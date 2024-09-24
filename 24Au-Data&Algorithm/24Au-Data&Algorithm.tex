@@ -1,0 +1,310 @@
+\documentclass[10pt, a4paper, oneside, fontset=none]{ctexart}
+
+%调用宏包
+\usepackage{amsmath, amsthm, amssymb, graphicx, wrapfig, mathrsfs}
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+\usepackage{color, framed, geometry, tcolorbox, nicematrix, xcolor}
+\tcbuselibrary{breakable}%box跨页
+\tcbuselibrary{skins}%box跨页不留边
+\usepackage{makecell, booktabs, listings, float}
+\usepackage[labelfont=bf, justification=raggedleft]{caption}
+\usepackage{multicol}
+\usepackage{extarrows}
+\usepackage{enumitem}
+\usepackage{yhmath}
+\usepackage{multirow}
+\usepackage[text=\includegraphics{C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png},angle=0]{draftwatermark}%水印
+%\usepackage{tikz}
+
+%基本字体设置
+\usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+%\newcommand{\symbf}[1]{\boldsymbol{#1}}
+%\newcommand{\symup}[1]{\mathrm{#1}}
+\setmonofont{Iosevka}
+\newfontfamily{\mono}{Cascadia Mono Regular}
+\setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
+\setCJKsansfont{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={FZYanZQKSJF.TTF}]
+\setCJKmonofont{LXGWNeoXiHei.ttf}
+%附加字体设置
+\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体Coca-ColaCareFontKaiTi.TTF}
+\newCJKfontfamily{\kai}{FZXKTK.TTF}[BoldFont={汉仪颜楷W.ttf}, ItalicFont={方正清刻本悦宋 简繁.TTF}, BoldItalicFont={FZYanZQKSJF.TTF}]
+\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁.TTF}[ItalicFont={FZYanZQKSJF.TTF}]
+\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK.TTF}[ItalicFont={方正宋刻本秀楷_GBK.TTF}, BoldFont={FZYanZQKSJF.TTF}]
+\newCJKfontfamily{\run}{汉仪润圆-45W.ttf}[BoldFont={汉仪润圆-75W.ttf}, ItalicFont={汉仪润圆-45W.ttf}]
+\newCJKfontfamily{\wen}{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={hk4e_zh-cn.ttf}]
+
+%文档格式
+\geometry{left=1.96cm, right=1.96cm, top=3.18cm, bottom=3.18cm}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+\linespread{1.4}
+\renewcommand{\theparagraph}{\Alph{paragraph})}
+\newcommand{\Section}[1]{ \refstepcounter{section} \section*{*\thesection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{section}{\makebox[0pt][r]{*}\thesection\texorpdfstring{\quad}{} #1} }
+\newcommand{\Subsection}[1]{ \refstepcounter{subsection} \subsection*{*\thesubsection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{subsection}{\makebox[0pt][r]{*}\thesubsection\texorpdfstring{\quad}{} #1} }
+\newcommand{\Subsubsection}[1]{ \refstepcounter{subsubsection} \subsubsection*{*\thesubsubsection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{subsubsection}{\makebox[0pt][r]{*}\thesubsubsection\texorpdfstring{\quad}{} #1} }
+\setlist[itemize]{leftmargin=3em, labelsep=0.25em, itemindent=0em, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt}
+\setlength{\lineskip}{5pt}
+\setlength{\lineskiplimit}{5pt}
+\setlength{\belowcaptionskip}{-1em}
+\setlength{\abovecaptionskip}{0.5em}
+\setlength{\columnsep}{1cm} % 分栏间距
+\setlength{\columnseprule}{.4pt} % 栏分割线粗
+\setlength{\abovecaptionskip}{0.2em}
+\setlength{\belowcaptionskip}{-0.5em}
+\def\columnseprulecolor{\color{white!50!black}}
+
+%定理环境
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[subsection]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{proposition}[theorem]{命题}
+
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{例}
+\newtheorem{circum}[theorem]{情形}
+
+\newenvironment{proofs}[1][\small\proofname]{\begin{pf}[breakable, enhanced jigsaw]\begin{proof}[#1]\small\kai}{\end{proof}\end{pf}}
+%\newenvironment{solution}{\begin{proofs}[\small\textit{\yan 解}]\small\renewcommand{\qedsymbol}{$\circledS$}}{\end{proofs}}
+\renewcommand{\proofname}{\yan{证明}}
+
+\newenvironment{twoc}{\vspace{-11pt}\begin{multicols}{2}}{\end{multicols}\vspace{-9pt}}
+%颜色命名
+\definecolor{meihong}{rgb}{0.85,0.2,0.47}
+\definecolor{bali}{rgb}{0.2,0.6,0.78}
+\definecolor{qinglv}{rgb}{0,0.35,0.32}
+\newcommand{\colors}[1]{\color{#1!75!black}}
+%tbox环境
+\newtcolorbox{pr}[2][]{colback=black!5!white,colframe=white!75!black,fonttitle=\sffamily\wen\bfseries,title=#2,#1}
+\newtcolorbox[use counter=definition,number within=subsection]{defi}[2][]{colback=bali!5!white,colframe=bali!75!black,fonttitle=\sffamily\wen\bfseries,title=定义~\thetcbcounter. #2,#1}
+\newtcolorbox[auto counter,number within=section]{compl}[2][]{colback=bali!5!white,colframe=bali!65!black,fonttitle=\sffamily\wen\bfseries,label=#2,title=电路部件~\thetcbcounter. #2,#1, fontupper=\kai, fontlower=\kai}
+\newtcolorbox[use counter=theorem,number within=subsection]{theo}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,title=结论~\thetcbcounter. #2,#1}
+\newtcolorbox[use counter=definition,number within=subsection]{defil}[2][]{colback=bali!5!white,colframe=bali!75!black,fonttitle=\sffamily\wen\bfseries,label=#2,title=定义~\thetcbcounter. #2,#1}
+\newtcolorbox[use counter=theorem,number within=subsection]{theol}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,label=#2,title=结论~\thetcbcounter. #2,#1}
+\newtcolorbox[auto counter,number within=section]{note}[2][]{colback=qinglv!5!white,colframe=qinglv!75!black,breakable, enhanced jigsaw,fonttitle=\sffamily\wen\bfseries,title=注~\thetcbcounter. #2,#1}
+\newtcolorbox{prenote}[2][]{colback=gray!5!white,colframe=gray!50!black,breakable, enhanced jigsaw, fonttitle=\sffamily\wen\bfseries,fontupper=\small\kai,title=#2,#1}
+\newtcolorbox{pf}[1][]{colback=black!5!white,colframe=white!75!black, fontupper=\small\kai,#1}
+%\newcommand{\mybox}[1]{\tikz[baseline=(MeNode.base)]{\node[rounded corners, fill=gray!20](MeNode){#1};}}
+
+%代码环境
+\lstset{
+	xleftmargin=3em, xrightmargin=1em, 
+	breaklines,                                 % 自动将长的代码行换行排版
+	extendedchars=false,                        % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+	rulecolor=\color[rgb]{0.8,0.8,0.8},         % 设置代码框颜色
+	backgroundcolor=\color[rgb]{0.96,0.96,0.96},% 背景颜色
+	keywordstyle=\colors{bali}\bfseries,        % 关键字颜色
+	identifierstyle=\color{black},              % 普通标识符颜色
+	commentstyle=\rm\kai\color{gray},          	% 注释颜色
+	stringstyle=\colors{meihong},      			% 字符串颜色
+	showstringspaces=false,                     % 不显示字符串内的空格
+	numbers=left,                               % 显示行号
+	numberstyle=\tiny,              			% 设置数字字体
+	basicstyle=\linespread{1}\tt,               % 设置基本字体
+	captionpos=t,                               % title在上方(在bottom即为b)
+	frame=single,                               % 设置代码框形式
+	showtabs=false, 
+	numbersep=15pt, 
+	framesep=1em, 
+	language=C++, 
+	columns=flexible, 
+	tabsize=4, 
+	gobble=4,
+}
+\lstdefinestyle{intro}
+	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{bali!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{bali}]{<-}{->}, }
+\lstdefinestyle{qintro}
+	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{qinglv!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{qinglv}]{<-}{->}, }
+\lstdefinestyle{notec}
+	{xleftmargin=3.5em, xrightmargin=2.5em, rulecolor=\color{qinglv!75!black}, backgroundcolor=\color{qinglv!5!white}, keywordstyle=\color{qinglv!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{qinglv}]{<-}{->}, }
+\lstdefinestyle{output}
+	{rulecolor=\color{white!75!black}, backgroundcolor=\color{white!5!black}, language={}, basicstyle=\linespread{1}\color{white!90!black}\mono\wen, identifierstyle=\linespread{1}\color{white!90!black}\mono, morecomment=[s][\it]{<-}{->}, showspaces=false, basewidth=0.6em}
+
+%定义格式记号
+\newcommand{\hang}[1][1]{\hangafter 1 \hangindent #1em}
+\newcommand{\den}[2][]{\begin{defi}{#1}\kai #2\end{defi}}
+\newcommand{\din}[2][]{\begin{theo}{#1}\run #2\end{theo}}
+\newcommand{\de}[2][]{\begin{defil}{#1}\kai #2\end{defil}}
+\newcommand{\di}[2][]{\begin{theol}{#1}\run #2\end{theol}}
+\newcommand{\dep}[3][]{\begin{defi}{#1\page{#2}}\kai #3\end{defi}}
+\newcommand{\dip}[3][]{\begin{theo}{#1\page{#2}}\run #3\end{theo}}
+\newcommand{\zhu}[2][]{\begin{note}{#1}\xiu #2\end{note}}
+\newcommand{\tboba}[1]{\textbf{\kai\color{bali!75!black}#1}}
+\newcommand{\mboba}[1]{\kai\symbf{\color{bali!75!black}#1}}
+\newcommand{\tbome}[1]{\textbf{\run\color{meihong!75!black}#1}}
+\newcommand{\mbome}[1]{\run\symbf{\color{meihong!75!black}#1}}
+\newcommand{\tboqi}[1]{\textbf{\xiu\color{qinglv!75!black}#1}}
+\newcommand{\mboqi}[1]{\xiu\symbf{\color{qinglv!75!black}#1}}
+\NewTotalTCBox{\code}{ O{red} v !O{} }{
+    fontupper=\mono, nobeforeafter, tcbox raise base, arc=0pt, outer arc=0pt, top=1pt, bottom=1pt, left=1pt, right=1pt, leftrule=0pt, rightrule=0pt, toprule=0.3mm, bottomrule=0.3mm, boxsep=0.5mm, colback=#1!10!white, colframe=#1!50!black, #3
+}{#2}
+
+%定义算符
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\newcommand*{\dif}{\mathop{}\!\symrm{d}}
+\newcommand*{\e}{\symrm{e}}
+\renewcommand{\i}{\symrm{i}}
+\newcommand*{\R}{\mathbb{R}}
+\newcommand{\dint}[1][]{\displaystyle{\int #1}}
+\newcommand*{\page}[1]{\hfill P$_\text{#1}$}
+
+%标题、作者、日期
+\title
+{
+	\textbf{数据与算法}{\kai 知识与方法}
+}
+\author{\zihao{5} T$^\text{T}$T}
+\date{\zihao{5}\kai \today}
+%----------------------------------------------------------
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+	\begin{flushleft}
+		\tableofcontents
+	\end{flushleft}
+\end{multicols}
+
+\newpage
+%----------------------------------------------------------
+\setcounter{section}{-1}
+\section{绪论：数据、数学模型、算法}
+
+\subsection{数据及其结构}
+
+\begin{definition}
+    数据的基本单元称为\tboba{数据元素}。
+\end{definition}
+
+数据元素并不是孤立存在的，而是存在密切的联系。
+
+数据的逻辑结构：
+\begin{itemize}
+    \item \tboba{集合结构}：数据元素之间没有任何关系
+    \item \tboba{线性结构}：数据元素之间存在一对一的关系，如线性表、栈、队列、串
+    \item \tboba{树形结构}：数据元素之间存在一对多的关系，如树
+    \item \tboba{图形结构}：数据元素之间存在多对多的关系，如图
+\end{itemize}
+
+数据的存储结构：
+\begin{itemize}
+    \item \tboba{顺序存储结构}：将数据元素存放在地址连续的存储单元里
+    \item \tboba{链式存储结构}：将数据元素存放在任意的存储单元里，通过指针相连
+\end{itemize}
+
+\subsection{数学模型}
+
+\begin{definition}
+    \tboba{数学模型}是对于现实世界的某一特定对象，根据其内在规律，为特定目的而得到的一个抽象的、简化的数学结构。
+\end{definition}
+
+常用的数学模型的类型：
+\begin{itemize}
+    \item \tboba{线性方程组}：超定线性方程组的线性拟合、欠定线性方程组的线性规划
+    \item \tboba{非线性方程组}：非线性方程组的求解
+    \item \tboba{微分方程}：常微分方程的数值解法、偏微分方程的数值解法
+    \item \tboba{概率模型}：概率预测、概率统计
+    \item \tboba{统计模型}：统计预测、统计分析
+    \item \tboba{离散模型}：线性结构、树结构、图结构
+    \item \tboba{优化模型}：线性规划、整数规划、非线性规划
+\end{itemize}
+
+\subsection{算法}
+
+\begin{definition}
+    \tboba{算法}是用以解决某一问题的有限长度的指令序列。
+\end{definition}
+
+算法的基本特点：
+\begin{itemize}
+    \item \tboba{有穷性}：算法必须在执行有穷步之后能够结束，且每一步都可在有穷时间内完成
+    \item \tboba{确定性}：算法的每一步必须有确切的含义，算法的实际执行结果是确定的、且精确地符合要求或期望
+    \item \tboba{可行性}：算法中描述的操作都可以通过已经实现的基本操作运算的有限次执行来实现
+    \item \tboba{输入}：算法必须有零个或多个输入
+    \item \tboba{输出}：算法必须有一个或多个输出
+\end{itemize}
+
+好的算法应该具有以下特点：
+\begin{itemize}
+    \item \tboba{正确性}：算法应该能够解决问题
+    \begin{itemize}
+        \item 不含语法错误
+        \item 对一般的输入数据能够产生正确的输出结果
+        \item 对精心选择的苛刻数据也能产生正确的输出结果
+        \item 对于所有的输入数据都能产生正确的输出结果
+    \end{itemize}
+    \item \tboba{可读性}：算法应该容易理解
+    \item \tboba{健壮性}：算法应该能够处理各种异常情况
+    \item \tboba{高效性}：算法应该能够在合理的时间和空间开销内解决问题
+\end{itemize}
+
+一个特定算法的运行工作量的大小，与问题规模的大小有关，这种关系称为算法的复杂度。
+
+\de[渐进时间复杂度]{
+    算法的\tboba{（渐进）时间复杂度}是指算法的运行时间与问题规模之间的关系。
+}
+
+\begin{example}
+    现有程序如下：
+    \begin{lstlisting}[gobble=8]
+        for(int i = 0; i < n; i++)
+            for(int j = i; j < n; j++)
+                if(a[i] > a[j])
+                    swap(a[i], a[j]);
+    \end{lstlisting}
+    其中，基本操作\lstinline|swap|函数的时间复杂度为\(O(1)\)，
+    其执行次数为\(\sum\limits_{i=0}^{n-1}\sum\limits_{j=i}^{n-1}1 = \sum\limits_{i=0}^{n-1}(n-i) = \sum\limits_{i=0}^{n-1}i = \dfrac{n(n-1)}{2}\)，
+    则该程序的时间复杂度为\(O\left(\dfrac{n(n-1)}{2}\right) = O(n^2)\)。
+\end{example}
+
+\begin{example}
+    现有程序如下：
+    \begin{lstlisting}[gobble=8]
+        for(int i = 1; i < n; i++)
+            for(int j = 0; j < i; j *= 2)
+                a[i] += a[j];
+    \end{lstlisting}
+    其内层循环的时间复杂度为\(O(\log_2i)\)，
+    则该程序的时间复杂度为
+    \begin{align*}
+        \sum\limits_{i=2}^{n-1} O(\log_2i) &= O\left(\sum\limits_{i=2}^{n-1} \log_2i\right)
+        = O\left(\log_2\left(\prod\limits_{i=2}^{n-1} i\right)\right) \\
+        &= O\left(\log_2(n-1)!\right) = O\left(\log_2n!\right) = O(n\log_2n)
+    \end{align*}
+\end{example}
+
+\de[渐进空间复杂度]{
+    算法的\tboba{（渐进）空间复杂度}是指算法的空间开销与问题规模之间的关系。
+}
+
+\section{数据结构}
+
+\newpage
+%----------------------------------------------------------
+\appendix
+\section{LambdaOJ平台介绍}
+
+\subsection{判题结果}
+判题有如下结果：
+\begin{itemize}
+    \item \code[green]{ACCEPTED}：结果完全正确。
+    \item \code{WRONG_ANSWER}：程序正常执行，也没有超时和超内存，但是答案不对。
+    \item \code{TIME_LIMIT_EXCEEDED}：程序超时，可能是死循环，也可能是算法不够优，或者实现不够优；还没到核对答案那一步，内存情况也不明。
+    \item \code{MEMORY_LIMIT_EXCEEDED}：程序超过内存限制，可能是算法不够优，或者实现不够优；也没有到核对答案那一步。
+    \item \code{OUTPUT_LIMIT_EXCEEDED}：输出数据过多，要么程序有bug，要么是恶意代码。
+    \item \code{BAD_SYSCALL}：使用了非法的系统调用，要么是恶意代码，大部分情况是C++在\,\lstinline{new}\,一块内存的时候，超过了限制失败了，C++运行时环境需要一个系统调用关闭信号，然后杀死这个进程。
+    \item \code{RUN_TIME_ERROR}：运行时错误，可能是由于除零、引用空指针或者数组越界等等。
+\end{itemize}
+
+\subsection{注意事项}
+
+尽量使用\,\lstinline{stdio.h}\,而不使用\,\lstinline{iostream}，前者的输入输出效率更高，时间和空间开销更小。
+%----------------------------------------------------------
+\end{document}

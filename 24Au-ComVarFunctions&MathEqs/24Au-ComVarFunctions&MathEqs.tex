@@ -1,0 +1,422 @@
+\documentclass[10pt, a4paper, oneside, fontset=none]{ctexart}
+%调用宏包
+\usepackage{amsmath, amsthm, amssymb, graphicx, mathrsfs}
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+\usepackage{color, framed, geometry, tcolorbox, nicematrix}
+\tcbuselibrary{breakable}%box跨页
+\tcbuselibrary{skins}%box跨页不留边
+\usepackage{makecell, booktabs}
+\usepackage[labelfont={bf}]{caption}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{extarrows}
+\usepackage{esint}
+\usepackage{yhmath}
+\usepackage{dashrule}% 虚线分割线
+\usepackage[text=\includegraphics{C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png},angle=0]{draftwatermark}%水印
+%\usepackage{tikz}
+%基本字体设置
+\catcode`\，=\active
+\def ，{\textup{,}\hskip0.5em }
+\setmonofont{Iosevka}
+\setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
+\setCJKsansfont{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={FZYanZQKSJF.TTF}]
+\setCJKmonofont{LXGWNeoXiHei.ttf}
+%附加字体设置
+\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体Coca-ColaCareFontKaiTi.TTF}
+\newCJKfontfamily{\kai}{FZXKTK.TTF}[BoldFont={汉仪颜楷W.ttf}, ItalicFont={方正清刻本悦宋 简繁.TTF}, BoldItalicFont={FZYanZQKSJF.TTF}]
+\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁.TTF}[ItalicFont={FZYanZQKSJF.TTF}]
+\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK.TTF}[ItalicFont={方正宋刻本秀楷_GBK.TTF}, BoldFont={FZYanZQKSJF.TTF}]
+\newCJKfontfamily{\run}{汉仪润圆-45W.ttf}[BoldFont={汉仪润圆-75W.ttf}, ItalicFont={汉仪润圆-45W.ttf}]
+\newCJKfontfamily{\wen}{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={hk4e_zh-cn.ttf}]
+%文档格式
+\geometry{left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+\linespread{1.4}
+\numberwithin{equation}{section}
+\renewcommand{\theparagraph}{\Alph{paragraph})}
+\newcommand{\Section}[1]{ \refstepcounter{section} \section*{*\thesection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{section}{\makebox[0pt][r]{*}\thesection\texorpdfstring{\ \ }{} #1} }
+\newcommand{\Subsection}[1]{ \refstepcounter{subsection} \subsection*{*\thesubsection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{subsection}{\makebox[0pt][r]{*}\thesubsection\texorpdfstring{\ \ }{} #1} }
+\newcommand{\Subsubsection}[1]{\refstepcounter{subsubsection}\subsubsection*{*\thesubsubsection\texorpdfstring{\quad}{}#1} \addcontentsline{toc}{subsubsection}{\makebox[0pt][r]{*}\thesubsubsection\texorpdfstring{\ \ }{}#1}}
+\setlist[itemize]{leftmargin=3em, labelsep=0.25em, itemindent=0em, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt}
+\setlist[description]{leftmargin=4em, labelsep=1em, itemindent=-1em, itemsep=0pt, parsep=0pt, topsep=3pt, partopsep=0pt}
+%定理环境
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[subsection]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{proposition}[theorem]{命题}
+
+\theoremstyle{definition}
+\newtheorem{examplein}[theorem]{\run 例题}
+\newtheorem{circum}[theorem]{情形}
+
+\newcommand{\exampleparameter}{0}
+\newenvironment{example}[1][0]{% 0/1: no space; 2/3: 5pt space
+	\renewcommand{\exampleparameter}{#1}
+	\ifnum \exampleparameter>1
+		\vspace{10pt}
+	\fi
+	\hrule
+	\vspace{3pt}
+	\noindent\hdashrule{\linewidth}{0.5pt}{2pt}
+	\vspace{-2em}
+	\begin{examplein}
+}{% 0/2: -0.5pt space; 1/3: 5pt space
+	\end{examplein}
+	\vspace{-1em}
+	\noindent\hdashrule{\linewidth}{0.5pt}{2pt}\vspace{3pt}
+	\hrule
+	\ifnum 1=\exampleparameter
+		\vspace{10pt}
+	\else
+		\ifnum 3=\exampleparameter
+			\vspace{10pt}
+		\else
+			\vspace{-0.5pt}
+		\fi
+	\fi
+}
+
+\newenvironment{proofs}[1][\proofname]{\begin{pf}[breakable, enhanced jigsaw]\adjline\begin{proof}[\small#1]\small\kai}{\end{proof}\end{pf}}
+\newenvironment{solution}{\begin{proofs}[\small\textit{\yan 解}]\small\renewcommand{\qedsymbol}{$\circledS$}}{\end{proofs}}
+\renewcommand{\proofname}{\yan{证明}}
+%颜色命名
+\definecolor{meihong}{rgb}{0.85,0.2,0.47}
+\definecolor{bali}{rgb}{0.2,0.6,0.78}
+\definecolor{qinglv}{rgb}{0,0.35,0.32}
+%box环境
+\newtcolorbox[use counter=definition,number within=section]{defi}[2][]{colback=bali!5!white,colframe=bali!75!black,fonttitle=\sffamily\wen\bfseries,title=重要定义~\thetcbcounter. #2,#1}
+\newtcolorbox[use counter=theorem,number within=subsection]{theo}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,title=重要定理~\thetcbcounter. #2,#1}
+\newtcolorbox[use counter=definition,number within=section]{defil}[2][]{colback=bali!5!white,colframe=bali!75!black,fonttitle=\sffamily\wen\bfseries,label=#2,title=重要定义~\thetcbcounter. #2,#1}
+\newtcolorbox[use counter=theorem,number within=subsection]{theol}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,label=#2,title=重要定理~\thetcbcounter. #2,#1}
+\newtcolorbox[auto counter,number within=section]{note}[2][]{colback=qinglv!5!white,colframe=qinglv!75!black,fonttitle=\sffamily\wen\bfseries,title=注~\thetcbcounter. #2,#1}
+\newtcolorbox{prenote}[2][]{colback=qinglv!5!white,colframe=qinglv!75!black,fonttitle=\bfseries,title=#2,#1}
+\newtcolorbox{pf}[1][]{colback=black!5!white,colframe=white!75!black,#1}
+%\newcommand{\mybox}[1]{\tikz[baseline=(MeNode.base)]{\node[rounded corners, fill=gray!20](MeNode){#1};}}
+
+%定义格式记号
+\newcommand{\hang}[1][1]{\hangafter 1 \hangindent #1em \noindent}
+\newcommand{\adjline}[1][4]{	\lineskiplimit=3pt
+	\lineskip=3pt
+	\abovedisplayskip=#1pt
+	\belowdisplayskip=#1pt}
+\newcommand{\den}[2][]{\begin{defi}{#1}\adjline
+	\kai #2\end{defi}}
+\newcommand{\din}[2][]{\begin{theo}{#1}\adjline
+	\run #2\end{theo}}
+\newcommand{\de}[2][]{\begin{defil}{#1}\adjline
+	\kai #2\end{defil}}
+\newcommand{\di}[2][]{\begin{theol}{#1}\adjline
+	\run #2\end{theol}}
+\newcommand{\dep}[3][]{\begin{defi}{#1\page{#2}}\adjline
+	\kai #3\end{defi}}
+\newcommand{\dip}[3][]{\begin{theo}{#1\page{#2}}\adjline
+	\run #3\end{theo}}
+\newcommand{\zhu}[2][]{\begin{note}{#1}\adjline
+	\xiu #2\end{note}}
+\newcommand{\colors}[1]{\color{#1!75!black}}
+\newcommand{\tboba}[1]{\textbf{\kai\color{bali!75!black}#1}}
+\newcommand{\mboba}[1]{\kai\boldsymbol{\color{bali!75!black}#1}}
+\newcommand{\tbome}[1]{\textbf{\run\color{meihong!75!black}#1}}
+\newcommand{\mbome}[1]{\run\boldsymbol{\color{meihong!75!black}#1}}
+\newcommand{\tboqi}[1]{\textbf{\xiu\color{qinglv!75!black}#1}}
+\newcommand{\mboqi}[1]{\xiu\boldsymbol{\color{qinglv!75!black}#1}}
+%定义算符
+\def\upint{\mathchoice%
+	{\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+	{\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+ \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+\renewcommand{\cfrac}[2]{\genfrac{}{}{}{0}{\raisebox{0.6em}{$#1$}}{\raisebox{-0.8em}{$#2$}}}
+\newcommand{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\Re}{\mathop{}\!\mathfrak{Re}\mathop{}\!}
+\renewcommand{\Im}{\mathop{}\!\mathfrak{Im}\mathop{}\!}
+\newcommand{\tp}{^\mathrm{T}}
+\renewcommand{\v}[1]{\vec{\boldsymbol{#1}}}
+\newcommand{\V}[2][-0.665]{\vec{#2\hspace{#1em}#2\hspace{#1em}#2}}
+\newcommand{\dint}[1][]{\displaystyle\int #1}
+\newcommand{\page}[1]{\hfill P$_\text{#1}$}
+\newcommand{\sumi}[1][n]{\sum\limits_{#1=1}^\infty}
+\renewenvironment{cases}[1][l]{\left\{\,\begin{NiceArray}{#1}}{\end{NiceArray}\right.}
+
+%标题、作者、日期
+\title
+{
+	\textbf{复变函数与数理方程}\textit{知识与方法}
+}
+\author{\fontsize{10.95}{15}\selectfont T$^\text{T}$T}
+\date{\fontsize{10.95}{15}\selectfont\kai \today}
+%----------------------------------------------------------
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+	\begin{flushleft}
+		\tableofcontents
+	\end{flushleft}
+\end{multicols}
+
+\adjline
+
+\newpage
+%----------------------------------------------------------
+\section{复变函数}
+
+\subsection{复数与复变函数}
+
+\subsubsection{复数的定义与运算}
+
+\begin{definition}
+    设 \(z=x+\i y\)，其中 \(x\) 和 \(y\) 是实数，\(\i\) 是虚数单位，满足 \(\i^2=-1\)，则称 \(z\) 为\tboba{复数}，\(x\) 为\tboba{实部}，\(y\) 为\tboba{虚部}，记作 \(z=\Re z+\i\Im z\)。
+\end{definition}
+
+\begin{definition}
+    改用极坐标 \(\rho\) 和 \(\varphi\) 表示复数 \(z\)，即可得到复数 \(z\) 的\tboba{三角式} \(z=\rho(\cos\varphi+\i\sin\varphi)\) 或\tboba{指数式} \(z=\rho\e^{\i\varphi}\)。其中 \(\rho=|z|=\sqrt{x^2+y^2}\) 为复数 \(z\) 的\tboba{模}，\(\varphi=\mathop\mathrm{Arg} z\) 为复数 \(z\) 的\tboba{幅角}。
+
+    约定：以 \(\arg z\) 表示复数 \(z\) 的幅角中满足 \(0 \le \mathop\mathrm{Arg} z < 2\pi\) 的一个特定值，称为 \(z\) 的\tboba{幅角主值}。
+\end{definition}
+
+\begin{definition}
+    复数 \(z=x+\i y = \rho(\cos\varphi + \i\sin\varphi) = \rho\e^{\i\varphi}\) 的\tboba{共轭}定义为 \(z^* = x-\i y = \rho(\cos\varphi - \i\sin\varphi) = \rho\e^{-\i\varphi}\)。
+\end{definition}
+
+复数的运算规则与实数类似，即满足交换律、结合律、分配律等基本运算法则。乘、除、乘方、开方运算使用三角式或指数式更为方便：
+\di[复数三角式或指数式的乘、除、乘方、开方运算]{
+    设复数 \(z_1=\rho_1(\cos\varphi_1+\i\sin\varphi_1)=\rho_1\e^{\i\varphi_1}\) 和 \(z_2=\rho_2(\cos\varphi_2+\i\sin\varphi_2)=\rho_2\e^{\i\varphi_2}\)，则有：
+    \begin{align*}
+        &z_1z_2 = \rho_1\rho_2\big(\cos(\varphi_1+\varphi_2)+\i\sin(\varphi_1+\varphi_2)\big)
+        = \rho_1\rho_2\e^{\i(\varphi_1+\varphi_2)}，\\
+        &\frac{z_1}{z_2} = \frac{\rho_1}{\rho_2}\big(\cos(\varphi_1-\varphi_2)+\i\sin(\varphi_1-\varphi_2)\big)
+        = \frac{\rho_1}{\rho_2}\e^{\i(\varphi_1-\varphi_2)}，\\
+        &z_1^n = \rho_1^n\big(\cos n\varphi_1+\i\sin n\varphi_1\big)
+        = \rho_1^n\e^{\i n\varphi_1}，\\
+        &\sqrt[n]{z_1} = \sqrt[n]{\rho_1}\left(\cos\frac{\varphi_1+2k\pi}{n}+\i\sin\frac{\varphi_1+2k\pi}{n}\right)
+        = \sqrt[n]{\rho_1}\e^{\i\frac{\varphi_1+2k\pi}{n}}，\quad k=0,1,2,\cdots,n-1
+    \end{align*}
+}
+
+\zhu[幅角运算]{
+    （1）复数 \(z\) 的幅角 \(\varphi\) 不能唯一确定，其可以加减 \(2k\pi\)，即 \(\varphi+2k\pi\) 也是复数 \(z\) 的幅角，其中 \(k=0,\pm1,\pm2,\cdots\)。因此，根式 \(\sqrt[n]{z}\) 的幅角也就可以加减 \(\dfrac{2\pi}{n}\) 的整数倍，从而 \(\sqrt[n]{z}\) 有 \(n\) 个值。
+    
+    （2）一般地，\(\mathop\mathrm{Arg}(z_1z_2) = \mathop\mathrm{Arg}z_1 + \mathop\mathrm{Arg} z_2\)，但 \(\mathop\mathrm{Arg} z^2 = \mathop\mathrm{Arg} z + \mathop\mathrm{Arg} z \neq 2\mathop\mathrm{Arg} z\)。
+}
+
+\begin{example}
+    将实值坐标平面上的直线方程 \(ax+by+c = 0\) 表示为复数形式。
+\begin{solution}
+    令直线上 \(z=x+\i y\)，则有 \(x=\Re z=\dfrac{z+z^*}{2}\)，\(y=\Im z=\dfrac{z-z^*}{2\i}\)，因此有
+    \[
+        a \frac{z+z^*}{2} + b \frac{z-z^*}{2\i} + c = 0 \quad \Rightarrow \quad (a-\i b)z + (a+\i b)z^* + 2\i c = 0
+    \]
+    即
+    \[
+        B^* z + B z^* + C = 0
+    \]
+    其中 \(B \in \C\)，\(C \in \R\)。
+\end{solution}
+\end{example}
+
+\subsubsection{复变函数与解析函数}
+
+\de[复变函数、解析函数]{
+    在复平面上存在一个点集 \(E\)，若对于每一个 \(z \in E\)，都按照一定规律有一个或多个复数 \(w\) 与之对应，则称这种对应关系为从 \(E\) 到复数集 \(\C\) 的\tboba{复变函数}，记作 \(w=f(z)\)。其中，\(z\) 称为 \(w\) 的\tboba{宗量}，\(E\) 称为 \(f\) 的\tboba{定义域}。
+
+    若函数的定义域 \(E\) 是一个\tboba{区域}：
+    \begin{itemize}
+        \item \(E\) 是全由\tboba{内点}组成的点集；
+        \item \(E\) 具有\tboba{连通性}，即对于任意两点 \(z_1\) 和 \(z_2\)，连接 \(z_1\) 和 \(z_2\) 的折线段也存在于 \(E\) 中；
+    \end{itemize}
+    并且在区域上每一点都\tboba{解析}（定义\,\ref{解析}），则称复变函数 \(f\) 为\tboba{解析函数}。
+}
+
+典型的复变函数有：
+\begin{itemize}
+    \item \textbf{多项式}：\(f(z)=a_0+a_1z+a_2z^2+\cdots+a_nz^n\)；
+    \item \textbf{有理分式}：\(f(z)=\dfrac{P(z)}{Q(z)}\)，其中 \(P(z)\) 和 \(Q(z)\) 为多项式函数；
+    \item \textbf{根式}：\(f(z)=\sqrt[n]{z-a}\)；
+    \item 部分\textbf{初等函数}：
+    \begin{itemize}[leftmargin=1em]
+        \item \textbf{指数函数}：\(f(z)=\e^z=\e^{x+\i y}=\e^x(\cos y+\i \sin y)\)；
+        \item \textbf{三角函数}：\(\sin z=\dfrac{\e^{\i z}-\e^{-\i z}}{2\i}\)，\(\cos z=\dfrac{\e^{\i z}+\e^{-\i z}}{2}\)，\\
+        　　　　　这里 \(\sin^2 z + \cos^2 z = 1\) 仍成立，但 \(|\sin z|^2 + |\cos z|^2 \ge 1\)；
+        \item \textbf{双曲函数}：\(\sinh z=\dfrac{\e^z-\e^{-z}}{2}\)，\(\cosh z=\dfrac{\e^z+\e^{-z}}{2}\)；
+        \item \textbf{对数函数}：\(\ln z=\ln \big(|z|\e^{\i\mathop\mathrm{Arg} z})=\ln|z|+\i\mathop\mathrm{Arg} z\)；
+        \item \textbf{幂函数}：\(z^\alpha=\e^{\alpha\ln z}\)。
+    \end{itemize}
+\end{itemize}
+
+\begin{example}[3]
+    在\tboba{反演}变换 \(w = \dfrac{1}{z}\) （\(z \neq 0\)）中，\(z\) 平面上的下面曲线各映射为 \(w\) 平面上的什么曲线？
+
+    （1）\(|z| = 2\)；（2）\(\Re z = 1\)。
+\begin{solution}
+    设 \(z = x + \i y\)，\(w = u + \i v\)，则
+    \[
+        w = \frac{1}{z} = \frac{1}{x+\i y} = \frac{x-\i y}{x^2+y^2} = \frac{x}{x^2+y^2} - \i\frac{y}{x^2+y^2} \quad \Rightarrow \quad u = \frac{x}{x^2+y^2}，v = -\frac{y}{x^2+y^2}
+    \]
+
+    （1）\(x^2+y^2=4\)，则 \(u = \dfrac{x}{4}，v = -\dfrac{y}{4}\)，即 \(u^2+v^2=\dfrac{1}{16}\)，为 \(w\) 平面上的圆心在原点、半径为 \(\dfrac{1}{4}\) 的圆，复平面上的表示为 \(|w| = \dfrac{1}{2}\)。
+
+    （2）\(x=1\)，则 \(u = \dfrac{1}{1+y^2}，v = -\dfrac{y}{1+y^2}\)，即 \(u^2+v^2=\dfrac{1+y^2}{(1+y^2)^2}=\dfrac{1}{1+y^2}=u\)，为 \(w\) 平面上的圆心在 \(\left(\dfrac{1}{2}，0\right)\)、半径为 \(\dfrac{1}{2}\) 的圆，复平面上的表示为 \(\left|w-\dfrac{1}{2}\right| = \dfrac{1}{2}\)。
+\end{solution}
+\end{example}
+
+\subsubsection{复变函数的导数}
+
+\de[复变函数的导数]{
+    设函数 \( w = f(z) \) 是在区域 \(B\) 上定义的单值函数，若在 \(B\) 内对于任意一点 \(z\)，存在极限
+    \begin{equation}
+        \lim\limits_{\Delta z \to 0} \frac{\Delta w}{\Delta z} = \lim\limits_{\Delta z \to 0} \frac{f(z+\Delta z)-f(z)}{\Delta z}
+    \end{equation}
+    且其值与 \(\Delta z \to 0\) 的方式无关，则称函数 \(w = f(z)\) 在 \(z\) 处\tboba{可导}，称该极限为函数 \(f(z)\) 在点 \(z\) 处的\tboba{导数}，记作 \(f'(z)\) 或 \(\dfrac{\dif w}{\dif z}\)。
+}
+
+形式上看，复变函数和实变函数导数的定义相同，因此在某些方面
+具有一致性。然而，\textbf{它们具有本质的区别，因为实变函数只需要沿
+实轴逼近极限，而复变函数则需要在全方向逼近极限。}
+
+下面给出函数可导的必要条件：
+
+\di[Cauchy-Riemann条件]{
+    记复变函数 \(w = f(z)\) 中，\(\Re w = u\)，\(\Im w = v\)，\(\Re z = x\)，\(\Im z = y\)，\(|z| = \rho\)，\(\mathop\mathrm{arg} z = \varphi\)，则函数可导的必要条件是各偏导数存在且满足\,\tbome{Cauchy-Riemann方程}：
+    \begin{equation}
+        \begin{cases}
+            \dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y}，\\[7pt]
+            \dfrac{\partial u}{\partial y} = -\dfrac{\partial v}{\partial x}，
+        \end{cases}
+        \quad \text{或} \quad
+        \begin{cases}
+            \dfrac{\partial u}{\partial \rho} = \dfrac{1}{\rho}\dfrac{\partial v}{\partial \varphi}，\\[7pt]
+            \dfrac{1}{\rho}\dfrac{\partial u}{\partial \varphi} = -\dfrac{\partial v}{\partial \rho}
+        \end{cases}
+    \end{equation}
+}
+
+\begin{example}
+    设有函数 \(f(z) = \sqrt{\left| \Im z^2 \right|}\)，求其在复平面原点的可导性。
+\begin{solution}
+    设 \(z = x + \i y\)，知 \(u = \Re f(z) = \sqrt{|2xy|}\)，\(v = \Im f(z) = 0\)。则在\((0，0)\)点有
+    \begin{align*}
+        & \dfrac{\partial u }{\partial x } = \lim\limits_{\Delta x \to 0} \dfrac{u(\Delta x，0) - u(0，0)}{\Delta x} = 0 = \dfrac{\partial v }{\partial y }，\\
+        & \dfrac{\partial u }{\partial y } = \lim\limits_{\Delta y \to 0} \dfrac{u(0，\Delta y) - u(0，0)}{\Delta y} = 0 = -\dfrac{\partial v }{\partial x }
+    \end{align*}
+    因此满足 Cauchy-Riemann 方程。然而，从定义看，由于 \(\dfrac{\Delta f(z)}{\Delta z } = \dfrac{f(\Delta z) - f(0)}{\Delta z} = \dfrac{\sqrt{|2\Delta x\Delta y |}}{\Delta x + \i \Delta y}\)，因此 
+    \[
+        \lim\limits_{\Delta x \to 0^+ \atop \Delta x = \Delta y} \dfrac{\Delta f(z)}{\Delta z } = \dfrac{\sqrt{2}}{1 + \i}，\qquad
+        \lim\limits_{\Delta x \to 0^+ \atop \Delta y = 0} \dfrac{\Delta f(z)}{\Delta z } = 0
+    \]
+    这说明函数在原点不可导。\textbf{其原因是：函数\(\boldsymbol{u(x，y)}\)在\(\boldsymbol{(0，0)}\)点不可微。}
+\end{solution}
+\end{example}
+
+\di[单值复变函数可导的充要条件]{
+    单值函数\(f(z) = u(x，y) + \i v(x，y)\)可导，当且仅当 \(u(x，y)\) 和 \(v(x，y)\)可微，并且各偏导数满足定理\,\ref{Cauchy-Riemann条件}\,的 Cauchy-Riemann 条件。
+}
+
+\de[解析]{
+    若函数 \(f(z)\) 在点 \(z_0\) 及其邻域上处处可导，则称 \(f(z)\) 在点 \(z_0\) 处\tboba{解析}。
+    
+    若函数 \(f(z)\) 在区域 \(B\) 上的每一点都解析，则称 \(f(z)\) 在区域 \(B\) 上\tboba{解析}，此时称 \(f(z)\) 为\tboba{解析函数}。
+}
+
+\zhu[解析函数实部与虚部的关系]{
+    解析函数的实部和虚部不是独立的，知道了其中之一，例如实
+    部\(u\)，根据Cauchy-Riemann条件就可以唯一地（相差一个常数）确定虚部\(v\)，
+    这是因为
+    \[
+        \dif v = \dfrac{\partial v}{\partial x}\dif x + \dfrac{\partial v}{\partial y}\dif y = -\dfrac{\partial u}{\partial y}\dif x + \dfrac{\partial u}{\partial x}\dif y
+    \]
+    从而有
+    \[
+        v = \int \dif v = -\int \dfrac{\partial u}{\partial y}\dif x + \int \dfrac{\partial u}{\partial x}\dif y + C
+    \]
+}
+
+\begin{theorem}
+    若函数 \(f(z) = u(x，y) + \i v(x，y)\) 在区域 \(B\) 上解析，则\\
+    （1）\(u = \Re f(z)\)，\(v = \Im f(z)\)均为 \(B\) 上的\tboba{调和函数}：
+    \begin{itemize}
+        \item \(u\)，\(v\)在区域 \(B\) 上均有二阶连续偏导数；
+        \item \(u\)，\(v\)均满足\tboba{拉普拉斯方程}，即\(\dfrac{\partial^2 u}{\partial x^2} + \dfrac{\partial^2 u}{\partial y^2} = 0\)，\(\dfrac{\partial^2 v}{\partial x^2} + \dfrac{\partial^2 v}{\partial y^2} = 0\)；
+    \end{itemize}
+    （2）\(u(x，y) = C_1\)，\(v(x，y) = C_2\)（\(C_1\)，\(C_2\)为任意实数）是\(B\)上的两组\tboba{正交曲线簇}。
+\end{theorem}
+
+\begin{example}
+    已知解析函数 \(f(z) = u(x，y) + \i v(x，y)\) 的虚部 \(v = \sqrt{-x + \sqrt{x^2 + y^2}}\)，求其实部 \(u\) 和函数 \(f\)。
+\begin{solution}
+    改用极坐标 \(x = \rho\cos\varphi\)，\(y = \rho\sin\varphi\)，则有
+    \[
+        v = \sqrt{-\rho\cos\varphi + \sqrt{\rho^2\cos^2\varphi + \rho^2\sin^2\varphi}} = \sqrt{-\rho\cos\varphi + \rho} = \sqrt{2\rho} \sin \dfrac{\varphi}{2}
+    \]
+    则可求出 \( \dfrac{\partial v}{\partial \rho} = \dfrac{1}{\sqrt{2\rho}}\sin \dfrac{\varphi}{2} \)，\(\dfrac{\partial v}{\partial \varphi} = \sqrt{\dfrac{\rho}{2}}\cos \dfrac{\varphi}{2}\)。因此有
+    \[
+        \dfrac{\partial u}{\partial \rho} = \dfrac{1}{\rho}\dfrac{\partial v}{\partial \varphi} = \dfrac{1}{\sqrt{2\rho}}\cos \dfrac{\varphi}{2}，\qquad \dfrac{\partial u}{\partial \varphi} = -\rho\dfrac{\partial v}{\partial \rho} = -\sqrt{\dfrac{\rho}{2}}\sin \dfrac{\varphi}{2}
+    \]
+    得到
+    \begin{align*}
+        \dif u &= \dfrac{\partial u}{\partial \rho}\dif \rho + \dfrac{\partial u}{\partial \varphi}\dif \varphi = \dfrac{1}{\sqrt{2\rho}}\cos \dfrac{\varphi}{2}\dif \rho - \sqrt{\dfrac{\rho}{2}}\sin \dfrac{\varphi}{2}\dif \varphi \\
+        &= \cos \dfrac{\varphi}{2}\dif \sqrt{2\rho} - \sqrt{2\rho} \dif \cos \dfrac{\varphi}{2} = \dif \left(\sqrt{2\rho}\cos \dfrac{\varphi}{2}\right)
+    \end{align*}
+    因此 
+    \[
+        u = \sqrt{2\rho}\cos \dfrac{\varphi}{2} + C
+        = \sqrt{x + \sqrt{x^2 + y^2}} + C
+    \]
+    从而得到函数 \(f\) 为
+    \begin{equation*}
+        f(z) = \sqrt{x + \sqrt{x^2 + y^2}} + \i \sqrt{2\rho}\sin \dfrac{\varphi}{2} = \sqrt{x + \sqrt{x^2 + y^2}} + \i \sqrt{y + \sqrt{x^2 + y^2}} \qedhere
+    \end{equation*}
+\end{solution}
+\end{example}
+
+\Subsubsection{复变函数的多值性}
+
+\de[多值函数]{
+    若函数 \(w = f(z)\) 的定义域 \(E\) 中，对于某些 \(z\)，存在多个值 \(w \) 与之对应，则称 \(w = f(z)\) 为\tboba{多值函数}。多值函数在每个宗量 \(z\) 处都有多个值，一般认为 \(f(z)\) 表示 \(z \) 处的全部值的集合。
+
+    若定义在上面点集 \(E\) 上的单值函数 \(w_n = f_n(z) \in f(z)\)（\(\forall z \in E\)），则称 \(f_n(z)\) 为 \(f(z)\) 的一个\tboba{单值分支}。
+}
+
+\begin{example}
+    设有函数 \(w = \sqrt{z}\)，其中 \(|z| = \rho\)，\(\arg z = \varphi\)。
+
+    由 \(\sqrt{z} = \sqrt{\rho\e^{\i\mathop\mathrm{Arg} z}} = \sqrt{\rho}\e^{\i\mathop\mathrm{Arg} z/2} = \sqrt{\rho}\e^{\i(\varphi + 2k\pi)/2} = \sqrt{\rho}\e^{\i(\varphi/2 + k\pi)}\)（\(k \in \mathbb{Z}\)），
+    知\(\sqrt{z}\) 有两个值：
+    \[
+        \begin{cases}[ll]
+            k = 0\text{：} & w_1 = \sqrt{\rho}\e^{\i\varphi/2}，\\
+            k = 1\text{：} & w_2 = \sqrt{\rho}\e^{\i\left(\varphi/2 + \pi\right)} = -\sqrt{\rho}\e^{\i\varphi/2}
+        \end{cases}
+    \]
+    因此，\(w = \sqrt{z}\) 有两个单值分支。
+
+    设 \(z\) 从某一点 \(z_0\) 出发（对应地 \(w\) 从分支 \(w_1\) 上的 \(w_0 = \sqrt{|z_0|}\e^{\i\mathop\mathrm{arg} z_0/2}\) 出发），沿着闭合曲线 \(C\) 回到 \(z_0\)。
+\end{example}
+
+\newpage
+%----------------------------------------------------------
+\section{积分变换}
+
+
+\newpage
+%----------------------------------------------------------
+\section{数理方程}
+
+
+\newpage
+%----------------------------------------------------------
+\section{特殊函数}
+
+
+%----------------------------------------------------------
+\end{document}
