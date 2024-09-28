@@ -2,6 +2,10 @@
 \contentsline {subsection}{\numberline {0.1}数据及其结构}{2}{subsection.0.1}%
 \contentsline {subsection}{\numberline {0.2}数学模型}{2}{subsection.0.2}%
 \contentsline {subsection}{\numberline {0.3}算法}{2}{subsection.0.3}%
-\contentsline {section}{\numberline {A}LambdaOJ平台介绍}{4}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}判题结果}{4}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}注意事项}{4}{subsection.A.2}%
+\contentsline {section}{\numberline {1}数据结构}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}抽象数据类型}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}线性结构}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}线性表}{5}{subsubsection.1.2.1}%
+\contentsline {section}{\numberline {A}LambdaOJ平台介绍}{7}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}判题结果}{7}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}注意事项}{7}{subsection.A.2}%

@@ -1,0 +1,6 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{第 1幕 \hskip 1em\relax 重逢}{2}{}%
+\contentsline {section}{第 1场\hskip 1em\relax }{2}{}%
+\contentsline {chapter}{第 2幕 \hskip 1em\relax 缘起}{4}{}%
+\contentsline {section}{第 1场\hskip 1em\relax }{4}{}%
+\contentsline {chapter}{第 3幕 \hskip 1em\relax 复燃}{5}{}%

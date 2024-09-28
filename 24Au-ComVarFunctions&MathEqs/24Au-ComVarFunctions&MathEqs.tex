@@ -403,6 +403,279 @@
     设 \(z\) 从某一点 \(z_0\) 出发（对应地 \(w\) 从分支 \(w_1\) 上的 \(w_0 = \sqrt{|z_0|}\e^{\i\mathop\mathrm{arg} z_0/2}\) 出发），沿着闭合曲线 \(C\) 回到 \(z_0\)。
 \end{example}
 
+\subsection{复变函数积分}
+
+\subsubsection{Cauchy积分定理}
+
+\di[单连通区域 Cauchy 定理]{
+    设函数 \(f(z)\) 在闭单连通区域 \(\overline{B}\) 上解析，
+    则沿 \(\overline{B}\) 上任意分段光滑闭合曲线 \(\ell\)，有 
+    \begin{equation}
+        \oint_\ell f(z)\dif z = 0
+    \end{equation} 
+}
+
+\begin{theorem}
+    设函数 \(f(z)\) 在单连通区域 \(B\) 上解析，且在 \(\overline{B}\) 上连续，则沿 \(\overline{B}\) 上任意分段光滑闭合曲线 \(\ell\)，有 
+    \begin{equation}
+        \oint_\ell f(z)\dif z = 0
+    \end{equation} 
+\end{theorem}
+
+\begin{example}
+    计算积分 \(\displaystyle I = \oint_\ell (z-\alpha)^n \dif z\) （\(\alpha\) 为常数，\(n\) 为整数）。
+    \label{eg: Cauchy积分公式的引理}
+\begin{solution}
+    （1）若回路 \(\ell\) 不包围点 \(\alpha\)，则被积函数在 \(\ell\) 所围区域上解析，故积分 \(I = 0\)。
+
+    （2）若回路 \(\ell\) 包围点 \(\alpha\)，则当 \(n \ge 0\) 时，被积函数在 \(\ell\) 所围区域上解析，故积分 \(I = 0\)；
+    
+    当 \(n \le -1\) 时，被积函数在 \(\ell\) 所围区域上有一个奇点 \(\alpha\)。由定义，存在以 \(\alpha\) 为中心、\(R\) 为半径的圆周 \(\gamma\) 在 \(\ell\) 所围区域内，因此在圆周 \(\gamma\) 上有 \(z - \alpha = R\e^{\i\varphi}\)，以及
+    \begin{equation*} 
+        I = \oint_\ell (z-\alpha)^n \dif z = \oint_\gamma R^n\e^{\i n\varphi} \dif(\alpha + R\e^{\i\varphi}) = \i R^{n+1}\oint_0^{2\pi} \e^{\i n\varphi} \dif\varphi = \begin{cases}[ll]
+            0， & n \neq -1，\\
+            2\pi\i， & n = -1
+        \end{cases}
+        \qedhere
+    \end{equation*}
+\end{solution}
+\end{example}
+
+\subsubsection{Cauchy积分公式}
+
+\di[单连通区域 Cauchy 积分公式]{
+    设函数 \(f(z)\) 在闭单连通区域 \(\overline{B}\) 上解析，\(\ell\) 为 \(\overline{B}\) 的边界线，若点 \(\alpha\) 在 \(\ell\) 内部，则有
+    \begin{equation}
+        f(\alpha) = \dfrac{1}{2\pi\i} \oint_\ell \dfrac{f(z)}{z-\alpha} \dif z
+    \end{equation}
+}
+\begin{proofs}
+    由例~\ref{eg: Cauchy积分公式的引理}~可知，\(\displaystyle \oint_\ell \dfrac{\dif z}{z - \alpha} = 2 \pi \i\)，因此有
+    \[
+        f(\alpha) = f(\alpha) \cdot \dfrac{1}{2\pi\i} \oint_\ell \dfrac{\dif z}{z - \alpha} = \dfrac{1}{2\pi\i} \oint_\ell \dfrac{f(\alpha)}{z-\alpha} \dif z
+    \]
+    于是只需证明 \(\displaystyle \dfrac{1}{2\pi\i} \oint_\ell \dfrac{f(z)-f(\alpha)}{z-\alpha} \dif z = 0\)。
+    
+    由于 \(\alpha\) 是区域 \(B\) 上一点，因此存在以 \(\alpha\) 为圆心、任意小 \(\varepsilon\) 为半径的小圆 \(C_\varepsilon \subset B\)。
+    由 Cauchy 定理，有
+    \[
+        \left| \oint_\ell \dfrac{f(z)-f(\alpha)}{z-\alpha} \dif z \right| = \left| \oint_{C_\varepsilon} \dfrac{f(z)-f(\alpha)}{z-\alpha}  \dif z \right|
+    \]
+    我们有估计
+    \[
+        \left| \oint_{C_\varepsilon} \dfrac{f(z)-f(\alpha)}{z-\alpha}  \dif z \right| 
+        \le \dfrac{\max\limits_{z \in C_\varepsilon} \left|f(z) - f(\alpha)\right|}{\varepsilon} 2\pi\varepsilon = 2\pi \max\limits_{z \in C_\varepsilon} |f(z) - f(\alpha)|
+    \]
+
+    令 \(\varepsilon \to 0\)，即 \(C_\varepsilon \to \{\alpha\}\)，由于 \(f(z)\) 连续，即 \(f(z) \to f(\alpha)\)，\(\max\limits_{z \in C_\varepsilon} |f(z) - f(\alpha)| \to 0\)，因此有
+    \[
+        \left| \oint_\ell \dfrac{f(z)-f(\alpha)}{z-\alpha} \dif z \right|
+        = \lim_{\varepsilon \to 0} \left| \oint_{C_\varepsilon} \dfrac{f(z)-f(\alpha)}{z-\alpha}  \dif z \right| = 0
+        \quad \Rightarrow \quad \oint_\ell \dfrac{f(z)-f(\alpha)}{z-\alpha} \dif z = 0
+    \]
+    故定理得证。
+\end{proofs}
+
+通常将 Cauchy 积分公式写为
+\[
+    f(z) = \dfrac{1}{2\pi\i} \oint_\ell \dfrac{f(\zeta)}{\zeta - z} \dif \zeta
+\]
+
+若 \(f(z)\) 在 \(\ell\) 所围区域上存在奇点，则需考虑挖去奇点后的复连通区域。在复连通区域上，\(f(z)\) 解析，显然 Cauchy积分公式仍然成立，只要将 \(\ell\) 理解为所有边界线并都取正向即可。
+
+\begin{example}[2]
+    考虑围线 \(C_R\colon |z|=R\)，讨论不同 \(R\) 下的积分
+    \[
+        I = \oint_{C_R} \dfrac{1}{z^3(z+1)(z-1)} \dif z
+    \]
+\begin{solution}
+    注意到被积函数在 \(z=0\)，\(z=-1\)，\(z=1\) 处都有奇点。
+    
+    （1）当 \(0<R<1\) 时，有
+    \begin{align*}
+        I_R &= \oint_{C_R} \dfrac{\dfrac{1}{(z+1)(z-1)}}{z^3} \dif z 
+        = \dfrac{2\pi\i}{2!} \dfrac{\dif^2}{\dif z^2} \left(\dfrac{1}{(z+1)(z-1)}\right) \bigg|_{z=0} 
+        = \dfrac{\pi\i}{2} \dfrac{\dif^2}{\dif z^2} \left(\dfrac{1}{z-1} - \dfrac{1}{z+1}\right) \bigg|_{z=0} \\
+        &= \dfrac{\pi\i}{2} \left(\dfrac{2}{(z-1)^3} - \dfrac{2}{(z+1)^3}\right) \bigg|_{z=0} = -2\pi\i
+    \end{align*}
+
+    （2）当 \(R>1\) 时，在 \(C_R\) 内作三个小圆 \(C_{R_{-1}}\colon |z+1|=R_{-1}\)，\(C_{R_0}\colon |z|=R_0\)，\(C_{R_1}\colon |z-1|=R_1\)，其中 \(R_{-1}+1<R\)，\(R_1+1<R\)，\(R_0+R_1<1\)，\(R_0+R_{-1}<1\)，
+    则有
+    \begin{align*}
+        I_R &= \left(\ointctrclockwise_{C_{R_{-1}}} + \ointctrclockwise_{C_{R_0}} + \ointctrclockwise_{C_{R_1}}\right) \dfrac{1}{(z+1)(z-1)z^3} \dif z \\
+        &= \ointctrclockwise_{C_{R_{-1}}} \dfrac{\dfrac{1}{z^3(z-1)}}{z+1} \dif z + \ointctrclockwise_{C_{R_0}} \dfrac{\dfrac{1}{(z+1)(z-1)}}{z^3} \dif z + \ointctrclockwise_{C_{R_1}} \dfrac{\dfrac{1}{z^3(z+1)}}{z-1} \dif z  \\
+        &= 2\pi\i \left( \dfrac{1}{(-1)^3(-1-1)} - 1 + \dfrac{1}{1^(1+1)}\right) = 0
+    \end{align*}
+
+    （3）当 \(R=0\) 时，积分不存在。
+\end{solution}
+\end{example}
+
+\begin{example}[1]
+    \textbf{代数学基本定理\quad} 证明在 \(z\) 平面上的 \(n\) 次多项式 \(p_n(z) = a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0\) （\(a_n \neq 0\)）至少有一个零点。
+    \begin{proofs}
+        用反证法。若 \(p_n(z)\) 无零点，则有 \(\dfrac{1}{p_n(z)}\) 在整个复平面上解析。由于
+        \[
+            \lim_{|z| \to \infty} p_n(z) = \lim_{|z| \to \infty} z^n \left(a_n + \dfrac{a_{n-1}}{z} + \cdots + \dfrac{a_1}{z^{n-1}} + \dfrac{a_0}{z^n}\right) = \infty
+        \]
+        因此
+        \[
+            \lim_{|z| \to \infty} \dfrac{1}{p_n(z)} = 0
+        \]
+        由 Liouville 定理，\(\dfrac{1}{p_n(z)}\) 为常数，即 \(p_n(z)\) 为常数，与 \(a_n \neq 0\) 矛盾。因此，\(p_n(z)\) 至少有一个零点。
+    \end{proofs}
+\end{example}
+
+\subsection{Taylor级数和Laurent级数}
+
+\subsubsection{复数项级数}
+
+\de[复数项级数]{
+    设有复数项级数
+    \[
+        \sum_{n=0}^\infty z_n = z_0 + z_1 + z_2 + \cdots + z_n + \cdots
+    \]
+    其中 \(z_n = a_n + \i b_n\)，\(a_n\) 和 \(b_n\) 为实数。若级数通项的实部\(a_n\) 和虚部 \(b_n\) 的级数分别收敛，则称级数 \(\sum\limits_{n=0}^\infty z_n\) \,\tboba{收敛}，并定义其和为
+    \[
+        \sum_{n=0}^\infty z_n = \sum_{n=0}^\infty a_n + \i \sum_{n=0}^\infty b_n
+    \]
+}
+
+\begin{theorem}
+    \textbf{\textup{Cauchy 收敛准则\quad}} 级数 \(\sum\limits_{n=0}^\infty z_n\) 收敛，当且仅当对任意 \(\varepsilon > 0\)，存在正整数 \(N\)，使得当 \(n > N\) 时，对任意 \(p \in \mathbb{N}^*\)，有
+    \[
+        \left| \sum_{n+1}^{n+p} z_n \right| < \varepsilon
+    \]
+\end{theorem}
+
+\begin{definition}
+    如果级数 \(\sum\limits_{n=0}^\infty z_n\) 收敛，且级数 \(\sum\limits_{n=0}^\infty |z_n|\) 也收敛，则称级数 \(\sum\limits_{n=0}^\infty z_n\) \,\tboba{绝对收敛}。
+\end{definition}
+
+绝对收敛的级数必然收敛，且求和的先后次序可以任意改变。
+
+\begin{theorem}
+    设有两个级数 \(\sum\limits_{n=0}^\infty z_n\) 和 \(\sum\limits_{n=0}^\infty w_n\)，若级数 \(\sum\limits_{n=0}^\infty z_n\) 和 \(\sum\limits_{n=0}^\infty w_n\) 分别绝对收敛于 \(A\)、\(B\)，则其逐项相乘的级数 \(\sum\limits_{n=0}^\infty \sum\limits_{k=0}^\infty z_n w_k\) 绝对收敛于 \(AB\)。
+\end{theorem}
+
+\de[函数项级数]{
+    设有函数项级数
+    \[
+        \sum_{n=0}^\infty w_n(z) = w_0(z) + w_1(z) + w_2(z) + \cdots + w_n(z) + \cdots
+    \]
+    若对某个区域 \(B\) 或某根曲线 \(\ell\) 上的每一点 \(z\)，级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 收敛，则称级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 在区域 \(B\) 或沿曲线 \(\ell\) \,\tboba{收敛}。
+}
+
+\begin{theorem}
+    \textbf{\textup{Cauchy 收敛准则}\quad} 函数项级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 在区域 \(B\) 或沿曲线 \(\ell\) 上收敛，当且仅当对任意 \(\varepsilon > 0\)，存在 \(N(z)\) 使得当 \(n > N(z)\) 时，对任意 \(p \in \mathbb{N}^*\)，有
+    \[
+        \left| \sum_{n+1}^{n+p} w_n(z) \right| < \varepsilon
+    \]
+    若选取的 \(N(z)\) 与点 \(z\) 无关，则称级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 在区域 \(B\) 或沿曲线 \(\ell\) 上\,\tboba{一致收敛}。
+\end{theorem}
+
+\begin{theorem}
+    （1）若在区域 \(B\) 或曲线 \(\ell\) 上 一致收敛的级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 每一项都是 \(B\) 或 \(\ell\) 上的连续函数，则级数的和函数 \(w(z) = \sum\limits_{n=0}^\infty w_n(z)\) 也是 \(B\) 或 \(\ell\) 上的连续函数。
+
+    （2）若在曲线 \(\ell\) 上 一致收敛的级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 每一项都是 \(\ell\) 上的连续函数，则级数可以沿 \(\ell\) 逐项积分，即
+    \[
+        \int_\ell \sum_{n=0}^\infty w_n(\zeta) \dif \zeta = \sum_{n=0}^\infty \int_\ell w_n(\zeta) \dif \zeta
+    \]
+
+    （3）若在闭区域 \(\overline{B}\) 上一致收敛的级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 每一项都是 \(\overline{B}\) 上的解析函数，则级数的和函数 \(w(z) = \sum\limits_{n=0}^\infty w_n(z)\) 也是 \(\overline{B}\) 上的解析函数，且级数可以逐项求导，即
+    \[
+        \dfrac{\dif^n}{\dif z^n} \sum_{n=0}^\infty w_n(z) = \sum_{n=0}^\infty \dfrac{\dif^n}{\dif z^n} w_n(z)
+    \]
+    其中各阶导数 \(\dfrac{\dif^n}{\dif z^n} w_n(z)\) 也在 \(\overline{B}\) 上一致收敛。
+\end{theorem}
+
+\begin{definition}
+    若函数项级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 在区域 \(B\) 或沿曲线 \(\ell\) 上所有点 \(z\) 处都满足通项 \(|w_n(z)| \le M_n\)，而正常数项级数 \(\sum\limits_{n=0}^\infty M_n\) 收敛，则称级数 \(\sum\limits_{n=0}^\infty w_n(z)\) 在区域 \(B\) 或沿曲线 \(\ell\) 上\tboba{绝对且一致收敛}。
+\end{definition}
+
+\de[幂级数]{
+    设有函数项级数
+    \[
+        \sum_{k=0}^\infty a_k(z-z_0)^k = a_0 + a_1(z-z_0) + a_2(z-z_0)^2 + \cdots + a_k(z-z_0)^k + \cdots
+    \]
+    其中 \(a_k\) 为常数，\(z_0\) 为常数，这样的级数称为以 \(z_0\) 为中心的\tboba{幂级数}。
+}
+
+\begin{theorem}
+    \textbf{\textup{幂级数的绝对收敛条件}\quad} 对幂级数 \(\sum\limits_{k=0}^\infty a_k(z-z_0)^k\)，若存在正数 \(R = \lim\limits_{k \to \infty} \dfrac{|a_k|}{|a_{k+1}|}\)，则 \(|z-z_0|<R\) 时 \(\sum\limits_{k=0}^\infty a_k(z-z_0)^k\) 绝对收敛，而 \(|z-z_0|>R\) 时级数发散。
+\end{theorem}
+
+\zhu[收敛半径]{
+    幂级数 \(\sum\limits_{k=0}^\infty a_k(z-z_0)^k\) 的\tboqi{收敛半径}\,\(R\) 可定义为
+    \[
+        R = \lim_{k \to \infty} \left|\dfrac{a_k}{a_{k+1}}\right| 
+        \qquad \text{或} \qquad
+        R = \limsup\limits_{k \to \infty} \dfrac{1}{\sqrt[k]{|a_k|}}
+    \]
+    圆 \(|z-z_0|=R\) 称为幂级数的\tboqi{收敛圆}。
+}
+
+幂级数在收敛圆的内部绝对且一致收敛，进而在收敛圆内单值解析，于是可以逐项积分、逐项微分，且逐项积分、微分不改变收敛半径。
+
+\begin{example}[3]
+    讨论幂级数 \(\sum\limits_{k=0}^\infty z^k \cos \i k\) 的收敛半径。
+\begin{solution}
+    幂级数 \(\sum\limits_{k=0}^\infty z^k \cos \i k\) 的系数为 \(a_k = \cos \i k = \dfrac{\e^{k} + \e^{-k}}{2}\)，因此收敛半径为
+    \[
+        R = \lim_{k \to \infty} \dfrac{1}{\sqrt[k]{|a_k|}} = \lim_{k \to \infty} \dfrac{\sqrt[k]{2}}{\sqrt[k]{\e^k + \e^{-k}}}
+    \]
+    注意到 \(k \to \infty\) 时，\(\e < \sqrt[k]{\e^k + \e^{-k}} < \sqrt[k]{2\e^k} = \sqrt[k]{2}\e \to \e\)，因此收敛半径为 \(R = \dfrac{1}{\e}\)。
+\end{solution}
+\end{example}
+
+\subsubsection{Taylor级数}
+
+\di[解析函数的Taylor展开]{
+    设函数 \(f(z)\) 在点 \(z_0\) 为圆心的圆盘 \(C_R \colon |z-z_0|<R\) 上解析，那么在圆盘 \(C_R\) 内任意点 \(z\)，函数 \(f(z)\) 可展开为幂级数
+    \[
+        f(z) = \sum_{n=0}^\infty a_n (z-z_0)^n
+    \]
+    其中
+    \begin{equation}
+        a_n = \dfrac{1}{2\pi\i} \oint_{C_{R_1}} \dfrac{f(\zeta)}{(\zeta-z_0)^{n+1}} \dif \zeta = \dfrac{1}{n!} f^{(n)}(z_0)
+    \end{equation}
+    \(C_{R_0}\) 为以 \(z_0\) 为圆心、包含点 \(z\) 的圆周。
+}
+
+\begin{proofs}
+    根据 Cauchy 积分公式，有 \(\displaystyle f(z) = \dfrac{1}{2\pi\i} \oint_{C_{R_1}} \dfrac{f(\zeta)}{\zeta-z} \dif \zeta\)，可先将 \(\dfrac{1}{\zeta-z}\) 展开为幂级数，即
+    \[
+        \dfrac{1}{\zeta-z} = \dfrac{1}{(\zeta-z_0) - (z-z_0)} = \dfrac{1}{\zeta-z_0} \dfrac{1}{1-\dfrac{z-z_0}{\zeta-z_0}} = \dfrac{1}{\zeta-z_0} \sum_{n=0}^\infty \left(\dfrac{z-z_0}{\zeta-z_0}\right)^n = \sum_{n=0}^\infty \dfrac{(z-z_0)^n}{(\zeta-z_0)^{n+1}}
+    \]
+    这里由于 \(\zeta\) 在以 \(z_0\) 为圆心、包含点 \(z\) 的圆周 \(C_{R_0}\) 上，容易知道满足 \(\left|\dfrac{z-z_0}{\zeta-z_0}\right| < 1\)。代入 Cauchy 积分公式，得到
+    \begin{align*}
+        f(z) &= \dfrac{1}{2\pi\i} \oint_{C_{R_1}} f(\zeta) \sum_{n=0}^\infty \dfrac{(z-z_0)^n}{(\zeta-z_0)^{n+1}} \dif \zeta 
+        = \sum_{n=0}^\infty (z-z_0)^n \dfrac{1}{2\pi\i} \oint_{C_{R_1}} \dfrac{f(\zeta)}{(\zeta-z_0)^{n+1}} \dif \zeta \\
+        &= \sum_{n=0}^\infty \dfrac{f^{(n)(z_0)}}{n!} (z-z_0)^n
+    \end{align*}
+    从而可证。
+\end{proofs}
+
+\begin{example}
+    考虑函数 \(f(z) = \ln z\) 在点 \(z_0 = 1\) 附近的 Taylor 展开。
+\begin{solution}
+    多值函数 \(\ln z\) 的支点为 \(z = 0，\infty\)，因此在 \(z_0 = 1\) 附近的 Taylor 展开的圆盘应该避开这两个支点。取 \(R = 1\)，则在圆盘 \(C_1\) 内有
+    \begin{align*}
+        &f(z) = \ln z && f(1) = \ln 1 = 2\pi n\i \\
+        &f^{(1)}(z) = \dfrac{1}{z} && f^{(1)}(1) = 1 \\
+        &f^{(2)}(z) = -\dfrac{1}{z^2} && f^{(2)}(1) = -1 \\
+        &\vdots && \vdots \\
+        &f^{(k)}(z) = (-1)^{k-1} \dfrac{(k-1)!}{z^k} && f^{(k)}(1) = (-1)^{k-1} (k-1)!
+    \end{align*}
+    因此在圆盘 \(C_1\) 内有
+    \[
+        \ln z = \sum_{n=0}^\infty (-1)^{n-1} \dfrac{(n-1)!}{n!} (z-1)^n = \sum_{n=0}^\infty (-1)^{n-1} \dfrac{(z-1)^n}{n}
+    \]
+\end{solution}
+\end{example}
+
+
+
 \newpage
 %----------------------------------------------------------
 \section{积分变换}

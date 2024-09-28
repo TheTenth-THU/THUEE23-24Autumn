@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  24 SEP 2024 00:32
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  26 SEP 2024 18:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1379,27 +1379,41 @@ File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
  [13]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [14]
+File: 卡诺循环.png Graphic file (type bmp)
+<卡诺循环.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [15]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [16]
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 65.
 See the caption package documentation for explanation.
 
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
-[14] (./24Sp-Physics(1).aux)
+[17] (./24Sp-Physics(1).aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `24Sp-Physics(1).out' has not changed.
-(rerunfilecheck)             Checksum: DAE70BEC3BE1D41C8D68B5C29ACD6342;1903.
+(rerunfilecheck)             Checksum: C7F068E1E11F87A5A4AD92B6C59AE556;2103.
  ) 
 Here is how much of TeX's memory you used:
- 54148 strings out of 476683
- 1375887 string characters out of 5798754
- 1958148 words of memory out of 5000000
- 73621 multiletter control sequences out of 15000+600000
- 534563 words of font info for 208 fonts, out of 8000000 for 9000
+ 54191 strings out of 476683
+ 1377326 string characters out of 5798754
+ 1958150 words of memory out of 5000000
+ 73660 multiletter control sequences out of 15000+600000
+ 534579 words of font info for 210 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,23n,97p,592b,1013s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 24Sp-Physics(1).pdf (14 pages).
+Output written on 24Sp-Physics(1).pdf (17 pages).

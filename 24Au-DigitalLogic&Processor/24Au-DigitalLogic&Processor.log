@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  23 SEP 2024 16:10
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  26 SEP 2024 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1058,15 +1058,31 @@ Package: dashrule 2013/03/28 v1.3 Dashed rules
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
 )
 \c@hdr@segments=\count439
-) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
+) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/tablefootnote/tablefootnote.sty
+Package: tablefootnote 2014/01/26 v1.1c Table foot notes (HMM)
+ (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+ (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count440
+\calc@Bcount=\count441
+\calc@Adimen=\dimen422
+\calc@Bdimen=\dimen423
+\calc@Askip=\skip86
+\calc@Bskip=\skip87
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count442
+\calc@Cskip=\skip88
+))) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
 Package: draftwatermark 2020/12/08 3.0 Put a gray textual watermark on document pages
 ) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
 Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
-\g__um_fam_int=\count440
-\g__um_fonts_used_int=\count441
-\l__um_primecount_int=\count442
+\g__um_fam_int=\count443
+\g__um_fonts_used_int=\count444
+\l__um_primecount_int=\count445
 \g__um_primekern_muskip=\muskip19
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex))) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/kpfonts-otf/KpRoman.fontspec)
 
@@ -1150,11 +1166,11 @@ Package fontspec Info: Font family 'KpRoman(1)' created for font 'KpRoman'
 (fontspec)             <->"[KpRoman-Bold.otf]/OT:script=latn;language=dflt;slant=0.19;+liga;-rlig;-dlig;-hlig;+pcap;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/KpRoman(1)/m/n on input line 31.
+(Font)                  OT1/cmr/m/n --> TU/KpRoman(1)/m/n on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/KpRoman(1)/m/it on input line 31.
+(Font)                  OT1/cmr/m/it --> TU/KpRoman(1)/m/it on input line 32.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/KpRoman(1)/b/n on input line 31.
+(Font)                  OT1/cmr/bx/n --> TU/KpRoman(1)/b/n on input line 32.
 
 Package fontspec Info: Font family 'Iosevka(0)' created for font 'Iosevka'
 (fontspec)             with options
@@ -1217,9 +1233,9 @@ Package fontspec Info: Font family 'Iosevka(1)' created for font 'Iosevka'
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/Iosevka(1)/m/n on input line 32.
+(Font)                  OT1/cmtt/m/n --> TU/Iosevka(1)/m/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/Iosevka(1)/b/n on input line 32.
+(Font)                  OT1/cmtt/m/n --> TU/Iosevka(1)/b/n on input line 33.
 
 Package fontspec Info: Font family 'KpMath-Regular.otf(0)' created for font
 (fontspec)             'KpMath-Regular.otf' with options
@@ -1245,13 +1261,13 @@ Package fontspec Info: Font family 'KpMath-Regular.otf(1)' created for font
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 35.
+(Font)              `operators' in the math version `normal' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/KpMath-Regular.otf(1)/m/n on input line 35.
+(Font)                  OT1/cmr/m/n --> TU/KpMath-Regular.otf(1)/m/n on input line 36.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 35.
+(Font)              `operators' in the math version `bold' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/KpMath-Regular.otf(1)/b/n on input line 35.
+(Font)                  OT1/cmr/bx/n --> TU/KpMath-Regular.otf(1)/b/n on input line 36.
 
 Package fontspec Info: KpMath-Regular scale = 1.0001.
 
@@ -1297,13 +1313,13 @@ Package fontspec Info: Font family 'KpMath-Regular.otf(2)' created for font
 (fontspec)             21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 35.
+(Font)              `symbols' in the math version `normal' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/KpMath-Regular.otf(2)/m/n on input line 35.
+(Font)                  OMS/cmsy/m/n --> TU/KpMath-Regular.otf(2)/m/n on input line 36.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 35.
+(Font)              `symbols' in the math version `bold' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/KpMath-Regular.otf(2)/b/n on input line 35.
+(Font)                  OMS/cmsy/b/n --> TU/KpMath-Regular.otf(2)/b/n on input line 36.
 
 Package fontspec Info: KpMath-Regular scale = 0.9999.
 
@@ -1338,13 +1354,13 @@ Package fontspec Info: Font family 'KpMath-Regular.otf(3)' created for font
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 35.
+(Font)              `largesymbols' in the math version `normal' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/KpMath-Regular.otf(3)/m/n on input line 35.
+(Font)                  OMX/cmex/m/n --> TU/KpMath-Regular.otf(3)/m/n on input line 36.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 35.
+(Font)              `largesymbols' in the math version `bold' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/KpMath-Regular.otf(3)/b/n on input line 35.
+(Font)                  OMX/cmex/m/n --> TU/KpMath-Regular.otf(3)/b/n on input line 36.
 
 Package fontspec Info: Could not resolve font "NewCMMath-Regular/B" (it
 (fontspec)             probably doesn't exist).
@@ -1363,9 +1379,9 @@ Package fontspec Info: Font family 'NewCMMath-Regular(0)' created for font
 
 \sym__um_fam1=\mathgroup8
 LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `normal'
-(Font)                  TU/NewCMMath-Regular(0)/m/n --> TU/NewCMMath-Regular(0)/m/n on input line 36.
+(Font)                  TU/NewCMMath-Regular(0)/m/n --> TU/NewCMMath-Regular(0)/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `bold'
-(Font)                  TU/NewCMMath-Regular(0)/m/n --> TU/NewCMMath-Regular(0)/b/n on input line 36.
+(Font)                  TU/NewCMMath-Regular(0)/m/n --> TU/NewCMMath-Regular(0)/b/n on input line 37.
 
 Package fontspec Info: Font family 'FZXSSK.TTF(0)' created for font
 (fontspec)             'FZXSSK.TTF' with options
@@ -1387,35 +1403,35 @@ Package fontspec Info: Font family 'FZXSSK.TTF(0)' created for font
 (fontspec)             <->"[汉仪颜楷W.ttf]/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-\c@theorem=\count443
-\c@definition=\count444
-\c@tcb@cnt@compl=\count445
-\c@tcb@cnt@note=\count446
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 304.
+\c@theorem=\count446
+\c@definition=\count447
+\c@tcb@cnt@compl=\count448
+\c@tcb@cnt@note=\count449
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 305.
  (./24Au-DigitalLogic&Processor.aux)
 \openout1 = `24Au-DigitalLogic&Processor.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-Package hyperref Info: Link coloring ON on input line 304.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 305.
+LaTeX Font Info:    ... okay on input line 305.
+Package hyperref Info: Link coloring ON on input line 305.
  (./24Au-DigitalLogic&Processor.out) (./24Au-DigitalLogic&Processor.out)
 \@outlinefile=\write4
 \openout4 = `24Au-DigitalLogic&Processor.out'.
@@ -1460,10 +1476,10 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@tabularnotesi=\count447
-\enitdp@tabularnotes=\count448
-\c@tabularnotes*i=\count449
-\enitdp@tabularnotes*=\count450
+\c@tabularnotesi=\count450
+\enitdp@tabularnotes=\count451
+\c@tabularnotes*i=\count452
+\enitdp@tabularnotes*=\count453
 
 Package siunitx Warning: Detected the "physics" package:
 (siunitx)                omitting definition of \qty.
@@ -1478,12 +1494,12 @@ Package siunitx Warning: Detected the "physics" package:
 (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 304.
-\c@lstlisting=\count451
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 305.
+\c@lstlisting=\count454
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 304.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 305.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 304.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 305.
 
 Package fontspec Info: Font family 'FZXKTK.TTF(0)' created for font
 (fontspec)             'FZXKTK.TTF' with options
@@ -1507,45 +1523,45 @@ Package fontspec Info: Font family 'FZXKTK.TTF(0)' created for font
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 309.
+(Font)              scaled to size 12.00128pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 309.
+(Font)              scaled to size 8.00085pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 309.
+(Font)              scaled to size 6.00064pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 309.
+(Font)              scaled to size 11.99872pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 309.
+(Font)              scaled to size 7.99915pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 309.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 309.
+(Font)              scaled to size 5.99936pt on input line 310.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 310.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 309.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 310.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 309.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 310.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 10.54048pt on input line 309.
+(Font)              scaled to size 10.54048pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 309.
+(Font)              scaled to size 7.00075pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 309.
+(Font)              scaled to size 5.00053pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 10.53824pt on input line 309.
+(Font)              scaled to size 10.53824pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 309.
+(Font)              scaled to size 6.99925pt on input line 310.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 309.
+(Font)              scaled to size 4.99947pt on input line 310.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 309.
+(Font)              size <10.95> substituted on input line 310.
 
 (./24Au-DigitalLogic&Processor.toc
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
@@ -1625,13 +1641,38 @@ Package fontspec Info: Font family '汉仪润圆-45W.ttf(0)' created for font
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/FZXSSK.TTF(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/FZXSSK.TTF(0)/m/it' tried instead on input line 386.
+(Font)              Font shape `TU/FZXSSK.TTF(0)/m/it' tried instead on input line 387.
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
  [2]
+\g__nicematrix_max_cell_width_dim=\dimen424
+\c@iRow=\count455
+\c@jCol=\count456
+\l__nicematrix_cell_box=\box148
+\l__nicematrix_the_array_box=\box149
+\l__nicematrix_left_delim_dim=\dimen425
+\l__nicematrix_right_delim_dim=\dimen426
+\g__nicematrix_dp_row_zero_dim=\dimen427
+\g__nicematrix_ht_row_zero_dim=\dimen428
+\g__nicematrix_ht_row_one_dim=\dimen429
+\g__nicematrix_dp_ante_last_row_dim=\dimen430
+\g__nicematrix_ht_last_row_dim=\dimen431
+\g__nicematrix_dp_last_row_dim=\dimen432
+\g__nicematrix_ddots_int=\count457
+\g__nicematrix_iddots_int=\count458
+\g__nicematrix_delta_x_one_dim=\dimen433
+\g__nicematrix_delta_y_one_dim=\dimen434
+\g__nicematrix_delta_x_two_dim=\dimen435
+\g__nicematrix_delta_y_two_dim=\dimen436
+\l__nicematrix_initial_i_int=\count459
+\l__nicematrix_initial_j_int=\count460
+\l__nicematrix_final_i_int=\count461
+\l__nicematrix_final_j_int=\count462
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
  [3]
+File: Circuits/202409250229.png Graphic file (type bmp)
+<Circuits/202409250229.png>
 
 Package fontspec Info: Font family '方正清刻本悦宋简繁.TTF(0)' created for font
 (fontspec)             '方正清刻本悦宋 简繁.TTF' with options
@@ -1648,22 +1689,29 @@ Package fontspec Info: Font family '方正清刻本悦宋简繁.TTF(0)' created 
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 475.
+(Font)              scaled to size 9.00096pt on input line 489.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 475.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 477.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: Unused \captionsetup[subfigure] on input line 64.
-See the caption package documentation for explanation.
+(Font)              scaled to size 8.99904pt on input line 489.
+File: Circuits/202409251632.png Graphic file (type bmp)
+<Circuits/202409251632.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [4]
+Overfull \hbox (0.5407pt too wide) in paragraph at lines 591--616
+[][][][][][][][][] 
+ []
 
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
-[4] (./24Au-DigitalLogic&Processor.aux)
+[5]
+File: Circuits/202409262050.png Graphic file (type bmp)
+<Circuits/202409262050.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [6]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [7] (./24Au-DigitalLogic&Processor.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1672,12 +1720,12 @@ Package rerunfilecheck Info: File `24Au-DigitalLogic&Processor.out' has not chan
 (rerunfilecheck)             Checksum: B595BF0EB22AC3019C7A8DF6AE4B8AE2;1085.
  ) 
 Here is how much of TeX's memory you used:
- 62483 strings out of 476683
- 1548308 string characters out of 5798754
- 2252434 words of memory out of 5000000
- 81907 multiletter control sequences out of 15000+600000
- 527477 words of font info for 203 fonts, out of 8000000 for 9000
+ 63277 strings out of 476683
+ 1568055 string characters out of 5798754
+ 2263125 words of memory out of 5000000
+ 82673 multiletter control sequences out of 15000+600000
+ 527581 words of font info for 216 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,17n,114p,566b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 24Au-DigitalLogic&Processor.pdf (4 pages).
+Output written on 24Au-DigitalLogic&Processor.pdf (7 pages).

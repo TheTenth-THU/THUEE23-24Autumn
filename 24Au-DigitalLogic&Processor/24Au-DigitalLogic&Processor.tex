@@ -21,6 +21,7 @@
 \usepackage{enumitem}
 \usepackage{listings}
 \usepackage{dashrule}
+\usepackage{tablefootnote}%表格脚注
 \usepackage[text=\includegraphics{C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png},angle=0]{draftwatermark}%水印
 %\usepackage{tikz}
 %基本字体设置
@@ -395,7 +396,9 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 		\midrule
 		非门 & \cbox{
 			\draw (0,0) node[left]{\(A\)} node[not port, anchor=in](G){} (G.out) node[right]{\(Y\)};
-		} & NOT & \(Y = \overline{A}\) \\[1em]
+		} & NOT & \(Y = A'\) \tablefootnote{
+			为区别单个的非逻辑和其他多目运算中的非，这里约定单独的非逻辑用\(A'\)表示，夺目运算附带的非逻辑用\(\overline{A}\)表示。
+		} \\[1em]
 		与非门 & \cbox{
 			\draw (0,0) node[left]{\(A\)} node[nand port, anchor=in 1](G){} (G.out) node[right]{\(Y\)} (G.in 2) node[left]{\(B\)};
 		} & NAND & \(Y = \overline{A \cdot B}\) \\[1em]
@@ -430,7 +433,13 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 \bu[传输门]{
 	\cbox{\draw (0,0) node[left]{\(A \)} node[double tgate, anchor=in](G){} (G.out) node[right]{\(Y\)} (G.up) ++(0,0.15) node[above]{\(\overline{B}\)} (G.down) ++(0,-0.2) node[below]{\(B\)}; }
 }{
-	传输门是一种多输入单输出的逻辑门，其输出为与或逻辑（AND-OR）运算的结果。
+	传输门是一种多输入单输出的逻辑门，其输出为
+	\[
+		Y = \begin{cases}[ll]
+			A， & B = 1 \\
+			\mathrm{undefined}， & B = 0
+		\end{cases}
+	\]
 }
 
 \subsection{组合逻辑}
@@ -441,57 +450,271 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 
 \subsubsection{组合逻辑电路的分析方法}
 
+分析组合逻辑电路，即是从给定的设计电路（晶体管或逻辑门电路）中，找出输入与输出之间的关系，用真值表、布尔表达式等形式表示。
 
+\begin{example}[2]
+	分析如图~\ref{Fig: Combinational Logic Circuit 1}~所示的组合逻辑电路。
+	\begin{figure}[!ht]
+		\centering
+		\subfloat[逻辑电路]{
+			\label{Fig: Combinational Logic Circuit 1}
+			\(\vcenter{\hbox{
+				\includegraphics[scale=0.12]{Circuits/202409250229.png}
+			}}\)
+		}
+		\quad
+		\subfloat[真值表]{
+			\belowrulesep=0pt
+			\aboverulesep=0pt
+			\label{Tab: Combinational Logic Circuit 1}
+			\begin{tabular}{ccc|ccc}
+				\toprule
+				\(\symbf{A}\) & \(\symbf{B}\) & \(\symbf{C}\) & \(\symbf{F_0}\) & \(\symbf{F_1}\) & \(\symbf{F_2}\) \\
+				\midrule
+				0 & 0 & 0 & 0 & 0 & 1 \\
+				0 & 0 & 1 & 0 & 1 & 0 \\
+				0 & 1 & 0 & 0 & 1 & 1 \\
+				0 & 1 & 1 & 1 & 0 & 0 \\
+				1 & 0 & 0 & 1 & 0 & 1 \\
+				1 & 0 & 1 & 1 & 1 & 0 \\
+				1 & 1 & 0 & 1 & 1 & 1 \\
+				1 & 1 & 1 & 0 & 0 & 0 \\
+				\bottomrule
+			\end{tabular}
+		}
+		\caption{组合逻辑电路实例 1}
+	\end{figure}
+	\begin{solution}
+		根据逻辑门的运算规则，可得到
+		\[
+			\begin{cases}
+				F_0 = A \oplus (B \cdot C) \\
+				F_1 = B \oplus C \\
+				F_2 = \overline{C}
+			\end{cases}
+		\]
+		因此，该组合逻辑电路输出的真值表如表~\ref{Tab: Combinational Logic Circuit 1}~所示。
+		可以看出，这个电路所实现的功能为 \((F_0F_1F_2)_2 = (ABC)_2 + 1\)，这是一个 3-bit 二进制自增电路。
+	\end{solution}
+\end{example}
+
+\begin{example}[1]
+	分析如图~\ref{Fig: Combinational Logic Circuit 2}~所示的组合逻辑电路。
+	\begin{figure}[!ht]
+		\centering
+		\subfloat[逻辑电路]{
+			\label{Fig: Combinational Logic Circuit 2}
+			\(\vcenter{\hbox{
+				\includegraphics[scale=0.12]{Circuits/202409251632.png}
+			}}\)
+		}
+		\quad
+		\subfloat[真值表]{
+			\belowrulesep=0pt
+			\aboverulesep=0pt
+			\begin{tabular}{ccc|ccc}
+				\toprule
+				\(\symbf{A}\) & \(\symbf{B}\) & \(\symbf{C}\) & \(\symbf{D}\) & \(\symbf{F_0}\) & \(\symbf{F_1}\) \\
+				\midrule
+				0 & 0 & 0 & 0 & 0 & 1 \\
+				0 & 0 & 1 & 0 & 1 & 1 \\
+				0 & 1 & 0 & 1 & 1 & 0 \\
+				0 & 1 & 1 & 0 & 1 & 0 \\
+				1 & 0 & 0 & 0 & 0 & 0 \\
+				1 & 0 & 1 & 1 & 0 & 0 \\
+				1 & 1 & 0 & 1 & 1 & 1 \\
+				1 & 1 & 1 & 1 & 0 & 1 \\
+				\bottomrule
+			\end{tabular}
+			\label{Tab: Combinational Logic Circuit 2}
+		}
+		\caption{组合逻辑电路实例 2}
+	\end{figure}
+	\begin{solution}
+		根据逻辑门的运算规则，可得到
+		\[
+			\begin{cases}
+				F_0 = \overline{\overline{AC} \cdot \overline{B\overline{c}}} \\
+				F_1 = \overline{\overline{B\overline{C}} \cdot \overline{C\overline{A}}} \\
+				F_2 = \overline{(A+B) \cdot \overline{AB}}
+			\end{cases}
+		\]
+		因此，该组合逻辑电路输出的真值表如表~\ref{Tab: Combinational Logic Circuit 2}~所示，这是一个 Gray 码递增电路。
+	\end{solution}
+\end{example}
 
 \subsubsection{组合逻辑电路的设计过程}
 
+设计一个组合逻辑电路，需要将算法转化为二元逻辑的计算，化简后用逻辑电路结构实现。
 
+\begin{example}[3]
+	设计一个 2-bit 比较器。
+	\begin{solution}
+		2-bit 比较器的设计需求为：
+		\begin{itemize}
+			\item 功能：比较两个 2-bit 二进制数的大小；
+			\item 输入：两个 2-bit 二进制数 \(A_1A_0\) 和 \(B_1B_0\)；
+			\item 输出：三个逻辑值 \(LT\)、\(EQ\) 和 \(GT\)，分别表示 \(A < B\)、\(A = B\) 和 \(A > B\)。
+		\end{itemize}
+		用卡诺图表示出 \(LT\)、\(EQ\) 和 \(GT\) 的逻辑表达式如表~\ref{Tab: 2-bit Comparator}~所示，即知其两级与或表达式为
+		\begin{align*}
+			& LT = A_1'B_1 + A_1'A_0'B_0 + A_0'B_1B_0 \\
+			& EQ = A_1'A_0'B_1'B_0' + A_1'A_0B_1'B_0 + A_1A_0'B_1B_0' + A_1A_0B_1B_0 \\
+			& GT = A_1B_1' + A_1B_1'B_0' + A_1A_0B_0'
+		\end{align*}
+		其中 \(EQ\) 可以更简单地表示为
+		\[
+			EQ = \overline{A_1 \oplus B_1} \cdot \overline{A_0 \oplus B_0}
+		\]
+		或者利用另外两个输出的逻辑表达式，即
+		\[
+			EQ = \overline{LT + GT}
+		\]
+		将 \(LT\)、\(EQ\) 和 \(GT\) 的逻辑表达式转化为逻辑电路，即可得到 2-bit 比较器的设计。
+	\end{solution}
+	\begin{table}[!ht]
+		\belowrulesep=0pt
+		\aboverulesep=0pt
+		\caption{2-bit 比较器设计的卡诺图}
+		\label{Tab: 2-bit Comparator}
+		\subfloat[\(LT\)]{
+			\begin{tabular}{c|cccc}
+				\toprule
+				\(A_1A_0 \backslash B_1B_0\) & 00 & 01 & 11 & 10 \\
+				\midrule
+				00 &   & 1 & 1 & 1 \\
+				01 &   &   & 1 & 1 \\
+				11 &   &   &   &   \\
+				10 &   &   & 1 &   \\
+				\bottomrule
+			\end{tabular}
+		}
+		\subfloat[\(EQ\)]{
+			\begin{tabular}{c|cccc}
+				\toprule
+				\(A_1A_0 \backslash B_1B_0\) & 00 & 01 & 11 & 10 \\
+				\midrule
+				00 & 1 &   &   &   \\
+				01 &   & 1 &   &   \\
+				11 &   &   & 1 &   \\
+				10 &   &   &   & 1 \\
+				\bottomrule
+			\end{tabular}
+		}
+		\subfloat[\(GT\)]{
+			\begin{tabular}{c|cccc}
+				\toprule
+				\(A_1A_0 \backslash B_1B_0\) & 00 & 01 & 11 & 10 \\
+				\midrule
+				00 &   &   &   &   \\
+				01 & 1 &   &   &   \\
+				11 & 1 & 1 &   & 1 \\
+				10 & 1 & 1 &   &   \\
+				\bottomrule
+			\end{tabular}
+		}
+	\end{table}
+\end{example}
+
+
+如上 4-bit 输入的逻辑运算已经比较复杂。对于更加复杂的逻辑运算，在处理中需要采取更多的技巧以简化运算，如：
+\begin{itemize}
+	\item 将输入变量分组，写成更简单的逻辑表达式的多级运算：
+	\[
+		f(A，B，C，\cdots) = F(g_1(A，B，\cdots)，g_2(C，\cdots)，\cdots)
+	\]
+	\item 将输入变量分离，写成更简单的逻辑表达式的分支计算：
+	\[
+		f(A，B，C，\cdots) = A \cdot g_1(B，C，\cdots) + \overline{A} \cdot g_2(B，C，\cdots)
+	\]
+	\item 从结构化表达式中找出重复的部分加以复用，简化逻辑电路。
+\end{itemize} 
+同时，还需要照应到实际的功耗、性能、面积等要求。
 
 \subsubsection{组合逻辑电路的评价指标}
 
-
+评价逻辑电路的主要指标包括：
+\begin{itemize}
+	\item 稳态因素：
+	\begin{itemize}
+		\item \textbf{逻辑电平}：逻辑电路的输入和输出电平高低；
+		\item \textbf{噪声容限}：逻辑电路抵抗噪声的能力；
+		\item \textbf{静态功耗}：逻辑电路在稳态工作时的功耗，主要与电路的 \(V_{CC}\) 有关；
+		\item \textbf{面积}：逻辑电路的物理尺寸；
+		\item \textbf{扇出系数}：逻辑门的输出能够驱动的输入数量。
+	\end{itemize}
+	\item 动态因素：
+	\begin{itemize}
+		\item \textbf{传输延迟}和\textbf{时钟频率}：逻辑电路的输入到输出的延迟时间；
+		\item \textbf{时序容限}：逻辑电路的输入信号的时序要求；
+		\item \textbf{动态功耗}：逻辑电路在工作时的功耗，主要与电路的切换频率有关；
+		\item \textbf{噪声}：逻辑电路在工作时产生的噪声。
+	\end{itemize}
+\end{itemize}
 
 \subsubsection{组合逻辑电路的设计实例}
 
-\paragraph{编码器（Encoder）}
+\paragraph{编码器（Encoder）和译码器（Decoder）}
 
-用 \(m\) 个二进制位对 \(n \le 2^m\) 个输入信号进行编码，得到 \(m\) 位二进制代码的电路。
+用 \(m\) 个二进制位对 \(n \le 2^m\) 个输入信号进行编码，得到 \(m\) 位二进制代码的电路，称为 \,\(\mboba{2^m - m}\)\,\tboba{线编码器}。
 
-\paragraph{译码器（Decoder）}
+\begin{example}[3]
+	设计一个 \(4-2\) 线编码器用作抢答器，其中每个抢答按钮按下时对应输入信号为1，其余输入信号为0。
+	\begin{solution}
+		4 个输入信号的抢答器的真值表如表~\ref{Tab: 4-2 Encoder}~所示\footnote{
+			由于编码器的输入信号类型数最多为输出信号所能表示的最大数值，其必定要用\textbf{无关项}的形式归总一些设计之外的情况。考虑到输出信号的唯一性，表中无关项的分布不是对称的。
+		}，容易得到其逻辑表达式为
+		\begin{align*}
+			& Y_0 = A_3 + A_1 \\[-3pt]
+			& Y_1 = A_3 + A_2
+		\end{align*}
+		该编码器的设计如图~\ref{Fig: 4-2 Encoder}~所示。
 
-用 \(n\) 个二进制位对 \(m \le log_2 n\) 个输入信号进行译码，得到 \(n\) 位二进制代码的电路。
+		但是，这个编码器不能满足抢答器的优先要求。为了实现优先级，可以将输入信号的优先级从高到低排列，然后将优先级高的输入信号的输出信号设为1，优先级低的输入信号的输出信号设为0。具体的电路设计略。
+	\end{solution}
+	\begin{figure}[!ht]
+		\belowrulesep=0pt
+		\aboverulesep=0pt
+		\centering
+		\subfloat[真值表]{
+			\label{Tab: 4-2 Encoder}
+			\begin{tabular}{cccc|cc}
+				\toprule
+				\(A_3\) & \(A_2\) & \(A_1\) & \(A_0\) & \(Y_1\) & \(Y_0\) \\
+				\midrule
+				\(\times\) & \(\times\) & \(\times\) & 1 & 0 & 0 \\
+				\(\times\) & \(\times\) & 1 & 0 & 0 & 1 \\
+				\(\times\) & 1 & 0 & 0 & 1 & 0 \\
+				1 & 0 & 0 & 0 & 1 & 1 \\
+				\bottomrule
+			\end{tabular}
+		}
+		\quad
+		\subfloat[逻辑电路]{
+			\label{Fig: 4-2 Encoder}
+			\(\vcenter{\hbox{
+				\includegraphics[scale=0.12]{Circuits/202409262050.png}
+			}}\)
+		}
+		\caption{\(4-2\) 线编码器设计}
+		\vspace{-2em}
+	\end{figure}
+\end{example}
+
+译码是编码的逆过程，即将编码后的信号转换为原始信号。用 \(n\) 个二进制位对 \(m \le log_2 n\) 个输入信号进行译码，得到 \(n\) 位二进制代码的电路，称为 \,\(\mboba{log_2 n - n}\)\,\tboba{线译码器}。
 
 \paragraph{多路选择器（Multiplexer，MUX）}
 
-用 \(n\) 个控制信号对 \(2^n\) 个输入信号进行选择，得到一个输出信号的电路。
+用 \(n\) 个控制信号对 \(2^n\) 个输入信号进行选择，得到一个输出信号的电路，称为 \,\(\mboba{2^n : 1}\)\,\tboba{多路选择器}。
 
 \paragraph{加法器}
 
 用于实现二进制数的加法运算。
 
-\begin{example}
+\begin{example}[3]
 	设计一个 4-bit 全加器电路。
 	\begin{solution}
-		1-bit 全加器有 3 个输入信号（ \(A\)、\(B\) 和进位信号 \(C_\mathrm{in}\)）、2 个输出信号（本位的和 \(S\) 、进位输出信号\(C_\mathrm{out}\)，其真值表如表~\ref{Tab: 1-bit Full Adder}~所示。
-
-		\captionof{table}{1-bit 全加器真值表}
-		\label{Tab: 1-bit Full Adder}
-		\begin{tabular}{ccccc}
-			\toprule
-			\(A\) & \(B\) & \(C_\mathrm{in}\) & \(S\) & \(C_\mathrm{out}\) \\
-			\midrule
-			0 & 0 & 0 & 0 & 0 \\
-			0 & 0 & 1 & 1 & 0 \\
-			0 & 1 & 0 & 1 & 0 \\
-			0 & 1 & 1 & 0 & 1 \\
-			1 & 0 & 0 & 1 & 0 \\
-			1 & 0 & 1 & 0 & 1 \\
-			1 & 1 & 0 & 0 & 1 \\
-			1 & 1 & 1 & 1 & 1 \\
-			\bottomrule
-		\end{tabular}
-		
-		则
+		1-bit 全加器有 3 个输入信号（ \(A\)、\(B\) 和进位信号 \(C_\mathrm{in}\)）、2 个输出信号（本位的和 \(S\) 、进位输出信号\(C_\mathrm{out}\)。则
 	\end{solution}
 \end{example}
 

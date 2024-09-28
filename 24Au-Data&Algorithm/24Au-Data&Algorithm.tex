@@ -17,6 +17,8 @@
 %\usepackage{tikz}
 
 %基本字体设置
+\catcode`\，=\active
+\def ，{\textup{,}\hskip0.5em }
 \usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
 %\newcommand{\symbf}[1]{\boldsymbol{#1}}
 %\newcommand{\symup}[1]{\mathrm{#1}}
@@ -95,6 +97,8 @@
 	rulecolor=\color[rgb]{0.8,0.8,0.8},         % 设置代码框颜色
 	backgroundcolor=\color[rgb]{0.96,0.96,0.96},% 背景颜色
 	keywordstyle=\colors{bali}\bfseries,        % 关键字颜色
+	keywordstyle=[2]\colors{qinglv}\bfseries,   % 自定义关键字颜色
+	keywordstyle=[3]\colors{orange}\it\ttfamily,% 自定义关键字颜色
 	identifierstyle=\color{black},              % 普通标识符颜色
 	commentstyle=\rm\kai\color{gray},          	% 注释颜色
 	stringstyle=\colors{meihong},      			% 字符串颜色
@@ -111,15 +115,16 @@
 	columns=flexible, 
 	tabsize=4, 
 	gobble=4,
+	escapeinside={(*@}{@*)},
 }
 \lstdefinestyle{intro}
-	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{bali!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{bali}]{<-}{->}, }
+	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{bali!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{bali}]{<-}{->}, escapeinside={(*@}{@*)}, }
 \lstdefinestyle{qintro}
-	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{qinglv!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{qinglv}]{<-}{->}, }
+	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{qinglv!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{qinglv}]{<-}{->}, escapeinside={(*@}{@*)}, }
 \lstdefinestyle{notec}
-	{xleftmargin=3.5em, xrightmargin=2.5em, rulecolor=\color{qinglv!75!black}, backgroundcolor=\color{qinglv!5!white}, keywordstyle=\color{qinglv!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{qinglv}]{<-}{->}, }
+	{xleftmargin=3.5em, xrightmargin=2.5em, rulecolor=\color{qinglv!75!black}, backgroundcolor=\color{qinglv!5!white}, keywordstyle=\color{qinglv!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{qinglv}]{<-}{->}, escapeinside={(*@}{@*)}, }
 \lstdefinestyle{output}
-	{rulecolor=\color{white!75!black}, backgroundcolor=\color{white!5!black}, language={}, basicstyle=\linespread{1}\color{white!90!black}\mono\wen, identifierstyle=\linespread{1}\color{white!90!black}\mono, morecomment=[s][\it]{<-}{->}, showspaces=false, basewidth=0.6em}
+	{rulecolor=\color{white!75!black}, backgroundcolor=\color{white!5!black}, language={}, basicstyle=\linespread{1}\color{white!90!black}\mono\wen, identifierstyle=\linespread{1}\color{white!90!black}\mono, morecomment=[s][\it]{<-}{->}, showspaces=false, basewidth=0.6em, escapeinside={(*@}{@*)}}
 
 %定义格式记号
 \newcommand{\hang}[1][1]{\hangafter 1 \hangindent #1em}
@@ -137,7 +142,7 @@
 \newcommand{\tboqi}[1]{\textbf{\xiu\color{qinglv!75!black}#1}}
 \newcommand{\mboqi}[1]{\xiu\symbf{\color{qinglv!75!black}#1}}
 \NewTotalTCBox{\code}{ O{red} v !O{} }{
-    fontupper=\mono, nobeforeafter, tcbox raise base, arc=0pt, outer arc=0pt, top=1pt, bottom=1pt, left=1pt, right=1pt, leftrule=0pt, rightrule=0pt, toprule=0.3mm, bottomrule=0.3mm, boxsep=0.5mm, colback=#1!10!white, colframe=#1!50!black, #3
+	fontupper=\mono, nobeforeafter, tcbox raise base, arc=0pt, outer arc=0pt, top=1pt, bottom=1pt, left=1pt, right=1pt, leftrule=0pt, rightrule=0pt, toprule=0.3mm, bottomrule=0.3mm, boxsep=0.5mm, colback=#1!10!white, colframe=#1!50!black, #3
 }{#2}
 
 %定义算符
@@ -153,6 +158,7 @@
 \renewcommand{\i}{\symrm{i}}
 \newcommand*{\R}{\mathbb{R}}
 \newcommand{\dint}[1][]{\displaystyle{\int #1}}
+\renewcommand{\a}[1]{\left\langle #1 \right\rangle}
 \newcommand*{\page}[1]{\hfill P$_\text{#1}$}
 
 %标题、作者、日期
@@ -180,111 +186,230 @@
 \subsection{数据及其结构}
 
 \begin{definition}
-    数据的基本单元称为\tboba{数据元素}。
+	数据的基本单元称为\tboba{数据元素}。
 \end{definition}
 
 数据元素并不是孤立存在的，而是存在密切的联系。
 
 数据的逻辑结构：
 \begin{itemize}
-    \item \tboba{集合结构}：数据元素之间没有任何关系
-    \item \tboba{线性结构}：数据元素之间存在一对一的关系，如线性表、栈、队列、串
-    \item \tboba{树形结构}：数据元素之间存在一对多的关系，如树
-    \item \tboba{图形结构}：数据元素之间存在多对多的关系，如图
+	\item \tboba{集合结构}：数据元素之间没有任何关系
+	\item \tboba{线性结构}：数据元素之间存在一对一的关系，如线性表、栈、队列、串
+	\item \tboba{树形结构}：数据元素之间存在一对多的关系，如树
+	\item \tboba{图形结构}：数据元素之间存在多对多的关系，如图
 \end{itemize}
 
 数据的存储结构：
 \begin{itemize}
-    \item \tboba{顺序存储结构}：将数据元素存放在地址连续的存储单元里
-    \item \tboba{链式存储结构}：将数据元素存放在任意的存储单元里，通过指针相连
+	\item \tboba{顺序存储结构}：将数据元素存放在地址连续的存储单元里
+	\item \tboba{链式存储结构}：将数据元素存放在任意的存储单元里，通过指针相连
 \end{itemize}
 
 \subsection{数学模型}
 
 \begin{definition}
-    \tboba{数学模型}是对于现实世界的某一特定对象，根据其内在规律，为特定目的而得到的一个抽象的、简化的数学结构。
+	\tboba{数学模型}是对于现实世界的某一特定对象，根据其内在规律，为特定目的而得到的一个抽象的、简化的数学结构。
 \end{definition}
 
 常用的数学模型的类型：
 \begin{itemize}
-    \item \tboba{线性方程组}：超定线性方程组的线性拟合、欠定线性方程组的线性规划
-    \item \tboba{非线性方程组}：非线性方程组的求解
-    \item \tboba{微分方程}：常微分方程的数值解法、偏微分方程的数值解法
-    \item \tboba{概率模型}：概率预测、概率统计
-    \item \tboba{统计模型}：统计预测、统计分析
-    \item \tboba{离散模型}：线性结构、树结构、图结构
-    \item \tboba{优化模型}：线性规划、整数规划、非线性规划
+	\item \tboba{线性方程组}：超定线性方程组的线性拟合、欠定线性方程组的线性规划
+	\item \tboba{非线性方程组}：非线性方程组的求解
+	\item \tboba{微分方程}：常微分方程的数值解法、偏微分方程的数值解法
+	\item \tboba{概率模型}：概率预测、概率统计
+	\item \tboba{统计模型}：统计预测、统计分析
+	\item \tboba{离散模型}：线性结构、树结构、图结构
+	\item \tboba{优化模型}：线性规划、整数规划、非线性规划
 \end{itemize}
 
 \subsection{算法}
 
 \begin{definition}
-    \tboba{算法}是用以解决某一问题的有限长度的指令序列。
+	\tboba{算法}是用以解决某一问题的有限长度的指令序列。
 \end{definition}
 
 算法的基本特点：
 \begin{itemize}
-    \item \tboba{有穷性}：算法必须在执行有穷步之后能够结束，且每一步都可在有穷时间内完成
-    \item \tboba{确定性}：算法的每一步必须有确切的含义，算法的实际执行结果是确定的、且精确地符合要求或期望
-    \item \tboba{可行性}：算法中描述的操作都可以通过已经实现的基本操作运算的有限次执行来实现
-    \item \tboba{输入}：算法必须有零个或多个输入
-    \item \tboba{输出}：算法必须有一个或多个输出
+	\item \tboba{有穷性}：算法必须在执行有穷步之后能够结束，且每一步都可在有穷时间内完成
+	\item \tboba{确定性}：算法的每一步必须有确切的含义，算法的实际执行结果是确定的、且精确地符合要求或期望
+	\item \tboba{可行性}：算法中描述的操作都可以通过已经实现的基本操作运算的有限次执行来实现
+	\item \tboba{输入}：算法必须有零个或多个输入
+	\item \tboba{输出}：算法必须有一个或多个输出
 \end{itemize}
 
 好的算法应该具有以下特点：
 \begin{itemize}
-    \item \tboba{正确性}：算法应该能够解决问题
-    \begin{itemize}
-        \item 不含语法错误
-        \item 对一般的输入数据能够产生正确的输出结果
-        \item 对精心选择的苛刻数据也能产生正确的输出结果
-        \item 对于所有的输入数据都能产生正确的输出结果
-    \end{itemize}
-    \item \tboba{可读性}：算法应该容易理解
-    \item \tboba{健壮性}：算法应该能够处理各种异常情况
-    \item \tboba{高效性}：算法应该能够在合理的时间和空间开销内解决问题
+	\item \tboba{正确性}：算法应该能够解决问题
+	\begin{itemize}
+		\item 不含语法错误
+		\item 对一般的输入数据能够产生正确的输出结果
+		\item 对精心选择的苛刻数据也能产生正确的输出结果
+		\item 对于所有的输入数据都能产生正确的输出结果
+	\end{itemize}
+	\item \tboba{可读性}：算法应该容易理解
+	\item \tboba{健壮性}：算法应该能够处理各种异常情况
+	\item \tboba{高效性}：算法应该能够在合理的时间和空间开销内解决问题
 \end{itemize}
 
 一个特定算法的运行工作量的大小，与问题规模的大小有关，这种关系称为算法的复杂度。
 
 \de[渐进时间复杂度]{
-    算法的\tboba{（渐进）时间复杂度}是指算法的运行时间与问题规模之间的关系。
+	算法的\tboba{（渐进）时间复杂度}是指算法的运行时间与问题规模之间的关系。
 }
 
 \begin{example}
-    现有程序如下：
-    \begin{lstlisting}[gobble=8]
-        for(int i = 0; i < n; i++)
-            for(int j = i; j < n; j++)
-                if(a[i] > a[j])
-                    swap(a[i], a[j]);
-    \end{lstlisting}
-    其中，基本操作\lstinline|swap|函数的时间复杂度为\(O(1)\)，
-    其执行次数为\(\sum\limits_{i=0}^{n-1}\sum\limits_{j=i}^{n-1}1 = \sum\limits_{i=0}^{n-1}(n-i) = \sum\limits_{i=0}^{n-1}i = \dfrac{n(n-1)}{2}\)，
-    则该程序的时间复杂度为\(O\left(\dfrac{n(n-1)}{2}\right) = O(n^2)\)。
+	现有程序如下：
+	\begin{lstlisting}[gobble=8]
+		for(int i = 0; i < n; i++)
+			for(int j = i; j < n; j++)
+				if(a[i] > a[j])
+					swap(a[i], a[j]);
+	\end{lstlisting}
+	其中，基本操作\,\lstinline|swap|\,函数的时间复杂度为\(O(1)\)，
+	其执行次数为\(\sum\limits_{i=0}^{n-1}\sum\limits_{j=i}^{n-1}1 = \sum\limits_{i=0}^{n-1}(n-i) = \sum\limits_{i=0}^{n-1}i = \dfrac{n(n-1)}{2}\)，
+	则该程序的时间复杂度为\(O\left(\dfrac{n(n-1)}{2}\right) = O(n^2)\)。
 \end{example}
 
 \begin{example}
-    现有程序如下：
-    \begin{lstlisting}[gobble=8]
-        for(int i = 1; i < n; i++)
-            for(int j = 0; j < i; j *= 2)
-                a[i] += a[j];
-    \end{lstlisting}
-    其内层循环的时间复杂度为\(O(\log_2i)\)，
-    则该程序的时间复杂度为
-    \begin{align*}
-        \sum\limits_{i=2}^{n-1} O(\log_2i) &= O\left(\sum\limits_{i=2}^{n-1} \log_2i\right)
-        = O\left(\log_2\left(\prod\limits_{i=2}^{n-1} i\right)\right) \\
-        &= O\left(\log_2(n-1)!\right) = O\left(\log_2n!\right) = O(n\log_2n)
-    \end{align*}
+	现有程序如下：
+	\begin{lstlisting}[gobble=8]
+		for(int i = 1; i < n; i++)
+			for(int j = 0; j < i; j *= 2)
+				a[i] += a[j];
+	\end{lstlisting}
+	其内层循环的时间复杂度为\(O(\log_2i)\)，
+	则该程序的时间复杂度为
+	\begin{align*}
+		\sum\limits_{i=2}^{n-1} O(\log_2i) &= O\left(\sum\limits_{i=2}^{n-1} \log_2i\right)
+		= O\left(\log_2\left(\prod\limits_{i=2}^{n-1} i\right)\right) \\
+		&= O\left(\log_2(n-1)!\right) = O\left(\log_2n!\right) = O(n\log_2n)
+	\end{align*}
 \end{example}
 
 \de[渐进空间复杂度]{
-    算法的\tboba{（渐进）空间复杂度}是指算法的空间开销与问题规模之间的关系。
+	算法的\tboba{（渐进）空间复杂度}是指算法的空间开销与问题规模之间的关系。
 }
 
 \section{数据结构}
+
+\subsection{抽象数据类型}
+
+\de[数据类型]{
+	\tboba{数据类型}是元素的集合 \(D\)、集合中元素的关系 \(R\) 和定义在此集合上的对这些元素的操作的集合 \(C\) 的总称。
+}
+
+数据类型是一种封装好的数据结构，把用户无须了解的实现细节封装起来，只提供刻画外在特性的接口。对于高级语言，除开语言本身定义好的\textbf{原子类型}外，用户还可以自定义\textbf{结构类型}，即\textbf{抽象数据类型（ADT）}。
+
+\begin{example}
+	复数的抽象数据类型定义如下：
+	\begin{lstlisting}[gobble=8, morekeywords={ADT, }, morekeywords={[2]{Complex, }}, morekeywords={[3]{InitComplex, DestroyComplex, Add, Sub, }}]
+		ADT Complex {
+			数据对象：(*@\(D = \{ e_1，e_2 \mid e_1，e_2 \in \R \}\)@*)
+			数据关系：(*@\(R = \{ \a{e_1，e_2} \mid e_1 = \mathfrak{Re}(D)，e_2 = \mathfrak{Im}(D)\}\)@*)
+			基本操作：
+				InitComplex(&Z, v1, v2)
+					操作结果：构造复数 Z, 其实部和虚部分别被赋以参数 v1 和 v2 的值。
+				DestroyComplex(&Z)
+					初始条件：复数 Z 存在；
+					操作结果：复数 Z 被销毁。
+				Add(z1, z2, &sum)
+					初始条件：z1, z2 是复数。
+					操作结果：用 sum 返回两个复数 z1, z2 的和值。
+				Sub(z1, z2, &sub)
+					初始条件：z1, z2 是复数。
+					操作结果：用 sub 返回两个复数 z1, z2 的差值。
+		} ADT Complex
+	\end{lstlisting}
+\end{example}
+
+\begin{example}
+	圆柱体的抽象数据类型定义如下：
+	\begin{lstlisting}[gobble=8, morekeywords={ADT, }, morekeywords={[2]{CYLinder, }}, morekeywords={[3]{InitCyld, BaseArea, SideArea, Volume, }}]
+		ADT CYLinder {
+			数据对象：(*@\( D = \{r，h \mid r，h \in \R \} \)@*)
+			数据关系：(*@\( R = \{\a{r，h} \mid r\text{ 为圆柱底面半径}，h\text{ 为圆柱高}\} \)@*)
+			基本操作：
+				InitCyld(r, h)
+					操作结果：构造圆柱体, 底面半径 r, 圆柱高 h。
+				BaseArea(r, &bArea)
+					初始条件：圆柱体存在。
+					操作结果：计算圆柱体底面积, 用 bArea 返回。
+				SideArea(r, h, &sArea)
+					初始条件：圆柱体存在。
+					操作结果：计算圆柱体侧面积, 用 sArea 返回。
+				Volume(r, h, &vol)
+					初始条件：圆柱体存在。
+					操作结果：计算圆柱体体积, 用 vol 返回。
+		} ADT CYLinder
+	\end{lstlisting}
+\end{example}
+
+\subsection{线性结构}
+
+\subsubsection{线性表}
+
+\de[线性表]{
+	\tboba{线性表}是一种「有序」结构，即在数据元素的非空有限集合中，
+	\begin{itemize}
+		\item 存在唯一的一个被称为「\tboba{第一个}」的数据元素，无前驱；
+		\item 存在唯一的一个被称为「\tboba{最后一个}」的数据元素，无后继；
+		\item 除第一个之外，每个数据元素均只有一个直接\tboba{前驱}；
+		\item 除最后一个之外，每个数据元素均只有一个直接\tboba{后继}。
+	\end{itemize}
+	对呈现这样结构的数据，可以记为 \(L = (a_0，a_1，a_2，\cdots，a_{i-1}，a_i，a_{i+1}，\cdots，a_n)\)，并称
+	\begin{itemize}
+		\item \(a_i\) 为\tboba{第 i 个}数据元素，\(i\) 为数据元素 \(a_i\) 的\tboba{位序}；
+		\item \(a_{i-1}\) 为 \(a_i\) 的\tboba{直接前驱}；
+		\item \(a_{i+1}\) 为 \(a_i\) 的\tboba{直接后继}；
+		\item \(n + 1\) ，即线性表中数据元素的个数，为表的\tboba{长度}。
+	\end{itemize}
+}
+
+线性表的抽象数据类型可以定义为：
+\begin{lstlisting}[style=intro, morekeywords={ADT, }, morekeywords={[2]{List, ElemType, compare, visit, }}, morekeywords={[3]{InitList, DestroyList, IsEmpty, ListLength, GetElem, LocateElem, PriorElem, NextElem, ClearList, ListInsert, ListDelete, ListTraverse, }}]
+	ADT List {
+		数据对象：(*@\( D = \{a_0，a_1，a_2，\cdots，a_n \mid a_i \in \text{ElemType}，1 \leq i \leq n \} \)@*)
+		数据关系：(*@\( R = \{ \a{a_i，a_{i+1}} \mid a_i \text{为第} \, i \,  \text{个数据元素，} a_{i+1} \text{为第}\, i+1 \, \text{个数据元素} \} \)@*)
+		基本操作：
+			InitList(&L)
+				操作结果：构造一个空的线性表 L。
+			DestroyList(&L)
+				初始条件：线性表 L 存在。
+				操作结果：销毁线性表 L。
+			IsEmpty(L)
+				初始条件：线性表 L 存在。
+				操作结果：若 L 为空表, 则返回 true, 否则返回 false。
+			ListLength(L)
+				初始条件：线性表 L 存在。
+				操作结果：返回 L 中数据元素的个数。
+			GetElem(L, i, &e)
+				初始条件：线性表 L 存在, 0 <= i < ListLength(L)。
+				操作结果：用 e 返回 L 中第 i 个数据元素的值。
+			LocateElem(L, e, compare())
+				初始条件：线性表 L 存在, compare() 是数据元素判定函数。
+				操作结果：返回 L 中第一个与 e 满足 compare() 的数据元素的位序；若不存在, 则返回 -1。
+			PriorElem(L, cur_e, &pre_e)
+				初始条件：线性表 L 存在。
+				操作结果：若 cur_e 是 L 的数据元素, 且不是第一个, 则用 pre_e 返回它的直接前驱；否则操作失败。
+			NextElem(L, cur_e, &next_e)
+				初始条件：线性表 L 存在。
+				操作结果：若 cur_e 是 L 的数据元素, 且不是最后一个, 则用 next_e 返回它的直接后继；否则操作失败。
+			ClearList(&L)
+				初始条件：线性表 L 存在。
+				操作结果：将 L 重置为空表。
+			ListInsert(&L, i, e)
+				初始条件：线性表 L 存在, 0 <= i <= ListLength(L)。
+				操作结果：在 L 的第 i 个位置（第 i 个元素之前）插入新的数据元素 e, L 的长度加 1。
+			ListDelete(&L, i, &e)
+				初始条件：线性表 L 存在, 0 <= i < ListLength(L)。
+				操作结果：删除 L 的第 i 个数据元素, 并用 e 返回其值, L 的长度减 1。
+			ListTraverse(L, visit())
+				初始条件：线性表 L 存在, visit() 是对数据元素操作的函数。
+				操作结果：依次对 L 的每个数据元素调用 visit(), 一旦 visit() 失败, 则操作失败。
+	} ADT List
+\end{lstlisting}
+
+
 
 \newpage
 %----------------------------------------------------------
@@ -294,13 +419,13 @@
 \subsection{判题结果}
 判题有如下结果：
 \begin{itemize}
-    \item \code[green]{ACCEPTED}：结果完全正确。
-    \item \code{WRONG_ANSWER}：程序正常执行，也没有超时和超内存，但是答案不对。
-    \item \code{TIME_LIMIT_EXCEEDED}：程序超时，可能是死循环，也可能是算法不够优，或者实现不够优；还没到核对答案那一步，内存情况也不明。
-    \item \code{MEMORY_LIMIT_EXCEEDED}：程序超过内存限制，可能是算法不够优，或者实现不够优；也没有到核对答案那一步。
-    \item \code{OUTPUT_LIMIT_EXCEEDED}：输出数据过多，要么程序有bug，要么是恶意代码。
-    \item \code{BAD_SYSCALL}：使用了非法的系统调用，要么是恶意代码，大部分情况是C++在\,\lstinline{new}\,一块内存的时候，超过了限制失败了，C++运行时环境需要一个系统调用关闭信号，然后杀死这个进程。
-    \item \code{RUN_TIME_ERROR}：运行时错误，可能是由于除零、引用空指针或者数组越界等等。
+	\item \code[green]{ACCEPTED}：结果完全正确。
+	\item \code{WRONG_ANSWER}：程序正常执行，也没有超时和超内存，但是答案不对。
+	\item \code{TIME_LIMIT_EXCEEDED}：程序超时，可能是死循环，也可能是算法不够优，或者实现不够优；还没到核对答案那一步，内存情况也不明。
+	\item \code{MEMORY_LIMIT_EXCEEDED}：程序超过内存限制，可能是算法不够优，或者实现不够优；也没有到核对答案那一步。
+	\item \code{OUTPUT_LIMIT_EXCEEDED}：输出数据过多，要么程序有bug，要么是恶意代码。
+	\item \code{BAD_SYSCALL}：使用了非法的系统调用，要么是恶意代码，大部分情况是C++在\,\lstinline{new}\,一块内存的时候，超过了限制失败了，C++运行时环境需要一个系统调用关闭信号，然后杀死这个进程。
+	\item \code{RUN_TIME_ERROR}：运行时错误，可能是由于除零、引用空指针或者数组越界等等。
 \end{itemize}
 
 \subsection{注意事项}

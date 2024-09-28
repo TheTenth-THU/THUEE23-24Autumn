@@ -736,7 +736,7 @@
 	\end{itemize}
 }
 
-对于理想气体系统的任一元过程 \((E，T) \to (E+\dif E，T+\dif T)\)，\(\dif E\) 只与始末状态有关，因此可选择方便的变化过程，即\textbf{等容+等温过程}计算 \(\dif E\)，且 \(\dif E = \dif E_V + \dif E_T = \dif E_V\)。由热力学第一定律，等容过程 \(\dif E_V = \dbar Q_V - \dbar A_V = \nu C_{V,\mathrm{m}} \dif T\)，因此有 
+对于理想气体系统的任一元过程 \((E，T) \to (E+\dif E，T+\dif T)\)，\(\dif E\) 只与始末状态有关，因此可选择方便的变化过程，即\textbf{等容\,+\,等温过程}计算 \(\dif E\)，且 \(\dif E = \dif E_V + \dif E_T = \dif E_V\)。由热力学第一定律，等容过程 \(\dif E_V = \dbar Q_V - \dbar A_V = \nu C_{V,\mathrm{m}} \dif T\)，因此有 
 
 \begin{theorem}
 	对于理想气体系统的任一元过程，有
@@ -763,7 +763,162 @@
 	即得 \(C_{p,\mathrm{m}} - C_{V,\mathrm{m}} = R\)。
 \end{proofs}
 
-\zhu[]{}
+\zhu[\(\boldsymbol{C_{p,\mathrm{m}}}\)与\(\boldsymbol{C_{V,\mathrm{m}}}\)的大小关系]{
+	对于理想气体，有 \(C_{p,\mathrm{m}} > C_{V,\mathrm{m}}\)，即在等压条件下，单位物质的量的物质温度升高单位温度所吸收的热量，要大于在等容条件下的热量。这是因为，在等压条件下，除了吸收热量使分子的热运动增加外，还要对系统的外界做功，因此需要更多的热量。
+}
+
+\begin{definition}
+	定压摩尔热容量和定体摩尔热容量的比值称为\tboba{比热容比（比热比）}，记作 \(\gamma\)，即 \(\gamma = \dfrac{C_{p,\mathrm{m}}}{C_{V,\mathrm{m}}}\)。
+\end{definition}
+
+\begin{theorem}
+	\textbf{\textup{理想气体热容量的理论公式}\quad} 对于理想气体，有
+	\begin{equation}
+		C_{V,\mathrm{m}} = \dfrac{i}{2} R \qquad C_{p,\mathrm{m}} = \dfrac{i+2}{2} R \qquad \gamma = \dfrac{i+2}{i}
+	\end{equation}
+	其中 \(i\) 为分子的自由度。
+\end{theorem}
+\begin{proofs}
+	对于理想气体，分子的内能只与温度有关，因此有 \(\dif E = \nu C_{V,\mathrm{m}} \dif T\)，而 \(\dif E = \dfrac{i}{2} \nu R \dif T\)，因此有 \(C_{V,\mathrm{m}} = \dfrac{i}{2} R\)。由迈耶公式即得 \(C_{p,\mathrm{m}} = \dfrac{i+2}{2} R\)，进而得 \(\gamma = \dfrac{i+2}{i}\)。
+\end{proofs}
+
+\subsubsection{绝热过程}
+
+\begin{definition}
+	系统与外界无热接触，即系统与外界无热量交换的过程称为\tboba{绝热过程}。绝热过程中，\(\dbar Q = 0\)，\(\dif E = -\dbar A\)。
+\end{definition}
+
+下面条件下的过程可视为绝热过程：
+\begin{itemize}
+	\item 良好绝热材料包围的系统发生的过程；
+	\item 进行得较快而来不及和外界发生热交换的过程，如声音的传播过程。
+\end{itemize}
+
+\paragraph{理想气体的准静态绝热过程}
+
+对于理想气体的准静态绝热过程，有 \(\dif E = -\dbar A\)，即 \(\nu C_{V,\mathrm{m}} \dif T = -p \dif V\)。
+由理想气体的状态方程 \(pV = \nu RT\)，可得 \(\dif (pV) = p \dif V + V \dif p = \nu R \dif T\)。
+又 \(R = C_{p,\mathrm{m}} - C_{V,\mathrm{m}}\)，因此有
+\begin{equation}
+	\dfrac{\dif p }{p } = -\dfrac{C_{V,\mathrm{m}}}{C_{p,\mathrm{m}}} \dfrac{\dif V}{V} = - \gamma \dfrac{\dif V}{V}
+\end{equation}
+一般将 \(\gamma\) 视为常数，两边积分，即有 \(\ln p + \gamma \ln V = \text{const}\)，或写成 
+\di[泊松公式（绝热过程方程）]{
+	对于理想气体的准静态绝热过程，有
+	\begin{equation}
+		pV^\gamma = \text{const}
+	\end{equation}
+	\tcblower
+	\hang[3]\textbf{其中\quad}\( \gamma \)——比热比。
+}
+
+\begin{definition}
+	对于理想气体的绝热过程，体积功为
+	\begin{equation}
+		A = \int_{V_1}^{V_2} p \dif V = \int_{V_1}^{V_2} \dfrac{\mathrm{const}}{V^\gamma} \dif V = \dfrac{\mathrm{const}}{1-\gamma} \left( V_2^{1-\gamma} - V_1^{1-\gamma} \right) \xlongequal{\mathrm{const}=p_1V_1^\gamma=p_2V_2^\gamma} \dfrac{1}{\gamma - 1} (p_1V_1 - p_2V_2)
+	\end{equation}
+	称为该过程的\tboba{绝热功}。
+\end{definition}
+
+\paragraph{理想气体的多方过程}
+
+\begin{definition}
+	热容量 \(C\) 为常量的过程称为\tboba{多方过程}。对于理想气体的多方过程，有
+	\begin{equation}
+		pV^n = \text{const}
+	\end{equation}
+	其中 \(n = \dfrac{C_\mathrm{m} - C_{p,\mathrm{m}}}{C_\mathrm{m} - C_{V,\mathrm{m}}}\) 称为\tboba{多方指数}。
+\end{definition}
+
+若该多方过程同时为绝热过程，则有 \(C_\mathrm{m} = 0\)，即 \(n = \gamma\)。
+
+\paragraph{理想气体的绝热自由膨胀}
+
+对于理想气体的绝热自由膨胀，即系统与外界无热接触，且无外界对系统做功，即 \(\dbar Q = \dbar A = 0\)。由热力学第一定律，有 \(\dif E = 0\)，即系统内能不变。
+
+\begin{itemize}
+	\item 对理想气体，膨胀前后 \(\dif E = 0\) 可直接得到 \(\dif T = 0\)；
+	\item 对真实气体，
+	\begin{itemize}
+		\item 分子力以引力为主时，膨胀后温度降低，即 \(\dif T < 0\)；
+		\item 分子力以斥力为主时，膨胀后温度升高，即 \(\dif T > 0\)。
+	\end{itemize}
+\end{itemize}
+
+\zhu[节流过程]{
+	气体通过多孔塞或小孔向压强较低区域膨胀的过程称为\tboqi{节流过程}。节流过程是绝热过程的一种特例，是一种无热量交换的绝热过程。\tboqi{Joule-Thomson 效应}指出，实际气体的节流过程中，气体的温度会发生变化，其中温度降低的称为\tboqi{正Joule-Thomson效应}，可用于制冷和制取液态空气；温度升高的称为\tboqi{负Joule-Thomson效应}，可用于制取气体。
+
+	设气体通过多孔塞前后的内能分别为 \(E_1\) 和 \(E_2\)，体积分别为 \(V_1\) 和 \(V_2\)，多孔塞两侧的压强分别为 \(p_1\) 和 \(p_2\) 且保持恒定。由热力学第一定律，有 \(0 = E_2 - E_1 + p_1V_1 - p_2V_2\)，即 \(E_2 + p_2V_2 = E_1 + p_1V_1\)，即气体的内能和压强与体积之积的和在节流过程中保持不变。
+}
+\begin{definition}
+	气体内能和压强与体积之积的和称为气体的\tboba{焓}，记作 \(H\)，即 \(H = E + pV\)。
+\end{definition}
+
+气体的绝热节流过程是\textbf{等焓过程}。
+
+相比于\textbf{内能是等体过程中系统吸的热量}：
+\[
+	\dbar Q_V = \dif E + p \dif V = \dif E 
+	\qquad 
+	C_V = \left( \dfrac{\dbar Q}{\dif T} \right)_V = \left( \dfrac{\partial E}{\partial T} \right)_V
+\]
+\textbf{焓是等压过程中系统吸的热量}：
+\[
+	\dbar Q_p = \dif E + p \dif V = \dif (E + pV) = \dif H
+	\qquad
+	C_p = \left( \dfrac{\dbar Q}{\dif T} \right)_p = \left( \dfrac{\partial H}{\partial T} \right)_p
+\]
+
+\subsubsection{循环过程}
+
+\begin{definition}
+	系统从一个状态经过一系列过程回到原状态，称为\tboba{循环过程}。循环一周，系统的内能不变，即 \(\Delta E = 0\)，但系统和一系列热源交换了热量。
+\end{definition}
+
+如果循环的各阶段为准静态过程，循环过程
+可用状态图，如 \(p - V\) 图上的闭合曲线表示。
+
+\paragraph{热循环和制冷循环}
+
+循环一周，系统净吸收热量、对外做功的循环过程称为\tboba{热循环}。
+设一个循环中吸收的热量为 \(Q_1\)，放出的热量为 \(|Q_2|\)，对外做的净功为 \(A\)，则
+热循环的\tboba{效率}定义为
+\begin{equation}
+	\eta = \dfrac{A}{Q_1} = \dfrac{Q_1 - |Q_2|}{Q_1} = 1 - \dfrac{|Q_2|}{Q_1}
+\end{equation}
+
+循环一周，系统净放出热量、外界对系统做功的循环过程称为\tboba{制冷循环（逆循环）}。
+设一个循环中放出的热量为 \(|Q_1|\)，吸收的热量为 \(Q_2\)，外界对系统做的净功为 \(|A|\)，则
+制冷循环的\tboba{效率}定义为
+\begin{equation}
+	\eta = \dfrac{|A|}{|Q_1|} = \dfrac{|Q_1| - Q_2}{|Q_1|} = 1 - \dfrac{Q_2}{|Q_1|}
+\end{equation}
+
+\paragraph{卡诺循环}
+　
+\de[卡诺循环]{
+	工质只和两个恒温热源交换热量的无摩擦的准静态循环称为\tboba{卡诺循环}。
+}
+
+卡诺循环包含两个等温过程和两个绝热过程，如图~\ref{Fig: Carnot Cycle}~所示。
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=5cm]{卡诺循环.png}
+	\caption{卡诺循环示意图}
+	\label{Fig: Carnot Cycle}
+\end{figure}
+
+Carnot 循环是理论上的最高效率循环，下面以理想气体为工质推导卡诺循环的效率。
+\begin{itemize}
+	\item 1 \(\to\) 2：等温膨胀，\(Q_1 = A_1 = \nu RT_1 \ln \dfrac{V_2}{V_1}\)；
+	\item 2 \(\to\) 3：绝热膨胀，\(T_1 V_2^{\gamma-1} = T_2 V_3^{\gamma-1}\)；
+	\item 3 \(\to\) 4：等温压缩，\(|Q_2| = |A_2| = \nu RT_2 \ln \dfrac{V_3}{V_4}\)；
+	\item 4 \(\to\) 1：绝热压缩，\(T_2 V_4^{\gamma-1} = T_1 V_1^{\gamma-1}\)。
+\end{itemize}
+
+
+
 
 \newpage
 %----------------------------------------------------------

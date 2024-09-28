@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  19 SEP 2024 16:44
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  27 SEP 2024 16:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1288,17 +1288,35 @@ File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿
  [8]
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [9] (./24Au-ComVarFunctions&MathEqs.aux)
+ [9]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [10]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [11]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [12]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [13]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [14]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [15] (./24Au-ComVarFunctions&MathEqs.aux)
 Package rerunfilecheck Info: File `24Au-ComVarFunctions&MathEqs.out' has not changed.
-(rerunfilecheck)             Checksum: 161021024F86B6942BDD3FF1BBA917A7;1004.
+(rerunfilecheck)             Checksum: 51EF274AEC108F92D385CDBEF5664237;1755.
  ) 
 Here is how much of TeX's memory you used:
- 36119 strings out of 476683
- 849222 string characters out of 5798754
- 1881012 words of memory out of 5000000
- 55690 multiletter control sequences out of 15000+600000
- 533424 words of font info for 202 fonts, out of 8000000 for 9000
+ 36337 strings out of 476683
+ 855652 string characters out of 5798754
+ 1885012 words of memory out of 5000000
+ 55905 multiletter control sequences out of 15000+600000
+ 533448 words of font info for 205 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,15n,97p,568b,1111s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,15n,97p,568b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 24Au-ComVarFunctions&MathEqs.pdf (9 pages).
+Output written on 24Au-ComVarFunctions&MathEqs.pdf (15 pages).
