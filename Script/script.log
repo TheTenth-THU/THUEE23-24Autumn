@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  28 SEP 2024 14:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  28 SEP 2024 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -735,7 +735,7 @@ Package fontspec Info: Font family '汉仪文黑-45W.ttf(0)' created for font
  [2
 
 
-] [3
+] [3] [4
 
 ] [1
 
@@ -746,18 +746,20 @@ Package fontspec Info: Font family '汉仪文黑-45W.ttf(0)' created for font
 
 ] [5] [6] [7
 
-]
+] [8] [9
+
+] [10]
 \tf@toc=\write4
 \openout4 = `script.toc'.
 
  (./script.aux) ) 
 Here is how much of TeX's memory you used:
- 12354 strings out of 476683
- 297900 string characters out of 5798754
- 1862012 words of memory out of 5000000
- 32455 multiletter control sequences out of 15000+600000
+ 12432 strings out of 476683
+ 303278 string characters out of 5798754
+ 1861012 words of memory out of 5000000
+ 32533 multiletter control sequences out of 15000+600000
  520515 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,11n,97p,430b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on script.pdf (12 pages).
+Output written on script.pdf (16 pages).

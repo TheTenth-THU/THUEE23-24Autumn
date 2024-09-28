@@ -24,7 +24,7 @@
 
 \setlength{\parindent}{0pt}
 
-\renewcommand{\printtoctitle}[1]{\centering\Large\bfseries Acts}  
+\renewcommand{\printtoctitle}[1]{\centering\Large\bfseries Acts \& Scenes}  
     % Set the title of the contents page.
 % \renewcommand{\printtoctitle}[1]  
     % Remove the title from the contents page entirely.
@@ -101,7 +101,7 @@
         % The starred form of \section prevents a section number (eg ``1.1'', ``2.3'') being printed before each section title (eg ``Scene 1'', ``Scene 2'').
     % \section*{\hfill\textit{SCENE 1}}
         % Use this line instead if you want the Scene 1 heading shifted to the right edge of the page.
-    \addcontentsline{toc}{section}{第 \thescene 场\quad #1}
+    \addcontentsline{toc}{section}{SCENE \thescene\quad #1}
         % The \addcontentsline command will add the scene to the table of contents.
     \begin{description}[align=left, itemsep=1ex, leftmargin=2em, itemindent=-1em, labelsep=1em]
         % Set up a description list to hold the dialogue of the scene.    Increase the space between the list items, and set the left margin to 1cm.
@@ -123,7 +123,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \chapter*{第 \theact 幕\; #1}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \addcontentsline{toc}{chapter}{第 \theact 幕 \quad #1}
+    \addcontentsline{toc}{chapter}{ACT \theact\quad #1}
         % The \chapter* will prevent the the chapters (Acts) being listed in the table of contents, so we need to add them manually.
     \setcounter{scene}{0}
         % Reset the scene counter to 0 at the start of each act.
@@ -174,6 +174,16 @@
     \item \textbf{C2}，支教队同学。
     \item \textbf{C3}，支教队同学。
 \end{itemize}
+
+\textbf{D组}，AP 的同学，与 AP 同组参加 C 组角色的支教营。
+\begin{itemize}
+    \item \textbf{D0}，AP 同学。
+    \item \textbf{D1}，AP 同学。
+    \item \textbf{D2}，AP 同学。
+    \item \textbf{D3}，AP 同学。
+\end{itemize}
+
+\textbf{E}，AC 支教实践支队授课学生。
 
 
 
@@ -353,8 +363,91 @@ With regard to some particular passages which seemed generally disliked, I confe
 }
 
 \act[复燃]{
-    
+    \scene{
+        \stage{
+            \textup{
+                \textbf{时间点\(\boldsymbol{C}\)}，T大学电子系实验室天台。
+            }
+            承接第一幕，AC 回过神来，看着串口绘图仪上的图像。B0 和 B1 也看着绘图仪，但都还认为是故障，并不在意。
+        }
+        \dialog[B1]{
+            这监视器怎么回事？是哪里的工频信号进来了吗？
+        }
+        \dialog[B0]{
+            这个波……反正不是预期，还是哪里有问题。要不还是老办法Reset一下？
+        }
+        \stage{
+            B0 正要伸手去按 Mega 板的 Reset 键，AC 突然（有些激动地）拦住了他。
+        }
+        \dialog[AC]{
+            \direction{激动} 不！不要！这个波……先让它把收到的数据记着！
+        }
+        \stage{
+            AC 快速写起了程序，凭着印象中当年的编码方式写出了一个解码程序。绘图仪中的图像慢慢平缓下来，突然出现的信号消失了，只剩下噪声起起伏伏。
+        }
+        \stage{
+            AC 将串口数据复制出来，导入刚刚写好的解码程序，终于在屏幕上看到了一行行的汉字。
+        }
+        \dialog[B0、B1]{
+            \direction{惊讶} 啊这……
+        }
+        \stage{
+            AC 也有些激动，但又有些迷茫，屏幕上的汉字让他不得不相信，当年的信号不知为何有了回波。
+        }
+        \stage{
+            AC 解释着自己的难以置信却又铁证如山的想法，感觉到了当年的那份探索热情。冥冥之中，似乎确实有什么东西在等待着他。这种意义感让他重新振作起来。
+        }
+    }
+    \scene{
+        \stage{
+            \textup{
+                \textbf{时间点\(\boldsymbol{C}\)}，P 中学机房。
+            }
+            实践支队来到 P 中学的支教活动前夜，包括 AC 在内的几位同学正在一台一台地手动安装软件，为即将开始的支教活动做准备。窗外，刚下晚自习的 E 背着包、抱着书，靠在窗边向里张望。
+        }
+    }
 }
+\act[再会]{
+    \scene{
+        \stage{
+            \textup{
+                \textbf{时间点\(\boldsymbol{F}\)}，T大学实验室。
+            }
+            AF 已学有所成，经过多次试验和改进，时空沟通的课题已经基本完成。AF 正在检查着最后的程序，准备进行最后的实验。
+        }
+        \dialog[AF]{
+            \direction{自言自语} 这次的实验，应该是最后一次了。 \direction{看向屏幕} 一切准备就绪，开始吧。
+        }
+        \stage{
+            AF 按下了启动键，信息流开始在时空中穿梭，汇集到他的面前。
+        }
+        \stage{
+            手机振动，是他指导的支教队的同学发来的信息。灵光一闪，AF 想起了当年的自己。
+        }
+        \dialog[AF]{
+            \direction{自言自语} 那么这最后的试验，就从那时的我开始吧。 \direction{开始输入时空坐标，突然明白了什么} 原来，这就是当时那列回波的来源啊。时空的沟通，原来是这样的。 \direction{看向屏幕} 那么，我要把这首诗送回去了。
+        }
+        \stage{
+            AF 开始操作起来，连接起 时间点\(C\) 和 时间点\(P\) 的信息流。望着屏幕上的不断跳出的运行日志，感慨万千。
+        }
+        \dialog[AF]{
+            \direction{放松下来} 把过去的我的礼物，送给过去的我，还真是有意思的事情啊。 
+        }
+        \dialog[AF]{
+            既然这样，\direction{转向观众} 不如也将这些信息流，送到各位所处的这个特殊的时候吧。
+        }
+        \stage{
+            AF 操作起来，时间点\(C\)、时间点\(P\) 和 时间点\(F\) 的信息流汇聚起来，形成了一个巨大的信息流。信息流在时空中穿梭，最终汇聚到了一个点上。屏幕上显示，那里正在举办 T 大学电子系的学生节，舞台暗场又亮起，屏幕上显示着「频率之外」。
+        }
+        \dialog[AF（画外音）]{
+            希望你们，喜欢这个有意思的故事。
+        }
+        \stage{
+            全剧终。
+        }
+    }
+}
+
 
 %=========================================================
 \end{document}
