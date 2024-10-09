@@ -9,4 +9,12 @@
 \contentsline {subsubsection}{\numberline {2.2.4}组合逻辑电路的设计实例}{6}{subsubsection.2.2.4}%
 \contentsline {paragraph}{\numberline {\hskip 2emA)}编码器（Encoder）和译码器（Decoder）}{6}{paragraph.2.2.4.1}%
 \contentsline {paragraph}{\numberline {\hskip 2emB)}多路选择器（Multiplexer\textup {,}\hskip 0.5em MUX）}{7}{paragraph.2.2.4.2}%
-\contentsline {paragraph}{\numberline {\hskip 2emC)}加法器}{7}{paragraph.2.2.4.3}%
+\contentsline {paragraph}{\numberline {\hskip 2emC)}加法器}{8}{paragraph.2.2.4.3}%
+\contentsline {subsection}{\numberline {2.3}时序逻辑}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}时序逻辑电路的基本概念}{8}{subsubsection.2.3.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emA)}触发与节拍信号}{8}{paragraph.2.3.1.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emB)}状态与有限状态机}{8}{paragraph.2.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}锁存器}{10}{subsubsection.2.3.2}%
+\contentsline {paragraph}{\numberline {\hskip 2emA)}锁存器的电路实现}{10}{paragraph.2.3.2.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emB)}锁存器的时序参数}{11}{paragraph.2.3.2.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}触发器}{12}{subsubsection.2.3.3}%

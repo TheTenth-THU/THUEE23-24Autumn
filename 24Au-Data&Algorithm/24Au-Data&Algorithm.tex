@@ -81,9 +81,10 @@
 \newtcolorbox{pr}[2][]{colback=black!5!white,colframe=white!75!black,fonttitle=\sffamily\wen\bfseries,title=#2,#1}
 \newtcolorbox[use counter=definition,number within=subsection]{defi}[2][]{colback=bali!5!white,colframe=bali!75!black,fonttitle=\sffamily\wen\bfseries,title=定义~\thetcbcounter. #2,#1}
 \newtcolorbox[auto counter,number within=section]{compl}[2][]{colback=bali!5!white,colframe=bali!65!black,fonttitle=\sffamily\wen\bfseries,label=#2,title=电路部件~\thetcbcounter. #2,#1, fontupper=\kai, fontlower=\kai}
-\newtcolorbox[use counter=theorem,number within=subsection]{theo}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,title=结论~\thetcbcounter. #2,#1}
+\newcounter{algo}[section]
+\newtcolorbox[use counter=algo,number within=section]{theo}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,title=算法~\thetcbcounter. #2,#1}
 \newtcolorbox[use counter=definition,number within=subsection]{defil}[2][]{colback=bali!5!white,colframe=bali!75!black,fonttitle=\sffamily\wen\bfseries,label=#2,title=定义~\thetcbcounter. #2,#1}
-\newtcolorbox[use counter=theorem,number within=subsection]{theol}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,label=#2,title=结论~\thetcbcounter. #2,#1}
+\newtcolorbox[use counter=algo,number within=section]{theol}[2][]{colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseries,fontupper=\run,label=#2,title=算法~\thetcbcounter. #2,#1}
 \newtcolorbox[auto counter,number within=section]{note}[2][]{colback=qinglv!5!white,colframe=qinglv!75!black,breakable, enhanced jigsaw,fonttitle=\sffamily\wen\bfseries,title=注~\thetcbcounter. #2,#1}
 \newtcolorbox{prenote}[2][]{colback=gray!5!white,colframe=gray!50!black,breakable, enhanced jigsaw, fonttitle=\sffamily\wen\bfseries,fontupper=\small\kai,title=#2,#1}
 \newtcolorbox{pf}[1][]{colback=black!5!white,colframe=white!75!black, fontupper=\small\kai,#1}
@@ -97,8 +98,8 @@
 	rulecolor=\color[rgb]{0.8,0.8,0.8},         % 设置代码框颜色
 	backgroundcolor=\color[rgb]{0.96,0.96,0.96},% 背景颜色
 	keywordstyle=\colors{bali}\bfseries,        % 关键字颜色
-	keywordstyle=[2]\colors{qinglv}\bfseries,   % 自定义关键字颜色
-	keywordstyle=[3]\colors{orange}\it\ttfamily,% 自定义关键字颜色
+	keywordstyle=[2]\color{qinglv}\bfseries,   % 自定义关键字颜色
+	keywordstyle=[3]\color{purple!70!black}\ttfamily,	% 自定义关键字颜色
 	identifierstyle=\color{black},              % 普通标识符颜色
 	commentstyle=\rm\kai\color{gray},          	% 注释颜色
 	stringstyle=\colors{meihong},      			% 字符串颜色
@@ -112,13 +113,16 @@
 	numbersep=15pt, 
 	framesep=1em, 
 	language=C++, 
-	columns=flexible, 
+	columns=fixed,
+	basewidth=0.5em, 
 	tabsize=4, 
 	gobble=4,
 	escapeinside={(*@}{@*)},
 }
 \lstdefinestyle{intro}
 	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{bali!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{bali}]{<-}{->}, escapeinside={(*@}{@*)}, }
+\lstdefinestyle{algo}
+	{rulecolor=\color{meihong!75!black}, backgroundcolor=\color{meihong!5!white}, keywordstyle=\color{meihong!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{bali}]{<-}{->}, escapeinside={(*@}{@*)}, }
 \lstdefinestyle{qintro}
 	{rulecolor=\color{bali!75!black}, backgroundcolor=\color{bali!5!white}, keywordstyle=\color{qinglv!50!black}\bfseries, morecomment=[s][\tt\bfseries\colors{qinglv}]{<-}{->}, escapeinside={(*@}{@*)}, }
 \lstdefinestyle{notec}
@@ -131,7 +135,7 @@
 \newcommand{\den}[2][]{\begin{defi}{#1}\kai #2\end{defi}}
 \newcommand{\din}[2][]{\begin{theo}{#1}\run #2\end{theo}}
 \newcommand{\de}[2][]{\begin{defil}{#1}\kai #2\end{defil}}
-\newcommand{\di}[2][]{\begin{theol}{#1}\run #2\end{theol}}
+\newcommand{\di}[3][]{\begin{theol}{#1}\run \textbf{\wen 思想\hskip0.65em}#2 \tcblower\run \hang[3]\textbf{\wen 步骤\quad}\hskip-0.65em#3 \end{theol}}
 \newcommand{\dep}[3][]{\begin{defi}{#1\page{#2}}\kai #3\end{defi}}
 \newcommand{\dip}[3][]{\begin{theo}{#1\page{#2}}\run #3\end{theo}}
 \newcommand{\zhu}[2][]{\begin{note}{#1}\xiu #2\end{note}}
@@ -408,6 +412,512 @@
 				操作结果：依次对 L 的每个数据元素调用 visit(), 一旦 visit() 失败, 则操作失败。
 	} ADT List
 \end{lstlisting}
+
+\paragraph{线性表的实现}
+
+按照存储结构的不同，线性表可以分为顺序表和链表。
+
+\begin{itemize}
+	\item \textbf{顺序表}：线性表的存储结构为顺序存储结构，即用一组地址连续的存储单元依次存放线性表中的元素。
+	
+	可以用 C++ 语言实现一个顺序表：
+	\begin{lstlisting}[style=intro, morekeywords={[2]{List, ElemType, }}, morekeywords={[3]{isEmpty, listLength, getElem, locateElem, priorElem, nextElem, clearList, listInsert, listDelete, listTraverse, visit, }}, gobble=8]
+		class List {
+		private:
+			ElemType *elem;
+			int length, maxSize;
+		public:
+			List(int size) : maxSize(size) 
+				{ elem = new ElemType[maxSize]; length = 0; }
+			~List() 						{ delete[] elem; }
+			bool isEmpty() const 			{ return length == 0; }
+			int listLength() const 			{ return length; }
+			ElemType getElem(int i) const 	{ return elem[i]; }
+			int locateElem(ElemType e) const {
+				for (int i = 0; i < length; i++)
+					if (elem[i] == e) return i;
+				return -1;
+			}
+			ElemType priorElem(ElemType e) const {
+				int i = locateElem(e);
+				if (i > 0) return elem[i - 1];
+				return -1;
+			}
+			ElemType nextElem(ElemType e) const {
+				int i = locateElem(e);
+				if (i >= 0 && i < length - 1) return elem[i + 1];
+				return -1;
+			}
+			void clearList() 				{ length = 0; }
+			bool listInsert(int i, ElemType e) {
+				if (i < 0 || i > length || length == maxSize) return false;
+				for (int j = length; j > i; j--)
+					elem[j] = elem[j - 1];
+				elem[i] = e; 
+				length++;
+				return true;
+			}
+			ElemType listDelete(int i) {
+				if (i < 0 || i >= length) return -1;
+				ElemType e = elem[i];
+				for (int j = i; j < length - 1; j++)
+					elem[j] = elem[j + 1];
+				length--; return e;
+			}
+			void listTraverse(void (*visit)(ElemType)) const {
+				for (int i = 0; i < length; i++)
+					visit(elem[i]);
+			}
+		};
+	\end{lstlisting}
+\end{itemize}
+
+\subsubsection{栈}
+
+\de[栈]{
+	\tboba{栈}是一种特殊的线性表，其插入和删除操作只能在表的同一端进行，这一端被称为\tboba{栈顶}，另一端被称为\tboba{栈底}。
+}
+
+栈的抽象数据类型可以定义为：
+\begin{lstlisting}[style=intro, morekeywords={ADT, }, morekeywords={[2]{Stack, ElemType, visit, }}, morekeywords={[3]{InitStack, DestroyStack, IsEmpty, GetTop, Push, Pop, ClearStack, StackLength, }}]
+	ADT Stack {
+		数据对象：(*@\( D = \{a_0，a_1，a_2，\cdots，a_n \mid a_i \in \text{ElemType}，1 \leq i \leq n \} \)@*)
+		数据关系：(*@\( R = \{ \a{a_i，a_{i+1}} \mid a_i \text{为第} \, i \,  \text{个数据元素，} a_{i+1} \text{为第}\, i+1 \, \text{个数据元素} \} \)@*)
+		基本操作：
+			InitStack(&S)
+				操作结果：构造一个空栈 S。
+			DestroyStack(&S)
+				初始条件：栈 S 存在。
+				操作结果：销毁栈 S。
+			IsEmpty(S)
+				初始条件：栈 S 存在。
+				操作结果：若 S 为空栈, 则返回 true, 否则返回 false。
+			GetTop(S, &e)
+				初始条件：栈 S 存在, S 非空。
+				操作结果：用 e 返回 S 的栈顶元素。
+			Push(&S, e)
+				初始条件：栈 S 存在。
+				操作结果：将元素 e 压入栈顶。
+			Pop(&S, &e)
+				初始条件：栈 S 存在, S 非空。
+				操作结果：弹出栈顶元素，并用 e 返回其值。
+			ClearStack(&S)
+				初始条件：栈 S 存在。
+				操作结果：将 S 重置为空栈。
+			StackLength(S)
+				初始条件：栈 S 存在。
+				操作结果：返回 S 的元素个数。
+	} ADT Stack
+\end{lstlisting}
+
+\paragraph{栈的实现}
+
+按照存储结构的不同，栈可以分为顺序栈和链式栈。
+
+\begin{itemize}
+	\item \textbf{顺序栈}：栈的存储结构为顺序存储结构，即用一组地址连续的存储单元依次存放栈中的元素。
+	
+	可以用 C++ 语言实现一个顺序栈：
+	\begin{lstlisting}[style=intro, morekeywords={ElemType, }, morekeywords={[2]{Stack, }}, morekeywords={[3]{isEmpty, getTop, stackLength, push, pop, clearStack, }}, gobble=8]
+		class Stack {
+		private:
+			ElemType *bottom;
+			int stackDepth, maxSize;
+		public:
+			Stack(int size) : maxSize(size) 
+				{ bottom = new ElemType[maxSize]; stackDepth = 0; }
+			~Stack() 						{ delete[] bottom; }
+			bool isEmpty() const 			{ return stackDepth == 0; }
+			ElemType getTop() const 		{ return bottom[stackDepth - 1]; }
+			int stackLength() const 		{ return stackDepth; }
+			void push(ElemType e) 			{ bottom[stackDepth++] = e; }
+			ElemType pop() 					{ return bottom[--stackDepth]; }
+			void clearStack() 				{ stackDepth = 0; }
+		};		
+	\end{lstlisting}
+	在初始化顺序栈时，需要指定栈的最大容量 \lstinline|maxSize|，如果栈中元素已经达到最大容量，继续压栈会导致\tboba{栈溢出}。在具体实现中，根据需要可以具体设计如何处理栈溢出的情况。
+
+	\item \textbf{链式栈}：栈的存储结构为链式存储结构，即用链表存放栈中的元素。
+	
+	可以用 C++ 语言实现一个链式栈：
+	\begin{lstlisting}[style=intro, morekeywords={ElemType, }, morekeywords={[2]{Stack, Node, Link, }}, morekeywords={[3]{isEmpty, getTop, stackLength, push, pop, clearStack, }}, gobble=8]
+		struct Node {
+			ElemType data;
+			Node *next;
+		};
+		typedef struct Node* Link;
+		class Stack {
+		private:
+			Link head;
+		public:
+			Stack() 				{ head = nullptr; }
+			~Stack() 				{ clearStack(); }
+			bool isEmpty() const 	{ return head == nullptr; }
+			ElemType getTop() const { return head->data; }
+			int stackLength() const 
+				{ int len = 0; for (Link p = head; p; p = p->next) len++; return len; }
+			void push(ElemType e) 
+				{ Link p = new Node; p->data = e; p->next = head; head = p; }
+			ElemType pop() 
+				{ Link p = head; head = head->next; ElemType e = p->data; delete p; return e; }
+			void clearStack() 		{ while (!isEmpty()) pop(); }
+		};
+	\end{lstlisting}
+	链式栈的实现中，栈顶元素位于链表的头部，每次压栈时，新元素插入到链表的头部；每次弹栈时，栈顶元素从链表的头部删除。
+\end{itemize}
+
+\begin{example}
+	\textbf{后缀表达式}是一种不含括号的表达式，其操作符位于操作数后面。例如，后缀表达式 \(3\,4\,+\,5\,*\) 对应的中缀表达式为 \((3 + 4) * 5\)。在计算机处理中，后缀表达式的计算更加方便。用栈实现四则运算后缀表达式的计算如下：
+	\begin{lstlisting}[morekeywords={ValueException, }, morekeywords={[2]{Stack, }}, morekeywords={[3]{calcPostfix, isEmpty, push, pop, }}, gobble=8]
+		double calcPostfix(const char *postfix) {
+			strstream ss(postfix);					// 用字符串流读取后缀表达式
+			Stack values;
+			int curValue = 0; char curChar = '\0';
+			while (ss >> curChar) {					// 逐个读取字符
+				if (isdigit(curChar)) {				// 对数字字符，转换为数字并入记录数值
+					curValue = curValue * 10 + curChar - '0';
+				} else {							// 对操作符，弹栈计算
+					int preValue = values.pop();
+					switch (curChar) {
+					case '+': values.push(preValue + curValue); break;
+					case '-': values.push(preValue - curValue); break;
+					case '*': values.push(preValue * curValue); break;
+					case '/': values.push(preValue / curValue); break;
+					}
+					curValue = 0;					// 重置记录数值
+				}
+			}
+			if (values.stackLength() != 1) throw ValueException("Invalid postfix expression!");
+			return values.pop();
+		}
+	\end{lstlisting}					
+\end{example}
+
+\paragraph{栈与递归}
+
+递归是一种常见的算法设计方法，递归函数的调用过程可以看作是一个栈的过程。递归函数的调用过程中，每次调用函数时，都会将当前函数的局部变量、返回地址等信息压入栈中，当递归函数返回时，会将这些信息弹出。
+
+\begin{example}
+	\label{e.g: Fibonacci recursion}
+	计算斐波那契数列的第 \(n\) 项的递归函数如下：
+	\begin{lstlisting}[morekeywords={[3]{fibonacci, }}, gobble=8]
+		int fibonacci(int n) {
+			if (n == 0) return 1;
+			if (n == 1) return 1;
+			return fibonacci(n - 1) + fibonacci(n - 2);
+		}
+	\end{lstlisting}
+	在计算斐波那契数列的第 \(n\) 项时，递归函数 \lstinline|fibonacci| 会不断调用自身，直到递归到 \lstinline|n = 0| 或 \lstinline|n = 1| 时返回，这个过程可以看作是一个栈的过程。
+\end{example}
+
+递归算法可能导致较高的时间复杂度和空间复杂度，因此有时需要考虑使用非递归的方法来实现，即\textbf{递归的消除}。以下两类递归函数可以比较容易地消除：
+\begin{itemize}
+	\item \textbf{尾递归}：如果一个递归函数中只有唯一一个递归调用语句，并且递归调用语句在递归算法的最后，称为尾递归。尾递归可以通过循环来实现，从而避免栈的过多压入和弹出。
+	\item \textbf{单向递归}：如果一个递归函数中虽然有多处递归调用语句，但各递归调用语句的参数之间无关，并且递归调用语句都在递归算法的最后。单向递归可以通过设置变量保存中间结果，从而用循环结构代替递归。
+\end{itemize}
+
+\begin{example}
+	例 \ref{e.g: Fibonacci recursion} 中的斐波那契数列的递归函数是一个单向递归函数，消除递归的算法设计为：
+	\begin{lstlisting}[morekeywords={[3]{fibonacci, }}, gobble=8]
+		int fibonacci(int n) {
+			if (n == 0) return 1;
+			if (n == 1) return 1;
+			int pre = 0, cur = 1, next;
+			for (int i = 2; i <= n; i++) {
+				next = pre + cur;
+				pre = cur; cur = next;
+			}
+			return next;
+		}
+	\end{lstlisting}
+\end{example}
+
+\subsubsection{队列}
+
+\de[队列]{
+	\tboba{队列}是一种特殊的线性表，其插入操作只能在表的一端进行，这一端被称为\tboba{队头}；删除操作只能在表的另一端进行，称为\tboba{队尾}。
+}
+
+队列的抽象数据类型可以定义为：
+\begin{lstlisting}[style=intro, morekeywords={ADT, }, morekeywords={[2]{Queue, ElemType, }}, morekeywords={[3]{InitQueue, DestroyQueue, IsEmpty, QueueLength, GetHead, EnQueue, DeQueue, ClearQueue, QueueTraverse, visit, }}]
+	ADT Queue {
+		数据对象：(*@\( D = \{a_0，a_1，a_2，\cdots，a_n \mid a_i \in \text{ElemType}，1 \leq i \leq n \} \)@*)
+		数据关系：(*@\( R = \{ \a{a_i，a_{i+1}} \mid a_i \text{为第} \, i \,  \text{个数据元素，} a_{i+1} \text{为第}\, i+1 \, \text{个数据元素} \} \)@*)
+				  约定：队头为 a_0，队尾为 a_n。
+		基本操作：
+			InitQueue(&Q)
+				操作结果：构造一个空队列 Q。
+			DestroyQueue(&Q)
+				初始条件：队列 Q 存在。
+				操作结果：销毁队列 Q。
+			IsEmpty(Q)
+				初始条件：队列 Q 存在。
+				操作结果：若 Q 为空队列, 则返回 true, 否则返回 false。
+			QueueLength(Q)
+				初始条件：队列 Q 存在。
+				操作结果：返回 Q 的元素个数。
+			GetHead(Q, &e)
+				初始条件：队列 Q 存在, Q 非空。
+				操作结果：用 e 返回 Q 的队头元素。
+			EnQueue(&Q, e)
+				初始条件：队列 Q 存在。
+				操作结果：将元素 e 入队列 Q 的队尾。
+			DeQueue(&Q, &e)
+				初始条件：队列 Q 存在, Q 非空。
+				操作结果：将 Q 的队头元素出队列，并用 e 返回其值。
+			ClearQueue(&Q)
+				初始条件：队列 Q 存在。
+				操作结果：将 Q 重置为空队列。
+			QueueTraverse(Q, visit())
+				初始条件：队列 Q 存在, visit() 是对数据元素操作的函数。
+				操作结果：依次对 Q 的每个数据元素调用 visit(), 一旦 visit() 失败, 则操作失败。
+	} ADT Queue
+\end{lstlisting}
+
+\paragraph{队列的实现}
+
+按照存储结构的不同，队列可以分为顺序队列和链式队列。
+
+\begin{itemize}
+	\item \textbf{顺序队列}：队列的存储结构为顺序存储结构，即用一组地址连续的存储单元依次存放队列中的元素。为了避免队列整体移动，通常采用\textbf{循环队列}的方式实现顺序队列。
+	
+	可以用 C++ 语言实现一个顺序队列：
+	\begin{lstlisting}[style=intro, morekeywords={ElemType, }, morekeywords={[2]{Queue, }}, morekeywords={[3]{isEmpty, getHead, queueLength, enQueue, deQueue, clearQueue, }}, gobble=8]
+		class Queue {
+		private:
+			ElemType *base;
+			int front, rear, maxSize;
+		public:
+			Queue(int size) : maxSize(size) 
+				{ base = new ElemType[maxSize]; front = rear = 0; }
+			~Queue() 						{ delete[] base; }
+			bool isEmpty() const 			{ return front == rear; }
+			ElemType getHead() const 		{ return base[front]; }
+			int queueLength() const 		{ return (rear - front + maxSize) % maxSize; }
+			void enQueue(ElemType e)
+				{ base[rear] = e; rear = (rear + 1) % maxSize; }
+			ElemType deQueue()
+				{ ElemType e = base[front]; front = (front + 1) % maxSize; return e; }
+			void clearQueue() 				{ front = rear = 0; }
+		};
+	\end{lstlisting}
+
+	\item \textbf{链式队列}：队列的存储结构为链式存储结构，即用链表存放队列中的元素。链式队列是只在头尾两端进行插入和删除操作的更简单的链表。
+	
+	可以用 C++ 语言实现一个链式队列：
+	\begin{lstlisting}[style=intro, morekeywords={ElemType, }, morekeywords={[2]{Queue, Node, Link, }}, morekeywords={[3]{isEmpty, getHead, queueLength, enQueue, deQueue, clearQueue, }}, gobble=8]
+		struct Node {
+			ElemType data;
+			Node *next;
+		};
+		typedef struct Node* Link;
+		class Queue {
+		private:
+			Link front, rear;
+		public:
+			Queue() 						{ front = rear = new Node; front->next = nullptr; }
+			~Queue() 						{ clearQueue(); delete front; }
+			bool isEmpty() const 			{ return front == rear; }
+			ElemType getHead() const 		{ return front->next->data; }
+			int queueLength() const 
+				{ int len = 0; for (Link p = front->next; p; p = p->next) len++; return len; }
+			void enQueue(ElemType e) 
+				{ Link p = new Node; p->data = e; p->next = nullptr; rear->next = p; rear = p; }
+			ElemType deQueue() 
+				{ Link p = front->next; front->next = p->next; ElemType e = p->data; delete p; return e; }
+			void clearQueue() 				{ while (!isEmpty()) deQueue(); }
+		};
+	\end{lstlisting}
+\end{itemize}
+
+\paragraph{优先级队列}
+
+给队列中的每一个元素都赋予一个优先级，优先级高的元素先出队列，这种队列称为\textbf{优先级队列}。
+
+优先级队列的抽象数据类型可以定义为：
+\begin{lstlisting}[style=intro, morekeywords={ADT, }, morekeywords={[2]{PQueue, ElemType, }}, morekeywords={[3]{InitPQueue, DestroyPQueue, IsEmpty, PQueueLength, GetHead, EnPQueue, DePQueue, ClearPQueue, PQueueTraverse, visit, }}]
+	ADT PQueue {
+		数据对象：(*@\( D = \{a_0，a_1，a_2，\cdots，a_n \mid a_i \in \)@*) map<int, ElemType>(*@，\(1 \leq i \leq n \} \)@*)
+		数据关系：(*@\( R = \{ \a{a_i，a_{i+1}} \mid a_i \text{为第} \, i \,  \text{个数据元素，} a_{i+1} \text{为第}\, i+1 \, \text{个数据元素} \} \)@*)
+				  约定：队头为 a_0, 队尾为 a_n。
+		基本操作：
+			InitPQueue(&Q)
+				操作结果：构造一个空优先级队列 Q。
+			DestroyPQueue(&Q)
+				初始条件：优先级队列 Q 存在。
+				操作结果：销毁优先级队列 Q。
+			IsEmpty(Q)
+				初始条件：优先级队列 Q 存在。
+				操作结果：若 Q 为空队列, 则返回 true, 否则返回 false。
+			PQueueLength(Q)
+				初始条件：优先级队列 Q 存在。
+				操作结果：返回 Q 的元素个数。
+			GetHead(Q, &e)
+				初始条件：优先级队列 Q 存在, Q 非空。
+				操作结果：用 e 返回 Q 中优先级最高的元素。
+			EnPQueue(&Q, e)
+				初始条件：优先级队列 Q 存在。
+				操作结果：将元素 e 插入优先级队列 Q。
+			ChangePQueue(&Q, ei, ef)
+				初始条件：优先级队列 Q 存在, Q 非空, ei 是 Q 中的元素。
+				操作结果：将 Q 中元素 ei 的优先级改为 ef。
+			DePQueue(&Q, &e)
+				初始条件：优先级队列 Q 存在, Q 非空。
+				操作结果：将 Q 中优先级最高的元素出优先级队列，并用 e 返回其值。
+			ClearPQueue(&Q)
+				初始条件：优先级队列 Q 存在。
+				操作结果：将 Q 重置为空优先级队列。
+			PQueueTraverse(Q, visit())
+				初始条件：优先级队列 Q 存在, visit() 是对数据元素操作的函数。
+				操作结果：依次对 Q 的每个数据元素调用 visit(), 一旦 visit() 失败, 则操作失败。
+	} ADT PQueue
+\end{lstlisting}
+
+优先级队列可以基于有序或无序的顺序表或链表实现。
+有序的优先级队列可以在插入时按照优先级顺序插入，插入操作的时间复杂度为 \(O(n)\)；
+而无序的优先级队列则需要在出队列时遍历所有元素找到优先级最高的元素，出队列操作的时间复杂度为 \(O(n)\)。各种实现方式中，入队、修改、出队操作的时间复杂度如表 \ref{Tab: Time Complexity of PQueue} 所示。
+
+\begin{table}[!ht]
+	\centering
+	\caption{优先级队列的时间复杂度}
+	\label{Tab: Time Complexity of PQueue}
+	\begin{tabular}[b]{cccccc}
+		\toprule
+		\multicolumn{2}{c}{\textbf{操作}} & \textbf{有序顺序表} & \textbf{无序顺序表} & \textbf{有序链表} & \textbf{无序链表} \\
+		\midrule
+		入队 & \lstinline[morekeywords={[3]{EnPQueue}}]|EnPQueue(&Q, e)|
+		& \(O(n)\) & \(O(1)\) & \(O(n)\) & \(O(1)\) \\
+		修改 & \lstinline[morekeywords={[3]{ChangePQueue}}]|ChangePQueue(&Q, ei, ef)|
+		& \(O(n)\) & \(O(1)\) & \(O(n)\) & \(O(1)\) \\
+		出队 & \lstinline[morekeywords={[3]{DePQueue}}]|DePQueue(&Q, &e)|
+		& \(O(n)\) & \(O(n)\) & \(O(1)\) & \(O(n)\) \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+若优先级队列需要频繁进行入队操作，可以考虑使用无序顺序表或无序链表实现；若优先级队列需要频繁进行出队操作，可以考虑使用有序链表实现。
+
+\zhu[优先级队列与栈、队列的联系]{
+	优先级队列是一种特殊的队列，其出队操作是根据元素的优先级进行的。同时，优先级队列可以看作是栈和队列的推广，若设定元素在队中的停留时间为其优先级，那么栈就是时间越短优先级越高的优先级队列，队列就是时间越长优先级越高的优先级队列。
+}
+
+\subsubsection{串}
+
+\de[串]{
+	\tboba{串}是由零个或多个字符组成的有限序列，又称\tboba{字符串}。串中的字符数目称为串的\tboba{长度}；长度为零的串称为\tboba{空串}，记作 \(\varnothing\)。两个串\tboba{相等}当且仅当它们的长度相等，且对应位置的字符都相同。
+
+	串中任意多个连续字符组成的子序列称为该串的\tboba{子串}，子串\textbf{首字符}在原串中的位置称为子串的\tboba{位置}。
+}
+
+串的抽象数据类型可以定义为：
+\begin{lstlisting}[style=intro, morekeywords={ADT, }, morekeywords={[2]{String, }}, morekeywords={[3]{StrAssign, StrCopy, StrEmpty, StrLength, StrCompare, Concat, SubStr, Index, Replace, StrTraverse, visit, }}]
+	ADT String {
+		数据对象：(*@\( D = \{a_0，a_1，a_2，\cdots，a_n \mid a_i \in \)@*) char(*@，\(1 \leq i \leq n \} \)@*)
+		数据关系：(*@\( R = \{ \a{a_i，a_{i+1}} \mid a_i \text{为第} \, i \,  \text{个字符，} a_{i+1} \text{为第}\, i+1 \, \text{个字符} \} \)@*)
+		基本操作：
+			StrAssign(&S, chars)
+				初始条件：chars 是字符串常量。
+				操作结果：生成一个其值等于 chars 的串 S。
+			StrCopy(&S, T)
+				初始条件：串 T 存在。
+				操作结果：由串 T 复制得到串 S。
+			StrEmpty(S)
+				初始条件：串 S 存在。
+				操作结果：若 S 为空串, 则返回 true, 否则返回 false。
+			StrLength(S)
+				初始条件：串 S 存在。
+				操作结果：返回 S 的长度。
+			StrCompare(S, T)
+				初始条件：串 S 和 T 存在。
+				操作结果：若 S > T, 则返回正数；若 S = T, 则返回 0；若 S < T, 则返回负数。
+			Concat(&S, T1, T2)
+				初始条件：串 T1 和 T2 存在。
+				操作结果：用 S 返回由 T1 和 T2 连接而成的新串。
+			SubStr(&S, T, pos, len)
+				初始条件：串 T 存在, 1 <= pos <= StrLength(T), 0 <= len <= StrLength(T) - pos + 1。
+				操作结果：用 S 返回串 T 的第 pos 个字符起长度为 len 的子串。
+			Index(S, T, pos)
+				初始条件：串 S 和 T 存在, 1 <= pos <= StrLength(S)。
+				操作结果：若 S 中存在和 T 值相同的子串, 则返回 S 中从第 pos 个字符起第一个这样的子串的位置, 否则返回 0。
+			Replace(&S, T, V)
+				初始条件：串 S、T 和 V 存在, T 非空。
+				操作结果：用 V 替换 S 中出现的所有与 T 相等的不重叠的子串。
+			StrTraverse(S, visit())
+				初始条件：串 S 存在, visit() 是对数据元素操作的函数。
+				操作结果：依次对 S 的每个数据元素调用 visit(), 一旦 visit() 失败, 则操作失败。
+	} ADT String
+\end{lstlisting}
+
+对串操作的最小子集包括
+串赋值 \lstinline[morekeywords={[3]{StrAssign}}]|StrAssign()|、
+串复制 \lstinline[morekeywords={[3]{StrCopy}}]|StrCopy()|、
+串求长 \lstinline[morekeywords={[3]{StrLength}}]|StrLength()|、
+串比较 \lstinline[morekeywords={[3]{StrCompare}}]|StrCompare()|、
+串连接 \lstinline[morekeywords={[3]{Concat}}]|Concat()|、
+求子串 \lstinline[morekeywords={[3]{SubStr}}]|SubStr()| 操作。
+
+\paragraph{串的实现}
+
+串的存储和一般的线性表类似，可以用顺序存储结构或链式存储结构实现。
+
+\begin{itemize}
+	\item \textbf{串的顺序存储}：串的顺序存储结构是用一组地址连续的存储单元依次存放串中的字符。根据其长度规定，又可以分为：
+	\begin{itemize}
+		\item \textbf{定长顺序存储}，即串的长度是固定的，不足部分用特殊字符填充；
+		\item \textbf{变长顺序存储}，即串的长度是动态分配的，可以根据需要动态调整，串的结束标志是特殊字符。
+	\end{itemize}
+	\item \textbf{串的链式存储}：串的链式存储结构是用链表存放串中的字符，每个结点存放一定数量的字符，一个结点存储的字符个数称为\textbf{结点大小}。
+\end{itemize}
+
+\paragraph{串的模式匹配}
+
+给定一个文本串 \(T\) 和一个模式串 \(P\)，模式匹配是指在文本串 \(T\) 中查找模式串 \(P\) 的过程。若 \(T\) 中存在一个子串与 \(P\) 完全相同，则称模式串 \(P\) 在文本串 \(T\) 中匹配成功。
+
+\textbf{蛮力穷举}是一种简单的模式匹配算法，其基本思想是：
+\begin{itemize}
+	\item 从文本串 \(T\) 的第一个字符开始，依次与模式串 \(P\) 的第一个字符开始比较；
+	\item 若不匹配，则文本串向后移动一位，模式串从头开始比较；
+	\item 若匹配，则继续比较下一个字符，直到模式串匹配成功或文本串遍历完毕。
+\end{itemize}
+蛮力穷举算法的时间复杂度为 \(O(m \cdot n)\)，其中 \(m\) 为模式串 \(P\) 的长度，\(n\) 为文本串 \(T\) 的长度。C++ 中 \lstinline|std::string| 类的 \lstinline|find| 函数即是蛮力穷举算法的实现。
+
+\di[KMP算法]{
+	在模式串 \(P\) 与文本串 \(T\) 的匹配过程中, 当遇到不匹配的字符时, 根据已经匹配的信息, 尽量减少不必要的比较次数。
+}{
+	（1）\textbf{构造模式串的部分匹配表}：对于模式串 \(P\)，求取一个部分匹配表 \lstinline|next|，其中 \lstinline|next[i]| 表示模式串 \(P[0:i]\) 的最长相同前后缀的长度。\\
+	（2）\textbf{匹配文本串}：在文本串 \(T\) 中匹配模式串 \(P\)，若遇到不匹配的字符，则根据部分匹配表 \lstinline|next| 调整模式串的位置。
+}
+
+算法的关键是构造模式串部分匹配表 \lstinline|next| 的函数 \lstinline[morekeywords={[3]{Next}}]|Next()|，其 C++ 实现如下：
+\begin{lstlisting}[style=algo, morekeywords={[3]{Next}}]
+	void Next(char *P, int next[]) {
+		int m = strlen(P), i = 1, j = 0;
+		next[0] = 0;
+		while (i < m) {
+			if (P[i] == P[j]) next[i++] = ++j;		// 相同字符, next[i] = j + 1
+			else if (j > 0) j = next[j - 1];		// 不同字符, 回溯到前一个字符
+			else next[i++] = 0;						// 不同字符且无法回溯, next[i] = 0
+		}
+	}
+\end{lstlisting}
+这样，将文本串 \(T\) 与模式串 \(P\) 进行匹配的函数 \lstinline[morekeywords={[3]{KMP}}]|KMP()| 的 C++ 实现如下：
+\begin{lstlisting}[style=algo, morekeywords={[3]{KMP}}]
+	int KMP(char *T, char *P) {
+		int n = strlen(T), m = strlen(P), i = 0, j = 0;
+		int *next = new int[m];
+		Next(P, next);
+		while (i < n) {
+			if (T[i] == P[j]) {
+				if (j == m - 1) return i - j;		// 匹配成功
+				else { i++; j++; }
+			} else if (j > 0) j = next[j - 1];
+			else i++;
+		}
+		delete[] next;
+		return -1;									// 匹配失败
+	}
+\end{lstlisting}
+KMP 算法的时间复杂度为 \(O(m + n)\)，其中 \(m\) 为模式串 \(P\) 的长度，\(n\) 为文本串 \(T\) 的长度。
 
 
 

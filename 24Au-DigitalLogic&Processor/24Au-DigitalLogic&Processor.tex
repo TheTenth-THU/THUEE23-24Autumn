@@ -10,6 +10,7 @@
 \usepackage{makecell, booktabs, longtable}
 \usepackage[font=sf, labelfont+=bf]{caption}
 \usepackage[font={small, sf}]{subfig}
+\usepackage{adjustbox}
 \usepackage{multicol}
 \usepackage{arydshln, nicematrix}%矩阵
 \usepackage{extarrows}
@@ -197,6 +198,8 @@ colback=meihong!5!white,colframe=meihong!75!black,fonttitle=\sffamily\wen\bfseri
 {standard jigsaw, colback=meihong!5!white, opacityback=0.7, %grow to right by=3.2cm, 
 colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip=7pt, after skip=7pt}
 %\newcommand{\mybox}[1]{\tikz[baseline=(MeNode.base)]{\node[rounded corners, fill=gray!20](MeNode){#1};}}
+\newtcolorbox[auto counter]{eg}[2][]{colback=black!5!white,colframe=white!75!black, breakable, enhanced jigsaw, fontupper=\small, breakable, enhanced jigsaw, fonttitle=\sffamily\wen\bfseries, title=实例~\thetcbcounter\quad#2, #1}
+
 
 \catcode`\，=\active
 \def ，{\textup{,}\hskip0.5em }
@@ -458,16 +461,16 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 		\centering
 		\subfloat[逻辑电路]{
 			\label{Fig: Combinational Logic Circuit 1}
-			\(\vcenter{\hbox{
-				\includegraphics[scale=0.12]{Circuits/202409250229.png}
-			}}\)
+			\begin{adjustbox}{valign=b}
+				\includegraphics[scale=0.25]{Circuits/FIG-Combinational_Logic_Circuit_1.drawio.png}
+			\end{adjustbox}
 		}
 		\quad
 		\subfloat[真值表]{
 			\belowrulesep=0pt
 			\aboverulesep=0pt
 			\label{Tab: Combinational Logic Circuit 1}
-			\begin{tabular}{ccc|ccc}
+			\begin{tabular}[b]{ccc|ccc}
 				\toprule
 				\(\symbf{A}\) & \(\symbf{B}\) & \(\symbf{C}\) & \(\symbf{F_0}\) & \(\symbf{F_1}\) & \(\symbf{F_2}\) \\
 				\midrule
@@ -504,15 +507,15 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 		\centering
 		\subfloat[逻辑电路]{
 			\label{Fig: Combinational Logic Circuit 2}
-			\(\vcenter{\hbox{
-				\includegraphics[scale=0.12]{Circuits/202409251632.png}
-			}}\)
+			\begin{adjustbox}{valign=b}
+				\includegraphics[scale=0.25]{Circuits/FIG-Combinational_Logic_Circuit_2.drawio.png}
+			\end{adjustbox}
 		}
 		\quad
 		\subfloat[真值表]{
 			\belowrulesep=0pt
 			\aboverulesep=0pt
-			\begin{tabular}{ccc|ccc}
+			\begin{tabular}[b]{ccc|ccc}
 				\toprule
 				\(\symbf{A}\) & \(\symbf{B}\) & \(\symbf{C}\) & \(\symbf{D}\) & \(\symbf{F_0}\) & \(\symbf{F_1}\) \\
 				\midrule
@@ -678,7 +681,7 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 		\centering
 		\subfloat[真值表]{
 			\label{Tab: 4-2 Encoder}
-			\begin{tabular}{cccc|cc}
+			\begin{tabular}[b]{cccc|cc}
 				\toprule
 				\(A_3\) & \(A_2\) & \(A_1\) & \(A_0\) & \(Y_1\) & \(Y_0\) \\
 				\midrule
@@ -692,9 +695,9 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 		\quad
 		\subfloat[逻辑电路]{
 			\label{Fig: 4-2 Encoder}
-			\(\vcenter{\hbox{
-				\includegraphics[scale=0.12]{Circuits/202409262050.png}
-			}}\)
+			\begin{adjustbox}{valign=b}
+				\includegraphics[scale=0.25]{Circuits/FIG-4-2_Encoder.drawio.png}
+			\end{adjustbox}
 		}
 		\caption{\(4-2\) 线编码器设计}
 		\vspace{-2em}
@@ -707,16 +710,367 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 
 用 \(n\) 个控制信号对 \(2^n\) 个输入信号进行选择，得到一个输出信号的电路，称为 \,\(\mboba{2^n : 1}\)\,\tboba{多路选择器}。
 
+\begin{example}[3]
+	设计一个 \(4 : 1\) 多路选择器。
+	\begin{solution}
+		4 : 1 多路选择器的真值表如表~\ref{Tab: 4-1 MUX}~所示，容易得到其逻辑表达式为
+		\[
+			Q = A_1'A_0'D_0 + A_1'A_0D_1 + A_1A_0'D_2 + A_1A_0D_3
+		\]
+		如图~\ref{Fig: 4-1 MUX}，该多路选择器的每一个输入信号都与一组控制信号相与，各组中当且仅当输入控制信号全都对应时，输出信号为对应的输入信号。
+	\end{solution}
+	\begin{figure}[!ht]
+		\vspace{-2em}
+		\belowrulesep=0pt
+		\aboverulesep=0pt
+		\centering
+		\subfloat[真值表]{
+			\label{Tab: 4-1 MUX}
+			\begin{tabular}[b]{cc|c}
+				\toprule
+				\(A_1\) & \(A_0\) & \(Q\) \\
+				\midrule
+				0 & 0 & \(D_0\) \\
+				0 & 1 & \(D_1\) \\
+				1 & 0 & \(D_2\) \\
+				1 & 1 & \(D_3\) \\
+				\bottomrule
+			\end{tabular}
+		}
+		\quad
+		\subfloat[逻辑电路]{
+			\label{Fig: 4-1 MUX}
+			\begin{adjustbox}{valign=b}
+				\includegraphics[scale=0.25]{Circuits/FIG-4-1_MUX.drawio.png}
+			\end{adjustbox}
+		}
+		\quad
+		\subfloat[记号]{
+			\begin{adjustbox}{valign=b}
+				\includegraphics[scale=0.25]{Circuits/FIG-4-1_MUX_Symbol.drawio.png}
+			\end{adjustbox}
+		}
+		\caption{\(4 : 1\) 多路选择器设计}
+		\vspace{-1em}
+	\end{figure}
+\end{example}
+
+\begin{eg}{移位器}
+	采用多路选择器可以实现移位运算。如图~\ref{Fig: 4-bit Shifter}~所示，一个 4-bit 右移位器可以通过 8 个 2 : 1 多路选择器实现。其中，\(S_0\) 控制右移 1 位，\(S_1\) 控制右移 2 位，当 \({S_1S_0}_{(2)} = 11_{(2)}\) 时即右移 3 位。换句话说，控制信号形成的二进制数表示右移的位数。右移后，高位补入 \(\mrm{MSB}\) 的值，通常对正数补 0，对负数补 1。
+\end{eg}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.25]{Circuits/FIG-4-bit_Shifter.drawio.png}
+	\caption{4-bit 右移位器}
+	\label{Fig: 4-bit Shifter}
+\end{figure}
+
 \paragraph{加法器}
 
 用于实现二进制数的加法运算。
 
 \begin{example}[3]
-	设计一个 4-bit 全加器电路。
+	设计一个 1-bit 全加器电路。
 	\begin{solution}
-		1-bit 全加器有 3 个输入信号（ \(A\)、\(B\) 和进位信号 \(C_\mathrm{in}\)）、2 个输出信号（本位的和 \(S\) 、进位输出信号\(C_\mathrm{out}\)。则
+		1-bit 全加器有 3 个输入信号（ \(A\)、\(B\) 和进位信号 \(C_\mrm{in}\)）、2 个输出信号（本位的和 \(S\) 、进位输出信号\(C_\mrm{out}\)，其真值表如表~\ref{Tab: 1-bit Full Adder}~所示。根据真值表，可以得到 1-bit 全加器的逻辑表达式为
+		\begin{align*}
+			& S = A \oplus B \oplus C_\mrm{in} \\
+			& C_\mrm{out} = AB + BC_\mrm{in} + AC_\mrm{in}
+		\end{align*}
+		该 1-bit 全加器的设计如图~\ref{Fig: 1-bit Full Adder}~所示。
 	\end{solution}
+	\begin{figure}[!ht]
+		\belowrulesep=0pt
+		\aboverulesep=0pt
+		\centering
+		\subfloat[真值表]{
+			\label{Tab: 1-bit Full Adder}
+			\begin{tabular}[b]{ccc|cc}
+				\toprule
+				\(A\) & \(B\) & \(C_\mrm{in}\) & \(S\) & \(C_\mrm{out}\) \\
+				\midrule
+				0 & 0 & 0 & 0 & 0 \\
+				0 & 0 & 1 & 1 & 0 \\
+				0 & 1 & 0 & 1 & 0 \\
+				0 & 1 & 1 & 0 & 1 \\
+				1 & 0 & 0 & 1 & 0 \\
+				1 & 0 & 1 & 0 & 1 \\
+				1 & 1 & 0 & 0 & 1 \\
+				1 & 1 & 1 & 1 & 1 \\
+				\bottomrule
+			\end{tabular}
+		}
+		\quad
+		\subfloat[逻辑电路]{
+			\label{Fig: 1-bit Full Adder}
+			\begin{adjustbox}{valign=b}
+				\includegraphics[scale=0.25]{Circuits/FIG-1-bit_Full_Adder.drawio.png}
+			\end{adjustbox}
+		}
+	\end{figure}
 \end{example}
+
+将 1-bit 全加器串联，可得到一种 4-bit 全加器的设计，如图~\ref{Fig: 4-bit Ripple Carry Adder}~所示，这称为\tboba{行波进位加法器（ripple carry adder）}。
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.25]{Circuits/FIG-4-bit_Ripple_Carry_Adder.drawio.png}
+	\caption{4-bit 行波进位加法器}
+	\label{Fig: 4-bit Ripple Carry Adder}
+\end{figure}
+
+\subsection{时序逻辑}
+
+\subsubsection{时序逻辑电路的基本概念}
+
+\paragraph{触发与节拍信号}
+
+用\textbf{时钟信号}控制逻辑电路的运行，使其在时钟信号的\textbf{节拍}下按照一定的顺序依次\textbf{触发}响应进行逻辑运算，这种电路称为\tboba{时序逻辑电路}。
+
+\begin{definition}
+	\tboba{时钟信号发生器}是一种能够产生连续的方波信号的电路。
+\end{definition}
+
+用\textbf{奇数个}反相器可以串联成环形振荡器，若串联的反相器个数为 \(n\)，每个反相器的延迟时间为 \(t_\mrm{pd}\)，则环形振荡器的周期为 \(T = 2n \cdot t_\mrm{pd}\)。因此，环形振荡器是一种简单的时钟信号发生器。
+
+基于时钟信号，在边缘（如上升沿）采样输入信号、更新状态，可以实现时序逻辑。
+
+\begin{definition}
+	使信号事件与时钟节拍一致的操作称为\tboba{同步}，所有同步于同一个时钟信号的信号集合称为\tboba{时钟域}。
+\end{definition}
+
+\paragraph{状态与有限状态机}
+
+一个系统的\tboba{状态（state）}应包含所有需要的信息而可以有冗余信息。依据输入信号和当前状态，系统的输出信号和下一个状态是确定的。
+
+\de[有限状态机]{
+	\tboba{有限状态机（finite state machine，FSM）}是一种能够根据输入信号和当前状态，确定输出信号和下一个状态的系统。
+
+	描述一个 FSM 需要确定 6 大要素：
+	\begin{itemize}
+		\item 状态集合 State，FSM 的所有可能状态；
+		\item 初始状态 \(S_0\)，FSM 启动及复位时的状态；
+		\item 输入信号 Input；
+		\item 输出信号 Output；
+		\item 输出函数 \(f\)，描述 FSM 的输出信号与输入信号和当前状态的关系；
+		\item 状态转移函数 \(g\)，描述 FSM 的下一个状态与输入信号和当前状态的关系。
+	\end{itemize}
+}
+
+FSM 有两种类型：\tboba{Moore FSM} 和 \tboba{Mealy FSM}。Moore FSM 的输出只与当前状态有关，而 Mealy FSM 的输出与当前状态和输入信号有关。两种 FSM 的状态转移函数 \(g\) 都可以用\tboba{状态转换表（state transition table）}表示，如表~\ref{Tab: General State Transition Table}~所示；或者用\tboba{状态转换图（state transition diagram）}表示，如图~\ref{Fig: General State Transition Diagram}~所示。
+
+\begin{table}[!ht]
+	\belowrulesep=0pt
+	\aboverulesep=0pt
+	\caption{一般的状态转换表}
+	\label{Tab: General State Transition Table}
+	\subfloat[Moore FSM]{
+		\begin{tabular}{c|cccc|c}
+			\toprule
+			\multirow{2}{*}{\textbf{State}} & \multicolumn{4}{c|}{\textbf{Input}} & \multirow{2}{*}{\textbf{Output}} \\
+			& \(I_1\) & \(I_2\) & \(\cdots\) & \(I_n\) & \\ 
+			\midrule
+			\(S_1\) & \(S_a\) & \(S_b\) & \(\cdots\) & \(S_c\) & \(O_1\) \\
+			\(S_2\) & \(S_d\) & \(S_e\) & \(\cdots\) & \(S_f\) & \(O_2\) \\
+			\(\vdots\) & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) & \(\vdots\) \\
+			\(S_m\) & \(S_x\) & \(S_y\) & \(\cdots\) & \(S_z\) & \(O_m\) \\
+			\bottomrule
+		\end{tabular}
+	}
+	\quad
+	\subfloat[Mealy FSM]{
+		\begin{tabular}{c|cccc}
+			\toprule
+			\multirow{2}{*}{\textbf{State}} & \multicolumn{4}{c}{\textbf{Input}} \\
+			& \(I_1\) & \(I_2\) & \(\cdots\) & \(I_n\)\\ 
+			\midrule
+			\(S_1\) & \(S_a，O_a\) & \(S_b，O_b\) & \(\cdots\) & \(S_c，O_c\) \\
+			\(S_2\) & \(S_d，O_d\) & \(S_e，O_e\) & \(\cdots\) & \(S_f，O_f\) \\
+			\(\vdots\) & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) \\
+			\(S_m\) & \(S_x，O_x\) & \(S_y，O_y\) & \(\cdots\) & \(S_z，O_z\) \\
+			\bottomrule
+		\end{tabular}
+	}
+\end{table}
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[Moore FSM]{
+		\label{Fig: Moore State Transition Diagram}
+		\includegraphics[scale=0.25]{Circuits/FIG-Moore_State_Transition_Diagram.drawio.png}
+	}
+	\quad
+	\subfloat[Mealy FSM]{
+		\label{Fig: Mealy State Transition Diagram}
+		\includegraphics[scale=0.25]{Circuits/FIG-Mealy_State_Transition_Diagram.drawio.png}
+	}
+	\caption{一般的状态转换图}
+	\label{Fig: General State Transition Diagram}
+\end{figure}
+
+
+\subsubsection{锁存器}
+
+\de[锁存器]{
+	\tboba{锁存器（latch）}是一个存储1-bit状态的电路单元，其输出信号可以保持，直到特定的输入信号触发重置或写入。
+}
+
+\paragraph{锁存器的电路实现}
+
+依据具体实现方式，锁存器可以分为 SR 锁存器、D 锁存器等类型。
+
+\bu[SR锁存器]{
+	\(\vcenter{\hbox{
+		\includegraphics[scale=0.25]{Circuits/FIG-SR_Latch.drawio.png}
+	}}\)
+	
+}{
+	下一个输出信号 \(Q^+\) 与输入信号 \(R\)、\(S\) 和当前输出信号 \(Q\) 的关系为 \(Q^+ = S + R'Q\)，其中 \(SR = 0\)。
+}
+
+用门电路实现 SR 锁存器，如图~\ref{Fig: SR Latch Circuit}~所示。
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[逻辑电路]{
+		\label{Fig: SR Latch Circuit}
+		\begin{adjustbox}{valign=b}
+			\includegraphics[scale=0.25]{Circuits/FIG-SR_Latch_Circuit.drawio.png}
+		\end{adjustbox}
+	}
+	\quad
+	\subfloat[真值表]{
+		\aboverulesep=0pt
+		\belowrulesep=0pt
+		\label{Tab: SR Latch}
+		\begin{tabular}[b]{cc|p{2em}<{\centering}p{2em}<{\centering}}
+			\toprule
+			\(S\) & \(R\) & \(Q^+\) & \(Q'^+\) \\
+			\midrule
+			0 & 0 & \(\symbf{Q}\) & \(\symbf{Q'}\) \\
+			0 & 1 & 0 & 1 \\
+			1 & 0 & 1 & 0 \\
+			1 & 1 & \multicolumn{2}{c}{undefined} \\
+			\bottomrule
+		\end{tabular}
+	}
+	\caption{SR锁存器}
+\end{figure}
+
+\zhu[要求 \(\symbf{SR = 0}\) 的原因]{
+	当 \(S = R = 1\) 时，SR 锁存器的输出保持 \(Q = Q' = 0\)，这不符合输出的逻辑要求；并且，此后若 \(S\) 和 \(R\) 同时变为 0，输出信号将不稳定，可能导致电路失效。因此，SR 锁存器的真值表如表~\ref{Tab: SR Latch}~所示。
+}
+
+可以给 SR 锁存器加上门控使能信号，如图~\ref{Fig: Gated SR Latch}~所示，仅当使能信号 \(C = 1\) 时，SR 锁存器才能改变状态。在门控信号上加上时钟信号 CLK，就可以实现对输入的定时采样。其 \(Q^+\) 与 \(Q\) 的关系可写为
+\[
+	Q^+ = C \cdot (S + R'Q) + C'Q
+\]
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[逻辑电路]{
+		\label{Fig: Gated SR Latch Circuit}
+		\includegraphics[scale=0.25]{Circuits/FIG-Gated_SR_Latch_Circuit.drawio.png}
+	}
+	\quad
+	\subfloat[记号]{
+		\includegraphics[scale=0.25]{Circuits/FIG-Gated_SR_Latch.drawio.png}
+	}
+	\caption{门控SR锁存器}
+	\label{Fig: Gated SR Latch}
+\end{figure}
+
+\bu[D锁存器]{
+	\(\vcenter{\hbox{
+		\includegraphics[scale=0.25]{Circuits/FIG-D_Latch.drawio.png}
+	}}\)
+}{
+	\(C = 1\) 时，下一个输出信号 \(Q^+\) 与输入信号 \(D\) 的关系为 \(Q^+ = D\)，即输出跟踪输入；\(C = 0\) 时，输出信号保持。
+}
+
+用门电路实现 D 锁存器，如图~\ref{Fig: D Latch LG}~所示。此外，也可以用传输门和非门实现 D 锁存器，如图~\ref{Fig: D Latch TG}~所示。
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[逻辑门实现]{
+		\label{Fig: D Latch LG}
+		\includegraphics[scale=0.25]{Circuits/FIG-D_Latch_Circuit_By_LG.drawio.png}
+	}
+	\quad
+	\subfloat[传输门实现]{
+		\label{Fig: D Latch TG}
+		\includegraphics[scale=0.25]{Circuits/FIG-D_Latch_Circuit_By_TG.drawio.png}
+	}
+	\caption{D锁存器}
+\end{figure}
+
+\zhu[门控SR锁存器和D锁存器的时序差异]{
+	门控SR锁存器和D锁存器都是\tboqi{在信号\(\mboqi{C}\)的下降沿}时锁定，但后者的锁定输出只与\tboqi{下降沿的输入}有关，而前者的锁定输出还受到\tboqi{\,\(\mboqi{S}\)与\(\mboqi{R}\)都为低电平}前的输入的影响。
+}
+
+\paragraph{锁存器的时序参数}
+
+锁存器的性能受到以下几个时序参数的影响：
+\begin{itemize}
+	\item \tboba{最小脉冲宽度}：能够稳定锁存的最短输入脉冲宽度，记作 \(t_{\mrm{w(min)}}\)；
+	\item \tboba{延迟时间}：输入信号发生变化到输出信号发生变化的时间，记作 \(t_{\mrm{pd}}\)，分为 \tboba{上升延迟时间} \(t_{\mrm{pLH}}\) 和 \tboba{下降延迟时间} \(t_{\mrm{pHL}}\)；
+	\item \tboba{建立时间}、\tboba{保持时间}：锁存操作开始、结束之前、之后输入信号需要保持的时间，分别记作 \(t_{\mrm{su}}\) 和 \(t_{\mrm{h}}\)。如果信号不满足建立时间和保持时间约束，输出结果会呈现不确定的\tboba{亚稳态}。
+\end{itemize}
+各个参数的具体定义如图~\ref{Fig: Timing Parameters of Latch}~所示。
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.25]{Circuits/FIG-Timing_Parameters_of_Latch.drawio.png}
+	\caption{锁存器的时序参数}
+	\label{Fig: Timing Parameters of Latch}
+\end{figure}
+
+\subsubsection{触发器}
+
+\de[触发器]{
+	\tboba{触发器（flip-flop）}是一种\textbf{只在触发沿}把输入信号写入输出信号的电路。
+}
+
+\bu[D 触发器（DFF）]{
+	\(\vcenter{\hbox{
+		\includegraphics[scale=0.25]{Circuits/FIG-D_Flip-Flop.drawio.png}
+	}}\)
+}{
+	在时钟信号 \(C\) 的上升沿，下一个输出信号 \(Q^+\) 与输入信号 \(D\) 的关系为 \(Q^+ = D\)；其他时间，输出信号保持。
+}
+
+DFF 的一种常见的实现方式是两个 D 锁存器级联，如图~\ref{Fig: D Flip-Flop Circuit}~所示，其中左侧的 D 锁存器用于存储输入信号，称为\tboba{主锁存器}；右侧的 D 锁存器用于控制输出信号，称为\tboba{从锁存器}。
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[逻辑电路]{
+		\label{Fig: D Flip-Flop Circuit}
+		\includegraphics[scale=0.25]{Circuits/FIG-D_Flip-Flop_Circuit.drawio.png}
+	}\\
+	\subfloat[时序图]{
+		\label{Fig: D Flip-Flop Timing Diagram}
+		\includegraphics[scale=0.25]{Circuits/FIG-D_Flip-Flop_Timing_Diagram.drawio.png}
+	}
+	\caption{D触发器}
+\end{figure}
+
+在一个时钟周期中，时钟信号 \(C\) 为低电平时，主锁存器的输出信号 \(Q_M\) 随输入信号 \(D\) 变化，从锁存器的输出信号 \(Q\) 保持不变；时钟信号 \(C\) 为高电平时，主锁存器的输出信号 \(Q_M\) 保持不变，从锁存器的输出信号 \(Q\) 将 \(Q_M\) 的值输出。因此，在 \(C\) 的上升沿，DFF 表现为将输入信号 \(D\) 写入输出信号 \(Q\) 锁存一个周期。DFF 的时序图如图~\ref{Fig: D Flip-Flop Timing Diagram}~所示。
+
+\zhu[DFF 的时序参数]{
+	DFF 的时序参数与锁存器类似，包括：
+	\begin{itemize}[leftmargin=1em]
+		\item \tboqi{建立时间} \(\mboqi{t_{\mrm{su}}}\)：输入信号在时钟信号上升沿前需要传输到 \(T_2\) 两端以避免竞争，这一过程所需要保持的时间；
+		\item \tboqi{保持时间} \(\mboqi{t_{\mrm{h}}}\)：输入信号在时钟信号上升沿后需要维持到 \(T_1\) 完全关闭以避免破坏写入的值，这一过程所需要保持的时间；\\
+		\(D\)和\(C\) 传播到 \(T_1\) 的时间一般相等，因此通常原生满足保持时间约束，即 \(t_{\mrm{h}} = 0\)。
+		\item \tboqi{输出响应时间} \(\mboqi{t_{\mrm{c-q}}}\)：输入信号在时钟信号上升沿后到输出信号发生变化的时间。
+	\end{itemize}
+
+	当两个 DFF 级联时，第一个 DFF 的输入信号 \(D_1\) 在开始采样 \(t_{\mrm{c-q}}\) 时间后才会传输到其输出 \(Q_1\)，第二个 DFF 的输入信号 \(D_2\) 在开始采样前 \(t_{\mrm{su}}\) 时间内需要保持不变，因此留给中间的组合逻辑电路的时间为 \(t_{\mrm{cyc}} - t_{\mrm{c-q}} - t_{\mrm{su}}\)，逻辑计算必须在这段时间内完成，这称为\tboqi{建立时间约束}；
+
+	第一个 DFF 的输出信号 \(Q_1\) 在 \(t_{\mrm{c-q}}\) 时间后才会更新，经过组合逻辑电路后才传输到 \(D_2\)，此前 \(D_2\) 因前一次采样而需要保持不变 \(t_{\mrm{h}}\) 时间，因此组合逻辑电路的延迟时间不能小于 \(t_{\mrm{h}} - t_{\mrm{c-q}}\)，这称为\tboqi{保持时间约束}。
+}
+
+
 
 
 %----------------------------------------------------------

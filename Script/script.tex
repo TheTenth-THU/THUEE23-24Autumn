@@ -1,12 +1,19 @@
 % This templete is obtained from http://kevindonnelly.org.uk/resources/playscript.tex
 
-\documentclass[11pt,a4paper,oneside]{memoir}
+\documentclass[10pt,a5paper,oneside]{memoir}
     % http://www.ctan.org/tex-archive/macros/latex/contrib/memoir
 \usepackage[english]{babel}
 \usepackage{enumitem}
     % http://www.ctan.org/tex-archive/macros/latex/contrib/enumitem
 \usepackage[fontset=none]{ctex}
 \usepackage{amsmath}
+\usepackage[
+    top=10mm, bottom=10mm, left=10mm, right=10mm, 
+    headheight=5mm,
+    includehead, includefoot
+]{geometry}
+    % http://www.ctan.org/tex-archive/macros/latex/contrib/geometry
+\usepackage{multirow}
 
 \setmonofont{Iosevka}
 \setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
@@ -19,12 +26,13 @@
 
 \chapterstyle{demo2}
     % See p92 of the Memoir manual.
+\setlength{\beforechapskip}{\baselineskip}
 
 \pagestyle{myheadings}
 
 \setlength{\parindent}{0pt}
 
-\renewcommand{\printtoctitle}[1]{\centering\Large\bfseries Acts \& Scenes}  
+\renewcommand{\printtoctitle}[1]{\centering\Large\bfseries 目录}  
     % Set the title of the contents page.
 % \renewcommand{\printtoctitle}[1]  
     % Remove the title from the contents page entirely.
@@ -34,9 +42,18 @@
 
 % Various title pages may be used with the memoir package.  The one below is from ``Some Examples of Title Pages'' (Peter Wilson) at http://www.ctan.org/tex-archive/info/latex-samples/TitlePages.
 
+\setitemize[1]{
+    itemsep=0pt, topsep=0em, partopsep=0pt, parsep=0pt, 
+}
+
+
+
+
 % Set up the title page.
 \newcommand*{\titleGM}{
-    \begingroup  % Gentle Madness title page style
+    \begingroup
+        % Gentle Madness title page style
+    \thispagestyle{plain}
     \drop = 0.1\textheight
     % \vspace*{\baselineskip}
     % \vfill
@@ -48,7 +65,7 @@
             \vbox{%
                 % Main title of the play
                 \vspace{\drop}{
-                    \noindent\HUGE\bfseries 频率之外
+                    \noindent\HUGE\bfseries 频率之外{\Large（暂名）}
                 }\\
                 % \vspace{\drop}{
                 %     \noindent\HUGE\bfseries Title of the play \\[0.5\baselineskip] 
@@ -56,11 +73,11 @@
                 % }\\
                 % 
                 % Subtitle of the play
-                [2\baselineskip]{\huge\scshape\itshape Beyond the Frequency}\\
+                [1\baselineskip]{\huge\scshape\slshape Beyond the Frequency}\\
                 % [2\baselineskip]{\huge\itshape Subtitle of the play \\[0.5\baselineskip] over two lines}\\
                 % 
                 % Author of the play
-                [4\baselineskip]{\Large （希望是）科幻喜剧}
+                [2\baselineskip]{\Large 科幻（且希望是但还不是）喜剧}
                 \par\vspace{0.5\textheight}
                 % [4\baselineskip]{
                 %     \Large First Author \\[0.5\baselineskip] 
@@ -70,7 +87,7 @@
                 % 
                 % Publisher and year of publication
                 {\noindent \textbf{无38} \\[0.5\baselineskip] 
-                \textbf{2024}}\\[\baselineskip]
+                \textbf{\today}}\\[\baselineskip]
             }% end of vbox
         }% end of parbox
     }% end of hbox
@@ -133,17 +150,20 @@
 
 \begin{document}
 
+
 \titleGM
     % Print out the title page.
 
-\pagenumbering{roman}
-    % Start numbering pages with Roman numerals (for the front matter).
 \setlength{\parskip}{0.5\baselineskip}
     % Increase the space between paragraphs.
 
+\markright{\textsc{Beyond the Frequency}}
+    % Generate a running header with the title of the play.
 \tableofcontents*
     % Print out the contents page, listing the acts of the play.
     % You will need to run pdflatex twice before the page numbers show up.
+\pagenumbering{roman}
+    % Start numbering pages with Roman numerals (for the front matter).
 
 
 \clearpage
@@ -153,6 +173,7 @@
 %%%%%%%%%%%%%%%
     % Print out the characters page, listing the dramatis personae
     % The starred form of \chapter prevents a chapter number (eg ``One'', ``Two'') being printed before each chapter title (eg ``Characters'', ``Act 1'').
+\addcontentsline{toc}{chapter}{角色}
 
 \textbf{A组}，主人公姜明明（姓名待定），从Q中学毕业后进入T大学电子系学习，曾因T大学支教队与嵌入式开发结缘，但进入大学后逐渐感到不知所措，变得迷茫与颓废。
 \begin{itemize}
@@ -162,52 +183,57 @@
 \end{itemize}
 
 \textbf{B组}，AC 的同学和队友，与 AC 同队参加硬件设计与支教活动。
-\begin{itemize}
-    \item \textbf{B0}，AC 硬设比赛队友。
-    \item \textbf{B1}，AC 硬设比赛队友。
-\end{itemize}
 
 \textbf{C组}，支教队同学，为 AP 带去嵌入式开发的启蒙。
-\begin{itemize}
-    \item \textbf{C0}，支教队同学。
-    \item \textbf{C1}，支教队同学。
-    \item \textbf{C2}，支教队同学。
-    \item \textbf{C3}，支教队同学。
-\end{itemize}
 
 \textbf{D组}，AP 的同学，与 AP 同组参加 C 组角色的支教营。
-\begin{itemize}
-    \item \textbf{D0}，AP 同学。
-    \item \textbf{D1}，AP 同学。
-    \item \textbf{D2}，AP 同学。
-    \item \textbf{D3}，AP 同学。
-\end{itemize}
 
 \textbf{E}，AC 支教实践支队授课学生。
 
+\begin{table}[!hb]
+    \centering
+    \small
+    \caption{角色、演员表}
+    \begin{tabular}{c|ccc|cccccccc|c}
+        \toprule
+        \multicolumn{1}{c|}{\textbf{主角}} & \multicolumn{3}{c|}{\textbf{配角甲组}} & \multicolumn{8}{c|}{\textbf{配角乙组}} & \multirow{2}*{\textbf{群演}}\\
+        \textbf{A} & \textbf{B0} & \textbf{B1} & \textbf{C3} & \textbf{C0} & \textbf{C1} & \textbf{C2} & \textbf{D0} & \textbf{D1} & \textbf{D2} & \textbf{D3} & \textbf{E} & ~\\
+        \midrule
+        &  &  &  &  &  &  &  &  &  &  &  & —\\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%
-\chapter*{写在前面}
+\chapter*{第一稿说明}
 %%%%%%%%%%%%%%%%%%
     % Print out a page with any additional authorial comments, notes on staging, or whatever.
+\addcontentsline{toc}{chapter}{前言}
+\addcontentsline{toc}{section}{第一稿说明}
 
-The preface to a play seems generally to be considered as a kind of closet-prologue in which the author solicits that indulgence from the reader which he had before experienced from the audience.
+首先必须抱歉地说明，由于时间仓促，这一稿只能大致勾勒出剧情的轮廓，剧本的各种细节还有待进一步完善。
 
-I need scarcely add that the circumstance alluded to was the withdrawing of the piece to remove those imprefections which were too obvious to escape reprehension.
+在这个剧本中，我试图通过一个经典的科幻情节，用两个回环讲述一个关于成长、关于教育的故事。主人公进入大学后，被成绩、表格等各种琐事压垮，逐渐迷失了自己的热爱，也忘记了当初为何会来到这所大学。未来的他借用过去的他，帮现在的他找回当初的热情，这是其一；过去的支教队帮助过去的他走出第一步，现在的他乃至未来的他也要去支教队帮助更多的学生，这是其二。这两个回环交织在一起，构成了这个故事的主线。
 
-With regard to some particular passages which seemed generally disliked, I confess that if I felt any emotion of surprise at the disapprobation, it was not that they were disapproved of, but that I had not before perceived that they deserved it.
+剧本所基于的背景是硬设大赛和与之相关的单片机支教实践，这是我在大学时期参与过的两个活动，也是我认为对于电子系大学生而言非常有意义的两个活动。但是强调这些，或许会让剧本显得有些「官方」，而我并不希望把剧本拍成「宣传片」。为此，在人物日常的对白和互动中，还需要更多的生活化、幽默化的细节。在后续的修改中，这些部分会交由演员自己创作修改，以求呈现得更加自然、生动、接地气。
+
+
+% The preface to a play seems generally to be considered as a kind of closet-prologue in which the author solicits that indulgence from the reader which he had before experienced from the audience.
+
+% I need scarcely add that the circumstance alluded to was the withdrawing of the piece to remove those imprefections which were too obvious to escape reprehension.
+
+% With regard to some particular passages which seemed generally disliked, I confess that if I felt any emotion of surprise at the disapprobation, it was not that they were disapproved of, but that I had not before perceived that they deserved it.
 
 \clearpage
 \pagenumbering{arabic}
     % Start numbering pages with Arabic numerals (for the text of the play).
-\markright{\textsc{Beyond the Frequency}}
-    % Generate a running header with the title of the play.
 
 %%%%%%%%%%%%%%%%%%
 \chapter*{概要}
 %%%%%%%%%%%%%%%%%%
     % Print out a page with a summary of the plot.
+\addcontentsline{toc}{chapter}{概要}
 
 儿时（时间点\(P\)），A 在 T 大学支教队同学的带领下尝试进行硬件设计时，将一首诗编码发送到太空中。几年后（时间点\(C\)），一段相似的回波又被考入该大学电子系、正调试着类似硬设作品的 AC 捕获。与此前不同的是，现在的他没有了当年（\(P\)）的探索热情，已经被数据、表格、成绩压垮。也因此，这成为了他生活轨迹的一个转折点。多年之后（时间点\(F\)）的他完成了时空的沟通，在信息的茫茫串流中找到了当年（\(P\)）编码的那一首诗。他回想起当初（\(C\)）的迷茫与颓丧，把这首诗送回给那时（\(C\)）的自己。
 
@@ -219,7 +245,9 @@ With regard to some particular passages which seemed generally disliked, I confe
 
 \textbf{第 4 幕}：再会。时间点\(F\)，A 完成了时空的沟通，找到了当年编码的那首诗，回想起当初的迷茫与颓丧，把这首诗送回给当时的自己。
 
+%%%%%%%%%%%
 \act[重逢]{
+%%%%%%%%%%%
     \scene{
         \stage{
             \textup{
@@ -269,7 +297,9 @@ With regard to some particular passages which seemed generally disliked, I confe
     }
 }
 
+%%%%%%%%%%%
 \act[缘起]{
+%%%%%%%%%%%
     \scene{
         \stage{
             \textup{
@@ -362,7 +392,9 @@ With regard to some particular passages which seemed generally disliked, I confe
     }
 }
 
+%%%%%%%%%%%
 \act[复燃]{
+%%%%%%%%%%%
     \scene{
         \stage{
             \textup{
@@ -407,7 +439,10 @@ With regard to some particular passages which seemed generally disliked, I confe
         }
     }
 }
+
+%%%%%%%%%%%
 \act[再会]{
+%%%%%%%%%%%
     \scene{
         \stage{
             \textup{
@@ -448,6 +483,11 @@ With regard to some particular passages which seemed generally disliked, I confe
     }
 }
 
+\chapter*{梗}
+
+\begin{enumerate}
+    \item 如果你有两块面包，你应该把两块面包都吃掉，因为一块面包价值五十万马克。
+\end{enumerate}
 
 %=========================================================
 \end{document}

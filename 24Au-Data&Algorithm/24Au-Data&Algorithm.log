@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  28 SEP 2024 10:52
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  8 OCT 2024 16:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1057,7 +1057,8 @@ Package fontspec Info: Font family 'FZXSSK.TTF(0)' created for font
 \c@theorem=\count402
 \c@definition=\count403
 \c@tcb@cnt@compl=\count404
-\c@tcb@cnt@note=\count405
+\c@algo=\count405
+\c@tcb@cnt@note=\count406
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1067,27 +1068,27 @@ File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 ) (./24Au-Data&Algorithm.aux)
 \openout1 = `24Au-Data&Algorithm.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 172.
-LaTeX Font Info:    ... okay on input line 172.
-Package hyperref Info: Link coloring ON on input line 172.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+Package hyperref Info: Link coloring ON on input line 176.
  (./24Au-Data&Algorithm.out) (./24Au-Data&Algorithm.out)
 \@outlinefile=\write4
 \openout4 = `24Au-Data&Algorithm.out'.
@@ -1127,23 +1128,23 @@ Package hyperref Info: Link coloring ON on input line 172.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@tabularnotesi=\count406
-\enitdp@tabularnotes=\count407
-\c@tabularnotes*i=\count408
-\enitdp@tabularnotes*=\count409
-\c@lstlisting=\count410
+\c@tabularnotesi=\count407
+\enitdp@tabularnotes=\count408
+\c@tabularnotes*i=\count409
+\enitdp@tabularnotes*=\count410
+\c@lstlisting=\count411
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 172.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 172.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 172.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 172.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 172.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 176.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1175,13 +1176,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 172.
+(Font)              `operators' in the math version `normal' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 172.
+(Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 176.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 172.
+(Font)              `operators' in the math version `bold' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 172.
+(Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 176.
 
 Package fontspec Info: latinmodern-math scale = 1.0001.
 
@@ -1245,13 +1246,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 172.
+(Font)              `symbols' in the math version `normal' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 172.
+(Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 176.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 172.
+(Font)              `symbols' in the math version `bold' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 172.
+(Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 176.
 
 Package fontspec Info: latinmodern-math scale = 0.9999.
 
@@ -1297,13 +1298,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 172.
+(Font)              `largesymbols' in the math version `normal' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 172.
+(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 176.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 172.
+(Font)              `largesymbols' in the math version `bold' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 172.
+(Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 176.
 
 Package fontspec Info: Font family 'FZXKTK.TTF(0)' created for font
 (fontspec)             'FZXKTK.TTF' with options
@@ -1327,50 +1328,50 @@ Package fontspec Info: Font family 'FZXKTK.TTF(0)' created for font
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 175.
+(Font)              scaled to size 12.00128pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 175.
+(Font)              scaled to size 8.00085pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 175.
+(Font)              scaled to size 6.00064pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 175.
+(Font)              scaled to size 11.99872pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 175.
+(Font)              scaled to size 7.99915pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 175.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 175.
+(Font)              scaled to size 5.99936pt on input line 179.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 179.
 (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 175.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 179.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 175.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 179.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 175.
+LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 179.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.54048pt on input line 175.
+(Font)              scaled to size 10.54048pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 175.
+(Font)              scaled to size 7.00075pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 175.
+(Font)              scaled to size 5.00053pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.53824pt on input line 175.
+(Font)              scaled to size 10.53824pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 175.
+(Font)              scaled to size 6.99925pt on input line 179.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 175.
+(Font)              scaled to size 4.99947pt on input line 179.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 175.
+(Font)              size <10.95> substituted on input line 179.
 
 (./24Au-Data&Algorithm.toc
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
@@ -1387,7 +1388,7 @@ File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿
 
 ]
 LaTeX Font Info:    Font shape `TU/FZXSSK.TTF(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/FZXSSK.TTF(0)/m/it' tried instead on input line 247.
+(Font)              Font shape `TU/FZXSSK.TTF(0)/m/it' tried instead on input line 251.
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
  [2]
@@ -1452,21 +1453,84 @@ File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿
  [6]
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [7] (./24Au-Data&Algorithm.aux)
+ [7]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [8]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [9]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [10]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [11]
+
+Package fontspec Info: Font family '方正宋刻本秀楷_GBK.TTF(0)' created for font
+(fontspec)             '方正宋刻本秀楷_GBK.TTF' with options
+(fontspec)             [Script={CJK},BoldFont={FZYanZQKSJF.TTF},ItalicFont={方正宋刻本秀楷_GBK.TTF}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[方正宋刻本秀楷_GBK.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[FZYanZQKSJF.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[方正宋刻本秀楷_GBK.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [12]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [13]
+
+Package fontspec Info: Font family '汉仪润圆-45W.ttf(0)' created for font
+(fontspec)             '汉仪润圆-45W.ttf' with options
+(fontspec)             [Script={CJK},BoldFont={汉仪润圆-75W.ttf},ItalicFont={汉仪润圆-45W.ttf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[汉仪润圆-45W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[汉仪润圆-75W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[汉仪润圆-45W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [14]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [15]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [16] (./24Au-Data&Algorithm.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `24Au-Data&Algorithm.out' has not changed.
-(rerunfilecheck)             Checksum: 27C8A293EC4830009331AF12B900378D;1072.
+(rerunfilecheck)             Checksum: 6C23AD3D9657069E40187FE4305B92B0;1308.
  ) 
 Here is how much of TeX's memory you used:
- 40863 strings out of 476683
- 909803 string characters out of 5798754
- 2118012 words of memory out of 5000000
- 60426 multiletter control sequences out of 15000+600000
- 524699 words of font info for 166 fonts, out of 8000000 for 9000
+ 41403 strings out of 476683
+ 921203 string characters out of 5798754
+ 2253012 words of memory out of 5000000
+ 60954 multiletter control sequences out of 15000+600000
+ 524771 words of font info for 175 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,14n,115p,550b,1216s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,16n,115p,550b,1344s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 24Au-Data&Algorithm.pdf (7 pages).
+Output written on 24Au-Data&Algorithm.pdf (16 pages).
