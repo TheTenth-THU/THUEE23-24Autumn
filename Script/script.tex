@@ -1,31 +1,45 @@
-% This templete is obtained from http://kevindonnelly.org.uk/resources/playscript.tex
+% 本模板采自 http://kevindonnelly.org.uk/resources/playscript.tex
 
-\documentclass[10pt,a5paper,oneside]{memoir}
+\documentclass[10pt, a5paper, oneside]{memoir}
+    % 使用 memoir 文档类，并定义字号为 10pt，纸张大小为 A5，单面打印。
     % http://www.ctan.org/tex-archive/macros/latex/contrib/memoir
+    % 许多文学作品的排版都可以使用 memoir 文档类，如小说、剧本、诗歌等。本模板来自 Peter Wilson 的《Some Examples of Title Pages》(http://www.ctan.org/tex-archive/info/latex-samples/TitlePages）。
+
 \usepackage[english]{babel}
+    % 用于支持多种语言的宏包。
+    % http://www.ctan.org/tex-archive/macros/latex/required/babel
 \usepackage{enumitem}
+    % 使用 enumitem 宏包，可以自定义列表的样式。
     % http://www.ctan.org/tex-archive/macros/latex/contrib/enumitem
 \usepackage[fontset=none]{ctex}
+    % 使用 ctex 宏包，可以在 LaTeX 中使用中文。
+    % http://www.ctan.org/tex-archive/macros/latex/contrib/ctex
 \usepackage{amsmath}
+    % 使用 amsmath 宏包，可以使用更多数学公式。
+    % http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math
 \usepackage[
     top=10mm, bottom=10mm, left=10mm, right=10mm, 
     headheight=5mm,
     includehead, includefoot
 ]{geometry}
+    % 设置版式。
     % http://www.ctan.org/tex-archive/macros/latex/contrib/geometry
 \usepackage{multirow}
+    % 使用 multirow 宏包，可以在表格中合并单元格。
+    % http://www.ctan.org/tex-archive/macros/latex/required/tools
 
 \setmonofont{Iosevka}
 \setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
 \setCJKsansfont{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={FZYanZQKSJF.TTF}]
 \setCJKmonofont{LXGWNeoXiHei.ttf}
+\newCJKfontfamily{\kai}{FZXKTK.TTF}[BoldFont={汉仪颜楷W.ttf}, ItalicFont={方正清刻本悦宋 简繁.TTF}, BoldItalicFont={FZYanZQKSJF.TTF}]
 
 \newlength{\drop}
-    % Without this, the title page will not compile correctly.
-    % To avoid using drop, see: http://wiki.lyx.org/LyX/UsingMemoirInLyX
+    % 定义 \drop 长度变量，用于标题页的垂直位置调整。
+    % 若不希望使用 \drop，可参考 http://wiki.lyx.org/LyX/UsingMemoirInLyX
 
 \chapterstyle{demo2}
-    % See p92 of the Memoir manual.
+    % 查看 memoir 手册第 92 页以了解更多章节样式。
 \setlength{\beforechapskip}{\baselineskip}
 
 \pagestyle{myheadings}
@@ -33,14 +47,13 @@
 \setlength{\parindent}{0pt}
 
 \renewcommand{\printtoctitle}[1]{\centering\Large\bfseries 目录}  
-    % Set the title of the contents page.
+    % 设置目录页的标题。
 % \renewcommand{\printtoctitle}[1]  
-    % Remove the title from the contents page entirely.
+    % 删去目录页的标题。
 
 \pagenumbering{gobble} 
-    % Remove page numbers until told otherwise.
+    % 不显示页码，直到另有说明。
 
-% Various title pages may be used with the memoir package.  The one below is from ``Some Examples of Title Pages'' (Peter Wilson) at http://www.ctan.org/tex-archive/info/latex-samples/TitlePages.
 
 \setitemize[1]{
     itemsep=0pt, topsep=0em, partopsep=0pt, parsep=0pt, 
@@ -49,10 +62,10 @@
 
 
 
-% Set up the title page.
+% 设置标题页的样式。
 \newcommand*{\titleGM}{
     \begingroup
-        % Gentle Madness title page style
+        % 使用 Gentle Madness 标题页样式。
     \thispagestyle{plain}
     \drop = 0.1\textheight
     % \vspace*{\baselineskip}
@@ -63,7 +76,7 @@
         \hspace*{0.05\textwidth}%
         \parbox[b]{0.75\textwidth}{
             \vbox{%
-                % Main title of the play
+                % 剧本的主标题
                 \vspace{\drop}{
                     \noindent\HUGE\bfseries 频率之外{\Large（暂名）}
                 }\\
@@ -72,11 +85,11 @@
                 %     over two lines
                 % }\\
                 % 
-                % Subtitle of the play
+                % 剧本的副标题
                 [1\baselineskip]{\huge\scshape\slshape Beyond the Frequency}\\
                 % [2\baselineskip]{\huge\itshape Subtitle of the play \\[0.5\baselineskip] over two lines}\\
                 % 
-                % Author of the play
+                % 剧本的类型/作者
                 [2\baselineskip]{\Large 科幻（且希望是但还不是）喜剧}
                 \par\vspace{0.5\textheight}
                 % [4\baselineskip]{
@@ -85,7 +98,7 @@
                 %     Third Author \\
                 % }\par\vspace{0.5\textheight}
                 % 
-                % Publisher and year of publication
+                % 剧本的出版信息
                 {\noindent \textbf{无38} \\[0.5\baselineskip] 
                 \textbf{\today}}\\[\baselineskip]
             }% end of vbox
@@ -97,118 +110,161 @@
 }
 
 \hbadness=10000
-    % Suppress underfull box warnings.
+    % 忽略盒子溢出的警告。
 
 \newcommand{\stage}[1]{%
+    % 舞台说明。
     \\[0.4\baselineskip] \textit{#1}%
 }
 \newcommand{\dialog}[2][旁白]{%
+    % 对话。
     \item[#1] #2%
 }
 \newcommand*{\direction}[1]{\textit{（#1）}}
+    % 动作说明。
 
 \newcounter{scene}
-    % Set up a scene counter.
 \setcounter{scene}{0}
-    % Set the scene counter to 0.
+    % 场景计数器，从 1 开始。
 \newcommand{\scene}[2][]{
+    % 场景。
     \stepcounter{scene}
-        % Increment the scene counter by 1.
+        % 场景计数器加 1。
     \section*{第 \thescene 场\; #1}
-        % The starred form of \section prevents a section number (eg ``1.1'', ``2.3'') being printed before each section title (eg ``Scene 1'', ``Scene 2'').
+        % 场景标题。
     % \section*{\hfill\textit{SCENE 1}}
-        % Use this line instead if you want the Scene 1 heading shifted to the right edge of the page.
+        % 场景标题右对齐。
     \addcontentsline{toc}{section}{SCENE \thescene\quad #1}
-        % The \addcontentsline command will add the scene to the table of contents.
+        % \addcontentsline 命令将场景添加到目录中。
     \begin{description}[align=left, itemsep=1ex, leftmargin=2em, itemindent=-1em, labelsep=1em]
-        % Set up a description list to hold the dialogue of the scene.    Increase the space between the list items, and set the left margin to 1cm.
+        % 设置一个描述列表来容纳场景的对话。增加列表项之间的间距，并将左边距设置为 1cm。
         \item[] \hfill 
         #2
     \end{description}
-        % Close the description list at the end of the scene.
+        % 结束描述列表的对话。
     \vskip 1cm
-        % Put a bit of space between this and the next scene heading.
+        % 场景标题和对话之间的空白。
 }
 
 \newcounter{act}
-    % Set up an act counter.
 \setcounter{act}{0}
-    % Set the act counter to 0.
+    % 幕计数器，从 1 开始。
 \newcommand{\act}[2][]{
     \stepcounter{act}
-        % Increment the act counter by 1.
+        % 幕计数器加 1。
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \chapter*{第 \theact 幕\; #1}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \addcontentsline{toc}{chapter}{ACT \theact\quad #1}
-        % The \chapter* will prevent the the chapters (Acts) being listed in the table of contents, so we need to add them manually.
     \setcounter{scene}{0}
-        % Reset the scene counter to 0 at the start of each act.
+        % 重置场景计数器。
     #2
+        % 打印出幕的内容。
 }
 
 
 \begin{document}
 
+%-----------------------------------------------------------
 
 \titleGM
-    % Print out the title page.
+    % 标题页。
+
+%-----------------------------------------------------------
 
 \setlength{\parskip}{0.5\baselineskip}
-    % Increase the space between paragraphs.
+    % 设置段间距为 1/2 行高。
 
 \markright{\textsc{Beyond the Frequency}}
-    % Generate a running header with the title of the play.
-\tableofcontents*
-    % Print out the contents page, listing the acts of the play.
-    % You will need to run pdflatex twice before the page numbers show up.
-\pagenumbering{roman}
-    % Start numbering pages with Roman numerals (for the front matter).
+    % 生成每一页的页眉。
 
+\tableofcontents*
+    % 目录。
+
+\pagenumbering{roman}
+    % 使用罗马数字编号页码。
 
 \clearpage
 
-%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
 \chapter*{角色}
 %%%%%%%%%%%%%%%
-    % Print out the characters page, listing the dramatis personae
-    % The starred form of \chapter prevents a chapter number (eg ``One'', ``Two'') being printed before each chapter title (eg ``Characters'', ``Act 1'').
+    % 角色表。
 \addcontentsline{toc}{chapter}{角色}
 
-\textbf{A组}，主人公姜明明（姓名待定），从Q中学毕业后进入T大学电子系学习，曾因T大学支教队与嵌入式开发结缘，但进入大学后逐渐感到不知所措，变得迷茫与颓废。
+\textbf{A组}，主人公（姓名待定），从Q中学毕业后进入T大学电子系学习，曾因T大学科技营与嵌入式开发结缘，但进入大学后逐渐感到不知所措，变得迷茫与颓废。
 \begin{itemize}
-    \item \textbf{AC}，时间点\(C\)的姜明明，T大学电子系学生。
-    \item \textbf{AP}，时间点\(P\)的姜明明，Q中学学生。
-    \item \textbf{AF}，时间点\(F\)的姜明明，学术上「小有成就」。
+    \item \textbf{AC}，时间点\(C\)的（姓名待定），T大学电子系学生。
+    \item \textbf{AP}，时间点\(P\)的（姓名待定），Q中学学生。
+    \item \textbf{AF}，时间点\(F\)的（姓名待定），学术上「小有成就」。
 \end{itemize}
 
-\textbf{B组}，AC 的同学和队友，与 AC 同队参加硬件设计与支教活动。
-
-\textbf{C组}，支教队同学，为 AP 带去嵌入式开发的启蒙。
-
-\textbf{D组}，AP 的同学，与 AP 同组参加 C 组角色的支教营。
-
-\textbf{E}，AC 支教实践支队授课学生。
-
-\begin{table}[!hb]
-    \centering
-    \small
-    \caption{角色、演员表}
-    \begin{tabular}{c|ccc|cccccccc|c}
+\begin{table}[!ht]
+    \begin{tabular}{p{0.15\textwidth}<{\centering}|p{0.2\textwidth}<{\centering}|p{0.55\textwidth}<{\centering}}
         \toprule
-        \multicolumn{1}{c|}{\textbf{主角}} & \multicolumn{3}{c|}{\textbf{配角甲组}} & \multicolumn{8}{c|}{\textbf{配角乙组}} & \multirow{2}*{\textbf{群演}}\\
-        \textbf{A} & \textbf{B0} & \textbf{B1} & \textbf{C3} & \textbf{C0} & \textbf{C1} & \textbf{C2} & \textbf{D0} & \textbf{D1} & \textbf{D2} & \textbf{D3} & \textbf{E} & ~\\
-        \midrule
-        &  &  &  &  &  &  &  &  &  &  &  & —\\
+        ~ & & \\[-0.7em]
+            % 这一行增加行高
+        \textbf{A组} & \textbf{A} & \textit{肖怡君} \\[0.3em]
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\textbf{B组}，AC 的同学和队友，与 AC 同队参加硬件设计与科技营活动。
+
+\begin{table}[!ht]
+    \begin{tabular}{p{0.15\textwidth}<{\centering}|p{0.2\textwidth}<{\centering}|p{0.55\textwidth}<{\centering}}
+        \toprule
+        ~ & & \\[-0.7em]
+            % 这一行增加行高
+        \multirow{2}*{\textbf{B组}} & \textbf{B0} & \textit{李硕实} \\[0.3em]
+        ~                           & \textbf{B1} & \textit{陈禛兴} \\[0.3em]
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\textbf{C组}，科技营带班同学，为 AP 带去嵌入式开发的启蒙。其中，C0 负责指导 AP 所在的小组，并为 AP 提供了精神上的支持。
+
+\begin{table}[!ht]
+    \begin{tabular}{p{0.15\textwidth}<{\centering}|p{0.2\textwidth}<{\centering}|p{0.55\textwidth}<{\centering}}
+        \toprule
+        ~ & & \\[-0.7em]
+            % 这一行增加行高
+        \multirow{2}*{\textbf{C组}} & \textbf{C0} & \textit{刘晋昊} \\[0.3em]
+        ~                           & \textbf{C1～C4} & \textit{翟仲浩　潘　浩　陶　硕　夏子凯} \\[0.3em]
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\textbf{D组}，AP 的同学，与 AP 同组参加 C 组角色的科技营。在 C 组到来开展教学的前夜，D0～D2 与 AP 一起在教室外好奇地围观。
+
+\begin{table}[!ht]
+    \begin{tabular}{p{0.15\textwidth}<{\centering}|p{0.2\textwidth}<{\centering}|p{0.55\textwidth}<{\centering}}
+        \toprule
+        ~ & & \\[-0.7em]
+            % 这一行增加行高
+        \multirow{2}*{\textbf{D组}} & \textbf{D0～D2} & \textit{白　澈　王禹博　杨梓琨} \\[0.3em]
+        ~ & \textbf{D3、D4} & \textit{单　硕　郝亚鹏} \\[0.3em]
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\textbf{E组}，AC 科技营授课学生。在 AP 开展教学的前夜，E 组的同学们在教室外好奇地围观，E0 像 AP 那样被推出。
+
+\begin{table}[!ht]
+    \begin{tabular}{p{0.15\textwidth}<{\centering}|p{0.2\textwidth}<{\centering}|p{0.55\textwidth}<{\centering}}
+        \toprule
+        ~ & & \\[-0.7em]
+            % 这一行增加行高
+        \multirow{2}*{\textbf{E组}} & \textbf{E0} & \textit{任秋莼} \\[0.3em]
+        ~                           & \textbf{E1～E4} & \textit{姜　为　黄浩然　邰伟宸　吴耀宇} \\[0.3em]
         \bottomrule
     \end{tabular}
 \end{table}
 
 
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 \chapter*{第一稿说明}
-%%%%%%%%%%%%%%%%%%
-    % Print out a page with any additional authorial comments, notes on staging, or whatever.
+%%%%%%%%%%%%%%%%%%%%%
 \addcontentsline{toc}{chapter}{前言}
 \addcontentsline{toc}{section}{第一稿说明}
 
@@ -218,6 +274,7 @@
 
 剧本所基于的背景是硬设大赛和与之相关的单片机支教实践，这是我在大学时期参与过的两个活动，也是我认为对于电子系大学生而言非常有意义的两个活动。但是强调这些，或许会让剧本显得有些「官方」，而我并不希望把剧本拍成「宣传片」。为此，在人物日常的对白和互动中，还需要更多的生活化、幽默化的细节。在后续的修改中，这些部分会交由演员自己创作修改，以求呈现得更加自然、生动、接地气。
 
+{\hfill\kai 2024年9月27日}
 
 % The preface to a play seems generally to be considered as a kind of closet-prologue in which the author solicits that indulgence from the reader which he had before experienced from the audience.
 
@@ -226,20 +283,35 @@
 % With regard to some particular passages which seemed generally disliked, I confess that if I felt any emotion of surprise at the disapprobation, it was not that they were disapproved of, but that I had not before perceived that they deserved it.
 
 \clearpage
-\pagenumbering{arabic}
-    % Start numbering pages with Arabic numerals (for the text of the play).
 
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+\chapter*{第二稿说明}
+%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{section}{第二稿说明}
+
+在第一稿的基础上，我对剧本进行了一些修改。
+
+首先，受限于拍摄场地的条件，经过取舍，暂定还是直白地把剧本的背景设定在大学校园，而 A 的回忆则设定为在大学科技冬令营中。
+这样一来，剧本的背景就更加贴近大学生的生活，也更容易找到合适的拍摄场地。
+
+
+
+\clearpage
+%-----------------------------------------------------------
+\pagenumbering{arabic}
+    % 开始使用阿拉伯数字编号页码。
+
+%%%%%%%%%%%%%%%
 \chapter*{概要}
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
     % Print out a page with a summary of the plot.
 \addcontentsline{toc}{chapter}{概要}
 
-儿时（时间点\(P\)），A 在 T 大学支教队同学的带领下尝试进行硬件设计时，将一首诗编码发送到太空中。几年后（时间点\(C\)），一段相似的回波又被考入该大学电子系、正调试着类似硬设作品的 AC 捕获。与此前不同的是，现在的他没有了当年（\(P\)）的探索热情，已经被数据、表格、成绩压垮。也因此，这成为了他生活轨迹的一个转折点。多年之后（时间点\(F\)）的他完成了时空的沟通，在信息的茫茫串流中找到了当年（\(P\)）编码的那一首诗。他回想起当初（\(C\)）的迷茫与颓丧，把这首诗送回给那时（\(C\)）的自己。
+儿时（时间点\(P\)），A 参与 T 大学科技冬令营，在 T 大学同学的带领下尝试进行硬件设计时，将一首诗编码发送到太空中。几年后（时间点\(C\)），一段相似的回波又被考入该大学电子系、正调试着类似硬设作品的 A 捕获。与此前不同的是，现在的 A 没有了当年（\(P\)）的探索热情，已经被数据、表格、成绩压垮。也因此，这成为了 A 生活轨迹的一个转折点。多年之后（时间点\(F\)）的 A 完成了时空的沟通，在信息的茫茫串流中找到了当年（\(P\)）编码的那一首诗。他回想起当初（\(C\)）的迷茫与颓丧，把这首诗送回给那时（\(C\)）的自己。
 
 \textbf{第 1 幕}：重逢。时间点\(C\)，A 在实验室天台与同学一起监听天线接收到的信号，突然间信号变得异常清晰，他意识到这是当年编码的那首诗。
 
-\textbf{第 2 幕}：缘起。时间点\(P\)，A 在支教队同学的带领下尝试进行硬件设计，将一首诗编码发送到太空中。
+\textbf{第 2 幕}：缘起。时间点\(P\)，A 在科技营学长的带领下尝试进行硬件设计，将一首诗编码发送到太空中。
 
 \textbf{第 3 幕}：复燃。时间点\(C\)，重新振作起来的 A 开始调试硬设作品，并随支教队将启蒙知识传递给后来的学生。
 
@@ -259,22 +331,41 @@
             \direction{不耐烦地} 要不就这样，差不多得了吧。 \direction{把说明书丢到一边}
         }
         \dialog[B0]{
-            再看看呢，没多少地方没排查过了。
+            再看看呢，没多少地方没排查过了。\direction{拿起说明书}
         }
         \dialog[B1]{
             大不了再把排线检查一遍嘛。
         }
         \dialog[AC]{
-            \direction{一脸厌倦、无奈} 何必呢，就我们手上这些东西 \direction{把黑盒盖子打开}，板子是串口不够刚换的，线头是断了又重新焊的，淘宝买的芯片问客服还说测试程序是外包的，现在就没哪个环节我们能保证跑得起来吧。\direction{把盖子推回但没有合上，激动而无力}
+            \direction{一脸厌倦、无奈} 何必呢。再得不到结果，也得先准备答辩去了。
         }
         \dialog[B0]{
-            \direction{无奈} 你这么说也没办法了。但既然都到这一步了，还是再试试吧。
+            但是连一个像样的信号都没收到，答辩咱能说啥呢？
         }
         \dialog[B1]{
-            从另一个角度想，需要我们去解决的问题不也没多少嘛。\direction{推开盖子，开始检查} 反正也就这些接线、程序、电源、天线是我们能控制的。
+            给评委们谈谈背景，谈谈理想，谈谈愿景嘛。\direction{装模作样起来}咳咳，「我们的设备虽然没收到可识读的信号，但这只是暂时的技术性调整，我们的项目仍然前景远大、前途光明，背后是对未知的探索、对未来的憧憬，承载了我们最初……」
         }
-        \stage{
-            【说明：此处对话细节有待进一步调整。】
+        \dialog[AC]{
+            \direction{打断} 你打住！\direction{笑} 说起来，咱们这个项目最初是要干啥来着？
+        }
+        \dialog[B0]{
+            最初你是说要做一个通信终端，然后几百块的报销额度只能做一端，所以就只做了一个接收端。
+        }
+        \dialog[B1]{
+            然后只有接收端就没有办法控制测试信号，所以就只有在天台上看微波背景辐射了。
+        }
+        \dialog[AC]{
+            但是就我们手上这些东西 \direction{把黑盒盖子打开}，板子是串口不够刚换的，线头是断了又重新焊的，淘宝买的芯片问客服还说测试程序是外包的，又怎么捕获到背景辐射那微小的波动呢？
+            \direction{把盖子推回但没有合上，激动而无力}
+        }
+        \dialog[B0]{
+            也确实是，你看 \direction{指着说明书} 这东西，说是说明书，其实就是 datasheet，
+            错误码没解释，示例程序没输出，光给些电压、电流、温度的，
+            除了我们用不到的各种 data 就只有 sh……
+            \direction{被捂嘴} 但既然我们都到这一步了，还是再试试呗。
+        }
+        \dialog[B1]{
+            从另一个角度想，需要我们去解决的问题不也没多少嘛。\direction{推开盖子，开始检查} 反正也就这些接线、程序、电源、天线是我们能控制的。看到一点比现在的噪声大的波动，我们就算成功了。
         }
         \stage{
             B1 一个接一个地检查着线头，B0 见状也翻看起程序，AC 颓丧地坐在一旁，看着他们，又看向远方。
@@ -305,7 +396,7 @@
             \textup{
                 \textbf{时间点\(\boldsymbol{P}\)}，Q中学机房。
             }
-            渐渐入夜，支教实践支队的几位同学正在一台一台地手动安装软件，为即将开始的支教活动做准备。机房窗外，刚下晚自习的 AP 背着包、抱着书，靠在窗边向里张望。
+            渐渐入夜，支教实践支队的几位同学正在一台一台地手动安装软件，为即将开始的支教活动做准备。机房窗外，刚下晚自习的 AP 带着D组同学们背着包、抱着书，靠在窗边向里张望。
         }
         \dialog[C1]{
             \direction{在不同进度的三台电脑前来回操作} 所以，这儿的终端管理软件是真的不能直接把软件包发下去吗？
@@ -313,23 +404,21 @@
         \dialog[C2]{
             \direction{在一台电脑前操作} 那样更慢。这里主机和从机本来连接就不大好，你看那边还有几台点一键开机没反应的。
         }
-        \dialog[C0]{
-            \direction{在另一台电脑前操作} 你们下好之后，记得拿个示例程序编译上传一下，教案里随便一个就行，只需要看看软件包有没有问题。\direction{看向窗外，发现了 AP} 外面那个同学好像很好奇的样子呢。
-        }
-        \stage{
-            【说明：此处对话细节有待进一步调整。假装已经把场景背景交代得很自然很清楚了。】
-        }
-        \stage{
-            AP 尴尬地转身走开，但又不甘心，又回头看了一眼。队员们看着他的背影，笑了一下，C3 前去拉住了他，带他进了机房。     
-        }
         \dialog[C3]{
+            \direction{在另一台电脑前操作} 你们下好之后，记得拿个示例程序编译上传一下，教案里随便一个就行，只需要看看软件包有没有问题。\direction{看向窗外，发现了 AP和同学们} 外面的同学们好像很好奇的样子呢。
+        }
+        \stage{
+            窗外的同学们看到被发现后，有些尴尬地哄笑了一下，相视一笑，把带他们来的 AP 推到了门前，哄笑着跑开到远处。
+            队员们看着 AP 的背影，笑了一下，C0 前去拉住了 AP，带他进了机房。     
+        }
+        \dialog[C0]{
             怎么，是好奇我们在干嘛吗？
         }
         \dialog[AP]{
             \direction{尴尬} 嗯，我……我只是路过，看到你们在这儿，就想看看。
         }
-        \dialog[C3]{
-            \direction{回到电脑前，插好 UNO 板，把自己的测试程序上传} 具体在做什么，等到后面的课程你就知道了。几天之后，你会掌握一些还算有点用处的技能的。
+        \dialog[C0]{
+            \direction{回到电脑前，插好 UNO 板，把自己的测试程序上传} 具体在做什么，等到后面的课程你就知道了。相信我们啦，几天之后，你会掌握一些还算有点用处的技能的。
         }
         \stage{
             AP 用力地点了点头，看着屏幕上跳动的图像和滚动的数字。
@@ -340,10 +429,31 @@
             \textup{
                 \textbf{时间点\(\boldsymbol{P}\)}，Q中学机房。
             }
-            自主设计阶段，AP 和同组的同学正在兴奋地讨论着他们的设计方案。这一组的指导助教 C3 在一旁默默地听着，同时在电脑上调试着自己的程序。
+            自主设计阶段，AP 和同组的同学正在兴奋地讨论着他们的设计方案。这一组的指导助教 C0 在一旁默默地听着，同时在电脑上调试着自己的程序。
+        }
+        \dialog[D0]{
+            \direction{摆弄着几个舵机} 
+            拿这几个舵机做个按摩椅模型，怎么样？
         }
         \dialog[D1]{
-            你说做个通信终端，可我们硬件就这么多了，应该很难攒出两台来吧。
+            不大行吧，刚刚老师不是说这个舵机工作一段时间就会抽风嘛。而且，只做一个模型，也没有实际功能，不太好哦。
+        }
+        \dialog[D2]{
+            那做个闹钟呢？把电机放在闹钟上，早上闹钟响了，电机就把你的被子给扯掉，这样就不会再睡过头了。
+        }
+        \dialog[D3]{
+            \direction{众笑}
+            这小电机哪有那么大劲啊。
+            要不做个收纳箱吧，把舵机放在箱子里，然后用板子控制箱子的开合，用摇杆上上下下左左右右AABB当密码，这样就有点意思了，也有用处。
+        }
+        \dialog[D4]{
+            做个音乐盒呢，我看老师之前演示的蜂鸣器编曲还挺方便的。
+        }
+        \dialog[AP]{
+            要不做点大的，比如，做个通信终端？我想看看书上那种把电容打开、把电感拉直的天线到底是怎么用的。
+        }
+        \dialog[D1]{
+            可我们硬件就这么多了，应该很难攒出两台来吧。
         }
         \dialog[D2]{
             而且，UNO 板也就这么大功率，通信信号估计不会太强哦。
@@ -351,23 +461,94 @@
         \dialog[D3]{
             咱们又没有专业的通信天线，噪声估计能把信号给淹没了都。通用的那些通信协议也不是那么容易实现的。
         }
-        \dialog[D0]{
-            \direction{拿着设计草稿} 但是，要就只是拿板子控制几个LED亮起来灭掉，这也太没意思了吧。我还是觉得该做点有意思的事情，这些问题 C3 老师肯定能帮我们解决的。\direction{笃定，看向 C3}
+        \dialog[AP]{
+            \direction{思考} 哎呀，关键还是得要有意思嘛。这些问题 C0 老师肯定能帮我们解决的。\direction{笃定，看向 C0}
         }
-        \dialog[C3]{
+        \dialog[C0]{
             \direction{突然听到自己的名字} 嗯？我咋啦？
         }
         \dialog[D0]{
-            没咋没咋。\direction{看到 C3 的电脑屏幕} 老师你在调什么程序呢？
+            没咋没咋。\direction{看到 C0 的电脑屏幕} 老师你在调什么程序呢？
         }
-        \dialog[C3]{
+        \dialog[C0]{
             \direction{指着屏幕} 挺基础的一个程序啦，就只是把汉字编码成二进制串。我在考虑怎么把这个串再压缩压缩。
         }
-        \dialog[D0]{
+        \dialog[AP]{
             \direction{灵光一闪} 不是只够做一个终端的吗？干脆我们直接把自己的信息编码成二进制串，然后发射到太空中去！
         }
         \stage{
-            总之众人一顿附和。C3 也被他们的热情感染，开始帮助他们调试程序。
+            沉默。
+        }
+        \dialog[D0]{
+            \direction{打破沉默} 这个……这个有点大啊。
+        }
+        \dialog[D1]{
+            有点大啊。
+        }
+        \dialog[D2]{
+            有点大啊。
+        }
+        \dialog[D3]{
+            有点大啊。
+        }
+        \dialog[D4]{
+            有点大啊。
+        }
+        \dialog[AP]{
+            有点……欸你们就说是不是够有意思嘛！
+        }
+        \stage{
+            沉默。
+        }
+    }
+    \scene{
+        \stage{
+            \textup{
+                \textbf{时间点\(\boldsymbol{P}\)}，Q中学操场。
+            }
+            雨淅淅沥沥地下着，夜色已深，操场上空无一人，只有几盏昏黄的路灯洒在湿漉漉的地面上。AP 思索着自己的设计方案，看着远处的天空，更加坚持自己的想法，但既不确定其是不是真的可行，也不知道如何说服同组的同学。AP 在操场上独自思考。
+        }
+        \stage{
+            C0 从教学楼走出，看到操场上的 AP，便撑着一把伞走了过去。
+        }
+        \dialog[C0]{
+            \direction{走到 AP 身边} 怎么，这么晚了还在这儿？\direction{递伞} 还淋着雨，会感冒的，快回去吧。
+        }
+        \dialog[AP]{
+            \direction{抬起头，勉强挤出一个笑容，接过伞，看向远方} 我在想，我的设计方案，是不是太大了？
+        }
+        \dialog[C0]{
+            \direction{看着远方，思考} 你说的是，关于那个，把信息编码成二进制串，然后发射到太空的想法吗？
+        }
+        \dialog[AP]{
+            \direction{回头} 嗯。
+        }
+        \dialog[C0]{
+            你这个想法确实比较大胆，也确实需要一些技术支持和更多的论证。但最重要的是，你要相信自己的想法，并且努力去实现它。\direction{抬头} 你有想过，这个方案的意义吗？
+        }
+        \dialog[AP]{
+            \direction{思考} 意义？
+        }
+        \dialog[C0]{
+            \direction{指向远方} 你看，那片天空，那些星星，那些星星背后的故事，那些故事背后的意义，你有想过吗？
+        }
+        \dialog[AP]{
+            \direction{看向远方} 我……
+        }
+        \dialog[C0]{
+            论证的部分，我可以帮你查，技术的部分，我也可以帮你做。但是，你要相信自己的想法，相信自己的能力，相信自己的意义。\direction{看向 AP} 因为这段时间我们终究时间有限，要实现更多的可能性，你还是需要未来自己去思考。
+        }
+        \dialog[AP]{
+            \direction{点头} 嗯。
+        }
+        \dialog[C0]{
+            回去吧，明天还有很多事情要做，你也需要休息。\direction{拍拍 AP 的肩膀} 别被现有的框架所限制，回去多想想那个关于「意义」的问题，你会找到答案的。
+        }
+        \dialog[AP]{
+            \direction{看着远方，思考} 意义……
+        }
+        \stage{
+            第二天，C0 带着 AP 和其他组员们再次聚集在机房。C0 主动提起了 AP 的想法，拿出了一夜论证的结果，并鼓励大家一起去尝试和实现。同学们也被 C0 的鼓励所感染，纷纷在这个方案的基础上提出了更多的想法，开始了他们的设计和实现。【此段不详细展开，用蒙太奇的方式表现】
         }
     }
     \scene{
@@ -381,13 +562,13 @@
             \direction{在中央} 接下来，我们有一个特别的展示，之后就是最后的颁奖环节。下面，我们先把时间给到操场上等待着的同学们！
         }
         \stage{
-            众人鼓掌。AP 带着发射装置走上展示区域，向四周的观众鞠躬。C3 也走上去，向观众们挥手致意。
+            众人鼓掌。AP 带着发射装置走上展示区域，向四周的观众鞠躬。C0 也走上去，向观众们挥手致意。
         }
         \dialog[AP]{
             \direction{向观众们展示，介绍作品的设计动机、技术细节和功能特点} （暂略）
         }
         \stage{
-            众人鼓掌。AP 和 C3 一起将板子和电脑连接好，将放大天线接上电源。一切准备就绪，在高涨的气氛中，AP 用摇杆将信号输入设备，传入高空。
+            众人鼓掌。AP 和 C0 一起将板子和电脑连接好，将放大天线接上电源。一切准备就绪，在高涨的气氛中，AP 用摇杆将信号输入设备，传入高空。
         }
     }
 }
@@ -483,11 +664,64 @@
     }
 }
 
-\chapter*{梗}
+%-----------------------------------------------------------
 
-\begin{enumerate}
-    \item 如果你有两块面包，你应该把两块面包都吃掉，因为一块面包价值五十万马克。
-\end{enumerate}
+%%%%%%%%%%%%%%%%%%%
+\chapter*{拍摄计划}
+%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{拍摄计划}
+
+\section*{DEMO拍摄}
+\addcontentsline{toc}{section}{DEMO拍摄}
+
+\begin{table}[!ht]
+    \raggedright
+    \begin{tabular}{p{0.2\textwidth}p{0.2\textwidth}p{0.5\textwidth}}
+        \toprule
+        ~ & & \\[-0.7em]
+        \textbf{时间} & \textbf{地点} & \textbf{内容} \\[0.3em]
+        \midrule
+        ~ & & \\[-0.7em]
+        10月11日        & 紫荆操场 & \textbf{ACT 2, SCENE 3} \\[0.3em]
+        22:00～23:59    & ~ & 
+            AP 受到打击，在操场上独自思考，被 C0 发现，获得宽慰。
+        \\
+        ~ & & \\[-0.7em]
+        ~ & ~ & \textbf{相关角色\quad}AP、C0 \\[0.3em]
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[!ht]
+    \raggedright
+    \begin{tabular}{p{0.2\textwidth}p{0.2\textwidth}p{0.5\textwidth}}
+        \toprule
+        ~ & & \\[-0.7em]
+        \textbf{时间} & \textbf{地点} & \textbf{内容} \\[0.3em]
+        \midrule
+        ~ & & \\[-0.7em]
+        10月12日        & 某个教室 & \textbf{ACT 2, SCENE 2} \\[0.3em]
+        8:00～9:35      & ~ & 
+            AP 及小组成员在机房讨论设计方案，C0 帮助他们调试程序。
+        \\
+        ~ & & \\[-0.7em]
+        ~ & ~ & \textbf{相关角色\quad}AP、D0～D4、C0 \\[0.3em]
+        \bottomrule
+    \end{tabular}
+\end{table}
+{   \vspace{-0.7\baselineskip}
+    \kai \small
+    \textbf{注：}该场由于校服难以到位，预计正式拍摄需要重拍。
+}
+
+% %%%%%%%%%%%%%%%%%%%
+% \chapter*{可用的梗}
+% %%%%%%%%%%%%%%%%%%%
+% \addcontentsline{toc}{chapter}{梗}
+
+% \begin{enumerate}
+%     \item 如果你有两块面包，你应该把两块面包都吃掉，因为一块面包价值五十万马克。
+% \end{enumerate}
 
 %=========================================================
 \end{document}
