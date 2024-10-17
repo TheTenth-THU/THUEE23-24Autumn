@@ -10,6 +10,10 @@
 \contentsline {subsection}{\numberline {1.3}Taylor级数和Laurent级数}{8}{subsection.1.3}%
 \contentsline {subsubsection}{\numberline {1.3.1}复数项级数}{8}{subsubsection.1.3.1}%
 \contentsline {subsubsection}{\numberline {1.3.2}Taylor级数}{11}{subsubsection.1.3.2}%
-\contentsline {section}{\numberline {2}积分变换}{13}{section.2}%
-\contentsline {section}{\numberline {3}数理方程}{14}{section.3}%
-\contentsline {section}{\numberline {4}特殊函数}{15}{section.4}%
+\contentsline {subsubsection}{\numberline {1.3.3}Laurent级数}{12}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}留数定理}{13}{subsubsection.1.3.4}%
+\contentsline {paragraph}{\numberline {A)}留数的计算方法}{14}{paragraph.1.3.4.1}%
+\contentsline {paragraph}{\numberline {B)}留数定理的应用}{14}{paragraph.1.3.4.2}%
+\contentsline {section}{\numberline {2}积分变换}{17}{section.2}%
+\contentsline {section}{\numberline {3}数理方程}{18}{section.3}%
+\contentsline {section}{\numberline {4}特殊函数}{19}{section.4}%

@@ -31,16 +31,16 @@
 %\setmathfont{latinmodern-math.otf}
 %\setmathfont{方正书宋_GBK}[range="002C]
 \setmonofont{Iosevka}
-\setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
-\setCJKsansfont{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={FZYanZQKSJF.TTF}]
-\setCJKmonofont{LXGWNeoXiHei.ttf}
+\setCJKmainfont{方正新书宋_GBK}[BoldFont={思源宋体 CN Bold}, ItalicFont={方正新楷体_GBK}, BoldItalicFont={汉仪颜楷 W}]
+\setCJKsansfont{汉仪文黑-45W ExtraLight}[BoldFont={汉仪文黑-75W Bold}, ItalicFont={方正颜真卿楷书 简繁}]
+\setCJKmonofont{霞鹭新晰黑}
 %附加字体设置
-\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体Coca-ColaCareFontKaiTi.TTF}
-\newCJKfontfamily{\kai}{FZXKTK.TTF}[BoldFont={汉仪颜楷W.ttf}, ItalicFont={方正清刻本悦宋 简繁.TTF}, BoldItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁.TTF}[ItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK.TTF}[ItalicFont={方正宋刻本秀楷_GBK.TTF}, BoldFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\run}{汉仪润圆-45W.ttf}[BoldFont={汉仪润圆-75W.ttf}, ItalicFont={汉仪润圆-45W.ttf}]
-\newCJKfontfamily{\wen}{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={hk4e_zh-cn.ttf}]
+\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体}
+\newCJKfontfamily{\kai}{方正新楷体_GBK}[BoldFont={汉仪颜楷 W}, ItalicFont={方正清刻本悦宋 简繁}, BoldItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁}[ItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK}[ItalicFont={方正宋刻本秀楷_GBK}, BoldFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\run}{汉仪润圆-45W ExtraLight}[BoldFont={汉仪润圆-75W Bold}, ItalicFont={汉仪润圆-45W ExtraLight}]
+\newCJKfontfamily{\wen}{汉仪文黑-45W ExtraLight}[ItalicFont={汉仪文黑-75W Bold}, BoldFont={汉仪文黑-85W Heavy}, BoldItalicFont={汉仪文黑-85W Heavy}]
 %文档格式
 \geometry{left=2.24cm, right=2.24cm, top=3.18cm, bottom=3.18cm}
 \setcounter{tocdepth}{3}
@@ -854,7 +854,7 @@
 	气体内能和压强与体积之积的和称为气体的\tboba{焓}，记作 \(H\)，即 \(H = E + pV\)。
 \end{definition}
 
-气体的绝热节流过程是\textbf{等焓过程}。
+气体的绝热节流过程是\tboba{等焓过程}。
 
 相比于\textbf{内能是等体过程中系统吸的热量}：
 \[
@@ -887,38 +887,233 @@
 	\eta = \dfrac{A}{Q_1} = \dfrac{Q_1 - |Q_2|}{Q_1} = 1 - \dfrac{|Q_2|}{Q_1}
 \end{equation}
 
-循环一周，系统净放出热量、外界对系统做功的循环过程称为\tboba{制冷循环（逆循环）}。
+循环一周，系统净放出热量、外界对系统做功的循环过程称为\tboba{致冷循环（逆循环）}。
 设一个循环中放出的热量为 \(|Q_1|\)，吸收的热量为 \(Q_2\)，外界对系统做的净功为 \(|A|\)，则
-制冷循环的\tboba{效率}定义为
+致冷循环的\tboba{效率}定义为
 \begin{equation}
 	\eta = \dfrac{|A|}{|Q_1|} = \dfrac{|Q_1| - Q_2}{|Q_1|} = 1 - \dfrac{Q_2}{|Q_1|}
+\end{equation}
+同时还定义\tboba{致冷系数}为 
+\begin{equation}
+	\omega = \dfrac{Q_2}{|A|} = \dfrac{Q_2}{|Q_1| - Q_2}
 \end{equation}
 
 \paragraph{卡诺循环}
 　
-\de[卡诺循环]{
-	工质只和两个恒温热源交换热量的无摩擦的准静态循环称为\tboba{卡诺循环}。
+\de[Carnot 循环]{
+	工质只和两个恒温热源交换热量的无摩擦的准静态循环称为\,\tboba{Carnot 循环}。
 }
 
-卡诺循环包含两个等温过程和两个绝热过程，如图~\ref{Fig: Carnot Cycle}~所示。
+Carnot 热循环包含两个等温过程和两个绝热过程，如图~\ref{Fig: Carnot Cycle}~所示。
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=5cm]{卡诺循环.png}
-	\caption{卡诺循环示意图}
+	\includegraphics[width=4cm]{卡诺循环.png}
+	\caption{Carnot 热循环示意图}
 	\label{Fig: Carnot Cycle}
 \end{figure}
 
-Carnot 循环是理论上的最高效率循环，下面以理想气体为工质推导卡诺循环的效率。
+Carnot 循环是理论上的最高效率循环，下面以理想气体为工质推导Carnot 循环的效率。
+\begin{solution}
+	各物理量所设符号如图~\ref{Fig: Carnot Cycle}~所示，则对各过程有：
+	\begin{itemize}
+		\item 1 \(\to\) 2：等温膨胀，\(Q_1 = A_1 = \nu RT_1 \ln \dfrac{V_2}{V_1}\)；
+		\item 2 \(\to\) 3：绝热膨胀，\(T_1 V_2^{\gamma-1} = T_2 V_3^{\gamma-1}\)；
+		\item 3 \(\to\) 4：等温压缩，\(|Q_2| = |A_2| = \nu RT_2 \ln \dfrac{V_3}{V_4}\)；
+		\item 4 \(\to\) 1：绝热压缩，\(T_2 V_4^{\gamma-1} = T_1 V_1^{\gamma-1}\)。
+	\end{itemize}
+	于是 Carnot 循环的效率为
+	\begin{equation*}
+		\eta_\mathrm{c} = \dfrac{A_1 - |A_2|}{Q_1} = 1 - \dfrac{|Q_2|}{Q_1} = 1 - \dfrac{T_2 \ln \dfrac{V_3}{V_4}}{T_1 \ln \dfrac{V_2}{V_1}} \xlongequal{\frac{V_2}{V_1} = \frac{V_3}{V_4}} 1 - \dfrac{T_2}{T_1}
+		\qedhere
+	\end{equation*}
+\end{solution}
+
+Carnot 热循环的效率只与两个热源的温度有关，与工质的种类、\(M\)、\(p\)、\(V\) 的变化过程无关。实用上，Carnot 热循环是理想的效率上限，通过提高 \(T_1\) 可以提高效率。
+
+类似地，Carnot 致冷机的致冷系数为 \(\omega_\mathrm{c} = \dfrac{T_2}{T_1 - T_2}\)。
+
+\subsection{热力学第二定律}
+
+\subsubsection{热力学第二定律的表述}
+
+\tboba{热力学第二定律}是关于自然过程方向的一条基本的、普遍的定律。
+
+\di[热力学第二定律（Kelvin 表述）]{
+	其\tbome{唯一效果}是热量全部转变为功的过程是不可能的。
+}
+Kelvin 表述否定了单热源热机——第二类永动机的存在，同时断言了热循环的效率不可能达到 100\%。
+
+\di[热力学第二定律（Clausius 表述）]{
+	热量不能\tbome{自动地}从低温物体传向高温物体。
+}
+Clausius 表述否定了热量自动从低温物体传向高温物体的过程，即断言了致冷系数不可能无限大。
+
+\begin{example}[3]
+	试证明在 \(p-V\) 图上任意物质的一条等温线和一条绝热线不能相交两次。\label{E.g. p-V Diagram Intersection}
+
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale=0.25]{[Fig] Proof of p-V Diagram Intersection.drawio.png}
+		\caption{例 \ref{E.g. p-V Diagram Intersection} 图}
+		\label{Fig: Proof of p-V Diagram Intersection}
+	\end{figure}
+
+	\begin{proofs}
+		反证法，假设等温线和绝热线相交两次，如图~\ref{Fig: Proof of p-V Diagram Intersection}~所示。图 \ref{Fig: Proof of p-V Diagram Intersection}~中循环说明，该系统可构成一个单热源热机，这违反热力学第二定律的 Kelvin 表述，故假设不成立。
+	\end{proofs}
+	类似可证明在 \(p-V\) 图上任意物质的两条绝热线不能相交。
+\end{example}
+
+\begin{definition}
+	其结果（系统和外界的变化）可完全被消除
+	的过程称为\tboba{可逆过程}，否则称为\tboba{不可逆过程}。可逆过程必然可以沿原路径的反向
+	进行，结果是系统和外界同时复原。
+\end{definition}
+一般而言，如果过程是由于某个强度量如\( p\)、
+\(T\) 的改变而进行，如果过程进行的每一步都
+能保证系统和外界的该强度量之间有无穷
+小的差别，那么这个过程就是可逆的。\textbf{一切与热现象有关的实际宏观过程
+都是不可逆的。}
+
+\di[不可逆过程的相互依存性]{
+	一切不可逆过程都是相互依存的。
+}
+
+
+
+
+\newpage
+%----------------------------------------------------------
+\section{光学}
+
+\setcounter{subsection}{-1}
+\subsection{光学基本概念}
+
+\begin{definition}
+	\textup{\textbf{波的几何描述}\quad} 波可以由以下几何概念描述：
+	\begin{itemize}[topsep=0pt]
+		\item \tboba{波线}（波射线）：表示波的传播方向的射线；
+		\item \tboba{波面}（等相面）：媒质中振动相位相同的点组成的面；
+		\item \tboba{波阵面}（波前）：某时刻波到达的各点所构成的面。
+	\end{itemize}
+\end{definition}
+
+\begin{definition}
+	\textup{\textbf{波的特征量}\quad} 波的传播特征可以由以下几个量描述：
+	\begin{itemize}[topsep=0pt]
+		\item \tboba{波速} \(u\)：振动状态传播的速度，
+		一般由媒质的性质和波的类型决定，在色散媒质中还与频率有关。
+		\item \tboba{周期} \(T\)：波的一个完整振动所需时间，或一个完整波通过波线上某点所需时间，
+		由波源决定（波源、观测者均不动时）。
+		\begin{itemize}[topsep=0pt, leftmargin=2em]
+			\item \tboba{频率} \(\nu\)：单位时间内波的振动次数，\(\nu = \dfrac{1}{T}\)。
+			\item \tboba{角频率} \(\omega\)：单位时间内波的相位变化，\(\omega = 2\upi\nu\)。
+		\end{itemize}
+		\item \tboba{波长} \(\lambda\)：波线上相邻的振动状态相同的两质元间的距离，
+		由波源和媒质共同决定，\(\lambda = uT\)。
+		\begin{itemize}[topsep=0pt, leftmargin=2em]
+			\item \tboba{波矢量} \(\v{k}\)：描述波的传播方向和波长的矢量，方向指向波传播方向，大小 \(k = \dfrac{2\pi}{\lambda} = \dfrac{\omega}{u}\) 称为\tboba{波数}。
+		\end{itemize}
+	\end{itemize}
+\end{definition}
+
+波在传播中，其传播方向、频率和振幅都可
+能改变。
+Huygens 原理给出的方法（Huygens 作
+图法）是一种处理波传播方向的普遍方法。
+
+\di[Huygens 原理]{
+	媒质中任意波面上的各点都可看作是发射
+	子波（次级波）的波源（点源），其后的任
+	一时刻，这些子波面的包络面（包迹）就是
+	波在该时刻的新的波面。
+}
+
+由 Huygens 原理，容易推导出波的衍射等现象。
+
+\di[电磁波方程]{
+	电磁波在各向同性均匀介质中的传播方程为
+	\begin{equation}
+		\begin{cases}
+			\nabla^2 \v{E} = \dfrac{1}{u^2} \dfrac{\partial^2 \v{E}}{\partial t^2} \\[5pt]
+			\nabla^2 \v{B} = \dfrac{1}{u^2} \dfrac{\partial^2 \v{B}}{\partial t^2}
+		\end{cases}
+	\end{equation}
+	\tcblower
+	\hang[3]\textbf{其中\quad} \(u\) ——介质中的光速，\(u = \dfrac{1}{\sqrt{\varepsilon\mu}}\)。
+}
+
+结论 \ref{电磁波方程} 中的 \(x\) 分量是一个一维波动方程 \(
+	\begin{cases}
+		\dfrac{\partial^2 \v{E}}{\partial x^2} = \dfrac{1}{u^2} \dfrac{\partial^2 \v{E}}{\partial t^2} \\[5pt]
+		\dfrac{\partial^2 \v{B}}{\partial x^2} = \dfrac{1}{u^2} \dfrac{\partial^2 \v{B}}{\partial t^2}
+	\end{cases}
+\)，其有一组最简单的解 
+\[
+	\begin{cases}
+		\v{E}(x，t) = \v{E}_{0} \cos \omega \left(t - \dfrac{x}{u}\right)， \\[5pt]
+		\v{B}(x，t) = \v{B}_{0} \cos \omega \left(t - \dfrac{x}{u}\right)
+	\end{cases}
+\]
+可见得电磁波的电场和磁场是同相位的。\textbf{振幅矢量} \(\v{E}_0\)、\(\v{B}_0\) 标志着电磁波的振动方向。
+
+\begin{theorem}
+	\textbf{\textup{平面电磁波的性质}\quad} 在平面电磁波中：
+	\begin{itemize}[topsep=0pt]
+		\item \(\v{E}\)、\(\v{H}\)、\(\v{u}\) 三者两两垂直，成右手关系；
+		\item 振幅之间满足 \(\sqrt{\mu} H = \sqrt{\varepsilon} E\)，\(\dfrac{E}{B} = \dfrac{1}{\sqrt{\varepsilon\mu}} = u\)；
+		\item 折射率 \(n = \sqrt{\varepsilon_\mathrm{r}\mu_\mathrm{r}}\)，对非铁磁质，\(n = \sqrt{\varepsilon_\mathrm{r}\mu_\mathrm{r}} = \approx = \sqrt{\varepsilon\mu}\)；
+		\item 电荷受力 \(\v{F} = q\v{E} + q\v{v} \cp \v{B} = q\v{E} + q\v{v} \cp \dfrac{\v{E}}{u}\)，一般 \(v \ll u\)，故电磁波主要是 \(\v{E}\) 成分与物质作用，\(\v{E}\) 称为\tbome{光矢量}。
+	\end{itemize}
+\end{theorem}
+
+\subsection{光的干涉}
+
+\subsubsection{光源的相干性}
+
+\begin{definition}
+	\textup{\textbf{相干光}\quad} 光源发出的光波，其波长相同、频率相同、振动方向相同、相位差恒定的光波称为\tboba{相干光}。
+\end{definition}
+
+光源的最基本发光单元是分子、原子。
 \begin{itemize}
-	\item 1 \(\to\) 2：等温膨胀，\(Q_1 = A_1 = \nu RT_1 \ln \dfrac{V_2}{V_1}\)；
-	\item 2 \(\to\) 3：绝热膨胀，\(T_1 V_2^{\gamma-1} = T_2 V_3^{\gamma-1}\)；
-	\item 3 \(\to\) 4：等温压缩，\(|Q_2| = |A_2| = \nu RT_2 \ln \dfrac{V_3}{V_4}\)；
-	\item 4 \(\to\) 1：绝热压缩，\(T_2 V_4^{\gamma-1} = T_1 V_1^{\gamma-1}\)。
+	\item 对\textbf{普通光源}，原子自发辐射，不同原子发光是完全独立的，不相干的，它们何时发光完全是不确定的，发光频率、光的振
+	动方向、光波的初位相，以及光的传播方向等
+	都可能不同，所以\textbf{不同原子发的光不可能产生
+	干涉现象}；同时，每个原子发光是间隙式的，\textbf{不同次发出的光也是独立的，不相干的}。
+
+	\item 对\textbf{激光光源}，原子受激辐射，可以实现\textbf{光放大}，产生完全一样的光子：传播方向、频率、相位、振动方向完
+	全相同。
 \end{itemize}
 
+下面考察两列频率相同、振动方向相同的光波的叠加。在两列光波的交汇点 \(P\) 处，两列光波的电场强度分别为 \(\v{E}_1 = \v{E}_{10} \cos(\omega t - \v{k}_1 \cdot \v{r}_1 + \varphi_{10})\)，\(E_2 = \v{E}_{20} \cos(\omega t - \v{k}_2 \cdot \v{r}_2 + \varphi_{20})\)，则 \(P\) 处的叠加光波的电场强度为 \(\v{E} = \v{E}_1 + \v{E}_2 = \v{E}_0 \cos(\omega t + \varphi)\)。于是，
+\[
+	\v{E}_0^2 = \v{E}_{10}^2 + \v{E}_{20}^2 + 2\v{E}_{10} \cdot \v{E}_{20} \cos \Delta \varphi
+	\qquad \text{其中} \quad \Delta \varphi = \varphi_{20} - \varphi_{10} + \v{k}_1 \cdot \v{r}_1 - \v{k}_2 \cdot \v{r}_2
+\]
+由于 \(I \propto \v{E}^2\)，故两列光波的叠加光波的强度为
+\[
+	I = I_1 + I_2 + 2\sqrt{I_1 I_2} \cdot \overline{\cos \Delta \varphi}
+\]
+其中 \(\overline{\cos \Delta \varphi}\) 为 \(\cos \Delta \varphi\) 的时间平均值，这是这两列光波叠加的\textbf{干涉项}。
 
+\begin{itemize}
+	\item 对非相干光源，\(\overline{\cos \Delta \varphi} = 0\)，故干涉项为 0，\(I = I_1 + I_2\)，这是\textbf{非相干叠加}；
+	\item 对相干光源，\(\overline{\cos \Delta \varphi} = \cos \Delta \varphi\)，故干涉项不为 0，\(I = I_1 + I_2 + 2\sqrt{I_1 I_2} \cos \Delta \varphi\)，这是\textbf{相干叠加}。特别地，
+	\begin{itemize}[topsep=0pt, leftmargin=2em]
+		\item 当 \(\Delta \varphi = \pm 2k\pi\)（\(k = 0，1，2，\cdots\)）时，两列光波同相叠加，强度 \(I = I_1 + I_2 + 2\sqrt{I_1 I_2} = I_\mathrm{max}\) 最大，称为\textbf{相长干涉}；
+		\item 当 \(\Delta \varphi = \pm (2k+1)\pi\)（\(k = 0，1，2，\cdots\)）时，两列光波反相叠加，强度 \(I = I_1 + I_2 - 2\sqrt{I_1 I_2} = I_\mathrm{min}\) 最小，称为\textbf{相消干涉}。
+	\end{itemize}
+\end{itemize}
 
+\begin{definition}
+	\textup{\textbf{条纹衬比度}\quad} 两列光波发生干涉，干涉的强度可用
+	\[
+		V = \dfrac{I_\mathrm{max} - I_\mathrm{min}}{I_\mathrm{max} + I_\mathrm{min}}
+	\]
+	来描述，称为\tboba{条纹衬比度}。条纹衬比度越大，干涉条纹越清晰。
+\end{definition}
 
 \newpage
 %----------------------------------------------------------

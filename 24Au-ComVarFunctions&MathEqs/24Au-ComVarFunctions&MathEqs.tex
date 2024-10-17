@@ -19,16 +19,16 @@
 \catcode`\，=\active
 \def ，{\textup{,}\hskip0.5em }
 \setmonofont{Iosevka}
-\setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
-\setCJKsansfont{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={FZYanZQKSJF.TTF}]
-\setCJKmonofont{LXGWNeoXiHei.ttf}
+\setCJKmainfont{方正新书宋_GBK}[BoldFont={思源宋体 CN Bold}, ItalicFont={方正新楷体_GBK}, BoldItalicFont={汉仪颜楷 W}]
+\setCJKsansfont{汉仪文黑-45W ExtraLight}[BoldFont={汉仪文黑-75W Bold}, ItalicFont={方正颜真卿楷书 简繁}]
+\setCJKmonofont{霞鹭新晰黑}
 %附加字体设置
-\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体Coca-ColaCareFontKaiTi.TTF}
-\newCJKfontfamily{\kai}{FZXKTK.TTF}[BoldFont={汉仪颜楷W.ttf}, ItalicFont={方正清刻本悦宋 简繁.TTF}, BoldItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁.TTF}[ItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK.TTF}[ItalicFont={方正宋刻本秀楷_GBK.TTF}, BoldFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\run}{汉仪润圆-45W.ttf}[BoldFont={汉仪润圆-75W.ttf}, ItalicFont={汉仪润圆-45W.ttf}]
-\newCJKfontfamily{\wen}{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={hk4e_zh-cn.ttf}]
+\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体}
+\newCJKfontfamily{\kai}{方正新楷体_GBK}[BoldFont={汉仪颜楷 W}, ItalicFont={方正清刻本悦宋 简繁}, BoldItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁}[ItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK}[ItalicFont={方正宋刻本秀楷_GBK}, BoldFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\run}{汉仪润圆-45W ExtraLight}[BoldFont={汉仪润圆-75W Bold}, ItalicFont={汉仪润圆-45W ExtraLight}]
+\newCJKfontfamily{\wen}{汉仪文黑-45W ExtraLight}[ItalicFont={汉仪文黑-75W Bold}, BoldFont={汉仪文黑-85W Heavy}, BoldItalicFont={汉仪文黑-85W Heavy}]
 %文档格式
 \geometry{left=2.54cm, right=2.54cm, top=3.18cm, bottom=3.18cm}
 \setcounter{tocdepth}{3}
@@ -661,20 +661,229 @@
 \begin{solution}
     多值函数 \(\ln z\) 的支点为 \(z = 0，\infty\)，因此在 \(z_0 = 1\) 附近的 Taylor 展开的圆盘应该避开这两个支点。取 \(R = 1\)，则在圆盘 \(C_1\) 内有
     \begin{align*}
-        &f(z) = \ln z && f(1) = \ln 1 = 2\pi n\i \\
-        &f^{(1)}(z) = \dfrac{1}{z} && f^{(1)}(1) = 1 \\
-        &f^{(2)}(z) = -\dfrac{1}{z^2} && f^{(2)}(1) = -1 \\
-        &\vdots && \vdots \\
+        &f(z) = \ln z && f(1) = \ln 1 = 2\pi n\i \\[-3pt]
+        &f^{(1)}(z) = \dfrac{1}{z} && f^{(1)}(1) = 1 \\[-3pt]
+        &f^{(2)}(z) = -\dfrac{1}{z^2} && f^{(2)}(1) = -1 \\[-3pt]
+        &\vdots && \vdots \\[-3pt]
         &f^{(k)}(z) = (-1)^{k-1} \dfrac{(k-1)!}{z^k} && f^{(k)}(1) = (-1)^{k-1} (k-1)!
     \end{align*}
     因此在圆盘 \(C_1\) 内有
-    \[
-        \ln z = \sum_{n=0}^\infty (-1)^{n-1} \dfrac{(n-1)!}{n!} (z-1)^n = \sum_{n=0}^\infty (-1)^{n-1} \dfrac{(z-1)^n}{n}
-    \]
+    \begin{equation*}
+        \ln z = \sum_{k=0}^\infty (-1)^{k-1} \dfrac{(k-1)!}{k} (z-1)^k = 2\pi n \i + \sum_{k=1}^\infty (-1)^{k-1} \dfrac{(k-1)!}{k} (z-1)^k
+        \qedhere
+    \end{equation*}
 \end{solution}
+其中，\(n\) 为整数，每个 \(n\) 对应 \(\ln z\) 的一个单值分支。称 \(n=0\) 的分支为 \(\ln z\) 的主值。
 \end{example}
 
+\zhu[解析延拓]{
+    当 Taylor 展开的收敛半径 \(R \neq +\infty\) 时，会出现级数在收敛圆外发散的情况。例如我们知道
+    \[
+        \ln z = \sum_{k=1}^\infty (-1)^{k-1} \dfrac{(k-1)!}{k} (z-1)^k
+        \qquad \text{（}|z-1| < 1\text{）}
+    \]
+    即我们有两个函数
+    \begin{align*}
+        f_1(z) &= \sum_{k=1}^\infty (-1)^{k-1} \dfrac{(k-1)!}{k} (z-1)^k
+        && \text{（}|z-1| < 1\text{）}\\
+        f_2(z) &= \ln z && \text{（} z \neq 0 \text{）}
+    \end{align*}
+    其中 \(f_1(z)\) 在较小区域内解析，而 \(f_2(z)\) 在较大区域内解析，且两者在交集内相等。我们称 \(f_1(z)\) 为 \(f_2(z)\) 的\tboqi{解析延拓}。
 
+    下面的定理保证了解析延拓的唯一性：
+    \begin{theorem}
+        设 \(f(z)\)，\(g(z)\) 在区域 \(B\) 上解析，如果存在 \(\{z_n\} \subset B\)，使得 \(f(z_n) = g(z_n)\) （\( n = 1, 2, \cdots\)），且 \(\{z_n\}\) 在 \(B\) 内聚敛于点 \(z_0\)，则在 \(B\) 上有 \(f(z) = g(z)\)。
+    \end{theorem}
+}
+
+\subsubsection{Laurent级数}
+
+当函数在所研究区域上存在奇点时，就不能再作 Taylor 级数展开，而
+需要考虑除去奇点的环域上的展开，即~\tboba{Laurent 级数}展开。
+
+\begin{definition}
+    含有正、负幂次的幂级数称为\tboba{双边幂级数}，形如 \(\cdots + a_{-2}(z-z_0)^{-2} + a_{-1}(z-z_0)^{-1} + a_0 + a_1(z-z_0) + a_2(z-z_0)^2 + \cdots\)，记作 \(\sum\limits_{n=-\infty}^\infty a_n (z-z_0)^n\)。
+
+    引入变量 \(\zeta = \dfrac{1}{z-z_0}\)，则一个双边幂级数可以写为 \(\sum\limits_{k=0}^\infty a_k (z-z_0)^k + \sum\limits_{k=1}^\infty a_{-k} \zeta^k\)，即两个幂级数的和。设这两个幂级数的收敛半径分别为 \(R_1\) 和 \(\dfrac{1}{R_2}\)，则可知双边幂级数的正幂部分在 \(|z-z_0| < R_1\) 内收敛，负幂部分在 \(|z-z_0| > R_2\) 内收敛。
+
+    若 \(R_1 > R_2\)，则双边幂级数在环域 \(R_2 < |z-z_0| < R_1\) 内\tboba{收敛}，且为\textbf{绝对且一致收敛}于一个\textbf{解析函数}。环域 \(R_2 < |z-z_0| < R_1\) 称为双边幂级数的\tboba{收敛环}。
+\end{definition}
+
+\di[解析函数的Laurent展开]{
+    设 \(f(z)\) 在环域 \(R_2 < |z-z_0| < R_1\) 上单值解析，则对环域上的每一点 \(z\)，函数 \(f(z)\) 可展开为双边幂级数
+    \begin{equation*}
+        f(z) = \sum_{n=-\infty}^\infty a_n (z-z_0)^n
+    \end{equation*}
+    其中
+    \begin{equation}
+        a_n = \dfrac{1}{2\pi\i} \oint_{\ell} \dfrac{f(\zeta)}{(\zeta-z_0)^{n+1}} \dif \zeta
+    \end{equation}
+    \(\ell\) 为环域内绕内圆一周的任意闭合曲线。
+    
+    \(\sum\limits_{n=-\infty}^{\infty} a_n (z-z_0)^n\) 称为~\tbome{Laurent级数}，\(f(z) = \sum\limits_{n=-\infty}^{\infty} a_n (z-z_0)^n\) 称为函数 \(f(z)\) 的~\tbome{Laurent展开}。
+}
+
+\de[孤立奇点]{
+    若函数 \(f(z)\) 在某点 \(z_0\) 不可导（甚至不连续、无定义），而在 \(z_0\) 的任意小邻域内除 \(z_0\) 外处处可导，则称 \(z_0\) 为函数 \(f(z)\) 的\tboba{孤立奇点}。
+}
+\begin{definition}
+    在挖去孤立奇点 \(z_0\) 而形成的环域上的解析函数 \(f(z)\) 可展开为 Laurent 级数 \(\sum\limits_{n=-\infty}^\infty a_n (z-z_0)^n\)，其中正幂部分 \(\sum\limits_{n=0}^\infty a_n (z-z_0)^n\) 称为函数 \(f(z)\) 的\tboba{解析部分}，负幂部分 \(\sum\limits_{n=1}^\infty a_{-n} (z-z_0)^{-n}\) 称为函数 \(f(z)\) 的\tboba{主要部分}。
+\end{definition}
+\de[可去奇点、极点、本性奇点]{
+    设函数 \(f(z)\) 在孤立奇点 \(z_0\) 的去心邻域内解析，其 Laurent 展开的负幂部分——
+    \begin{itemize}[leftmargin=2em]
+        \item 全为0，则称 \(z_0\) 为函数 \(f(z)\) 的\tboba{可去奇点}；
+        \item 只有有限项，则称 \(z_0\) 为函数 \(f(z)\) 的\tboba{极点}；
+        \item 有无限项，则称 \(z_0\) 为函数 \(f(z)\) 的\tboba{本性奇点}。
+    \end{itemize}
+}
+
+\subsubsection{留数定理}
+
+\newcommand{\res}{\mathop\mathrm{Res}}
+
+\de[留数]{
+    设函数 \(f(z)\) 在孤立奇点 \(z_0\) 的去心邻域内解析，其 Laurent 展开为 \(\sum\limits_{n=-\infty}^\infty a_n (z-z_0)^n\)，则称系数 \(a_{-1} = \dfrac{1}{2\pi\i} \displaystyle\oint_{\ell} f(z) \dif z\) 为函数 \(f(z)\) 在 \(z_0\) 处的\tboba{留数}，记作 \(\res f(z_0)\)。
+}
+
+
+\di[留数定理]{
+    设函数 \(f(z)\) 在闭曲线 \(\ell\) 所围区域 \(B\) 上除有限个孤立奇点 \(z_1，z_2，\cdots，z_n\) 外解析，在闭区域 \(\overline{B}\) 上除孤立奇点外连续，那么有
+    \begin{equation}
+        \oint_{\ell} f(z) \dif z = 2\pi\i \sum_{k=1}^n \res f(z_k)
+    \end{equation}
+}
+
+\begin{proofs}
+    由于 \(f(z)\) 在闭区域 \(\overline{B}\) 上除孤立奇点外连续，因此可以在 \(\ell\) 上任意一点 \(z\) 处展开为 Laurent 级数，即
+    \[
+        f(z) = \sum_{m=-\infty}^\infty a_m (z-z_k)^m
+    \]
+    在 Laurent 级数的收敛环中，作回路 \(\ell_k\) 分别包围孤立奇点 \(z_k\)，则根据 Cauchy 定理有
+    \[
+        \ointctrclockwise_{\ell} f(z) \dif z = \sum_{k=1}^n \ointctrclockwise_{\ell_k} f(z) \dif z
+    \] 
+    将 Laurent 级数代入右边积分，有
+    \begin{equation*}
+        \ointctrclockwise_{\ell_k} f(z) \dif z = \ointctrclockwise_{\ell_k} \sum_{m=-\infty}^\infty a_m (z-z_k)^m \dif z = 2\pi\i a_{-1}^{(k)} = 2\pi\i \res f(z_k)
+        \qedhere
+    \end{equation*}
+\end{proofs}
+
+留数定理指出了了被积函数的回路积分等于该函数所围奇
+点留数之和，因此\tboba{围道积分问题可以转换为留数求解问题}。
+
+\paragraph{留数的计算方法}
+
+1
+
+\zhu[无穷远点处的留数]{
+    若 \(\infty\) 是 \(f(z)\) 的孤立奇点，即存在 \(R > 0\)，使得 \(f(z)\) 在 \(R < |z - z_0| < +\infty\) 内解析，那么也可以在 \(\infty\) 处对 \(f(z)\) 做 Laurent 展开 \(f(z) = \sum\limits_{n=-\infty}^\infty a_n z^n\)，其中 \(a_k = \dfrac{1}{2\pi\i} \displaystyle\oint_{\ell} \dfrac{f(\zeta)}{\zeta^{k+1}} \dif \zeta\)。
+
+    \begin{definition}
+        系数 \(a_{-1} = \dfrac{1}{2\pi\i} \displaystyle\oint_{\ell} f(z) \dif z\) \textbf{的相反数}称为函数 \(f(z)\) 在无穷远点处的\tboqi{留数}，记作 \(\res f(\infty)\)，即 
+        \begin{equation}
+            \res f(\infty) = -a_{-1} = \dfrac{1}{2\pi\i} \ointclockwise_{\ell} f(z) \dif z
+        \end{equation}
+        按顺时针方向积分，部分是因为这个方向自然看作绕 \(\infty\) 的正方向。
+    \end{definition}
+}
+
+\paragraph{留数定理的应用}
+
+留数定理一个重要应用就是计算某些\textbf{实变函数的定积分}。因此，需
+要将实变函数定积分和复变函数定积分联系起来。
+
+\begin{circum}
+    \(\displaystyle I = \int_0^{2\pi} \mbome{R(\cos x，\sin x)} \dif x\)，即被积函数是\tbome{三角函数的有理式}，积分区间是 \([0，2\pi]\)。
+
+    做\textbf{变量替换} \(z = \e^{\i x}\)，则 \(\cos x = \dfrac{z + z^{-1}}{2}\)，\(\sin x = \dfrac{z - z^{-1}}{2\i}\)，\(\dif x = \dfrac{\dif z}{\i z}\)，积分轨迹变成了绕单位圆逆时针一周，即
+    \[
+        I = \oint_{|z|=1} R\left(\dfrac{z+z^{-1}}{2}，\dfrac{z-z^{-1}}{2\i}\right) \dfrac{\dif z}{\i z}
+    \]
+\end{circum}
+
+\begin{circum}\label{cir: 类型2}
+    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) 在实轴上没有奇点，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(zf(z)\) 一致趋于0。
+    \zhu[上下限均为无穷远点的反常积分]{
+        上面的反常积分（\(\displaystyle \int_{-\infty}^{+\infty} f(x) \dif x\)）通常理解为 \(\mboqi{\lim\limits_{R_1 \to +\infty \atop R_2 \to +\infty}} \dint_{-R_1}^{R_2} f(x) \dif x\)。若极限存在的话，这一极限便称为 \(\displaystyle \int_{-\infty}^{+\infty} f(x) \dif x\) 的值；而若 \(R_1 = R_2 \to +\infty\) 的极限存在，这一极限便称为 \(\displaystyle \int_{-\infty}^{+\infty} f(x) \dif x\) 的\tboqi{主值}，记为 \(\displaystyle \mathcal{P} \int_{-\infty}^{+\infty} f(x) \dif x\)。
+
+        本情形积分要计算的就是积分主值。
+    }
+
+    考虑半圆形回路 \(\ell\)，
+    \[
+        \oint_\ell f(z) \dif z = \int_{-R}^R f(x) \dif x + \int_{C_R} f(z) \dif z
+    \]
+    其中 \(C_R\) 为以零点为圆点\(R\)为半径的半圆（上半平面），积分路径为
+    逆时针方向。
+    根据留数定理，可知
+    \[
+        \int_{-R}^R f(x) \dif x + \int_{C_R} f(z) \dif z = 2\pi\i \sum_{z_0 \in \ell\text{内奇点}} \res f(z_0)
+    \]
+    其中 \(\displaystyle \int_{C_R} f(z) \dif z\) 只是半个圆周的积分，不能使用留数定理，考虑对其进行\textbf{估计}。当 \(R \to \infty\) 时，
+    \[
+        \left| \int_{C_R} f(z) \dif z \right| \le \int_{C_R} |f(z)| | \dif z | = \int_{C_R} |zf(z)| \dfrac{| \dif z |}{|z|} \le \max_{z \in C_R} |zf(z)| \int_{C_R} \dfrac{| \dif z |}{|z|} = \max_{z \in C_R} |zf(z)| \cdot \pi R \to 0
+    \]
+    因此 
+    \[
+        \int_{-\infty}^{+\infty} f(x) \dif x = 2\pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res f(z_0)
+    \]
+\end{circum}
+
+\begin{circum}\label{cir: 类型3}
+    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \e^{\i mx} \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) 在实轴上没有奇点，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(f(z)\) 一致趋于0。
+
+    \begin{lemma}
+        设 \(m\) 为正数，\(C_R\) 为以原点为圆心、\(R\) 为半径的半圆（上半平面），积分路径为逆时针方向，又设当\(z\)在上半平面或实轴上趋
+        于无穷时，\(f(z)\)一致趋于0，则 \(\displaystyle \lim_{R \to +\infty} \int_{C_R} f(z) \e^{\i mz} \dif z = 0\)。
+    \end{lemma}
+    \begin{proofs}
+        做变量替换 \(z = R\e^{\i \varphi}\)，则 \(\dif z = \i R\e^{\i \varphi} \dif \varphi\)，有估计
+        \begin{align*}
+            \left| \int_{C_R} f(z) \e^{\i mz} \dif z \right| 
+            &= \left| \int_0^\pi f(R\e^{\i \varphi}) \e^{\i mR\e^{\i \varphi}} \i R\e^{\i \varphi} \dif \varphi \right| 
+            = \left| \int_0^\pi f(R\e^{\i \varphi}) \e^{\i mR(\cos\varphi+i\sin\varphi)} \i R\e^{\i \varphi} \dif \varphi \right| \\
+            &\le \int_0^\pi \left| f(R\e^{\i \varphi}) \cdot \e^{\i mR\cos \varphi} \cdot \e^{-mR\sin \varphi} \cdot \i R\e^{\i \varphi} \right| \dif \varphi \displaybreak\\
+            &= \int_0^\pi |f(R\e^{\i \varphi})| \e^{-mR\sin \varphi} R \dif \varphi
+            \le \max_{\varphi \in [0,\pi]} |f(R\e^{\i \varphi})| \int_0^\pi R \e^{-mR\sin \varphi} \dif \varphi
+        \end{align*}
+        考察极限 \(\displaystyle \lim_{R \to +\infty} \int_0^{\pi/2} R \e^{-mR\sin \varphi} \dif \varphi\)，由 \(0 < \dfrac{2\varphi}{\pi} < \sin\varphi\)，有
+        \[
+            \int_0^{\pi/2} R \e^{-mR\sin \varphi} \dif \varphi 
+            \le \int_0^{\pi/2} R \e^{-mR \cdot 2\varphi/\pi} \dif \varphi
+            = \dfrac{\pi}{2m} \left(1 - \e^{-mR}\right) 
+            \xlongrightarrow{R \to +\infty} \dfrac{\pi}{2m}
+        \]
+        于是 \(\displaystyle \lim_{R \to +\infty} \int_0^\pi R \e^{-mR\sin \varphi} \dif \varphi = 2 \lim_{R \to +\infty} \int_0^{\pi/2} R \e^{-mR\sin \varphi} \dif \varphi\) 有界，因此 \(\displaystyle \lim_{R \to +\infty} \int_{C_R} f(z) \e^{\i mz} \dif z = 0\)。
+    \end{proofs}
+    于是，根据引理，利用留数定理，有（\(m > 0\)）
+    \[
+        \int_{-\infty}^{+\infty} f(x) \e^{\i mx} \dif x = 2\pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res \left(f(z_0)\e^{\i mz_0}\right)
+    \]
+\end{circum}
+
+针对形如 \(\displaystyle \int_0^{+\infty} g(x) \cos mx \dif x\) 或 \(\displaystyle \int_0^{+\infty} h(x) \sin mx \dif x\) 的积分，可以利用对称性进行奇、偶延拓，然后同上计算，有（\(m > 0\)）
+\begin{align*}
+    & \int_0^{+\infty} g(x) \cos mx \dif x = \pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res \left(g(z_0)\e^{\i mz_0}\right) \\
+    & \int_0^{+\infty} h(x) \sin mx \dif x = \pi \sum_{z_0 \in \text{上半平面内奇点}} \res \left(h(z_0)\e^{\i mz_0}\right)
+\end{align*}
+当 \(m < 0\) 时，改用下半平面的半圆路径，同上可有
+\begin{align*}
+    & \int_{-\infty}^{+\infty} f(x)\e^{\i mx} \dif x = -2\pi\i \sum_{z_0 \in \text{下半平面内奇点}} \res \left(f(z_0)\e^{\i mz_0}\right) \\
+    & \int_0^{+\infty} g(x) \cos mx \dif x = -\pi\i \sum_{z_0 \in \text{下半平面内奇点}} \res \left(g(z_0)\e^{\i mz_0}\right) \\
+    & \int_0^{+\infty} h(x) \sin mx \dif x = -\pi \sum_{z_0 \in \text{下半平面内奇点}} \res \left(h(z_0)\e^{\i mz_0}\right)
+\end{align*}
+
+\begin{circum}
+    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) 在实轴上有\textbf{单极点} \(z = \alpha\)，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(zf(z)\) （或如情形 \ref{cir: 类型3} 的\(\dfrac{f(z)}{\e^{\i mz}}\)）一致趋于0。
+
+    \begin{itemize}
+        \item \textbf{类似情形 \ref{cir: 类型2} 的处理}：由于存在这个奇点，可以用 圆心在 \(0\)、半径为 \(R\) 的半圆路径 \(C_R\) 和 圆心在 \(\alpha\)、半径为 \(\varepsilon\) 的半圆路径 \(C_\varepsilon\) 构造绕过奇点的回路 \(\ell\)，将积分拆分为
+        \[
+            \oint_{\ell} f(z) \dif z = \int_{-R}^{\alpha - \varepsilon}
+    \end{itemize}
+\end{circum}
 
 \newpage
 %----------------------------------------------------------

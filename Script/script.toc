@@ -1,16 +1,25 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{角色}{ii}{}%
-\contentsline {chapter}{前言}{iii}{}%
-\contentsline {section}{第一稿说明}{iii}{}%
+\contentsline {chapter}{前言}{iv}{}%
+\contentsline {section}{第一稿说明}{iv}{}%
+\contentsline {section}{第二稿说明}{v}{}%
 \contentsline {chapter}{概要}{1}{}%
 \contentsline {chapter}{ACT 1\hskip 1em\relax 重逢}{2}{}%
 \contentsline {section}{SCENE 1\hskip 1em\relax }{2}{}%
 \contentsline {chapter}{ACT 2\hskip 1em\relax 缘起}{4}{}%
 \contentsline {section}{SCENE 1\hskip 1em\relax }{4}{}%
 \contentsline {section}{SCENE 2\hskip 1em\relax }{5}{}%
-\contentsline {section}{SCENE 3\hskip 1em\relax }{6}{}%
-\contentsline {chapter}{ACT 3\hskip 1em\relax 复燃}{7}{}%
-\contentsline {section}{SCENE 1\hskip 1em\relax }{7}{}%
-\contentsline {section}{SCENE 2\hskip 1em\relax }{8}{}%
-\contentsline {chapter}{ACT 4\hskip 1em\relax 再会}{9}{}%
-\contentsline {section}{SCENE 1\hskip 1em\relax }{9}{}%
+\contentsline {section}{SCENE 3\hskip 1em\relax }{5}{}%
+\contentsline {section}{SCENE 4\hskip 1em\relax }{7}{}%
+\contentsline {section}{SCENE 5\hskip 1em\relax }{8}{}%
+\contentsline {section}{SCENE 6\hskip 1em\relax }{9}{}%
+\contentsline {chapter}{ACT 3\hskip 1em\relax 复燃}{11}{}%
+\contentsline {section}{SCENE 1\hskip 1em\relax }{11}{}%
+\contentsline {section}{SCENE 2\hskip 1em\relax }{12}{}%
+\contentsline {section}{SCENE 3\hskip 1em\relax }{13}{}%
+\contentsline {chapter}{ACT 4\hskip 1em\relax 再会}{14}{}%
+\contentsline {section}{SCENE 1\hskip 1em\relax }{14}{}%
+\contentsline {chapter}{ACT 5\hskip 1em\relax 幕结}{16}{}%
+\contentsline {section}{SCENE 1\hskip 1em\relax 创作背景介绍}{16}{}%
+\contentsline {chapter}{拍摄计划}{17}{}%
+\contentsline {section}{DEMO拍摄}{17}{}%

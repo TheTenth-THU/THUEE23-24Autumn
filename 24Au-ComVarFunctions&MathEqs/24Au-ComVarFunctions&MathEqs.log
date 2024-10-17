@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  3 OCT 2024 03:23
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  16 OCT 2024 12:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -939,24 +939,24 @@ Package fontspec Info: Font family 'Iosevka(0)' created for font 'Iosevka'
 (fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
 
 
-Package fontspec Info: Font family 'FZXSSK.TTF(0)' created for font
-(fontspec)             'FZXSSK.TTF' with options
-(fontspec)             [Script={CJK},BoldItalicFont={汉仪颜楷W.ttf},BoldFont={SourceHanSerifCN-Bold.otf},ItalicFont={FZXKTK.TTF}].
+Package fontspec Info: Font family '方正新书宋_GBK(0)' created for font '方正新书宋_GBK'
+(fontspec)             with options [Script={CJK},BoldItalicFont={汉仪颜楷
+(fontspec)             W},BoldFont={思源宋体 CN Bold},ItalicFont={方正新楷体_GBK}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[FZXSSK.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             <->"方正新书宋_GBK/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[SourceHanSerifCN-Bold.otf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"思源宋体 CN
+(fontspec)             Bold/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[FZXKTK.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             <->"方正新楷体_GBK/OT:script=hani;language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[汉仪颜楷W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"汉仪颜楷
+(fontspec)             W/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 \c@theorem=\count387
@@ -1109,25 +1109,24 @@ File: OMXyhex.fd
 File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 )
 
-Package fontspec Info: Font family 'FZXKTK.TTF(0)' created for font
-(fontspec)             'FZXKTK.TTF' with options
-(fontspec)             [Script={CJK},BoldItalicFont={FZYanZQKSJF.TTF},BoldFont={汉仪颜楷W.ttf},ItalicFont={方正清刻本悦宋
-(fontspec)             简繁.TTF}].
+Package fontspec Info: Font family '方正新楷体_GBK(0)' created for font '方正新楷体_GBK'
+(fontspec)             with options [Script={CJK},BoldItalicFont={方正颜真卿楷书
+(fontspec)             简繁},BoldFont={汉仪颜楷 W},ItalicFont={方正清刻本悦宋 简繁}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[FZXKTK.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             <->"方正新楷体_GBK/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[汉仪颜楷W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"汉仪颜楷
+(fontspec)             W/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"[方正清刻本悦宋
-(fontspec)             简繁.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"方正清刻本悦宋
+(fontspec)             简繁/OT:script=hani;language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
-(fontspec)             <->"[FZYanZQKSJF.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"方正颜真卿楷书
+(fontspec)             简繁/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
  (./24Au-ComVarFunctions&MathEqs.toc)
@@ -1144,94 +1143,139 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 179.
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
-Package fontspec Info: Font family '汉仪文黑-45W.ttf(0)' created for font
-(fontspec)             '汉仪文黑-45W.ttf' with options
-(fontspec)             [Script={CJK},BoldFont={汉仪文黑-75W.ttf},ItalicFont={FZYanZQKSJF.TTF}].
+Package fontspec Info: Could not resolve font "方正颜真卿楷书 简繁/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "汉仪文黑-75W Bold/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "汉仪文黑-45W ExtraLight/BI" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: Font family '汉仪文黑-45WExtraLight(0)' created for font
+(fontspec)             '汉仪文黑-45W ExtraLight' with options
+(fontspec)             [Script={CJK},BoldFont={汉仪文黑-75W
+(fontspec)             Bold},ItalicFont={方正颜真卿楷书 简繁}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"汉仪文黑-45W
+(fontspec)             ExtraLight/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"汉仪文黑-75W
+(fontspec)             Bold/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"方正颜真卿楷书
+(fontspec)             简繁/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+
+
+Package fontspec Info: Font family '汉仪文黑-45WExtraLight(1)' created for font
+(fontspec)             '汉仪文黑-45W ExtraLight' with options
+(fontspec)             [Script={CJK},BoldItalicFont={汉仪文黑-85W
+(fontspec)             Heavy},BoldFont={汉仪文黑-85W Heavy},ItalicFont={汉仪文黑-75W
+(fontspec)             Bold}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"汉仪文黑-45W
+(fontspec)             ExtraLight/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"汉仪文黑-85W
+(fontspec)             Heavy/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"汉仪文黑-75W
+(fontspec)             Bold/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"汉仪文黑-85W
+(fontspec)             Heavy/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+
+Package fontspec Info: Font family '汉仪润圆-45WExtraLight(0)' created for font
+(fontspec)             '汉仪润圆-45W ExtraLight' with options
+(fontspec)             [Script={CJK},BoldFont={汉仪润圆-75W
+(fontspec)             Bold},ItalicFont={汉仪润圆-45W ExtraLight}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"汉仪润圆-45W
+(fontspec)             ExtraLight/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"汉仪润圆-75W
+(fontspec)             Bold/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"汉仪润圆-45W
+(fontspec)             ExtraLight/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"汉仪润圆-45W
+(fontspec)             ExtraLight/B/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+
+Package fontspec Info: Could not resolve font "方正宋刻本秀楷_GBK/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "方正颜真卿楷书 简繁/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Could not resolve font "方正宋刻本秀楷_GBK/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family '方正宋刻本秀楷_GBK(0)' created for font
+(fontspec)             '方正宋刻本秀楷_GBK' with options
+(fontspec)             [Script={CJK},BoldFont={方正颜真卿楷书
+(fontspec)             简繁},ItalicFont={方正宋刻本秀楷_GBK}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[汉仪文黑-45W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             <->"方正宋刻本秀楷_GBK/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[汉仪文黑-75W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"方正颜真卿楷书
+(fontspec)             简繁/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 (fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[FZYanZQKSJF.TTF]/OT:script=hani;language=dflt;"
+(fontspec)             <->"方正宋刻本秀楷_GBK/OT:script=hani;language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
 
-Package fontspec Info: Font family '汉仪文黑-45W.ttf(1)' created for font
-(fontspec)             '汉仪文黑-45W.ttf' with options
-(fontspec)             [Script={CJK},BoldFont={汉仪文黑-75W.ttf},ItalicFont={hk4e_zh-cn.ttf}].
+Package fontspec Info: Could not resolve font "方正颜真卿楷书 简繁/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: Font family '方正清刻本悦宋简繁(0)' created for font '方正清刻本悦宋
+(fontspec)             简繁' with options [Script={CJK},ItalicFont={方正颜真卿楷书
+(fontspec)             简繁}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[汉仪文黑-45W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"方正清刻本悦宋
+(fontspec)             简繁/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[汉仪文黑-75W.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"方正清刻本悦宋
+(fontspec)             简繁/B/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[hk4e_zh-cn.ttf]/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"方正颜真卿楷书
+(fontspec)             简繁/OT:script=hani;language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"方正清刻本悦宋
+(fontspec)             简繁/BI/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-
-Package fontspec Info: Font family '汉仪润圆-45W.ttf(0)' created for font
-(fontspec)             '汉仪润圆-45W.ttf' with options
-(fontspec)             [Script={CJK},BoldFont={汉仪润圆-75W.ttf},ItalicFont={汉仪润圆-45W.ttf}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[汉仪润圆-45W.ttf]/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[汉仪润圆-75W.ttf]/OT:script=hani;language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[汉仪润圆-45W.ttf]/OT:script=hani;language=dflt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-
-
-Package fontspec Info: Font family '方正宋刻本秀楷_GBK.TTF(0)' created for font
-(fontspec)             '方正宋刻本秀楷_GBK.TTF' with options
-(fontspec)             [Script={CJK},BoldFont={FZYanZQKSJF.TTF},ItalicFont={方正宋刻本秀楷_GBK.TTF}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->"[方正宋刻本秀楷_GBK.TTF]/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'bold' (b/n) with NFSS spec.:
-(fontspec)             <->"[FZYanZQKSJF.TTF]/OT:script=hani;language=dflt;"
-(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[方正宋刻本秀楷_GBK.TTF]/OT:script=hani;language=dflt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-
-
-Package fontspec Info: Font family '方正清刻本悦宋简繁.TTF(0)' created for font
-(fontspec)             '方正清刻本悦宋 简繁.TTF' with options
-(fontspec)             [Script={CJK},ItalicFont={FZYanZQKSJF.TTF}].
-(fontspec)              
-(fontspec)              This font family consists of the following NFSS
-(fontspec)             series/shapes:
-(fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"[方正清刻本悦宋
-(fontspec)             简繁.TTF]/OT:script=hani;language=dflt;"
-(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
-(fontspec)             - 'italic' (m/it) with NFSS spec.:
-(fontspec)             <->"[FZYanZQKSJF.TTF]/OT:script=hani;language=dflt;"
-(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
-
-LaTeX Font Info:    Font shape `TU/FZXSSK.TTF(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/FZXSSK.TTF(0)/m/it' tried instead on input line 240.
+LaTeX Font Info:    Font shape `TU/方正新书宋_GBK(0)/m/sl' in size <10> not available
+(Font)              Font shape `TU/方正新书宋_GBK(0)/m/it' tried instead on input line 240.
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
  [2]
@@ -1301,22 +1345,41 @@ File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
  [13]
+
+LaTeX Font Warning: Font shape `TU/方正宋刻本秀楷_GBK(0)/b/it' undefined
+(Font)              using `TU/方正宋刻本秀楷_GBK(0)/b/n' instead on input line 790.
+
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [14]
+[14]
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [15] (./24Au-ComVarFunctions&MathEqs.aux)
+ [15]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [16]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [17]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [18]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [19] (./24Au-ComVarFunctions&MathEqs.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 Package rerunfilecheck Info: File `24Au-ComVarFunctions&MathEqs.out' has not changed.
-(rerunfilecheck)             Checksum: 51EF274AEC108F92D385CDBEF5664237;1755.
+(rerunfilecheck)             Checksum: CA58144C714767C2E5966EEFF51A5458;1974.
  ) 
 Here is how much of TeX's memory you used:
- 36337 strings out of 476683
- 855652 string characters out of 5798754
+ 36523 strings out of 476683
+ 864155 string characters out of 5798754
  1885012 words of memory out of 5000000
- 55905 multiletter control sequences out of 15000+600000
- 533448 words of font info for 205 fonts, out of 8000000 for 9000
+ 56067 multiletter control sequences out of 15000+600000
+ 535385 words of font info for 223 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,15n,97p,568b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,15n,97p,568b,1123s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 24Au-ComVarFunctions&MathEqs.pdf (15 pages).
+Output written on 24Au-ComVarFunctions&MathEqs.pdf (19 pages).

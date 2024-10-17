@@ -24,16 +24,16 @@
 %\newcommand{\symup}[1]{\mathrm{#1}}
 \setmonofont{Iosevka}
 \newfontfamily{\mono}{Cascadia Mono Regular}
-\setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
-\setCJKsansfont{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={FZYanZQKSJF.TTF}]
-\setCJKmonofont{LXGWNeoXiHei.ttf}
+\setCJKmainfont{方正新书宋_GBK}[BoldFont={思源宋体 CN Bold}, ItalicFont={方正新楷体_GBK}, BoldItalicFont={汉仪颜楷 W}]
+\setCJKsansfont{汉仪文黑-45W ExtraLight}[BoldFont={汉仪文黑-75W Bold}, ItalicFont={方正颜真卿楷书 简繁}]
+\setCJKmonofont{霞鹜新晰黑}
 %附加字体设置
-\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体Coca-ColaCareFontKaiTi.TTF}
-\newCJKfontfamily{\kai}{FZXKTK.TTF}[BoldFont={汉仪颜楷W.ttf}, ItalicFont={方正清刻本悦宋 简繁.TTF}, BoldItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁.TTF}[ItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK.TTF}[ItalicFont={方正宋刻本秀楷_GBK.TTF}, BoldFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\run}{汉仪润圆-45W.ttf}[BoldFont={汉仪润圆-75W.ttf}, ItalicFont={汉仪润圆-45W.ttf}]
-\newCJKfontfamily{\wen}{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={hk4e_zh-cn.ttf}]
+\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体}
+\newCJKfontfamily{\kai}{方正新楷体_GBK}[BoldFont={汉仪颜楷 W}, ItalicFont={方正清刻本悦宋 简繁}, BoldItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁}[ItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK}[ItalicFont={方正宋刻本秀楷_GBK}, BoldFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\run}{汉仪润圆-45W ExtraLight}[BoldFont={汉仪润圆-75W Bold}, ItalicFont={汉仪润圆-45W ExtraLight}]
+\newCJKfontfamily{\wen}{汉仪文黑-45W ExtraLight}[ItalicFont={汉仪文黑-75W Bold}, BoldFont={汉仪文黑-85W Heavy}, BoldItalicFont={汉仪文黑-85W Heavy}]
 
 %文档格式
 \geometry{left=1.96cm, right=1.96cm, top=3.18cm, bottom=3.18cm}
@@ -105,7 +105,8 @@
 	stringstyle=\colors{meihong},      			% 字符串颜色
 	showstringspaces=false,                     % 不显示字符串内的空格
 	numbers=left,                               % 显示行号
-	numberstyle=\tiny,              			% 设置数字字体
+	stepnumber=1,                               % 设置行号递增间隔
+	numberstyle=\tiny\ttfamily,              			% 设置数字字体
 	basicstyle=\linespread{1}\tt,               % 设置基本字体
 	captionpos=t,                               % title在上方(在bottom即为b)
 	frame=single,                               % 设置代码框形式
@@ -918,6 +919,367 @@
 	}
 \end{lstlisting}
 KMP 算法的时间复杂度为 \(O(m + n)\)，其中 \(m\) 为模式串 \(P\) 的长度，\(n\) 为文本串 \(T\) 的长度。
+
+\subsection{树}
+
+\subsubsection{树的基本概念}
+
+树是一种由\textbf{一对多}分支关系定义的层级结构。
+
+\de[树]{
+	\tboba{树}是由 \(n (n \geq 0)\) 个结点组成的有限集合，满足：
+	\begin{itemize}[leftmargin=1em]
+		\item 若 \(n = 0\)，则称为\tboba{空树}；
+		\item 对 \(n > 0\) 的非空树：
+		\begin{itemize}[leftmargin=1em]
+			\item 有且仅有一个特定的称为\tboba{根}（root）的结点，只有直接后继，没有直接前驱；
+			\item 除根以外的其余结点划分为 \(m (m > 0)\) 个互不相交的有限集合 \(T_1, T_2, \cdots, T_m\)，每个集合本身又是一棵树，称为根的\tboba{子树}（subtree）。子树的根节点有且仅有一个直接前驱，可以有 0 个或多个直接后继。没有直接后继的结点称为\tboba{叶子}（leaf）。
+		\end{itemize}
+	\end{itemize}
+}
+
+\begin{definition}
+	一个结点处的子树的个数称为该结点的\tboba{度}，树中结点的最大度称为树的\tboba{度}。如果树的度为 \(k\)，则称该树为 \(\mboba{k}\)~\tboba{叉树}。
+\end{definition}
+
+\begin{definition}
+	对树中的结点 \(v\)，其直接后继（或者说其子树的根）称为 \(v\) 的\tboba{孩子}（child）结点，\(v\) 称为孩子结点的\tboba{双亲}（parent）结点；结点 \(v\) 的孩子结点之间互为\tboba{兄弟}（sibling）结点，\(v\) 的不同孩子结点的孩子结点之间互为\tboba{堂兄弟}（cousin）结点；从根结点到结点 \(v\) 的路径上的结点都是 \(v\) 的\tboba{祖先}（ancestor）结点，\(v\) 的所有子树中的结点都是 \(v\) 的\tboba{后裔}（descendant）结点。
+\end{definition}
+
+\begin{definition}
+	树中结点的\tboba{层次}从根开始定义，根结点的层次为 1，其余结点的层次等于其双亲结点的层次加 1；树中（叶子）结点的最大层次称为树的\tboba{深度}（depth）。
+\end{definition}
+
+从离散数学的角度，树结构有如下性质：
+\begin{theorem}
+	树中结点的数目等于所有结点的度数和加 \(1\)。
+\end{theorem}
+
+\begin{theorem}
+	度为 \(k\) 的树中第 \(i\) 层上最多有 \(k^{i-1}\) 个结点。
+\end{theorem}
+
+\begin{theorem}
+	深度为 \(h\) 的 \(k\) 叉树最多有 \(\dfrac{k^h - 1}{k - 1}\) 个结点；有 \(n\) 个结点的 \(k\) 叉树的最小深度为 \(\bigl\lceil \log_k(n \cdot (k - 1) + 1) \bigr\rceil\)。
+\end{theorem}
+
+\subsubsection{二叉树}
+
+\tboba{二叉树}是一种特殊的树，其每个结点最多有两个子树，且子树有左右之分，次序不能颠倒。
+
+\de[二叉树]{
+	\tboba{二叉树}是一个包含 \(n\) 个结点的有限集合，满足：
+	\begin{itemize}[leftmargin=1em]
+		\item 若 \(n = 0\)，则称为\tboba{空二叉树}；
+		\item 若 \(n > 0\)，则满足：
+		\begin{itemize}[leftmargin=1em]
+			\item 有且仅有一个特定的称为\tboba{根}（root）的结点，只有直接后继，没有直接前驱；
+			\item 除根以外的其余结点划分为两个互不相交的有限集合 \(L\) 和 \(R\)，每个集合本身又是一棵二叉树，分别称为根的\tboba{左子树}（left subtree）和\tboba{右子树}（right subtree）；\(L\) 和 \(R\) 的根节点分别称为根的\tboba{左孩子}（left child）和\tboba{右孩子}（right child）。
+		\end{itemize}
+	\end{itemize}
+}
+
+\de[完全二叉树、满二叉树]{
+	若一棵深度为 \(h\) 的二叉树，除第 \(h\) 层外，其它各层的结点数都达到最大值，且第 \(h\) 层的结点都连续集中在最左边，则称其为\tboba{完全二叉树}；若一棵二叉树每一层的结点数都达到最大值，则称其为\tboba{满二叉树}。
+}
+
+\begin{theorem}
+	具有 \(n\) 个结点的完全二叉树的深度为 \(\bigl\lceil \log_2(n+1) \bigr\rceil\)。
+\end{theorem}
+
+\begin{theorem}
+	\textup{\textbf{完全二叉树的结点编号\quad}}对 \(n\) 个结点的完全二叉树自顶向下、自左向右进行 0 至 \(n-1\) 的编号，则对结点 \(i\) 有如下性质：
+	\begin{itemize}
+		\item 若 \(i = 0\)，则为根结点，无双亲；
+		否则，其双亲结点编号为 \(\left\lfloor \dfrac{i-1}{2} \right\rfloor\)；
+		\item 若 \(2i+1 > n\)，则该结点无左孩子；
+		否则，其左孩子编号为 \(2i+1\)；
+		\item 若 \(2i+2 > n\)，则该结点无右孩子；
+		否则，其右孩子编号为 \(2i+2\)；
+		\item 若 \(i\) 为非零偶数，则其左兄弟结点编号为 \(i-1\)；
+		\item 若 \(i\) 为不大于 \(n-2\) 的奇数，则其右兄弟结点编号为 \(i+1\)，否则该结点无右兄弟；
+		\item 结点 \(i\) 的层次为 \(\bigl\lceil \log_2(i+2) \bigr\rceil\)。
+	\end{itemize}
+\end{theorem}
+
+\subsubsection{二叉树的数据结构}
+
+二叉树的抽象数据类型可以定义为：
+\begin{lstlisting}[style=intro, morekeywords={ADT, }, morekeywords={[2]{BiTree, ElemType, }}, morekeywords={[3]{InitBiTree, DestroyBiTree, CreateBiTree, ClearBiTree, BiTreeEmpty, BiTreeDepth, Root, Value, Assign, Parent, LeftChild, RightChild, LeftSibling, RightSibling, InsertChild, DeleteChild, PreOrderTraverse, InOrderTraverse, PostOrderTraverse, LevelOrderTraverse, visit, }}]
+	ADT BiTree {
+		数据对象：(*@\( D = \{a_0, a_1, a_2, \cdots, a_n \mid a_i \in \)@*) ElemType(*@, \(1 \leq i \leq n \} \)@*)
+		数据关系：
+			若 (*@\( D = \varnothing \)@*), 则 (*@\( R = \varnothing \)@*)；
+			若 (*@\( D \neq \varnothing \)@*), 则 (*@\( R = H \)@*), 其中 (*@\( H \)@*) 是一个二元关系, 满足：
+			+ (*@\( \exists root \in D \)@*), (*@\( \forall v \in D \)@*), (*@\( \langle v, root \rangle \notin H \)@*)；
+			+ 若 (*@\( D - \{root\} \neq \varnothing \)@*), 则 (*@\( \exists D_l, D_r \subseteq D - \{root\} \)@*) 为 (*@\( D \)@*) 的划分,；
+			+ 若 (*@\( D_l \neq \varnothing \)@*), 则 (*@\( \exists! x_l \in D_l \)@*), 使得 (*@\( \langle root, x_l \rangle \in H \)@*), 且 (*@\( D_l \)@*) 上的关系 (*@\( H_l \subset H \)@*)；
+			  若 (*@\( D_r \neq \varnothing \)@*), 则 (*@\( \exists! x_r \in D_r \)@*), 使得 (*@\( \langle root, x_r \rangle \in H \)@*), 且 (*@\( D_r \)@*) 上的关系 (*@\( H_r \subset H \)@*)；
+			  并且, 上述的 (*@\( \{\langle root, x_l \rangle, \langle root, x_r \rangle\} \)@*) 以及 (*@\( H_l \)@*) 和 (*@\( H_r \)@*) 是 (*@\( H \)@*) 的三划分。
+			+ (*@\( D_l \)@*) 连带 (*@\( H_l \)@*)、(*@\( D_r \)@*) 连带 (*@\( H_r \)@*) 是符合本定义的二叉树。
+		基本操作：
+			InitBiTree(&T)
+				操作结果：构造一个空二叉树 T。
+			DestroyBiTree(&T)
+				初始条件：二叉树 T 存在。
+				操作结果：销毁二叉树 T。
+			CreateBiTree(&T, definition)
+				初始条件：二叉树 T 不存在。
+				操作结果：按 definition 中给出的定义建立二叉树 T。
+			ClearBiTree(&T)
+				初始条件：二叉树 T 存在。
+				操作结果：将二叉树 T 清空。
+			isEmpty(T)
+				初始条件：二叉树 T 存在。
+				操作结果：若 T 为空二叉树, 则返回 true, 否则返回 false。
+			GetDepth(T)
+				初始条件：二叉树 T 存在。
+				操作结果：返回 T 的深度。
+			GetRoot(T)
+				初始条件：二叉树 T 存在。
+				操作结果：返回 T 的根。
+			GetValue(T, cur_e)
+				初始条件：二叉树 T 存在, cur_e 是 T 中的某个结点。
+				操作结果：返回 cur_e 的值。
+			Assign(&T, cur_e, value)
+				初始条件：二叉树 T 存在, cur_e 是 T 中的某个结点。
+				操作结果：将 cur_e 结点的值赋为 value。
+			GetParent(T, cur_e)
+				初始条件：二叉树 T 存在, cur_e 是 T 中的某个结点。
+				操作结果：返回 cur_e 的双亲；若 cur_e 是根, 则返回空。
+			LeftChild(T, cur_e)
+				初始条件：二叉树 T 存在, cur_e 是 T 中的某个结点。
+				操作结果：返回 cur_e 的左孩子；若 cur_e 无左孩子, 则返回空。
+			RightChild(T, cur_e)
+				初始条件：二叉树 T 存在, cur_e 是 T 中的某个结点。
+				操作结果：返回 cur_e 的右孩子；若 cur_e 无右孩子, 则返回空。
+			LeftSibling(T, cur_e)
+				初始条件：二叉树 T 存在, cur_e 是 T 中的某个结点。
+				操作结果：返回 cur_e 的左兄弟；若 cur_e 无左兄弟, 则返回空。
+			RightSibling(T, cur_e)
+				初始条件：二叉树 T 存在, cur_e 是 T 中的某个结点。
+				操作结果：返回 cur_e 的右兄弟；若 cur_e 无右兄弟, 则返回空。
+			InsertChild(&T, p, LR, c)
+				初始条件：二叉树 T 存在, p 是 T 中的某个结点, LR = 0 时插入左子树, LR = 1 时插入右子树；c 为待插入的非空二叉树, 与 T 不相交且右子树为空。
+				操作结果：将 p 的左子树或右子树插入 c。
+			DeleteChild(&T, p, LR)
+				初始条件：二叉树 T 存在, p 是 T 中的某个结点, LR = 0 时删除左子树, LR = 1 时删除右子树。
+				操作结果：删除 p 的左子树或右子树。
+			PreOrderTraverse(&T, visit())
+				初始条件：二叉树 T 存在, visit() 是对结点操作的函数。
+				操作结果：前序遍历 T, 对每个结点调用 visit()。
+			InOrderTraverse(&T, visit())
+				初始条件：二叉树 T 存在, visit() 是对结点操作的函数。
+				操作结果：中序遍历 T, 对每个结点调用 visit()。
+			PostOrderTraverse(&T, visit())
+				初始条件：二叉树 T 存在, visit() 是对结点操作的函数。
+				操作结果：后序遍历 T, 对每个结点调用 visit()。
+			LevelOrderTraverse(&T, visit())
+				初始条件：二叉树 T 存在, visit() 是对结点操作的函数。
+				操作结果：层序遍历 T, 对每个结点调用 visit()。
+	} ADT BiTree
+\end{lstlisting}
+
+\paragraph{二叉树的存储}
+
+二叉树的存储结构有顺序存储结构和链式存储结构两种。
+
+\begin{itemize}
+	\item \textbf{二叉树的顺序存储}：二叉树的顺序存储结构是用一维数组存储二叉树中的结点，按照完全二叉树的结点编号规则存储。对于结点 \(i\)，其左孩子结点编号为 \(2i+1\)，右孩子结点编号为 \(2i+2\)，双亲结点编号为 \(\left\lfloor \dfrac{i-1}{2} \right\rfloor\)。
+	
+	对于非完全二叉树，顺序存储浪费的空间极大，如对于单分支的二叉树，顺序存储所真正使用的空间仅为所占用空间的 \(\dfrac{n}{2^{n-1}-1}\)。
+
+	\item \textbf{二叉树的链式存储}：二叉树的链式存储结构是用链表存储二叉树中的结点，每个结点包含数据域和两个指针域，分别指向左孩子和右孩子。
+	考虑到寻求双亲结点的需求，也可在结点中增加一个指向双亲结点的指针域。
+
+	链式存储结构的二叉树的结点定义如下：
+	\begin{lstlisting}[style=intro, gobble=8, morekeywords={[2]{TNode, nodeForBiTree, ElemType}}, morekeywords={[3]{InitBiTree, DestroyBiTree, CreateBiTree, ClearBiTree, BiTreeEmpty, BiTreeDepth, Root, Value, Assign, Parent, LeftChild, RightChild, LeftSibling, RightSibling, InsertChild, DeleteChild, PreOrderTraverse, InOrderTraverse, PostOrderTraverse, LevelOrderTraverse, visit, }}, xleftmargin=1em]
+		typedef struct nodeForBiTree {
+			ElemType data;
+			struct TNode *lchild, *rchild, *parent;
+		} TNode;
+	\end{lstlisting}
+
+	这样，可以用 C++ 实现二叉树的数据结构如下：
+	\begin{lstlisting}[style=intro, gobble=8, morekeywords={[2]{BiTree, TNode, ElemType}}, morekeywords={[3]{InitBiTree, DestroyBiTree, CreateBiTree, ClearBiTree, BiTreeEmpty, BiTreeDepth, Root, Value, Assign, Parent, LeftChild, RightChild, LeftSibling, RightSibling, InsertChild, DeleteChild, PreOrderTraverse, InOrderTraverse, PostOrderTraverse, LevelOrderTraverse, visit, }}, xleftmargin=1em]
+		class BiTree {
+		private:
+			TNode *root;
+		public:
+			BiTree() 									{ root = nullptr; }
+			~BiTree() 									{ DestroyBiTree(); }
+			void InitBiTree() 							{ root = nullptr; }
+			void DestroyBiTree() 
+				{ void deleteTNode(TNode *t) { delete t; }
+				  PostOrderTraverse(deleteTNode); root = nullptr; }
+			void CreateBiTree( /* 规则 */ )				{ /* 递归创建二叉树 */ }
+			void ClearBiTree() 							{ DestroyBiTree(); }
+			bool isEmpty() 								{ return root == nullptr; }
+			int getDepth() 								{ /* 递归计算二叉树深度 */; }
+			TNode* getRoot() 							{ return root; }
+			ElemType getValue(TNode *cur_e) 			{ return cur_e->data; }
+			void Assign(TNode *cur_e, ElemType value) 	{ cur_e->data = value; }
+			TNode* Parent(TNode *cur_e) 				{ return cur_e->parent; }
+			TNode* LeftChild(TNode *cur_e) 				{ return cur_e->lchild; }
+			TNode* RightChild(TNode *cur_e) 			{ return cur_e->rchild; }
+			TNode* LeftSibling(TNode *cur_e) 			{ return cur_e->parent->lchild; }
+			TNode* RightSibling(TNode *cur_e) 			{ return cur_e->parent->rchild; }
+			void InsertChild(TNode *p, int LR, BiTree c) 		{ /* 插入子树 */ }
+			void DeleteChild(TNode *p, int LR) 					{ /* 删除子树 */ }
+			void PreOrderTraverse(void (*visit)(TNode*)) 		{ /* 前序遍历 */ }
+			void InOrderTraverse(void (*visit)(TNode*)) 		{ /* 中序遍历 */ }
+			void PostOrderTraverse(void (*visit)(TNode*)) 		{ /* 后序遍历 */ }
+			void LevelOrderTraverse(void (*visit)(TNode*)) 		{ /* 层序遍历 */ }
+		};
+	\end{lstlisting}
+\end{itemize}
+\paragraph{二叉树的遍历}
+
+二叉树是一种递归结构，可以用递归思路来研究二叉树遍历方法。根据访问根节点时机，二叉树的遍历可分为\tbome{前序遍历}、\tbome{中序遍历}、\tbome{后序遍历}；还可以对二叉树自上而下逐层遍历，即\tbome{层序遍历}。
+
+\di[二叉树的递归遍历]{
+	在遍历左、右子树时，递归调用遍历函数；在访问根节点时，执行边界操作。
+}{
+	\hskip0.65em容易实现。
+}
+
+\begin{itemize}
+	\item \textbf{前序遍历}：先访问根节点，再前序遍历左子树，最后前序遍历右子树，即
+	\begin{lstlisting}[style=algo, morekeywords={[2]{Tnode}}, morekeywords={[3]{PreOrderTraverse, visit}}, gobble=8, xleftmargin=1em]
+		void PreOrderTraverse(Tnode* t, void (*visit)(Tnode*)) {
+			if (t) {									// 若二叉树非空
+				visit(t->data);							// 访问根节点
+				PreOrderTraverse(t->lchild, visit);		// 前序遍历左子树
+				PreOrderTraverse(t->rchild, visit);		// 前序遍历右子树
+			}
+		}
+	\end{lstlisting}
+	\item \textbf{中序遍历}：先中序遍历左子树，再访问根节点，最后中序遍历右子树，即
+	\begin{lstlisting}[style=algo, morekeywords={[2]{Tnode}}, morekeywords={[3]{InOrderTraverse, visit}}, gobble=8, xleftmargin=1em]
+		void InOrderTraverse(Tnode* t, void (*visit)(Tnode*)) {
+			if (t) {									// 若二叉树非空
+				InOrderTraverse(t->lchild, visit);		// 中序遍历左子树
+				visit(t->data);							// 访问根节点
+				InOrderTraverse(t->rchild, visit);		// 中序遍历右子树
+			}
+		}
+	\end{lstlisting}
+	\item \textbf{后序遍历}：先后序遍历左子树，再后序遍历右子树，最后访问根节点，即
+	\begin{lstlisting}[style=algo, morekeywords={[2]{Tnode}}, morekeywords={[3]{PostOrderTraverse, visit}}, gobble=8, xleftmargin=1em]
+		void PostOrderTraverse(Tnode* t, void (*visit)(Tnode*)) {
+			if (t) {									// 若二叉树非空
+				PostOrderTraverse(t->lchild, visit);	// 后序遍历左子树
+				PostOrderTraverse(t->rchild, visit);	// 后序遍历右子树
+				visit(t->data);							// 访问根节点
+			}
+		}
+	\end{lstlisting}
+\end{itemize}
+
+递归算法简介、清晰，但是递归深度过大时会导致栈溢出，因此可以考虑用非递归算法实现二叉树的遍历，即\tbome{消除递归}。对这类较复杂的递归情况，消除递归就是用一个显式的栈来模拟递归调用的隐式的栈。
+
+\di[二叉树的非递归遍历]{
+	用一个栈来模拟递归调用的隐式栈，实现二叉树的非递归遍历。
+}{
+	（1）创建一个栈，用于保存结点；
+	（2）按照需要的遍历顺序开始遍历，遇到要经过但没有访问的结点或没有访问某一侧孩子的结点时，将其入栈；
+	（3）访问到叶子结点，出栈一个结点继续遍历。
+}
+
+\begin{itemize}
+	\item \textbf{前序遍历}：用栈保存没有访问右孩子的结点，即
+	\begin{lstlisting}[style=algo, morekeywords={[2]{Tnode, stack}}, morekeywords={[3]{PreOrderTraverse, visit}}, gobble=8, xleftmargin=1em]
+		void PreOrderTraverse(Tnode* t, void (*visit)(Tnode*)) {
+			stack<Tnode*> s;				// 创建栈保存结点
+			Tnode* p = t;					// 从根结点出发遍历
+			while (p || !s.empty()) {
+				if (p) {					// 若结点非空
+					visit(p);				// 访问结点
+					s.push(p);				// 结点入栈
+					p = p->lchild;			// 移至左孩子
+				} else {					// 若结点为空
+					p = s.top(); s.pop();	// 出栈一个结点
+					p = p->rchild;			// 移至右孩子
+				}
+			}
+		}
+	\end{lstlisting}
+	\item \textbf{中序遍历}：用栈保存移入了左孩子但没有访问的结点，即
+	\begin{lstlisting}[style=algo, morekeywords={[2]{Tnode, stack}}, morekeywords={[3]{InOrderTraverse, visit}}, gobble=8, xleftmargin=1em]
+		void InOrderTraverse(Tnode* t, void (*visit)(Tnode*)) {
+			stack<Tnode*> s;				// 创建栈保存结点
+			Tnode* p = t;					// 从根结点出发遍历
+			while (p || !s.empty()) {
+				if (p) {					// 若结点非空
+					s.push(p);				// 结点入栈
+					p = p->lchild;			// 移至左孩子
+				} else {					// 若结点为空
+					p = s.top(); s.pop();	// 出栈一个结点
+					visit(p);				// 访问结点
+					p = p->rchild;			// 移至右孩子
+				}
+			}
+		}
+	\end{lstlisting}
+	\item \textbf{后序遍历}：用栈保存访问过右孩子但没有访问的结点，即
+	\begin{lstlisting}[style=algo, morekeywords={[2]{Tnode, stack}}, morekeywords={[3]{PostOrderTraverse, visit}}, gobble=8, xleftmargin=1em]
+		void PostOrderTraverse(Tnode* t, void (*visit)(Tnode*)) {
+			stack<Tnode*> s;				// 创建栈保存结点
+			Tnode* p = t, *r = nullptr;		// 从根结点出发遍历
+			while (p || !s.empty()) {
+				if (p) {					// 若结点非空
+					s.push(p);				// 结点入栈
+					p = p->lchild;			// 移至左孩子
+				} else {					// 若结点为空
+					p = s.top();			// 取栈顶结点
+					if (p->rchild && p->rchild != r) {	// 若右孩子存在且未访问
+						p = p->rchild;		// 移至右孩子
+					} else {				// 若右孩子不存在或已访问
+						visit(p);			// 访问结点
+						r = p;				// 记录访问过的结点
+						s.pop();			// 出栈一个结点
+						p = nullptr;		// 结点置空
+					}
+				}
+			}
+		}
+	\end{lstlisting}
+\end{itemize}
+
+\di[二叉树的层序遍历]{
+	用队列保存每一层的结点，实现二叉树的层序遍历。
+}{
+	（1）创建一个队列，用于保存每一层的结点；
+	（2）从根结点开始，将根结点入队；
+	（3）反复执行：出队一个结点，访问该结点，将其左右孩子入队；
+	（4）直至队列为空。
+}
+
+\begin{lstlisting}[style=algo, morekeywords={[2]{Tnode, queue}}, morekeywords={[3]{LevelOrderTraverse, visit}}]
+	void LevelOrderTraverse(Tnode* t, void (*visit)(Tnode*)) {
+		queue<Tnode*> q;						// 创建队列保存结点
+		Tnode* p = t;							// 从根结点出发遍历
+		q.push(p);								// 根结点入队
+		while (!q.empty()) {
+			p = q.front(); q.pop();				// 出队一个结点
+			visit(p);							// 访问结点
+			if (p->lchild) q.push(p->lchild);	// 左孩子入队
+			if (p->rchild) q.push(p->rchild);	// 右孩子入队
+		}
+	}
+\end{lstlisting}
+
+\paragraph{二叉树的建立}
+
+二叉树的遍历是把树状的二叉树结构转换为线性的遍历序列，这个过程显然是不可逆的，即\textbf{根据一个遍历序列无法唯一建立一棵二叉树}。要根据遍历序列建立二叉树，需要更多的信息：
+\begin{itemize}
+	\item 同时给定\textbf{前序序列和中序序列}可唯一地建立一棵二叉树。其基本思想是，前序序列的第一个结点是根结点，根据中序序列将结点分为左右子树，于是可以回到前序序列中找到左右子树的根结点，递归建立左右子树。
+	\item 同时给定\textbf{后序序列和中序序列}可唯一地建立一棵二叉树，其基本思想也类似。
+	\item 同时给定\textbf{前序序列和后序序列}无法唯一地建立一棵二叉树，因为没有提供更多关于左右子树划分的信息。
+\end{itemize}
+
+
+
 
 
 

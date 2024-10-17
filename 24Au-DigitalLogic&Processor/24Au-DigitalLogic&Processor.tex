@@ -35,16 +35,17 @@
 %\setmathfont[range=bb]{TeXGyrePagellaMath-Regular}
 %\setmathsfont(Digits,Latin){Garamond MT Pro}
 \setmathfont[range={\int}]{NewCMMath-Regular}
-\setCJKmainfont{FZXSSK.TTF}[BoldFont={SourceHanSerifCN-Bold.otf}, ItalicFont={FZXKTK.TTF}, BoldItalicFont={汉仪颜楷W.ttf}]
-\setCJKsansfont{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={FZYanZQKSJF.TTF}]
-\setCJKmonofont{LXGWNeoXiHei.ttf}
+\setmonofont{Iosevka}
+\setCJKmainfont{方正新书宋_GBK}[BoldFont={思源宋体 CN Bold}, ItalicFont={方正新楷体_GBK}, BoldItalicFont={汉仪颜楷 W}]
+\setCJKsansfont{汉仪文黑-45W ExtraLight}[BoldFont={汉仪文黑-75W Bold}, ItalicFont={方正颜真卿楷书 简繁}]
+\setCJKmonofont{霞鹭新晰黑}
 %附加字体设置
-\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体Coca-ColaCareFontKaiTi.TTF}
-\newCJKfontfamily{\kai}{FZXKTK.TTF}[BoldFont={汉仪颜楷W.ttf}, ItalicFont={方正清刻本悦宋 简繁.TTF}, BoldItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁.TTF}[ItalicFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK.TTF}[ItalicFont={方正宋刻本秀楷_GBK.TTF}, BoldFont={FZYanZQKSJF.TTF}]
-\newCJKfontfamily{\run}{汉仪润圆-45W.ttf}[BoldFont={汉仪润圆-75W.ttf}, ItalicFont={汉仪润圆-45W.ttf}]
-\newCJKfontfamily{\wen}{汉仪文黑-45W.ttf}[BoldFont={汉仪文黑-75W.ttf}, ItalicFont={hk4e_zh-cn.ttf}]
+\newCJKfontfamily{\kaico}{可口可乐在乎体 楷体}
+\newCJKfontfamily{\kai}{方正新楷体_GBK}[BoldFont={汉仪颜楷 W}, ItalicFont={方正清刻本悦宋 简繁}, BoldItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\yan}{方正清刻本悦宋 简繁}[ItalicFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\xiu}{方正宋刻本秀楷_GBK}[ItalicFont={方正宋刻本秀楷_GBK}, BoldFont={方正颜真卿楷书 简繁}]
+\newCJKfontfamily{\run}{汉仪润圆-45W ExtraLight}[BoldFont={汉仪润圆-75W Bold}, ItalicFont={汉仪润圆-45W ExtraLight}]
+\newCJKfontfamily{\wen}{汉仪文黑-45W ExtraLight}[ItalicFont={汉仪文黑-75W Bold}, BoldFont={汉仪文黑-85W Heavy}, BoldItalicFont={汉仪文黑-85W Heavy}]
 %文档格式
 \geometry{left=2.24cm, right=2.24cm, top=3.18cm, bottom=3.18cm}
 \linespread{1.4}
@@ -909,13 +910,13 @@ FSM 有两种类型：\tboba{Moore FSM} 和 \tboba{Mealy FSM}。Moore FSM 的输
 \end{figure}
 
 
-\subsubsection{锁存器}
+\subsubsection{锁存器和寄存器}
 
+\paragraph{锁存器}
+　
 \de[锁存器]{
 	\tboba{锁存器（latch）}是一个存储1-bit状态的电路单元，其输出信号可以保持，直到特定的输入信号触发重置或写入。
 }
-
-\paragraph{锁存器的电路实现}
 
 依据具体实现方式，锁存器可以分为 SR 锁存器、D 锁存器等类型。
 
@@ -1008,15 +1009,15 @@ FSM 有两种类型：\tboba{Moore FSM} 和 \tboba{Mealy FSM}。Moore FSM 的输
 	门控SR锁存器和D锁存器都是\tboqi{在信号\(\mboqi{C}\)的下降沿}时锁定，但后者的锁定输出只与\tboqi{下降沿的输入}有关，而前者的锁定输出还受到\tboqi{\,\(\mboqi{S}\)与\(\mboqi{R}\)都为低电平}前的输入的影响。
 }
 
-\paragraph{锁存器的时序参数}
-
-锁存器的性能受到以下几个时序参数的影响：
-\begin{itemize}
-	\item \tboba{最小脉冲宽度}：能够稳定锁存的最短输入脉冲宽度，记作 \(t_{\mrm{w(min)}}\)；
-	\item \tboba{延迟时间}：输入信号发生变化到输出信号发生变化的时间，记作 \(t_{\mrm{pd}}\)，分为 \tboba{上升延迟时间} \(t_{\mrm{pLH}}\) 和 \tboba{下降延迟时间} \(t_{\mrm{pHL}}\)；
-	\item \tboba{建立时间}、\tboba{保持时间}：锁存操作开始、结束之前、之后输入信号需要保持的时间，分别记作 \(t_{\mrm{su}}\) 和 \(t_{\mrm{h}}\)。如果信号不满足建立时间和保持时间约束，输出结果会呈现不确定的\tboba{亚稳态}。
-\end{itemize}
-各个参数的具体定义如图~\ref{Fig: Timing Parameters of Latch}~所示。
+\zhu[锁存器的时序参数]{
+	锁存器的性能受到以下几个时序参数的影响：
+	\begin{itemize}
+		\item \tboqi{最小脉冲宽度}：能够稳定锁存的最短输入脉冲宽度，记作 \(t_{\mrm{w(min)}}\)；
+		\item \tboqi{延迟时间}：输入信号发生变化到输出信号发生变化的时间，记作 \(t_{\mrm{pd}}\)，分为 \tboqi{上升延迟时间} \(t_{\mrm{pLH}}\) 和 \tboqi{下降延迟时间} \(t_{\mrm{pHL}}\)；
+		\item \tboqi{建立时间}、\tboqi{保持时间}：锁存操作开始、结束之前、之后输入信号需要保持的时间，分别记作 \(t_{\mrm{su}}\) 和 \(t_{\mrm{h}}\)。如果信号不满足建立时间和保持时间约束，输出结果会呈现不确定的\tboqi{亚稳态}。
+	\end{itemize}
+	各个参数的具体定义如图~\ref{Fig: Timing Parameters of Latch}~所示。
+}
 
 \begin{figure}[!ht]
 	\centering
@@ -1025,8 +1026,8 @@ FSM 有两种类型：\tboba{Moore FSM} 和 \tboba{Mealy FSM}。Moore FSM 的输
 	\label{Fig: Timing Parameters of Latch}
 \end{figure}
 
-\subsubsection{触发器}
-
+\paragraph{触发器}
+　
 \de[触发器]{
 	\tboba{触发器（flip-flop）}是一种\textbf{只在触发沿}把输入信号写入输出信号的电路。
 }
@@ -1065,11 +1066,126 @@ DFF 的一种常见的实现方式是两个 D 锁存器级联，如图~\ref{Fig:
 		\item \tboqi{输出响应时间} \(\mboqi{t_{\mrm{c-q}}}\)：输入信号在时钟信号上升沿后到输出信号发生变化的时间。
 	\end{itemize}
 
-	当两个 DFF 级联时，第一个 DFF 的输入信号 \(D_1\) 在开始采样 \(t_{\mrm{c-q}}\) 时间后才会传输到其输出 \(Q_1\)，第二个 DFF 的输入信号 \(D_2\) 在开始采样前 \(t_{\mrm{su}}\) 时间内需要保持不变，因此留给中间的组合逻辑电路的时间为 \(t_{\mrm{cyc}} - t_{\mrm{c-q}} - t_{\mrm{su}}\)，逻辑计算必须在这段时间内完成，这称为\tboqi{建立时间约束}；
-
-	第一个 DFF 的输出信号 \(Q_1\) 在 \(t_{\mrm{c-q}}\) 时间后才会更新，经过组合逻辑电路后才传输到 \(D_2\)，此前 \(D_2\) 因前一次采样而需要保持不变 \(t_{\mrm{h}}\) 时间，因此组合逻辑电路的延迟时间不能小于 \(t_{\mrm{h}} - t_{\mrm{c-q}}\)，这称为\tboqi{保持时间约束}。
+	当两个 DFF 级联时：
+	\begin{itemize}[leftmargin=1em]
+		\item 第一个 DFF 的输入信号 \(D_1\) 在开始采样 \(t_{\mrm{c-q}}\) 时间后才会传输到其输出 \(Q_1\)，第二个 DFF 的输入信号 \(D_2\) 在开始采样前 \(t_{\mrm{su}}\) 时间内需要保持不变，因此留给中间的组合逻辑电路的时间为 \(t_{\mrm{cyc}} - t_{\mrm{c-q}} - t_{\mrm{su}}\)，逻辑计算必须在这段时间内完成，这称为\tboqi{建立时间约束}；
+		\item 第一个 DFF 的输出信号 \(Q_1\) 在 \(t_{\mrm{c-q}}\) 时间后才会更新，经过组合逻辑电路后才传输到 \(D_2\)，此前 \(D_2\) 因前一次采样而需要保持不变 \(t_{\mrm{h}}\) 时间，因此组合逻辑电路的延迟时间不能小于 \(t_{\mrm{h}} - t_{\mrm{c-q}}\)，这称为\tboqi{保持时间约束}。
+	\end{itemize}	
 }
 
+\subsubsection{时序逻辑电路分析}
+
+在如图~\ref{Fig: Sequential Circuit}~所示的一般时序逻辑电路中，
+有以下几个要素需要分析：
+\begin{itemize}
+	\item \textbf{输出方程}：根据输入信号 \(x\) 和当前状态 \(s\) 计算输出信号 \(y = f(x, s)\)；
+	\item \textbf{激励方程}：根据输入信号 \(x\) 和当前状态 \(s\) 计算触发器的输入信号 \(e = g(x, s)\)；
+	\item \textbf{状态转移方程（次态方程）}：根据触发输入 \(e\) 和当前状态 \(s\) 计算下一个状态 \(s^+ = h(e, s)\)；
+\end{itemize}
+可以通过状态转移图、状态转移表、时序图和电路行为描述等方式进行分析。
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.25]{Circuits/FIG-Sequential_Circuit.drawio.png}
+	\caption{一般时序逻辑电路}
+	\label{Fig: Sequential Circuit}
+\end{figure}
+
+\subsubsection{时序逻辑电路设计}
+
+\begin{example}
+	设计一个训练累计器，输入每天的跑步距离 \(Today\)，根据给定的目标跑步距离 \(Goal\) 计算剩余距离 \(Left\) 并输出。
+
+	\begin{figure}[!ht]
+		\centering
+		\subfloat[]{
+			\includegraphics[scale=0.25]{Circuits/FIG-Training_Accumulator_FSM1.drawio.png}
+		}
+		\quad
+		\subfloat[]{
+			\includegraphics[scale=0.25]{Circuits/FIG-Training_Accumulator_FSM2.drawio.png}
+			\label{Fig: Training Accumulator FSM2}
+		}
+		\caption{训练累计器的FSM设计}
+		\label{Fig: Training Accumulator FSM}
+	\end{figure}
+	\begin{table}[!ht]
+		\belowrulesep=0pt
+		\aboverulesep=0pt
+		\caption{训练累计器的状态转移表}
+		\label{Tab: Training Accumulator State Transition Table}
+		\begin{tabular}{c|ccccc|c}
+			\toprule
+			\multirow{2}{*}{\textbf{\textit{Left}}} & \multicolumn{5}{c|}{\textbf{\textit{Today}}} & \multirow{2}{*}{\textbf{Output}} \\
+			& \(0\) & \(1\) & \(\cdots\) & \(t\) & \(\cdots\) & \\
+			\midrule
+			1000 & 1000 & 999 & \(\cdots\) & \(1000 - t\) & \(\cdots\) & 1000 \\
+			999 & 999 & 998 & \(\cdots\) & \(999 - t\) & \(\cdots\) & 999 \\
+			\(\vdots\) & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) \\
+			\(t\) & \(t\) & \(t - 1\) & \(\cdots\) & 0 & \(\cdots\) & \(t\) \\
+			\(t - 1\) & \(t - 1\) & \(t - 2\) & \(\cdots\) & 0 & \(\cdots\) & \(t - 1\) \\
+			\(\vdots\) & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) \\
+			0 & 0 & 0 & \(\cdots\) & 0 & \(\cdots\) & 0 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	\begin{solution}
+		训练累计器可以抽象成如图~\ref{Fig: Training Accumulator FSM}~所示的FSM，其中图~\ref{Fig: Training Accumulator FSM2}~显然更优。根据FSM设计，可以得到状态转移表如表~\ref{Tab: Training Accumulator State Transition Table}~所示。
+	\end{solution}
+\end{example}
+
+\zhu[时序逻辑电路设计方法]{
+	时序逻辑电路的设计包括以下几个步骤：
+	\begin{enumerate}[leftmargin=2em, parsep=0pt, itemsep=0pt, topsep=0pt]
+		\item \tboqi{抽象出一个有限状态机}，定义初始状态、输入信号、输出信号、输出函数和状态转移函数；
+		\item 状态化简、合并；
+		\item 状态分配；
+		\item 确定激励方程和输出方程；
+		\item 画出逻辑电路图。
+	\end{enumerate}
+}
+
+\paragraph{寄存器}
+　
+\de[寄存器]{
+	\tboba{寄存器（register）}是一个能够存储多个 bit 状态的电路单元，其输出信号可以保持，直到特定的输入信号触发重置或写入。仅有存储功能的寄存器称为\tboba{存储寄存器}，还带有移位功能的寄存器称为\tboba{移位寄存器}。
+}
+
+右移、左移移位寄存器可简单地通过串联多个 DFF 实现，如图~\ref{Fig: Shift Register}~所示。
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[右移移位寄存器]{
+		\includegraphics[scale=0.25]{Circuits/FIG-Shift_Right_Register.drawio.png}
+	}
+	\hskip-3em
+	\subfloat[左移移位寄存器]{
+		\includegraphics[scale=0.25]{Circuits/FIG-Shift_Left_Register.drawio.png}
+	}
+	\caption{串行移位寄存器}
+	\label{Fig: Shift Register}
+\end{figure}
+
+图~\ref{Fig: Shift Register}~中的移位寄存器是\tboba{串行移位寄存器}，即每个 DFF 的输出信号与下一个 DFF 的输入信号相连，输入信号只从一个端口输入，输出信号只从一个端口输出。应当可以看出，图~\ref{Fig: Shift Register}~中的两个移位寄存器实际具有相同的逻辑电路，只是对输入信号、输出信号和各 DFF 锁存信号所赋予的意义不同。
+
+串行输入、输出的效率较低，可以通过并行输入、输出提高效率，如图~\ref{Fig: Parallel Shift Register}~所示。
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[并行输入]{
+		\includegraphics[scale=0.25]{Circuits/FIG-Shift_Register_Parallel_Input.drawio.png}
+	}
+	\quad
+	\subfloat[并行输出]{
+		\includegraphics[scale=0.25]{Circuits/FIG-Shift_Register_Parallel_Output.drawio.png}
+	}
+	\caption{移位寄存器的并行输入、输出}
+	\label{Fig: Parallel Shift Register}
+\end{figure}
+
+
+\paragraph{计数器}
 
 
 

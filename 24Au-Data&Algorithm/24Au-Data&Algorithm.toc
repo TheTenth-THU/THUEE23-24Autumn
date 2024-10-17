@@ -16,6 +16,13 @@
 \contentsline {subsubsection}{\numberline {1.2.4}串}{13}{subsubsection.1.2.4}%
 \contentsline {paragraph}{\numberline {A)}串的实现}{14}{paragraph.1.2.4.1}%
 \contentsline {paragraph}{\numberline {B)}串的模式匹配}{14}{paragraph.1.2.4.2}%
-\contentsline {section}{\numberline {A}LambdaOJ平台介绍}{16}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}判题结果}{16}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}注意事项}{16}{subsection.A.2}%
+\contentsline {subsection}{\numberline {1.3}树}{15}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}树的基本概念}{15}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}二叉树}{16}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}二叉树的数据结构}{17}{subsubsection.1.3.3}%
+\contentsline {paragraph}{\numberline {A)}二叉树的存储}{18}{paragraph.1.3.3.1}%
+\contentsline {paragraph}{\numberline {B)}二叉树的遍历}{19}{paragraph.1.3.3.2}%
+\contentsline {paragraph}{\numberline {C)}二叉树的建立}{21}{paragraph.1.3.3.3}%
+\contentsline {section}{\numberline {A}LambdaOJ平台介绍}{23}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}判题结果}{23}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}注意事项}{23}{subsection.A.2}%
