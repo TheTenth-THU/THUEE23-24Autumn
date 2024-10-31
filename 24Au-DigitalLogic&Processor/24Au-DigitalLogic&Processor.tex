@@ -38,7 +38,7 @@
 \setmonofont{Iosevka}
 \setCJKmainfont{方正新书宋_GBK}[BoldFont={思源宋体 CN Bold}, ItalicFont={方正新楷体_GBK}, BoldItalicFont={汉仪颜楷 W}]
 \setCJKsansfont{汉仪文黑-45W ExtraLight}[BoldFont={汉仪文黑-75W Bold}, ItalicFont={方正颜真卿楷书 简繁}]
-\setCJKmonofont{霞鹭新晰黑}
+\setCJKmonofont{霞鹜新晰黑}
 %附加字体设置
 \newCJKfontfamily{\kaico}{可口可乐在乎体 楷体}
 \newCJKfontfamily{\kai}{方正新楷体_GBK}[BoldFont={汉仪颜楷 W}, ItalicFont={方正清刻本悦宋 简繁}, BoldItalicFont={方正颜真卿楷书 简繁}]
@@ -62,10 +62,11 @@
 \setlength{\lineskip}{5pt}
 \setlength{\lineskiplimit}{5pt}
 
+\captionsetup[subfigure]{captionskip=0.5em, nearskip=0em}
+\captionsetup[table]{justification=raggedright, singlelinecheck=false}
 \setlength{\abovecaptionskip}{0.3em}
 \setlength{\belowcaptionskip}{0em}
-\captionsetup[subfigure]{captionskip=0.5em, nearskip=0em}
-\captionsetup[table]{justification=raggedright,singlelinecheck=false}
+\setlength{\intextsep}{0.5\baselineskip}
 \renewcommand{\thefigure}{\thesection.\arabic{figure}}
 \renewcommand{\thetable}{\thesection.\arabic{table}}
 
@@ -201,6 +202,35 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 %\newcommand{\mybox}[1]{\tikz[baseline=(MeNode.base)]{\node[rounded corners, fill=gray!20](MeNode){#1};}}
 \newtcolorbox[auto counter]{eg}[2][]{colback=black!5!white,colframe=white!75!black, breakable, enhanced jigsaw, fontupper=\small, breakable, enhanced jigsaw, fonttitle=\sffamily\wen\bfseries, title=实例~\thetcbcounter\quad#2, #1}
 
+\lstset{
+	xleftmargin=3em, xrightmargin=1em, 
+	breaklines,                                 % 自动将长的代码行换行排版
+	extendedchars=false,                        % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+	rulecolor=\color[rgb]{0.8,0.8,0.8},         % 设置代码框颜色
+	backgroundcolor=\color[rgb]{0.96,0.96,0.96},% 背景颜色
+	keywordstyle=\colors{bali}\bfseries,        % 关键字颜色
+	keywordstyle=[2]\color{qinglv}\bfseries,   % 自定义关键字颜色
+	keywordstyle=[3]\color{purple!70!black}\ttfamily,	% 自定义关键字颜色
+	identifierstyle=\color{black},              % 普通标识符颜色
+	commentstyle=\rm\kai\color{gray},          	% 注释颜色
+	stringstyle=\colors{meihong},      			% 字符串颜色
+	showstringspaces=false,                     % 不显示字符串内的空格
+	numbers=left,                               % 显示行号
+	stepnumber=1,                               % 设置行号递增间隔
+	numberstyle=\tiny\ttfamily,              			% 设置数字字体
+	basicstyle=\linespread{1}\tt,               % 设置基本字体
+	captionpos=t,                               % title在上方(在bottom即为b)
+	frame=single,                               % 设置代码框形式
+	showtabs=false, 
+	numbersep=15pt, 
+	framesep=1em, 
+	language=C++, 
+	columns=fixed,
+	basewidth=0.5em, 
+	tabsize=4, 
+	gobble=4,
+	escapeinside={(*@}{@*)},
+}
 
 \catcode`\，=\active
 \def ，{\textup{,}\hskip0.5em }
@@ -342,17 +372,25 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 		0 & 0 & 1 & 0 & 2 & 2 \\
 		0 & 0 & 1 & 1 & 3 & 3 \\
 		0 & 1 & 0 & 0 & 4 & 4 \\
-		0 & 1 & 0 & 1 & 5 & 5 \\
-		0 & 1 & 1 & 0 & 6 & 6 \\
-		0 & 1 & 1 & 1 & 7 & 7 \\
+		\\
 		\bottomrule
 	\end{tabular} \(\quad\)
 	\begin{tabular}{cccccc}
 		\toprule
 		\multicolumn{4}{c}{\textbf{BIN}} & \textbf{DEC} & \textbf{HEX} \\
 		\midrule
+		0 & 1 & 0 & 1 & 5 & 5 \\
+		0 & 1 & 1 & 0 & 6 & 6 \\
+		0 & 1 & 1 & 1 & 7 & 7 \\
 		1 & 0 & 0 & 0 & 8 & 8 \\
 		1 & 0 & 0 & 1 & 9 & 9 \\
+		\\
+		\bottomrule
+	\end{tabular} \(\quad\)
+	\begin{tabular}{cccccc}
+		\toprule
+		\multicolumn{4}{c}{\textbf{BIN}} & \textbf{DEC} & \textbf{HEX} \\
+		\midrule
 		1 & 0 & 1 & 0 & 10 & A \\
 		1 & 0 & 1 & 1 & 11 & B \\
 		1 & 1 & 0 & 0 & 12 & C \\
@@ -365,6 +403,10 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 
 二进制数的\tboba{左移}运算和\tboba{右移}运算分别是将二进制数的所有位向左或向右移动一位，移动后的空位补0。左移一位相当于乘2，右移一位相当于除2。
 
+8个二进制位称为一个\tboba{字节}（byte，B），16个二进制位称为一个\tboba{字}（word）。在计算机中，字节是最小的可寻址内存单元，字是处理器的数据宽度。
+
+\subsubsection{二进制自然数的特殊编码}
+
 \de[BCD码]{
 	\tboba{BCD（binary-coded decimal）码}是二进制编码的一种，用4位二进制数表示一个十进制数的一位。
 	
@@ -376,10 +418,229 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 \begin{example}[3]
 	（1）\(34_{10} + 45_{10} = 0011\,0100_{BCD} + 0100\,0101_{BCD} = 0111\,1001_{BCD} = 79_{10}\)。
 
-	（2）\(14_{10} + 9_{10} = 0001\,0100_{BCD} + 0000\,1001_{BCD} = 0001\,1101_{BCD} \xlongequal{\text{进位}} = 0010\,0011_{BCD} = 23_{10}\)。
+	（2）\(14_{10} + 9_{10} = 0001\,0100_{BCD} + 0000\,1001_{BCD} = 0001\,1101_{BCD} \xlongequal{\text{进位}} 0010\,0011_{BCD} = 23_{10}\)。
 \end{example}
 
-8个二进制位称为一个\tboba{字节}。
+\de[Gray 码]{
+	\tboba{Gray 码}是二进制编码的一种，保证了相邻两个数码之间只有一位的差异。
+}
+
+Gray 码将在 \ref{Sec: Combinational Logic Circuit Design} 节中使用 Carnot 图进行简化时发挥重要作用。
+
+\subsubsection{二进制整数的编码}
+
+\de[有符号原码]{
+	\tboba{有符号原码}是整数二进制编码的一种，在给定位数的二进制数中，用最高位表示符号，0表示正数，1表示负数。
+}
+
+有符号原码是一种非常直接、适于人类理解的编码方式，但是其不满足按位进行加减法运算的规则。为了实现按位加减法运算，有必要引入补码和反码。
+
+\de[2-补码]{
+	\tboba{2-补码}是整数二进制编码的一种，用于表示有符号整数用于运算。正数的2-补码与原码相同，负数的2-补码是其绝对值的原码按位取反后加1。
+}
+
+\begin{example}[3]
+	（1）将 \((-3)_{10}\) 转为2-补码形式：
+
+	已知 \(3_{10} = 011_{2} = 011_{2's}\)，按位取反得到 \(100\)，则\((-3)_{10} = 101_{2's}\)。
+
+	（2）将 \(101_{2's}\) 转为十进制数：
+
+	将 \(101_{2's}\) 字面对应于3位无符号数 \(101_{2} = 5_{10}\)，则 \(101_{2's} = 5_{10}- 2_10^{3_10} = -3_{10}\)。
+\end{example}
+
+不考虑溢出的情况下，2-补码的加减法运算与无符号数的加减法运算规则相同，并能在规定的位数中连接正负侧形成循环。这样，二进制减法就可以通过按位取反运算和加法运算来实现。
+
+\de[溢出]{
+	在二进制加减法运算中，如果运算结果超出了规定的位数范围，则称为\tboba{溢出}。
+}
+
+加法的溢出只可能发生在同号两数相加时，其中两个正数相加得到负数（或零）的情况称为\tboba{上溢}，两个负数相加得到正数的情况称为\tboba{下溢}。从按位加法的角度来判断是否发生溢出，只需检查最高位的\textbf{进位输入} \(C_\mrm{in}\) 和\textbf{进位输出} \(C_\mrm{out}\) 做异或运算。根据进位输入、输出判断溢出的规则如表~\ref{Tab: Overflow}~所示。
+
+\begin{table}[!ht]
+	\caption{溢出判断规则}
+	\label{Tab: Overflow}
+	\begin{tabular}{ccl}
+		\toprule
+		\textbf{进位输入} & \textbf{进位输出} & \textbf{溢出情况} \\
+		\midrule
+		0 & 0 & 无溢出 \\
+		0 & 1 & \textbf{下溢}，负数相加得正数 \\
+		1 & 0 & \textbf{上溢}，正数相加得负数 \\
+		1 & 1 & 无溢出 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\Subsubsection{二进制小数的编码}
+
+\subsection{函数的布尔代数表示}
+
+\subsubsection{布尔代数}
+
+\de[布尔代数]{
+	\tboba{布尔代数}是一套使用逻辑运算符 \(\{\mrm{NOT}(\neg，')，\mrm{AND}(\land，+)，\mrm{OR}(\lor，-)\}\) 对定义在二元逻辑域 \(\{0，1\}\) 上的逻辑变量进行运算的代数系统。
+}
+
+\begin{theorem}
+	布尔代数的基本定律有：
+	\begin{description}[leftmargin=4em, parsep=0pt, itemsep=0pt]
+		\item[交换律（Commutative Law）] \(X + Y = Y + X\)，\(X \cdot Y = Y \cdot X\)；
+		\item[结合律（Associative Law）] \((X + Y) + Z = X + (Y + Z)\)，\((X \cdot Y) \cdot Z = X \cdot (Y \cdot Z)\)；
+		\item[分配律（Distributive Law）] \(X \cdot (Y + Z) = X \cdot Y + X \cdot Z\)，\(X + Y \cdot Z = (X + Y) \cdot (X + Z)\)；
+		\item[吸收律（Absorption Law）] \(X + X \cdot Y = X\)，\(X \cdot (X + Y) = X\)；
+		\item[互补律（Complement Law）] \(X + X' = 1\)，\(X \cdot X' = 0\)；
+		\item[幂等律（Idempotent Law）] \(X + X = X\)，\(X \cdot X = X\)；
+		\item[对合律（Involution Law）] \((X')' = X\)。
+	\end{description}
+\end{theorem}
+
+\begin{theorem}
+	\textup{\textbf{一致性定理（Consensus Theorem）}}\quad \(X \cdot Y + X' \cdot Z + Y \cdot Z = X \cdot Y + X' \cdot Z\)，\((X+Y) \cdot (X'+Z) \cdot (Y+Z) = (X+Y) \cdot (X'+Z)\)。
+\end{theorem}
+
+\di[De Morgan 定律]{
+	对布尔逻辑函数取反，等价于原函数的反演。即
+	\[\overline{X + Y} = X' \cdot Y'，\qquad \overline{X \cdot Y} = X' + Y'\]
+}
+
+De Morgan 定律可用于变换逻辑函数的形式，由此可以将逻辑电路的形式转换为只用某一部分逻辑门实现的形式。
+
+\begin{example}[3]
+	将 \(Y = AB'C'+A'C+BC\) 转写为只用与非门实现的形式。
+
+	\begin{solution}
+		根据 De Morgan 定律有
+		\begin{equation*}
+			Y  = AB'C'+A'C+BC
+			= \overline{\overline{AB'C'} \cdot \overline{A'C} \cdot \overline{BC}} \qedhere
+		\end{equation*}
+	\end{solution}
+\end{example}
+
+\subsubsection{函数的逻辑实现}
+
+要将一个函数用逻辑门实现，首先要将函数转换到二元域上，用布尔代数的语言描述。
+二元域上的函数可以用\textbf{真值表}表示，真值表中的每一行对应于函数的一个输入组合，每一列对应于函数的一个输出变量。
+
+\begin{example}[3]
+	给出下面日历子系统中一个函数的 C 程序，给出其真值表。
+	\label{e.g: Function number_of_days}
+
+	\begin{lstlisting}[gobble=8]
+		int number_of_days (month, leap_flag) {
+			switch (month){
+				case "january": 		return (31);
+				case "february": 
+					if (leap_flag == 1) return (29); 
+					else 				return (28);
+				case "march": 			return (31);
+				case "april": 			return (30);
+				case "may": 			return (31);
+				case "june": 			return (30);
+				case "july": 			return (31);
+				case "august":			return (31);
+				case "september": 		return (30);
+				case "october": 		return (31);
+				case "november": 		return (30);
+				case "december": 		return (31);
+				default: 				return (0);
+			}
+		}
+	\end{lstlisting}
+
+	\begin{solution}
+		真值表如表~\ref{Tab: Function number_of_days}~所示。其中，月份的输入变量用4位二进制数 \(a_8a_4a_2a_1\) 表示，闰年标志的输入变量用1位二进制数 \(Leap\) 表示，输出变量用4个二进制数 \(d_{28}\)、\(d_{29}\)、\(d_{30}\)、\(d_{31}\) 分别表示天数为28、29、30、31。
+	\end{solution}
+
+	\begin{table}[!ht]
+		\caption{函数 number\_of\_days 的真值表}
+		\label{Tab: Function number_of_days}
+		\begin{tabular}{cccccc}
+			\toprule
+			\(a_8a_4a_2a_1\) & \(Leap\) & \(d_{28}\) & \(d_{29}\) & \(d_{30}\) & \(d_{31}\) \\
+			\midrule
+			0000 & * & * & * & * & * \\
+			0001 & * & 0 & 0 & 0 & 1 \\
+			0010 & 0 & 1 & 0 & 0 & 0 \\
+			0010 & 1 & 0 & 1 & 0 & 0 \\		
+			0011 & * & 0 & 0 & 0 & 1 \\
+			0100 & * & 0 & 0 & 1 & 0 \\
+			0101 & * & 0 & 0 & 0 & 1 \\
+			0110 & * & 0 & 0 & 1 & 0 \\
+			\bottomrule
+		\end{tabular} \(\quad\)
+		\begin{tabular}{cccccc}
+			\toprule
+			\(a_8a_4a_2a_1\) & \(Leap\) & \(d_{28}\) & \(d_{29}\) & \(d_{30}\) & \(d_{31}\) \\
+			\midrule
+			0111 & * & 0 & 0 & 0 & 1 \\
+			1000 & * & 0 & 0 & 0 & 1 \\
+			1001 & * & 0 & 0 & 1 & 0 \\
+			1010 & * & 0 & 0 & 0 & 1 \\
+			1011 & * & 0 & 0 & 1 & 0 \\
+			1100 & * & 0 & 0 & 0 & 1 \\
+			1101 & * & * & * & * & * \\
+			111* & * & * & * & * & * \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{example}
+
+真值表中的对应关系不能直接用于逻辑电路的设计，需要将其转换为逻辑表达式。通过真值表可以很容易地得到\textbf{两级逻辑}的与或表达式。
+
+\begin{definition}
+	在 \(n\) 变量的逻辑函数中，如果一个\textbf{与项}包含了所有 \(n\) 个变量或者它们的反且只包含一次，那么这个与项称为\tboba{最小项}，记作 \(m_i\)，其中 \(i\) 是一个 \(n\) 位二进制数，每一位对应于一个变量，0 或 1 表示变量在最小项中取反或不取反。
+\end{definition}
+
+\begin{definition}
+	在 \(n\) 变量的逻辑函数中，如果一个\textbf{或项}包含了所有 \(n\) 个变量或者它们的反且只包含一次，那么这个或项称为\tboba{最大项}，记作 \(M_i\)，其中 \(i\) 是一个 \(n\) 位二进制数，每一位对应于一个变量，0 或 1 表示变量在最大项中取反或不取反。
+\end{definition}
+
+两级逻辑的表达式标准但不简单，我们希望能够通过简化逻辑表达式来简化逻辑电路。简化逻辑表达式的常用方法是\textbf{Carnot 图}法。
+
+\de[Carnot 图]{
+	\tboba{Carnot 图}是一种用于简化逻辑表达式的图形化方法。通过在表格中将仅有一个变量不同的最小项置于相邻位置，可以方便地找到可以合并的最小项，化简表达式。
+}
+
+\begin{example}[3]
+	化简例 \ref{e.g: Function number_of_days} 中 \(d_{30}\) 的表达式。
+
+	\begin{solution}
+		\textbf{（1）画出 Carnot 图。}
+		根据表 \ref{Tab: Function number_of_days}，\(d_{30}\) 的 Carnot 图如表 \ref{Tab: Carnot map of d30} 所示。
+
+		\textbf{（2）找到可以合并的最小项。}
+		根据 Carnot 图，寻找能覆盖所有标 1 最小项的\textbf{本质本原蕴涵项}，即用最大块优先的原则以尽可能少的块覆盖所有标 1 的方格。
+
+		\begin{definition}
+			在 \(F\) 的 Carnot 图中，对一个变量组合 \(P\)，如果有另一个变量组合 \(Q\)，使其为真的最小项范围覆盖使 \(P\) 为真的最小项范围，则可知 \(P \Rightarrow Q\)，称 \(P\) 为 \(Q\) 的\textbf{蕴涵项}；若对 \(F\) 的蕴涵项 \(P\)，不存在一个蕴含项 \(Q \neq P\) 使得 \(P \Rightarrow Q \Rightarrow F\)，则称 \(P\) 为 \(F\) 的\textbf{本原蕴涵项}；如果函数 \(F\) 中某个最小项仅由本原蕴含项 \(P\) 覆盖，则称 \(P\) 为 \(F\) 的\textbf{本质本原蕴涵项}。
+		\end{definition}
+
+		根据表 \ref{Tab: Carnot map of d30}，需要圈出的最小项组合为 0100、0110 和 1001、1011。
+
+		\textbf{（3）写出化简后的表达式。}
+		由上述最小项组合可得 \(d_{30} = a_8'a_4a_1' + a_8a_4'a_1\)。
+	\end{solution}
+
+	\begin{table}[!ht]
+		\belowrulesep=0pt
+		\aboverulesep=0pt
+		\caption{\(d_{30}\) 的 Carnot 图}
+		\label{Tab: Carnot map of d30}
+		\begin{tabular}{c|cccc}
+			\toprule
+			\(a_8a_4 \backslash a_2a_1\) & 00 & 01 & 11 & 10 \\
+			\midrule
+			00 & 0 & 0 & 0 & 0 \\
+			01 & 1 & 0 & 0 & 1 \\
+			11 & 0 & 0 & 0 & 0 \\
+			10 & 0 & 1 & 1 & 0 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{example}
+
 
 \section{逻辑计算}
 
@@ -401,7 +662,7 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 		非门 & \cbox{
 			\draw (0,0) node[left]{\(A\)} node[not port, anchor=in](G){} (G.out) node[right]{\(Y\)};
 		} & NOT & \(Y = A'\) \tablefootnote{
-			为区别单个的非逻辑和其他多目运算中的非，这里约定单独的非逻辑用\(A'\)表示，夺目运算附带的非逻辑用\(\overline{A}\)表示。
+			为区别单个的非逻辑和其他多目运算中的非，这里约定单独的非逻辑用\(A'\)表示，多目运算附带的非逻辑用\(\overline{A}\)表示。
 		} \\[1em]
 		与非门 & \cbox{
 			\draw (0,0) node[left]{\(A\)} node[nand port, anchor=in 1](G){} (G.out) node[right]{\(Y\)} (G.in 2) node[left]{\(B\)};
@@ -548,6 +809,8 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 \end{example}
 
 \subsubsection{组合逻辑电路的设计过程}
+
+\label{Sec: Combinational Logic Circuit Design}
 
 设计一个组合逻辑电路，需要将算法转化为二元逻辑的计算，化简后用逻辑电路结构实现。
 
@@ -701,7 +964,6 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 			\end{adjustbox}
 		}
 		\caption{\(4-2\) 线编码器设计}
-		\vspace{-2em}
 	\end{figure}
 \end{example}
 
@@ -775,7 +1037,7 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 	\begin{solution}
 		1-bit 全加器有 3 个输入信号（ \(A\)、\(B\) 和进位信号 \(C_\mrm{in}\)）、2 个输出信号（本位的和 \(S\) 、进位输出信号\(C_\mrm{out}\)，其真值表如表~\ref{Tab: 1-bit Full Adder}~所示。根据真值表，可以得到 1-bit 全加器的逻辑表达式为
 		\begin{align*}
-			& S = A \oplus B \oplus C_\mrm{in} \\
+			& S = A \oplus B \oplus C_\mrm{in} \\[-3pt]
 			& C_\mrm{out} = AB + BC_\mrm{in} + AC_\mrm{in}
 		\end{align*}
 		该 1-bit 全加器的设计如图~\ref{Fig: 1-bit Full Adder}~所示。
@@ -808,10 +1070,11 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 				\includegraphics[scale=0.25]{Circuits/FIG-1-bit_Full_Adder.drawio.png}
 			\end{adjustbox}
 		}
+		\caption{1-bit 全加器设计}
 	\end{figure}
 \end{example}
 
-将 1-bit 全加器串联，可得到一种 4-bit 全加器的设计，如图~\ref{Fig: 4-bit Ripple Carry Adder}~所示，这称为\tboba{行波进位加法器（ripple carry adder）}。
+将 1-bit 全加器串联，可得到一种 4-bit 全加器的设计，如图~\ref{Fig: 4-bit Ripple Carry Adder}~所示，这称为\tboba{行波进位加法器（ripple carry adder，RCA）}。
 
 \begin{figure}[!ht]
 	\centering
@@ -819,6 +1082,43 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 	\caption{4-bit 行波进位加法器}
 	\label{Fig: 4-bit Ripple Carry Adder}
 \end{figure}
+
+RCA 的加法计算是串行的，每一步计算依赖于前一步的进位输出。但实际上，后续的进位输入可以直接从输入计算得到，多个进位输入可以并行计算。这种设计称为\tboba{超前进位加法器（carry look-ahead adder，CLA）}。
+
+\begin{example}[3]
+	设计一个 4-bit 超前进位加法器。
+	\begin{solution}
+		某一位运算的进位输出要么直接在本位生成，要么从前一位计算的进位输出传播过来。
+		因此，定义\textbf{进位生成} \(G_i = A_iB_i\)，\textbf{进位传播} \(P_i = A_i \oplus B_i\)，
+		那么每一级的 \(C_{i+1} = G_i + P_iC_{i}\)，\(S_i = P_i \oplus C_{i}\)。
+		利用 \(G_i\) 和 \(P_i\) 递推计算，可得各位的进位为
+		\begin{align*}
+			& C_1 && = G_0 + P_0C_0 &&\\[-3pt]
+			& C_2 && = G_1 + P_1(G_0 + P_0C_0) &&= G_1 + P_1G_0 + P_1P_0C_0 \\[-3pt]
+			& C_3 && = G_2 + P_2(G_1 + P_1G_0 + P_1P_0C_0) &&= G_2 + P_2G_1 + P_2P_1G_0 + P_2P_1P_0C_0\\[-3pt]
+			& C_4 && = G_3 + P_3(G_2 + P_2G_1 + P_2P_1G_0 + P_2P_1P_0C_0) &&= G_3 + P_3G_2 + P_3P_2G_1 + P_3P_2P_1G_0 + P_3P_2P_1P_0C_0
+		\end{align*}
+		4-bit 超前进位加法器的设计如图 \ref{Fig: 4-bit Carry Look-ahead Adder} 所示。
+	\end{solution}
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale=0.25]{Circuits/FIG-4-bit_Carry_Look-ahead_Adder.drawio.png}
+		\caption{4-bit 超前进位加法器}
+		\label{Fig: 4-bit Carry Look-ahead Adder}
+	\end{figure}
+\end{example}
+
+超前进位加法器的本质是通过预先计算进位，用空间（面积）换时间（延迟），提高了加法器的运算速度。当计算到 \(i > 4\) 时，\(G_i\)、\(P_i\) 计算 \(C_{i+1}\) 的表达式会非常复杂，因此超前进位加法器一般只超前计算到 4 位。
+
+对于更多位数的加法器，可以利用 \(G_i\)、\(P_i\) 的递归性质，设计组内并行、组间并行的超前进位加法器，如图 \ref{Fig: 16-bit Carry Look-ahead Adder} 所示。
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.25]{Circuits/FIG-16-bit_Carry_Look-ahead_Adder.drawio.png}
+	\caption{16-bit 超前进位加法器}
+	\label{Fig: 16-bit Carry Look-ahead Adder}
+\end{figure}
+
 
 \subsection{时序逻辑}
 
@@ -834,6 +1134,46 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 
 用\textbf{奇数个}反相器可以串联成环形振荡器，若串联的反相器个数为 \(n\)，每个反相器的延迟时间为 \(t_\mrm{pd}\)，则环形振荡器的周期为 \(T = 2n \cdot t_\mrm{pd}\)。因此，环形振荡器是一种简单的时钟信号发生器。
 
+\begin{example}[3]
+	\label{e.g: Ring Oscillator}
+	三个非门串联成环形振荡器，其中每个非门的上升延迟时间为 \(t_\mrm{pd} = 2t\)，下降延迟时间为 \(t_\mrm{pd} = t\)，如图 \ref{Fig: Ring Oscillator Example} 所示。
+	求环形振荡器的周期、占空比。
+
+	\begin{figure}[!ht]
+		\centering
+		\subfloat[电路]{
+			\label{Fig: Ring Oscillator Example}
+			\includegraphics[scale=0.25]{Circuits/FIG-Ring_Oscillator_Example.drawio.png}
+		}
+		\quad
+		\subfloat[各非门输出信号]{
+			\label{Tab: Ring Oscillator Example}
+			\begin{tabular}[b]{ccccccccccc}
+				\toprule
+				\textbf{时刻/}\(\symbf{t}\) & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} \\
+				\midrule
+				\(Q_1\) & * & * & 1 & 1 & 1 & 1 & 1 & 0 & 0 & 0 \\
+				\(Q_2\) & * & * & * & * & 0 & 0 & 0 & 0 & 1 & 1 \\
+				\(Q_3\) & 0 & * & * & * & * & * & 1 & 1 & 1 & 0 \\
+				\bottomrule
+			\end{tabular}
+		}
+		\caption{例 \ref{e.g: Ring Oscillator} 中的环形振荡器}
+	\end{figure}
+
+	\begin{solution}
+		由于三个非门串联，环形振荡器的周期为
+		\[
+			T = 3 \times (2t + t) = 9t
+		\]
+		假设 \(0\) 时刻非门 \(Q_1\) 接收到信号 0，则各非门的输出信号如表 \ref{Tab: Ring Oscillator Example} 所示，环形振荡器的占空比为
+		\begin{equation*}
+			\mrm{Duty\ Cycle} = \frac{t_{\mrm{high},Q_3}}{T} = \frac{4t}{9t} = 44.4\%
+			\qedhere
+		\end{equation*}
+	\end{solution}
+\end{example}
+
 基于时钟信号，在边缘（如上升沿）采样输入信号、更新状态，可以实现时序逻辑。
 
 \begin{definition}
@@ -848,7 +1188,7 @@ colframe=meihong!85!black,#1, boxrule=0.4pt, leftrule=10pt, arc=0pt, before skip
 	\tboba{有限状态机（finite state machine，FSM）}是一种能够根据输入信号和当前状态，确定输出信号和下一个状态的系统。
 
 	描述一个 FSM 需要确定 6 大要素：
-	\begin{itemize}
+	\begin{itemize}[leftmargin=2em, topsep=0pt]
 		\item 状态集合 State，FSM 的所有可能状态；
 		\item 初始状态 \(S_0\)，FSM 启动及复位时的状态；
 		\item 输入信号 Input；
@@ -866,29 +1206,29 @@ FSM 有两种类型：\tboba{Moore FSM} 和 \tboba{Mealy FSM}。Moore FSM 的输
 	\caption{一般的状态转换表}
 	\label{Tab: General State Transition Table}
 	\subfloat[Moore FSM]{
-		\begin{tabular}{c|cccc|c}
+		\begin{tabular}{c|ccccc|c}
 			\toprule
-			\multirow{2}{*}{\textbf{State}} & \multicolumn{4}{c|}{\textbf{Input}} & \multirow{2}{*}{\textbf{Output}} \\
-			& \(I_1\) & \(I_2\) & \(\cdots\) & \(I_n\) & \\ 
+			\multirow{2}{*}{\makecell{\textbf{Cur.}\\[-5pt] \textbf{State}}} & \multicolumn{5}{c|}{\textbf{Next State}} & \multirow{2}{*}{\textbf{Output}} \\
+			& @\hspace{-1em} & \(I_1\) & \(I_2\) & \(\cdots\) & \(I_n\) & \\
 			\midrule
-			\(S_1\) & \(S_a\) & \(S_b\) & \(\cdots\) & \(S_c\) & \(O_1\) \\
-			\(S_2\) & \(S_d\) & \(S_e\) & \(\cdots\) & \(S_f\) & \(O_2\) \\
-			\(\vdots\) & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) & \(\vdots\) \\
-			\(S_m\) & \(S_x\) & \(S_y\) & \(\cdots\) & \(S_z\) & \(O_m\) \\
+			\(S_1\) & & \(S_a\) & \(S_b\) & \(\cdots\) & \(S_c\) & \(O_1\) \\
+			\(S_2\) & & \(S_d\) & \(S_e\) & \(\cdots\) & \(S_f\) & \(O_2\) \\
+			\(\vdots\) & & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) & \(\vdots\) \\
+			\(S_m\) & & \(S_x\) & \(S_y\) & \(\cdots\) & \(S_z\) & \(O_m\) \\
 			\bottomrule
 		\end{tabular}
 	}
 	\quad
 	\subfloat[Mealy FSM]{
-		\begin{tabular}{c|cccc}
+		\begin{tabular}{c|ccccc|ccccc}
 			\toprule
-			\multirow{2}{*}{\textbf{State}} & \multicolumn{4}{c}{\textbf{Input}} \\
-			& \(I_1\) & \(I_2\) & \(\cdots\) & \(I_n\)\\ 
+			\multirow{2}{*}{\makecell{\textbf{Cur.}\\[-5pt] \textbf{State}}} & \multicolumn{5}{c|}{\textbf{Next State}} & \multicolumn{5}{c}{\textbf{Output}} \\
+			& @\hspace{-1em} & \(I_1\) & \(I_2\) & \(\cdots\) & \(I_n\) & @\hspace{-1em} & \(I_1\) & \(I_2\) & \(\cdots\) & \(I_n\)\\ 
 			\midrule
-			\(S_1\) & \(S_a，O_a\) & \(S_b，O_b\) & \(\cdots\) & \(S_c，O_c\) \\
-			\(S_2\) & \(S_d，O_d\) & \(S_e，O_e\) & \(\cdots\) & \(S_f，O_f\) \\
-			\(\vdots\) & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) \\
-			\(S_m\) & \(S_x，O_x\) & \(S_y，O_y\) & \(\cdots\) & \(S_z，O_z\) \\
+			\(S_1\) & & \(S_a\) & \(S_b\) & \(\cdots\) & \(S_c\) & & \(O_a\) & \(O_b\) & \(\cdots\) & \(O_c\) \\
+			\(S_2\) & & \(S_d\) & \(S_e\) & \(\cdots\) & \(S_f\) & & \(O_d\) & \(O_e\) & \(\cdots\) & \(O_f\) \\
+			\(\vdots\) & & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) & & \(\vdots\) & \(\vdots\) & \(\ddots\) & \(\vdots\) \\
+			\(S_m\) & & \(S_x\) & \(S_y\) & \(\cdots\) & \(S_z\) & & \(O_x\) & \(O_y\) & \(\cdots\) & \(O_z\) \\
 			\bottomrule
 		\end{tabular}
 	}
@@ -1178,7 +1518,7 @@ DFF 的一种常见的实现方式是两个 D 锁存器级联，如图~\ref{Fig:
 	}
 	\quad
 	\subfloat[并行输出]{
-		\includegraphics[scale=0.25]{Circuits/FIG-Shift_Register_Parallel_Output.drawio.png}
+		% \includegraphics[scale=0.25]{Circuits/FIG-Shift_Register_Parallel_Output.drawio.png}
 	}
 	\caption{移位寄存器的并行输入、输出}
 	\label{Fig: Parallel Shift Register}
@@ -1186,8 +1526,98 @@ DFF 的一种常见的实现方式是两个 D 锁存器级联，如图~\ref{Fig:
 
 
 \paragraph{计数器}
+　
 
+\section{计算机指令集系统}
 
+\subsection{通用处理器的基本结构}
+
+\subsubsection{算法与指令的实现}
+
+\de[指令集]{
+	\tboba{指令集（instruction set）}是一组用于控制计算机操作的指令的集合。
+}
+
+从众多软件算法中抽象出一组指令，是计算机的基本设计思想之一。算法指令的基本类型有：
+\begin{itemize}
+	\item \textbf{赋值操作}：将一个值赋给一个变量；
+	\item \textbf{算术操作}：加、减、乘、除、求余等；
+	\item \textbf{逻辑操作}：与、或、非、异或等；
+	\item \tboba{分支跳转}：根据条件跳转到不同的指令；
+	\item \tboba{直接跳转}：无条件跳转到指定的指令；
+	\item \tboba{过程调用}：保持本组指令的执行现场，跳转到指定的过程执行，执行完毕后返回；
+	\item \tboba{访存操作}：从内存中读取数据、向内存中写入数据。
+\end{itemize}
+要支持通用算法，指令集需要包含上述基本类型的指令。
+
+构造有限状态机实现上面的基本类型指令，其基本结构如图~\ref{Fig: FSM for Basic Instructions}~所示。
+
+\begin{figure}[!ht]
+	\centering
+	\subfloat[任务模型]{
+		\includegraphics[scale=0.25]{Circuits/FIG-FSM_for_Basic_Instructions.drawio.png}
+	}
+	\quad
+	\subfloat[基本结构]{
+		\includegraphics[scale=0.25]{Circuits/FIG-FSM_for_Basic_Instructions_2.drawio.png}
+	}
+	\caption{基本指令的状态机实现}
+	\label{Fig: FSM for Basic Instructions}
+\end{figure}
+
+其中：
+\begin{itemize}
+	\item \tboba{程序计数器（PC）}：指示当前指令的地址，每个周期更新；
+	\item \tboba{算术/逻辑单元（ALU）}：执行算术、逻辑操作；
+	\item \tboba{寄存器堆（REG）}：存储数据，提高访存速度。
+\end{itemize}
+
+\begin{definition}
+	\textup{\textbf{普林斯顿架构}\quad}在普林斯顿架构中，存储器同时存储指令和数据，CPU处理器包括控制单元和计算单元（ALU）。
+\end{definition}
+
+\begin{definition}
+	\textup{\textbf{哈佛架构}\quad}在哈佛架构中，指令存储器和数据存储器分开，CPU处理器包括控制单元、指令存储器和数据存储器。
+\end{definition}
+
+\subsubsection{程序的执行流程}
+
+\paragraph{数据的存储格式}
+
+计算机中使用0/1二进制序列表示数据和指令。在指令集架构中，对数据和指令的存储格式有以下的要求：
+\begin{itemize}
+	\item 数据\textbf{按行存储}，以字节为单位索引，每个地址对应1字节数据；对于多字节数据，需要规定\tboba{字节序}——
+	\begin{itemize}
+		\item \tboba{大端序}：高位字节存储在低地址，如 0x12345678 存储为 0x12 0x34 0x56 0x78；
+		\item \tboba{小端序}：高位字节存储在高地址，如 0x12345678 存储为 0x78 0x56 0x34 0x12。
+	\end{itemize}
+	\item 指令\textbf{按字存储}，以字为单位索引，每个地址对应1字指令。
+\end{itemize}
+
+\paragraph{汇编语言}
+
+\de[汇编语言]{
+	\tboba{汇编语言（assembly language）}是一种将机器指令翻译成易于理解的符号指令的语言。
+}
+
+汇编语言的基本元素包括：
+\begin{itemize}
+	\item \textbf{指令}：对应机器指令；
+	\item \textbf{寄存器}：用于存储数据；
+	\item \textbf{标号}：用于标记指令的地址；
+	\item \textbf{伪指令}：用于定义数据、宏等。
+\end{itemize}
+
+\paragraph{指令集的性能评价}
+
+指令集的性能主要是指其时间性能，有以下几个指标：
+\begin{itemize}
+	\item \textbf{指令数}：完成一个任务所需的指令数；
+	\item \textbf{CPI（cycles per instruction）}：每条指令的平均时钟周期数；
+	\item \textbf{时钟周期}：计算机时钟信号的周期；
+	\item \textbf{执行时间}：完成一个任务所需的时间，等于\(\text{指令数} \times \text{CPI} \times \text{时钟周期}\)；
+	\item \textbf{总时间}：包括执行时间和存取时间。
+\end{itemize}
 
 %----------------------------------------------------------
 \end{document}

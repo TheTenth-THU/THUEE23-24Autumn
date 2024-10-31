@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  14 OCT 2024 12:14
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  31 OCT 2024 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,31 +1451,38 @@ Package fontspec Info: Font family '方正新书宋_GBK(0)' created for font '�
 \c@tcb@cnt@compl=\count451
 \c@tcb@cnt@note=\count452
 \c@tcb@cnt@eg=\count453
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 309.
+ (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+)
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 339.
  (./24Au-DigitalLogic&Processor.aux)
 \openout1 = `24Au-DigitalLogic&Processor.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-Package hyperref Info: Link coloring ON on input line 309.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 339.
+LaTeX Font Info:    ... okay on input line 339.
+Package hyperref Info: Link coloring ON on input line 339.
  (./24Au-DigitalLogic&Processor.out) (./24Au-DigitalLogic&Processor.out)
 \@outlinefile=\write4
 \openout4 = `24Au-DigitalLogic&Processor.out'.
@@ -1538,12 +1545,12 @@ Package siunitx Warning: Detected the "physics" package:
 (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 309.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 339.
 \c@lstlisting=\count458
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 309.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 339.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 309.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 339.
 
 Package fontspec Info: Font family '方正新楷体_GBK(0)' created for font '方正新楷体_GBK'
 (fontspec)             with options [Script={CJK},BoldItalicFont={方正颜真卿楷书
@@ -1566,45 +1573,45 @@ Package fontspec Info: Font family '方正新楷体_GBK(0)' created for font '�
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 314.
+(Font)              scaled to size 12.00128pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 314.
+(Font)              scaled to size 8.00085pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 314.
+(Font)              scaled to size 6.00064pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 314.
+(Font)              scaled to size 11.99872pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 314.
+(Font)              scaled to size 7.99915pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 314.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 314.
+(Font)              scaled to size 5.99936pt on input line 344.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 344.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 314.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 344.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 314.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 344.
  (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 10.54048pt on input line 314.
+(Font)              scaled to size 10.54048pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 314.
+(Font)              scaled to size 7.00075pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 314.
+(Font)              scaled to size 5.00053pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 10.53824pt on input line 314.
+(Font)              scaled to size 10.53824pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 314.
+(Font)              scaled to size 6.99925pt on input line 344.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 314.
+(Font)              scaled to size 4.99947pt on input line 344.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 314.
+(Font)              size <10.95> substituted on input line 344.
 
 (./24Au-DigitalLogic&Processor.toc
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
@@ -1706,38 +1713,17 @@ Package fontspec Info: Font family '汉仪润圆-45WExtraLight(0)' created for f
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/方正新书宋_GBK(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/方正新书宋_GBK(0)/m/it' tried instead on input line 391.
+(Font)              Font shape `TU/方正新书宋_GBK(0)/m/it' tried instead on input line 435.
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
  [2]
-\g__nicematrix_max_cell_width_dim=\dimen438
-\c@iRow=\count459
-\c@jCol=\count460
-\l__nicematrix_cell_box=\box150
-\l__nicematrix_the_array_box=\box151
-\l__nicematrix_left_delim_dim=\dimen439
-\l__nicematrix_right_delim_dim=\dimen440
-\g__nicematrix_dp_row_zero_dim=\dimen441
-\g__nicematrix_ht_row_zero_dim=\dimen442
-\g__nicematrix_ht_row_one_dim=\dimen443
-\g__nicematrix_dp_ante_last_row_dim=\dimen444
-\g__nicematrix_ht_last_row_dim=\dimen445
-\g__nicematrix_dp_last_row_dim=\dimen446
-\g__nicematrix_ddots_int=\count461
-\g__nicematrix_iddots_int=\count462
-\g__nicematrix_delta_x_one_dim=\dimen447
-\g__nicematrix_delta_y_one_dim=\dimen448
-\g__nicematrix_delta_x_two_dim=\dimen449
-\g__nicematrix_delta_y_two_dim=\dimen450
-\l__nicematrix_initial_i_int=\count463
-\l__nicematrix_initial_j_int=\count464
-\l__nicematrix_final_i_int=\count465
-\l__nicematrix_final_j_int=\count466
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 475.
+
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [3]
-File: Circuits/FIG-Combinational_Logic_Circuit_1.drawio.png Graphic file (type bmp)
-<Circuits/FIG-Combinational_Logic_Circuit_1.drawio.png>
+[3]
 
 Package fontspec Info: Could not resolve font "方正颜真卿楷书 简繁/B" (it probably
 (fontspec)             doesn't exist).
@@ -1764,49 +1750,121 @@ Package fontspec Info: Font family '方正清刻本悦宋简繁(0)' created for 
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 493.
+(Font)              scaled to size 9.00096pt on input line 514.
 LaTeX Font Info:    Font shape `TU/KpMath-Regular.otf(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 493.
+(Font)              scaled to size 8.99904pt on input line 514.
+
+Package fontspec Info: Could not resolve font "霞鹜新晰黑/BI" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Could not resolve font "霞鹜新晰黑/B" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Could not resolve font "霞鹜新晰黑/I" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: Font family '霞鹜新晰黑(0)' created for font '霞鹜新晰黑' with
+(fontspec)             options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"霞鹜新晰黑/OT:script=hani;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [4]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [5]
+\g__nicematrix_max_cell_width_dim=\dimen438
+\c@iRow=\count459
+\c@jCol=\count460
+\l__nicematrix_cell_box=\box150
+\l__nicematrix_the_array_box=\box151
+\l__nicematrix_left_delim_dim=\dimen439
+\l__nicematrix_right_delim_dim=\dimen440
+\g__nicematrix_dp_row_zero_dim=\dimen441
+\g__nicematrix_ht_row_zero_dim=\dimen442
+\g__nicematrix_ht_row_one_dim=\dimen443
+\g__nicematrix_dp_ante_last_row_dim=\dimen444
+\g__nicematrix_ht_last_row_dim=\dimen445
+\g__nicematrix_dp_last_row_dim=\dimen446
+\g__nicematrix_ddots_int=\count461
+\g__nicematrix_iddots_int=\count462
+\g__nicematrix_delta_x_one_dim=\dimen447
+\g__nicematrix_delta_y_one_dim=\dimen448
+\g__nicematrix_delta_x_two_dim=\dimen449
+\g__nicematrix_delta_y_two_dim=\dimen450
+\l__nicematrix_initial_i_int=\count463
+\l__nicematrix_initial_j_int=\count464
+\l__nicematrix_final_i_int=\count465
+\l__nicematrix_final_j_int=\count466
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [6]
+File: Circuits/FIG-Combinational_Logic_Circuit_1.drawio.png Graphic file (type bmp)
+<Circuits/FIG-Combinational_Logic_Circuit_1.drawio.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [7]
 File: Circuits/FIG-Combinational_Logic_Circuit_2.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Combinational_Logic_Circuit_2.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [4]
-Overfull \hbox (0.5407pt too wide) in paragraph at lines 595--620
+ [8]
+Overfull \hbox (0.5407pt too wide) in paragraph at lines 858--883
 [][][][][][][][][] 
  []
 
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
-[5]
+[9]
 File: Circuits/FIG-4-2_Encoder.drawio.png Graphic file (type bmp)
 <Circuits/FIG-4-2_Encoder.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [6]
+ [10]
 File: Circuits/FIG-4-1_MUX.drawio.png Graphic file (type bmp)
 <Circuits/FIG-4-1_MUX.drawio.png>
 File: Circuits/FIG-4-1_MUX_Symbol.drawio.png Graphic file (type bmp)
 <Circuits/FIG-4-1_MUX_Symbol.drawio.png>
 File: Circuits/FIG-4-bit_Shifter.drawio.png Graphic file (type bmp)
 <Circuits/FIG-4-bit_Shifter.drawio.png>
-File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
-<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [7]
 File: Circuits/FIG-1-bit_Full_Adder.drawio.png Graphic file (type bmp)
 <Circuits/FIG-1-bit_Full_Adder.drawio.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [11]
 File: Circuits/FIG-4-bit_Ripple_Carry_Adder.drawio.png Graphic file (type bmp)
 <Circuits/FIG-4-bit_Ripple_Carry_Adder.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [8]
+ [12]
+File: Circuits/FIG-4-bit_Carry_Look-ahead_Adder.drawio.png Graphic file (type bmp)
+<Circuits/FIG-4-bit_Carry_Look-ahead_Adder.drawio.png>
+File: Circuits/FIG-16-bit_Carry_Look-ahead_Adder.drawio.png Graphic file (type bmp)
+<Circuits/FIG-16-bit_Carry_Look-ahead_Adder.drawio.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [13]
+File: Circuits/FIG-Ring_Oscillator_Example.drawio.png Graphic file (type bmp)
+<Circuits/FIG-Ring_Oscillator_Example.drawio.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [14]
 File: Circuits/FIG-Moore_State_Transition_Diagram.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Moore_State_Transition_Diagram.drawio.png>
 File: Circuits/FIG-Mealy_State_Transition_Diagram.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Mealy_State_Transition_Diagram.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [9]
+ [15]
 File: Circuits/FIG-SR_Latch.drawio.png Graphic file (type bmp)
 <Circuits/FIG-SR_Latch.drawio.png>
 File: Circuits/FIG-SR_Latch_Circuit.drawio.png Graphic file (type bmp)
@@ -1842,36 +1900,33 @@ Package fontspec Info: Font family '方正宋刻本秀楷_GBK(0)' created for fo
 (fontspec)             <->"方正宋刻本秀楷_GBK/OT:script=hani;language=dflt;"
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
-File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
-<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [10]
 File: Circuits/FIG-Gated_SR_Latch_Circuit.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Gated_SR_Latch_Circuit.drawio.png>
 File: Circuits/FIG-Gated_SR_Latch.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Gated_SR_Latch.drawio.png>
 File: Circuits/FIG-D_Latch.drawio.png Graphic file (type bmp)
 <Circuits/FIG-D_Latch.drawio.png>
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [16]
 File: Circuits/FIG-D_Latch_Circuit_By_LG.drawio.png Graphic file (type bmp)
 <Circuits/FIG-D_Latch_Circuit_By_LG.drawio.png>
 File: Circuits/FIG-D_Latch_Circuit_By_TG.drawio.png Graphic file (type bmp)
 <Circuits/FIG-D_Latch_Circuit_By_TG.drawio.png>
-File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
-<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [11]
 File: Circuits/FIG-Timing_Parameters_of_Latch.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Timing_Parameters_of_Latch.drawio.png>
-File: Circuits/FIG-D_Flip-Flop.drawio.png Graphic file (type bmp)
-<Circuits/FIG-D_Flip-Flop.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [12]
+ [17]
+File: Circuits/FIG-D_Flip-Flop.drawio.png Graphic file (type bmp)
+<Circuits/FIG-D_Flip-Flop.drawio.png>
 File: Circuits/FIG-D_Flip-Flop_Circuit.drawio.png Graphic file (type bmp)
 <Circuits/FIG-D_Flip-Flop_Circuit.drawio.png>
 File: Circuits/FIG-D_Flip-Flop_Timing_Diagram.drawio.png Graphic file (type bmp)
 <Circuits/FIG-D_Flip-Flop_Timing_Diagram.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [13]
+ [18]
 File: Circuits/FIG-Sequential_Circuit.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Sequential_Circuit.drawio.png>
 File: Circuits/FIG-Training_Accumulator_FSM1.drawio.png Graphic file (type bmp)
@@ -1880,31 +1935,72 @@ File: Circuits/FIG-Training_Accumulator_FSM2.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Training_Accumulator_FSM2.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [14]
+ [19]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [20]
 File: Circuits/FIG-Shift_Right_Register.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Shift_Right_Register.drawio.png>
 File: Circuits/FIG-Shift_Left_Register.drawio.png Graphic file (type bmp)
 <Circuits/FIG-Shift_Left_Register.drawio.png>
+File: Circuits/FIG-Shift_Register_Parallel_Input.drawio.png Graphic file (type bmp)
+<Circuits/FIG-Shift_Register_Parallel_Input.drawio.png>
+
+Overfull \hbox (10.2028pt too wide) in paragraph at lines 1522--1522
+[]\TU/lmss/bx/n/9 (b)
+ []
+
+
+Overfull \hbox (6.45pt too wide) in paragraph at lines 1522--1522
+|\TU/汉仪文黑-45WExtraLight(0)/m/n/9 并
+ []
+
+
+Overfull \hbox (6.45pt too wide) in paragraph at lines 1522--1522
+\TU/汉仪文黑-45WExtraLight(0)/m/n/9 行
+ []
+
+
+Overfull \hbox (6.45pt too wide) in paragraph at lines 1522--1522
+\TU/汉仪文黑-45WExtraLight(0)/m/n/9 输
+ []
+
+
+Overfull \hbox (6.45pt too wide) in paragraph at lines 1522--1522
+\TU/汉仪文黑-45WExtraLight(0)/m/n/9 出| 
+ []
+
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [15]
+[21]
+File: Circuits/FIG-FSM_for_Basic_Instructions.drawio.png Graphic file (type bmp)
+<Circuits/FIG-FSM_for_Basic_Instructions.drawio.png>
+File: Circuits/FIG-FSM_for_Basic_Instructions_2.drawio.png Graphic file (type bmp)
+<Circuits/FIG-FSM_for_Basic_Instructions_2.drawio.png>
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [16] (./24Au-DigitalLogic&Processor.aux)
+ [22]
+Overfull \hbox (90.88pt too wide) in paragraph at lines 1601--1601
+ \TU/KpRoman(0)/b/n/10 B) \TU/方正新书宋_GBK(0)/b/n/10 汇 编 语 言[] [] 
+ []
+
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+[23] (./24Au-DigitalLogic&Processor.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `24Au-DigitalLogic&Processor.out' has not changed.
-(rerunfilecheck)             Checksum: 4947234A6C76C27F8D5660B4F151ED2A;1719.
+(rerunfilecheck)             Checksum: 858D35EDF6AF7DEA4F738311E3000FD6;3070.
  ) 
 Here is how much of TeX's memory you used:
- 64871 strings out of 476683
- 1610632 string characters out of 5798754
- 2282937 words of memory out of 5000000
- 84180 multiletter control sequences out of 15000+600000
- 527733 words of font info for 235 fonts, out of 8000000 for 9000
+ 65359 strings out of 476683
+ 1629721 string characters out of 5798754
+ 2533508 words of memory out of 5000000
+ 84637 multiletter control sequences out of 15000+600000
+ 527837 words of font info for 248 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,17n,114p,566b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,20n,114p,566b,2941s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 24Au-DigitalLogic&Processor.pdf (16 pages).
+Output written on 24Au-DigitalLogic&Processor.pdf (23 pages).

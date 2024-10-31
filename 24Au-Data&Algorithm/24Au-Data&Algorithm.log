@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  16 OCT 2024 00:43
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  22 OCT 2024 11:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1583,21 +1583,30 @@ File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿
  [22]
 File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
 <C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
- [23] (./24Au-Data&Algorithm.aux)
+ [23]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [24]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [25]
+File: C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png Graphic file (type bmp)
+<C:/Users/16870/.vscode/LaTeX_Application/tex/THUEE23-23Autumn/图标简稿.png>
+ [26] (./24Au-Data&Algorithm.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `24Au-Data&Algorithm.out' has not changed.
-(rerunfilecheck)             Checksum: 828BB83115F396F1AD730CED656068F9;1714.
+(rerunfilecheck)             Checksum: ADF9DD796B4E2F4B379A7D9815EE9DD3;1906.
  ) 
 Here is how much of TeX's memory you used:
- 41778 strings out of 476683
- 932977 string characters out of 5798754
+ 41895 strings out of 476683
+ 934750 string characters out of 5798754
  2310012 words of memory out of 5000000
- 61309 multiletter control sequences out of 15000+600000
+ 61426 multiletter control sequences out of 15000+600000
  524835 words of font info for 183 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,16n,115p,568b,1344s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 24Au-Data&Algorithm.pdf (23 pages).
+Output written on 24Au-Data&Algorithm.pdf (26 pages).

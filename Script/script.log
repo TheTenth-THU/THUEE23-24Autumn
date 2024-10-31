@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  17 OCT 2024 18:40
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.16)  19 OCT 2024 00:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -588,6 +588,74 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@cntb=\count358
 \multirow@dima=\skip260
 \bigstrutjot=\dimen296
+) (d:/Program Files (x86)/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
+\c@tracingmulticols=\count359
+\mult@box=\box63
+\multicol@leftmargin=\dimen297
+\c@unbalance=\count360
+\c@collectmore=\count361
+\doublecol@number=\count362
+\multicoltolerance=\count363
+\multicolpretolerance=\count364
+\full@width=\dimen298
+\page@free=\dimen299
+\premulticols=\dimen300
+\postmulticols=\dimen301
+\multicolsep=\skip261
+\multicolbaselineskip=\skip262
+\partial@page=\box64
+\last@line=\box65
+\maxbalancingoverflow=\dimen302
+\mult@rightbox=\box66
+\mult@grightbox=\box67
+\mult@firstbox=\box68
+\mult@gfirstbox=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\c@minrows=\count365
+\c@columnbadness=\count366
+\c@finalcolumnbadness=\count367
+\last@try=\dimen303
+\multicolovershoot=\dimen304
+\multicolundershoot=\dimen305
+\mult@nat@firstbox=\box106
+\colbreak@box=\box107
+\mc@col@check@num=\count368
 )
 
 Package fontspec Info: Font family 'Iosevka(0)' created for font 'Iosevka'
@@ -651,84 +719,84 @@ Package fontspec Info: Font family '方正新书宋_GBK(0)' created for font '�
 (fontspec)             W/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-\drop=\skip261
-\c@scene=\count359
-\c@act=\count360
+\drop=\skip263
+\c@scene=\count369
+\c@act=\count370
  (./script.aux)
 \openout1 = `script.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 166.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 166.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 166.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 166.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 166.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 166.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 166.
-LaTeX Font Info:    Redeclaring math accent \check on input line 166.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 166.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 166.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 166.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 166.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 169.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 169.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 169.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 169.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 169.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 169.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 169.
+LaTeX Font Info:    Redeclaring math accent \check on input line 169.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 169.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 169.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 169.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 169.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 169.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 166.
+(Font)              `operators' in the math version `normal' on input line 169.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 166.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 169.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 166.
+(Font)              `operators' in the math version `bold' on input line 169.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 166.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 169.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 166.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 166.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 166.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 166.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/Iosevka(0)/m/n on input line 166.
+(Font)                  OT1/cmtt/m/n --> TU/Iosevka(0)/m/n on input line 169.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 166.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 166.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 166.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 169.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/Iosevka(0)/b/n on input line 166.
+(Font)                  OT1/cmtt/m/n --> TU/Iosevka(0)/b/n on input line 169.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -852,10 +920,10 @@ Package fontspec Info: Font family '方正新楷体_GBK(0)' created for font '�
 
  (./script.aux) ) 
 Here is how much of TeX's memory you used:
- 13269 strings out of 476683
- 325835 string characters out of 5798754
+ 13407 strings out of 476683
+ 328216 string characters out of 5798754
  1866012 words of memory out of 5000000
- 33344 multiletter control sequences out of 15000+600000
+ 33479 multiletter control sequences out of 15000+600000
  517636 words of font info for 107 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,12n,97p,430b,563s stack positions out of 10000i,1000n,20000p,200000b,200000s

@@ -36,9 +36,9 @@
 \linespread{1.4}
 \numberwithin{equation}{section}
 \renewcommand{\theparagraph}{\Alph{paragraph})}
-\newcommand{\Section}[1]{ \refstepcounter{section} \section*{*\thesection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{section}{\makebox[0pt][r]{*}\thesection\texorpdfstring{\ \ }{} #1} }
-\newcommand{\Subsection}[1]{ \refstepcounter{subsection} \subsection*{*\thesubsection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{subsection}{\makebox[0pt][r]{*}\thesubsection\texorpdfstring{\ \ \ }{} #1} }
-\newcommand{\Subsubsection}[1]{\refstepcounter{subsubsection}\subsubsection*{*\thesubsubsection\texorpdfstring{\quad}{}#1} \addcontentsline{toc}{subsubsection}{\makebox[0pt][r]{*}\thesubsubsection\texorpdfstring{\ \ }{}#1}}
+\newcommand{\Section}[1]{ \refstepcounter{section} \section*{*\thesection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{section}{\makebox[0pt][r]{*}\thesection\texorpdfstring{\hskip1.15em}{} #1} }
+\newcommand{\Subsection}[1]{ \refstepcounter{subsection} \subsection*{*\thesubsection\texorpdfstring{\quad}{} #1} \addcontentsline{toc}{subsection}{\makebox[0pt][r]{*}\thesubsection\texorpdfstring{\hskip1.15em}{} #1} }
+\newcommand{\Subsubsection}[1]{\refstepcounter{subsubsection}\subsubsection*{*\thesubsubsection\texorpdfstring{\quad}{}#1} \addcontentsline{toc}{subsubsection}{\makebox[0pt][r]{*}\thesubsubsection\texorpdfstring{\hskip1.15em}{}#1}}
 \setlist[itemize]{leftmargin=3em, labelsep=0.25em, itemindent=0em, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt}
 \setlist[description]{leftmargin=4em, labelsep=1em, itemindent=-1em, itemsep=0pt, parsep=0pt, topsep=3pt, partopsep=0pt}
 %定理环境
@@ -147,6 +147,9 @@
 \newcommand{\page}[1]{\hfill P$_\text{#1}$}
 \newcommand{\sumi}[1][n]{\sum\limits_{#1=1}^\infty}
 \renewenvironment{cases}[1][l]{\left\{\,\begin{NiceArray}{#1}}{\end{NiceArray}\right.}
+
+\newcommand{\ftr}[1][f(x)]{\mathcal{F}\left[#1\right]}
+\newcommand{\iftr}[1][\hat{f}(\omega)]{\mathcal{F}^{-1}\left[#1\right]}
 
 %标题、作者、日期
 \title
@@ -775,7 +778,40 @@
 
 \paragraph{留数的计算方法}
 
-1
+一般的，对函数在奇点附近做 Laurent 展开即可得到留
+数，但这样做工作量太大，需要考虑不做 Laurent 展开直接算出留数的
+方法。
+
+\begin{itemize}
+    \item \textbf{单极点处的留数}\quad 若 \(z_0\) 是函数 \(f(z)\) 的单极点，则 Laurent 展开为 \(f(z) = \dfrac{a_{-1}}{z-z_0} + a_0 + a_1(z-z_0) + \cdots\)，左右同乘 \((z-z_0)\) 再取极限即可得到留数
+    \begin{equation}
+        \res f(z_0) = a_{-1} = \lim\limits_{z \to z_0} (z-z_0)f(z)
+    \end{equation}
+    上式既可以判断 \(z_0\) 是否为单极点，也可以计算单极点的留数。
+
+    \begin{theorem}
+        \textup{\textbf{分式函数上的推论}\quad}设函数 \(f(z) = \dfrac{P(z)}{Q(z)}\)，其中 \(P(z)\) 和 \(Q(z)\) 都在点 \(z_0\) 解析，\(z_0\) 是 \(Q(z)\) 的一阶零点，\(P(z_0) \neq 0\)，则
+        \begin{equation}
+            \res f(z_0) = \lim\limits_{z \to z_0} \dfrac{(z-z_0)P(z)}{Q(z)}
+            = \dfrac{P(z_0)}{Q'(z_0)}
+        \end{equation}
+        进一步，若 \(z_0\) 是 \(P(z)\) 的 \(n\) 阶零点，又是 \(Q(z)\) 的 \(n+1\) 阶零点，则
+        \begin{equation}
+            \res f(z_0) = \lim\limits_{z \to z_0} \dfrac{(z-z_0)P(z)}{Q(z)}
+            = \dfrac{(n+1)P^{(n)}(z_0)}{Q^{(n+1)}(z_0)}
+        \end{equation}
+    \end{theorem}
+
+    \item \textbf{\(\boldsymbol{n}\) 阶极点处的留数}\quad 若 \(z_0\) 是函数 \(f(z)\) 的 \(n\) 阶极点，则 Laurent 展开左右同乘 \((z-z_0)^{n}\) 为 
+    \[
+        (z - z_0)^nf(z) = a_{-n} + a_{-n+1}(z-z_0) + \cdots + a_{-1}(z-z_0)^{n-1} + a_0(z-z_0)^n + \cdots
+    \]
+    对上式取极限（极限是一个非零有限值）得到 \(\lim\limits_{z \to z_0} (z-z_0)^nf(z) = a_{-n}\)，这可以判断 \(z_0\) 是否为 \(n\) 阶极点；
+    对上式求 \(n-1\) 阶导数，再取极限得到
+    \begin{equation}
+        \res f(z_0) = a_{-1} = \dfrac{1}{(n-1)!} \lim\limits_{z \to z_0} \dfrac{\dif^{n-1}}{\dif z^{n-1}} \left((z - z_0)^nf(z)\right)
+    \end{equation}
+\end{itemize}
 
 \zhu[无穷远点处的留数]{
     若 \(\infty\) 是 \(f(z)\) 的孤立奇点，即存在 \(R > 0\)，使得 \(f(z)\) 在 \(R < |z - z_0| < +\infty\) 内解析，那么也可以在 \(\infty\) 处对 \(f(z)\) 做 Laurent 展开 \(f(z) = \sum\limits_{n=-\infty}^\infty a_n z^n\)，其中 \(a_k = \dfrac{1}{2\pi\i} \displaystyle\oint_{\ell} \dfrac{f(\zeta)}{\zeta^{k+1}} \dif \zeta\)。
@@ -787,7 +823,14 @@
         \end{equation}
         按顺时针方向积分，部分是因为这个方向自然看作绕 \(\infty\) 的正方向。
     \end{definition}
+
 }
+
+\di[留数和性质]{
+    若函数 \(f(z)\) 在扩充复平面上只有包含 \(\infty\) 的有限个孤立奇点，那么 \(f(z)\) 在各点的留数之和为0。
+}
+
+
 
 \paragraph{留数定理的应用}
 
@@ -797,14 +840,14 @@
 \begin{circum}
     \(\displaystyle I = \int_0^{2\pi} \mbome{R(\cos x，\sin x)} \dif x\)，即被积函数是\tbome{三角函数的有理式}，积分区间是 \([0，2\pi]\)。
 
-    做\textbf{变量替换} \(z = \e^{\i x}\)，则 \(\cos x = \dfrac{z + z^{-1}}{2}\)，\(\sin x = \dfrac{z - z^{-1}}{2\i}\)，\(\dif x = \dfrac{\dif z}{\i z}\)，积分轨迹变成了绕单位圆逆时针一周，即
-    \[
+    做\textbf{变量替换} \(z = \e^{\i x}\)，则 \(\cos x = \dfrac{z + z^{-1}}{2}\)，\(\sin x = \dfrac{z - z^{-1}}{2\i}\)，\(\dif x = \dfrac{\dif z}{\i z}\)，积分轨迹变成绕单位圆逆时针一周，即
+    \din[]{\begin{equation}
         I = \oint_{|z|=1} R\left(\dfrac{z+z^{-1}}{2}，\dfrac{z-z^{-1}}{2\i}\right) \dfrac{\dif z}{\i z}
-    \]
+    \end{equation}}
 \end{circum}
 
 \begin{circum}\label{cir: 类型2}
-    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) 在实轴上没有奇点，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(zf(z)\) 一致趋于0。
+    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) \tbome{在实轴上没有奇点}，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(\mbome{zf(z)}\) \tbome{一致趋于0}。
     \zhu[上下限均为无穷远点的反常积分]{
         上面的反常积分（\(\displaystyle \int_{-\infty}^{+\infty} f(x) \dif x\)）通常理解为 \(\mboqi{\lim\limits_{R_1 \to +\infty \atop R_2 \to +\infty}} \dint_{-R_1}^{R_2} f(x) \dif x\)。若极限存在的话，这一极限便称为 \(\displaystyle \int_{-\infty}^{+\infty} f(x) \dif x\) 的值；而若 \(R_1 = R_2 \to +\infty\) 的极限存在，这一极限便称为 \(\displaystyle \int_{-\infty}^{+\infty} f(x) \dif x\) 的\tboqi{主值}，记为 \(\displaystyle \mathcal{P} \int_{-\infty}^{+\infty} f(x) \dif x\)。
 
@@ -826,13 +869,13 @@
         \left| \int_{C_R} f(z) \dif z \right| \le \int_{C_R} |f(z)| | \dif z | = \int_{C_R} |zf(z)| \dfrac{| \dif z |}{|z|} \le \max_{z \in C_R} |zf(z)| \int_{C_R} \dfrac{| \dif z |}{|z|} = \max_{z \in C_R} |zf(z)| \cdot \pi R \to 0
     \]
     因此 
-    \[
+    \din[]{\begin{equation}
         \int_{-\infty}^{+\infty} f(x) \dif x = 2\pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res f(z_0)
-    \]
+    \end{equation}}
 \end{circum}
 
 \begin{circum}\label{cir: 类型3}
-    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \e^{\i mx} \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) 在实轴上没有奇点，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(f(z)\) 一致趋于0。
+    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \mbome{\e^{\i mx}} \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) \tbome{在实轴上没有奇点}，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(\mbome{f(z)}\) \tbome{一致趋于0}。
 
     \begin{lemma}
         设 \(m\) 为正数，\(C_R\) 为以原点为圆心、\(R\) 为半径的半圆（上半平面），积分路径为逆时针方向，又设当\(z\)在上半平面或实轴上趋
@@ -858,9 +901,9 @@
         于是 \(\displaystyle \lim_{R \to +\infty} \int_0^\pi R \e^{-mR\sin \varphi} \dif \varphi = 2 \lim_{R \to +\infty} \int_0^{\pi/2} R \e^{-mR\sin \varphi} \dif \varphi\) 有界，因此 \(\displaystyle \lim_{R \to +\infty} \int_{C_R} f(z) \e^{\i mz} \dif z = 0\)。
     \end{proofs}
     于是，根据引理，利用留数定理，有（\(m > 0\)）
-    \[
+    \din[]{\begin{equation}
         \int_{-\infty}^{+\infty} f(x) \e^{\i mx} \dif x = 2\pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res \left(f(z_0)\e^{\i mz_0}\right)
-    \]
+    \end{equation}}
 \end{circum}
 
 针对形如 \(\displaystyle \int_0^{+\infty} g(x) \cos mx \dif x\) 或 \(\displaystyle \int_0^{+\infty} h(x) \sin mx \dif x\) 的积分，可以利用对称性进行奇、偶延拓，然后同上计算，有（\(m > 0\)）
@@ -876,12 +919,49 @@
 \end{align*}
 
 \begin{circum}
-    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) 在实轴上有\textbf{单极点} \(z = \alpha\)，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(zf(z)\) （或如情形 \ref{cir: 类型3} 的\(\dfrac{f(z)}{\e^{\i mz}}\)）一致趋于0。
+    \(\displaystyle I = \int_{-\infty}^{+\infty} f(x) \dif x\)，积分区间是 \((-\infty，+\infty)\)。复变函数 \(f(z)\) \tbome{在实轴上有单极点} \(z = \alpha\)，在上半平面除有限个奇点外是解析的；当 \(z\) 在上半平面及实轴上逼近无穷远点时，\(\mbome{zf(z)}\) （或如情形 \ref{cir: 类型3} 的\(\mbome{\dfrac{f(z)}{\e^{\i mz}}}\)）\tbome{一致趋于0}。
 
     \begin{itemize}
         \item \textbf{类似情形 \ref{cir: 类型2} 的处理}：由于存在这个奇点，可以用 圆心在 \(0\)、半径为 \(R\) 的半圆路径 \(C_R\) 和 圆心在 \(\alpha\)、半径为 \(\varepsilon\) 的半圆路径 \(C_\varepsilon\) 构造绕过奇点的回路 \(\ell\)，将积分拆分为
         \[
-            \oint_{\ell} f(z) \dif z = \int_{-R}^{\alpha - \varepsilon}
+            \oint_{\ell} f(z) \dif z = \int_{-R}^{\alpha - \varepsilon} f(x) \dif x + \int_{C_\varepsilon} f(z) \dif z + \int_{\alpha + \varepsilon}^R f(x) \dif x + \int_{C_R} f(z) \dif z
+        \]
+        当 \(R \to +\infty\)，\(\varepsilon \to 0\) 时，左边有 \(\displaystyle \oint_{\ell} f(z) \dif z = 2\pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res f(z_0)\)；
+
+        前已估计 \(\displaystyle \lim_{R \to +\infty} \int_{C_R} f(z) \dif z = 0\)，还需估计 \(\displaystyle \lim_{\varepsilon \to 0} \int_{C_\varepsilon} f(z) \dif z\)。
+
+        在 \(\alpha\) 邻域内，\(f(z)\) 可展开为 Laurent 级数 \(f(z) = \dfrac{a_{-1}}{z-\alpha} + a_0 + a_1(z-\alpha) + \cdots := \dfrac{a_{-1}}{z-\alpha} + P(z-\alpha)\)，其中 \(P(z-\alpha)\) 是解析函数，因此
+        \[
+            \left| \int_{C_\varepsilon} P(z-\alpha) \dif z \right| 
+            \le \max_{z \in C_\varepsilon} |P(z-\alpha)| \cdot \pi \varepsilon \to 0
+        \]
+        而
+        \[
+            \int_{C_\varepsilon} \dfrac{a_{-1}}{z-\alpha} \dif z
+            = \int_\pi^0 \dfrac{a_{-1}}{\varepsilon \e^{\i \varphi}} \dif \left(\varepsilon \e^{\i \varphi}\right)
+            = \int_\pi^0 a_{-1} \dfrac{\i \varepsilon \e^{\i \varphi}\dif \varphi}{\varepsilon \e^{\i \varphi}}
+            = -\pi\i a_{-1} = -\pi\i \res f(\alpha)
+        \]
+        因此
+        \begin{align}
+            \int_{-\infty}^{+\infty} f(x) \dif x &= \lim\limits_{R \to +\infty \atop \varepsilon \to 0} \left( \int_{-R}^{\alpha - \varepsilon} f(x) \dif x + \int_{\alpha + \varepsilon}^R f(x) \dif x \right) \nonumber\\
+            &= 2\pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res f(z_0) + \pi\i \res f(\alpha)
+        \end{align}
+        如果实轴上有有限个单极点，则有
+        \din[]{\begin{equation}
+            \int_{-\infty}^{+\infty} f(x) \dif x = 2\pi\i \sum_{z_0 \in \text{上半平面内奇点}} \res f(z_0) + \pi\i \sum_{\alpha \in \text{实轴上单极点}} \res f(\alpha)
+        \end{equation}}
+
+        \item \textbf{类似情形 \ref{cir: 类型3} }可得
+        \din[]{\begin{equation}
+            \int_{-\infty}^{+\infty} f(x) \e^{\i mx} \dif x 
+            = \begin{cases}[ll]
+                2\pi\i \sum\limits_{z_0 \in \text{上半平面内奇点}} \res \left(f(z_0)\e^{\i mz_0}\right)\\
+                \qquad\qquad\qquad \mathop+ \pi\i \sum\limits_{\alpha \in \text{实轴上单极点}} \res \left(f(\alpha)\e^{\i m\alpha}\right)， & m > 0 \\
+                -2\pi\i \sum\limits_{z_0 \in \text{下半平面内奇点}} \res \left(f(z_0)\e^{\i mz_0}\right)\\
+                \qquad\qquad\qquad \mathop- \pi\i \sum\limits_{\alpha \in \text{实轴上单极点}} \res \left(f(\alpha)\e^{\i m\alpha}\right)， & m < 0
+            \end{cases}
+        \end{equation}}
     \end{itemize}
 \end{circum}
 
@@ -889,6 +969,132 @@
 %----------------------------------------------------------
 \section{积分变换}
 
+\subsection{Fourier 变换}
+
+\de[Fourier 变换]{
+    若 \(f \in \mathscr{L}(-\infty，+\infty)\)，则称
+    \begin{equation}
+        \hat{f}(\omega) = \ftr = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \e^{-\i \omega x} \dif x
+    \end{equation}
+    为函数 \(f(x)\) 的 \tboba{Fourier 变换}，\(f(x)\) 和 \(\hat{f}(\omega)\) 分别称为 Fourier 变换的\tboba{原函数}和\tboba{像函数}。
+}
+\begin{definition}
+    若 \(f \in \mathscr{L}(-\infty，+\infty) \cap \mathscr{C}^1(-\infty，+\infty)\)，则有
+    \begin{equation}
+        f(x) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \hat{f}(\omega) \e^{\i \omega x} \dif \omega
+        = \lim\limits_{N \to +\infty} \dfrac{1}{\sqrt{2\pi}} \int_{-N}^{N} \hat{f}(\omega) \e^{\i \omega x} \dif \omega
+    \end{equation}
+    称为\tboba{反演公式}或 \tboba{Fourier 逆变换}，记作 \(f(x) = \iftr\)。
+\end{definition}
+
+\zhu[Fourier 变换的物理意义]{
+    傅里叶逆变换的公式表明，\tboqi{任意波函数 \(\mboqi{f(x)}\) 都可以分解为一系列频率不同的简谐波 \(\mboqi{\e^{\i \omega x}}\) 的叠加}，而 \(\hat{f}(\omega)\) 则是 \(f(x)\) 包含的频率为 \(\omega\) 的简谐波的振幅。在频谱分析中，\(\hat{f}(\omega)\) 称为 \(f(x)\) 的\tboqi{频谱密度函数}，\(|\hat{f}(\omega)|\) 称为 \(f(x)\) 的\tboqi{（振幅）频谱}。
+}
+
+我们也可以将傅里叶变换拓展到高维情况，其差别仅仅是将积分拓
+展成多重情况。
+
+\begin{definition}
+    若 \(f \in \mathscr{L}(\R^d)\)，则称 
+    \[
+        \hat{f}(\v{\omega}) = \ftr[f(\v{x})] = \dfrac{1}{(2\pi)^{d/2}} \int_{\R^d} f(\v{x}) \e^{-\i \v{\omega} \cdot \v{x}} \dif \v{x}，\quad \v{\omega} \in \R^d
+    \] 
+    为函数 \(f(\v{x})\) 的\tboba{多重 Fourier 变换}；
+    若 \(f \in \mathscr{L}(\R^d) \cap \mathscr{C}^1(\R^d)\)，则同时有 
+    \[
+        f(\v{x}) = \iftr[\hat{f}(\v{\omega})] = \dfrac{1}{(2\pi)^{d/2}} \int_{\R^d} \hat{f}(\v{\omega}) \e^{\i \v{\omega} \cdot \v{x}} \dif \v{\omega}，\quad \v{x} \in \R^d
+    \] 
+    为\tboba{多重 Fourier 逆变换}。
+\end{definition}
+
+由于多重傅里叶变换在各个方向上是互相独立的，因此我们只需要
+讨论（单重）傅里叶变换的相关性质。
+
+\subsubsection{Fourier 变换的性质}
+\begin{theorem} \label{thm: Properties of Fourier Transform}
+    假定 \(f\)，\(g\) 的 Fourier 变换 \(\hat{f}\)，\(\hat{g}\) 存在，那么有如下性质：
+
+    \textup{（1）\textbf{对称性质}}\quad \(
+        \hat{f}(-\omega) = \hat{f}^*(\omega) = \iftr[f(x)]
+    \)；
+
+    \textup{（2）\textbf{线性性质}}\quad \(
+        \ftr[\alpha f(x) + \beta g(x)] = \alpha \hat{f}(\omega) + \beta \hat{g}(\omega)，\quad \alpha，\beta \in \C
+    \)；
+
+    \textup{（3）\textbf{平移性质}}\quad \(
+        \ftr[f(x \pm x_0)] = \e^{\pm \i \omega x_0} \hat{f}(\omega)，\quad
+        \ftr[\e^{\pm \i \omega_0 x} f(x)] = \hat{f}(\omega \mp \omega_0)
+    \)；
+
+    \textup{（4）\textbf{相似性质}}\quad \(
+        \ftr[f(kx)] = \dfrac{1}{|k|} \hat{f}\left(\dfrac{\omega}{k}\right)，\quad k \neq 0
+    \)；
+
+    \textup{（5）\textbf{微分性质}}\quad \(
+        \ftr[\dfrac{\dif}{\dif x} f(x)] = \i \omega \hat{f}(\omega)，\quad
+        \ftr[x f(x)] = \i \dfrac{\dif}{\dif \omega} \hat{f}(\omega)
+    \)；
+
+    \textup{（6）\textbf{积分性质}}\quad \( \displaystyle
+        \ftr[\int_{a}^x f(\xi) \dif \xi] = \dfrac{1}{\i \omega} \hat{f}(\omega)，\quad
+        \ftr[\int_{-\infty}^{+\infty} f(\xi) \dif \xi] = 2\pi \delta(\omega)
+    \)；
+
+    \textup{（7）\textbf{卷积性质}}\quad \(
+        \ftr[f(x) * g(x)] = \sqrt{2\pi} \hat{f}(\omega) \cdot \hat{g}(\omega)
+    \)；
+
+    \textup{（8）\textbf{Parseval 恒等式}}\quad \( \displaystyle
+        \int_{-\infty}^{+\infty} |f(x)|^2 \dif x = \int_{-\infty}^{+\infty} |\hat{f}(\omega)|^2 \dif \omega，\quad
+        f \in \mathscr{L}^2(-\infty，+\infty)
+    \)。
+\end{theorem}
+\begin{proofs}
+    （1）由定义即有
+    \begin{align*}
+        \hat{f}(-\omega) = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \e^{-\i (-\omega) x} \dif x 
+        &= \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \e^{-\i (-\omega x)} \dif x
+        = \hat{f}^*(\omega) \\
+        &= \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(\omega) \e^{\i \omega x} \dif \omega 
+        = \iftr[f(x)] 
+    \end{align*}
+
+    （2）由定义即有
+    \begin{equation*}
+        \ftr[\alpha f(x) + \beta g(x)] = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} (\alpha f(x) + \beta g(x)) \e^{-\i \omega x} \dif x
+        = \alpha \hat{f}(\omega) + \beta \hat{g}(\omega)
+    \end{equation*}
+
+    （3）只需讨论一种情况，如
+    \begin{align*}
+        \ftr[f(x - x_0)] &= \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x - x_0) \e^{-\i \omega x} \dif x
+        = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \e^{-\i \omega (x + x_0)} \dif x \\
+        &= \e^{-\i \omega x_0} \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \e^{-\i \omega x} \dif x
+        = \e^{-\i \omega x_0} \hat{f}(\omega)
+    \end{align*}
+
+    （4）\(k>0\)时，有
+    \begin{equation*}
+        \ftr[f(kx)] = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(kx) \e^{-\i \omega x} \dif x
+        = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \e^{-\i \omega x/k} \dif \left(\dfrac{x}{k}\right)
+        = \dfrac{1}{|k|} \hat{f}\left(\dfrac{\omega}{k}\right)
+    \end{equation*}
+    \(k<0\)时，有 
+    \begin{align*}
+        \ftr[f(kx)] &= \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(kx) \e^{-\i \omega x} \dif x
+        = \dfrac{1}{k\sqrt{2\pi}} \int_{+\infty}^{-\infty} f(x) \e^{-\i \omega x/k} \dif x \\
+        &= \dfrac{-1}{k \sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \e^{-\i \omega x/k} \dif x
+        = \dfrac{1}{|k|} \hat{f}\left(\dfrac{\omega}{k}\right)
+    \end{align*}
+
+    （5）只需讨论一种情况，如
+    \begin{align*}
+        \ftr[\dfrac{\dif}{\dif x} f(x)] &= \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \dfrac{\dif}{\dif x} f(x) \e^{-\i \omega x} \dif x
+        = \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \e^{-\i \omega x} \dif f(x) \\
+        &= f(x) \e^{-\i \omega x} \bigg|_{-\infty}^{+\infty} - \dfrac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(x) \dif \e^{-\i \omega x}
+    \end{align*}
+\end{proofs}
 
 \newpage
 %----------------------------------------------------------

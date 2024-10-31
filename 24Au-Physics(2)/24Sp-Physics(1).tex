@@ -270,12 +270,12 @@
 \end{itemize}
 
 \de[平衡态]{
-	热力学系统内部没有\tboba{宏观}的粒子和能量流动状态，系统各种\tboba{宏观}性质不随时间变化。
+	热力学系统内部没有\tboba{宏观}的粒子和能量流动，系统各种\tboba{宏观}性质不随时间变化的状态。
 }
 
-\di[平衡条件]{
+\di[与外界有相互作用的系统的平衡条件]{
 	与外界有相互作用的系统要保持平衡态，应满足\tbome{平衡条件}，如：
-	\begin{itemize}
+	\begin{itemize}[leftmargin=1em]
 		\item \tbome{力学平衡条件}：系统与外界有力学相互作用，则平衡时系统内外压强相等；
 		\item \tbome{热平衡条件}：	系统与外界有热量交换，则平衡时系统内外温度相等；
 		\item \tbome{相平衡条件}：	系统与外界处于不同相，则平衡时系统内外相同；
@@ -284,12 +284,14 @@
 }
 
 \zhu[区分热力学系统的平衡态和稳定态]{
+	在平衡态下，宏观上系统内部没有粒子和能量流动，因此系统的宏观性质不随时间变化。如果系统内有能量或粒子的流动，但系统的宏观性质不随时间变化，则称系统处于\tboqi{稳定态}，而不是平衡态。
 	
+	例如，若系统同时从恒温的高温热库吸热、向恒温的低温热库放热，则尽管系统各部分的温度不随时间变化，但系统内部有能量流动，因此系统不处于平衡态；若系统同时与工质高、低浓度的两个系统通过半透膜相接，尽管系统各部分的浓度不随时间变化，但系统内部有粒子流动，因此系统也不处于平衡态。
 }
 
 \de[宏观量]{
 	表征热力学系统宏观性质的物理量，如温度、压强、体积、熵等。
-	\begin{itemize}
+	\begin{itemize}[leftmargin=1em]
 		\item \tboba{广延量}：有累加性质，\( \lim\limits_{N \to \infty} \dfrac{Ex}{N} = \mathrm{Constant}\)，如体积、质量、熵等；
 		\item \tboba{强度量}：无累加性质，\( \lim\limits_{N \to \infty} In = \mathrm{Constant}\)，如温度、压强、密度等。
 	\end{itemize}
@@ -303,7 +305,7 @@
 \end{definition}
 
 \begin{eg}{理想气体物态方程}
-	由理想气体构成的热力学系统，其物态方程为\( pV = \dfrac{m}{M}RT \)，其中\( p \)为气体压强，\( V \)为气体体积，\( m \)为气体质量，\( M \)为气体摩尔质量，\( R \)为气体常数，\( T \)为气体温度。
+	由理想气体构成的热力学系统，其物态方程为\ pV = \dfrac{m}{M}RT \)，其中\( p \)为气体压强，\( V \)为气体体积，\( m \)为气体质量，\( M \)为气体摩尔质量，\( R \)为气体常数，\( T \)为气体温度。
 
 	理想气体物态方程还可以表示为\( p = nkT \)，其中\( n \)为气体分子的数密度，\( k = \dfrac{R}{N_\mathrm{A}} \approx  1.38 \cp 10^{-23} \mathrm{\,J/mol} \)为玻尔兹曼常数。
 \end{eg}
@@ -1114,6 +1116,96 @@ Huygens 原理给出的方法（Huygens 作
 	\]
 	来描述，称为\tboba{条纹衬比度}。条纹衬比度越大，干涉条纹越清晰。
 \end{definition}
+
+普通光源要想获得相干光，就需要使用光学仪器\textbf{将同一束光分成两束}，以保证其频率、振动方向相同且相位差恒定。常用的方法有：
+\begin{itemize}
+	\item \textbf{分波面法}：通过平面镜、透镜、狭缝等将一列波从波面上分成两列波；
+	\item \textbf{分振幅法}：通过偏振片、透镜、薄膜等将一列波从振幅上分成两列波。
+\end{itemize}
+
+\begin{eg}{双缝干涉}
+	如图~\ref{Fig: Double Slit Interference}~所示，光源 \(S\) 发出的平行光通过两个狭缝 \(S_1\)、\(S_2\)，在屏幕 \(P\) 上产生干涉条纹。
+
+	设两缝间距为 \(d\)，缝到屏幕的距离为 \(L\)，波长为 \(\lambda\)，则在屏幕上的两列光波的相位差为 \(\Delta \varphi = \dfrac{2\upi d \sin \theta}{\lambda}\)。于是，屏幕上的干涉条纹间距为
+	\[
+		x = \dfrac{\lambda L}{d}
+	\]
+	且相邻两条纹的衬比度为
+	\[
+		V = \dfrac{I_\mathrm{max} - I_\mathrm{min}}{I_\mathrm{max} + I_\mathrm{min}} = \dfrac{2\sqrt{I_1 I_2}}{I_1 + I_2} = \dfrac{2\sqrt{I_1 I_2}}{2I_1} = \sqrt{\dfrac{I_2}{I_1}}
+	\]
+	
+\end{eg}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.25]{[Fig] Double Slit Interference.drawio.png}
+	\caption{双缝干涉示意图}
+	\label{Fig: Double Slit Interference}
+\end{figure}
+
+\subsubsection{光的衍射}
+
+\de[光的衍射]{
+	光在传播过程中能绕过障碍物的边缘，进入
+	几何阴影区继续传播，且光强在空间重新分
+	布的现象叫\tboba{光的衍射}。一般障碍物的尺寸 \(< 10^3 \lambda\) 时，光的衍射现象明显。
+}
+
+\di[Huygens-Fresnel 原理]{
+	波传到的任何一点都是子波的波源，各子
+	波在空间某点的相干叠加，决定了该点波
+	的强度。
+}
+设波前上任意一点 \(Q\) 处有一面积元 \(\dif \v{S}\)，此处的波源发出的子波向 \(P\) 传播的位移为 \(\v{r}\)，则 \(P\) 处该子波的振幅为 
+\[\dif E(P) \propto \dfrac{a(Q)K(\theta)}{r} \dif S\]
+其中 \(a(Q) \propto E(Q)\)，\(\theta = \langle \v{r}，\dif \v{S} \rangle\)，\(K(\theta)\) 为方向因子，在 \(\theta = 0\) 时取最大值，当 \(\theta \ge 90^\circ\) 时取 0。
+
+事实上，
+\begin{align*}
+	&\dif E(P) = \dfrac{a(Q)K(\theta)}{r} \dif S \cdot \cos \left(\omega t - \dfrac{2\pi r }{\lambda}\right) \\
+	&E(P) = \iint_S \dfrac{a(Q)K(\theta)}{r} \cdot \cos \left(\omega t - \dfrac{2\pi r }{\lambda}\right) \dif S = E_0(P) \cos \left(\omega t + \varphi(P) \right)
+\end{align*}
+
+\paragraph{单缝 Fraunhofer 衍射}
+
+如 \ref{Fig: Single Slit Diffraction} 所示，光源 \(S\) 经透镜 \(L'\) 成为平行光，通过单缝 \(AB\) 后再经透镜 \(L\) 聚焦到屏幕 \(P\) 上，产生衍射条纹。缝宽 \(a = \overline{AB}\)，上下边缘的子波光程差为 \(\delta = a \sin \theta\)。
+
+\begin{figure}[!ht]
+	\centering
+	%\includegraphics[scale=0.25]{[Fig] Single Slit Diffraction.drawio.png}
+	\caption{单缝 Fraunhofer 衍射示意图}
+	\label{Fig: Single Slit Diffraction}
+\end{figure}
+
+当 \(\delta = m\lambda\)，\(m = 1，2，3，\cdots\)，即\textbf{光程差为波长的整数倍}时，波阵面可分为 \(2m\) 个半波带，相邻半波带的光程差即为 \(\dfrac{\lambda}{2}\)，对应点上的子波在 \(P \) 的相位相反，故两两相消，为\textbf{暗条纹的中心}；当 \(\delta = \left(m + \dfrac{1}{2}\right)\lambda\)，\(m = 1，2，3，\cdots\)，即\textbf{光程差为半波长的奇数倍}时，波阵面可分为 \(2m + 1\) 个半波带，两两相消后剩下一个半波带，\(P\) 近似为\textbf{明条纹的中心}；特别地，当 \(\delta = 0\)，即\textbf{光程差为零}时，\(P\) 为\textbf{中央明纹的中心}。
+
+\zhu[旋转矢量法求光强]{
+	半波带法给出的中央明纹（中心）和
+	暗纹位置是准确的，其余明纹中心的
+	位置稍有偏差；用光强求极值的方法可准确定出明暗纹位置。
+
+	将缝宽 \(a\) 等分为 \(N\) 个窄带，每个窄带的宽度为 \(\Dif x = a/N\)，各窄带的子波在 \(P\) 点振幅近似相等，设为 \(\Dif E_0\)，相邻窄带发的子波到 \(P\) 点的相位差为 \(\Dif \varphi = \dfrac{2\pi}{\lambda} \Dif x \sin \theta = \dfrac{2\pi}{\lambda} \dfrac{a \sin \theta}{N }\)，则 \(P\) 点处是 \(N\) 个\tboqi{同方向、同频率、同振幅、初相依次差一恒量 \(\mboqi{\Dif \varphi}\) 的波}的叠加，故 \(P\) 点的合振幅为
+	\[
+		E_P = \Dif E_0 \sum\limits_{m = 1}^N \cos \left(\omega t + (m-1)\Dif \varphi\right) = \Dif E_0 \cdot \mathfrak{Re} \left\{ \sum\limits_{m = 1}^N \e^{\i \left(\omega t + (m-1)\Dif \varphi\right)} \right\}
+	\]
+	在中心点，即 \(\theta = 0\) 处，\(\Dif \varphi = 0\)，故 \(P\) 点的合振幅为 \(E_P = N \Dif E_0 = E_0\)；
+
+	在其他 \(\theta\) 处，\(\Dif \varphi \neq 0\)，当 \(N \to \infty\) 时，复数 \(\e^{\i \left(\omega t + (m-1)\Dif \varphi\right)}\Dif E_0\) 首尾相接成为圆弧，圆心角 \(\Dif \varPhi = N \Dif \varphi = \dfrac{2\pi a \sin \theta}{\lambda}\)，故 \(P\) 点的合振幅为 \(E_P = 2 \cdot \dfrac{N \Dif E_0}{\Dif \varPhi} \cdot \sin \dfrac{\Dif \varPhi}{2} = \dfrac{E_0 \sin \dfrac{\Dif \varPhi}{2}}{\dfrac{\Dif \varPhi}{2}}\)。
+
+	令 \(\alpha = \dfrac{\Dif \varPhi}{2} = \dfrac{\pi a \sin \theta}{\lambda}\)，则 \(E_P = E_0 \dfrac{\sin \alpha}{\alpha}\)。由光强和振幅平方成正比，有 \(I = I_0 \left(\dfrac{\sin \alpha}{\alpha}\right)^2\)。对光强求极值，主极大位置为 \(\alpha = 0\)，极小位置为 \(\sin \alpha = 0\)，次极大位置为 \(\tan \alpha = \alpha\)。
+}
+
+对中央明纹，由两侧暗纹位置可知\textbf{半角宽度}为 \(\theta_1 \approx \sin \theta_1 = \dfrac{\lambda}{a}\)，\textbf{线宽度}为 \(\Dif x_0 = 2f \tan \theta_1 \approx \dfrac{2f\lambda}{a}\)。衍射角很小时，对暗条纹有 \(x_k = f \tan \theta_k \approx \dfrac{fk\lambda}{a}\)，于是其他明纹的线宽度 \(\Dif x \approx \dfrac{f\lambda}{a} = \dfrac{\Dif x_0}{2}\)。
+
+\paragraph{光栅衍射}
+
+光栅是由大量的等宽等间距的平行狭缝
+（或反射面）构成的光学元件；从广义上讲，由\textbf{衍射单元}排列成的具有
+\textbf{空间周期性}的任何结构都可叫作光栅。光栅常数 \(d\) 定义为相邻两个衍射单元的中心之间的距离。
+
+考虑光栅的 Fraunhofer 衍射，如图~\ref{Fig: Diffraction of Grating}~所示，光栅 \(G\) 由 \(N\) 个等宽等间距的狭缝构成，狭缝宽度为 \(a\)，狭缝间距为 \(d-a\)，光源 \(S\) 发出的平行光通过光栅后经透镜汇聚在屏幕 \(P\) 上产生衍射条纹。
+
+
 
 \newpage
 %----------------------------------------------------------

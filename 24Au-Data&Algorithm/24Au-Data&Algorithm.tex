@@ -1278,10 +1278,206 @@ KMP 算法的时间复杂度为 \(O(m + n)\)，其中 \(m\) 为模式串 \(P\) �
 	\item 同时给定\textbf{前序序列和后序序列}无法唯一地建立一棵二叉树，因为没有提供更多关于左右子树划分的信息。
 \end{itemize}
 
+\subsubsection{二叉树的应用}
+
+\paragraph{二叉搜索树}
+
+线性表中查找一个特定元素的复杂度是 \(O(n)\)，效率较低。为了提高查找效率，可以考虑用二叉树来存储数据。
+
+\de[二叉搜索树]{
+	\tboba{二叉搜索树}（Binary Search Tree，BST）是一棵二叉树，其中每个结点都含有一个关键字，且每个结点的关键字都大于等于其左子树中的任意结点的关键字，小于等于其右子树中的任意结点的关键字。
+}
+
+在平均情况下，二叉搜索树中查找一个特定元素的时间复杂度为 \(O(\log n)\)。
+
+二叉搜索树的 C++ 实现如下：
+\begin{lstlisting}[morekeywords={[2]{ITEM, BST_Node, BST}}, morekeywords={[3]{searchR, insertR, search, insert}}]
+	typedef struct Item {
+		int m_key;			// 关键字
+		float m_value;
+	} ITEM;
+	template <class Item> struct BST_Node {
+		Item item;			// 数据域
+		BST_Node *left;		// 左孩子
+		BST_Node *right;	// 右孩子
+		BST_Node(const Item &x) : item(x), left(nullptr), right(nullptr) {}
+	};
+	typedef BST_Node<ITEM> * Link;
+
+	template <class Item> class BST {
+	private:
+		Link head;
+		Item searchR(Link p, int &x);		// 查找函数
+		void insertR(Link &p, Item x);		// 插入函数
+	public:
+		BST() 							{ head = nullptr; }
+		inline Item search(int &x) 	{ return searchR(head, x); }
+		inline void insert(Item x) 		{ insertR(head, x); }
+	};
+\end{lstlisting}
+由于二叉搜索树构造时的有序性，其查找一个特定结点的过程是递归的，递归函数的实现如下：
+\begin{lstlisting}[style=algo, morekeywords={[2]{ITEM, BST_Node, BST}}, morekeywords={[3]{searchR, insertR, search, insert}}]
+	template <class Item> 
+	Item BST<Item>::searchR(Link p, int &x) {
+		if (!p) return NULL;				// 未找到
+		if (x == p->item.m_key) 
+			return p->item;					// 找到
+		if (x < p->item.m_key) 
+			return searchR(p->left, x);		// 在左子树中查找
+		return searchR(p->right, x);		// 在右子树中查找
+	}
+\end{lstlisting}
+插入过程与查找过程类似，本质上就是查找操作，只是在查找失败时将新结点插入到查找路径上。
+\begin{lstlisting}[style=algo, morekeywords={[2]{ITEM, BST_Node, BST}}, morekeywords={[3]{searchR, insertR, search, insert}}]
+	template <class Item> 
+	void BST<Item>::insertR(Link &p, Item x) {
+		if (!p) { 
+			p = new BST_Node<Item>(x);		// 插入新结点
+			return;
+		}
+		if (x.m_key < p->item.m_key) 
+			insertR(p->left, x);			// 在左子树中插入
+		else 
+			insertR(p->right, x);			// 在右子树中插入
+	}
+\end{lstlisting}
+
+\paragraph{Huffman 树}
+
+Huffman 树又称为最优二叉树，可以用于解决最优编码问题。
+
+\begin{definition}
+	给定树中，结点到结点的分支称为\tboba{路径}，路径上的分支数目称为\tboba{路径长度}。\tboba{结点的路径长度}定义为从根结点到该结点的路径长度；\tboba{树的路径长度}定义为所有叶子结点的路径长度之和，记为 \(L\)。
+\end{definition}
+
+\begin{definition}
+	给定树中，对分支加权的路径长度称为\tboba{带权路径长度}。\tboba{树的带权路径长度}定义为所有叶子结点的带权路径长度之和，记为 \(WPL\)。
+\end{definition}
+
+\de[Huffman 树]{
+	对给定的 \(n\) 个权值 \(w_1，w_2，\cdots，w_n\)，构造出的二叉树中带权路径长度最小的这棵二叉树称为 \tboba{Huffman 树}。
+}
+
+显然，Huffman 树中只有度为 0 或 2 的结点，没有度为 1 的结点。构造 Huffman 树的方法称为 \tbome{Huffman 算法}。
+
+\di[Huffman 算法]{
+	每次从剩余的结点中选取两个权值最小的结点构造一棵新的二叉树，直至所有结点构造成一棵二叉树。
+}{
+	（1）将所有结点 \(w_1，w_2，\cdots，w_n\) 按照权值从小到大排序，并看作 \(n\) 棵只有一个结点的二叉树，构成森林 \(F = \{T_1(w_1)，T_2(w_2)，\cdots，T_n(w_n)\}\)；\\
+	（2）从 \(F\) 中选取两棵根结点权值最小的二叉树 \(T_1\) 和 \(T_2\)，构造一棵新的二叉树 \(T\)，其根结点的权值为 \(w_1 + w_2\)，左右子树分别为 \(T_1\) 和 \(T_2\)；\\
+	（3）从 \(F\) 中删除 \(T_1\) 和 \(T_2\)，将 \(T\) 加入到 \(F\) 中，重新排序为 \(F = \{T_1^{(1)}，T_2^{(1)}，\cdots，T_{n-1}^{(1)}\}\)；\\
+	（4）重复步骤（2）和（3），直至 \(F\) 中只剩下一棵树为止。
+}
+
+Huffman 树的 C++ 实现如下：
 
 
+Huffman 树应用于数据压缩，其基本思想是将出现频率较高的字符用较短的编码，出现频率较低的字符用较长的编码，从而实现数据压缩。
 
+\di[Huffman 编码]{
+	将二进制编码方案表示为二叉树，由根沿着二叉树的路径下行，通向左孩子的分支标记为0，通向右孩子的分支标记为1，从而构造码长最短的\textbf{前缀编码}方案。
+}{
+	（1）以各字符出现频率作为权值，构造 Huffman 树；\\
+	（2）沿从根结点到叶子结点的路径依次按照左右分支标记编码，得到字符的 Huffman 编码。
+}
 
+\subsubsection{堆}
+
+\de[堆]{
+	\tboba{堆}（Heap）是一种特殊的完全二叉树，其中每个结点的值都大于等于（或小于等于）其左右孩子结点的值。堆的根结点称为\tboba{堆顶}，堆顶结点的值最大的堆称为\tboba{最大堆}，堆顶结点的值最小的堆称为\tboba{最小堆}。
+}
+
+堆可以顺序存储在数组 \(A\) 中，其根结点存储为 \(A[0]\)，第 \(i\) 个结点 \(A[i]\) 的左孩子存储在 \(A[2i+1]\)，右孩子存储在 \(A[2i+2]\)。
+
+\begin{definition}
+	树中结点的\tboba{高度}定义为从该结点到叶子结点的最长路径上的结点数；树的\tboba{高度}定义为根结点的高度；堆的\tboba{高度}定义为堆顶的高度，有 \(n\) 个结点的堆的高度为 \(\lceil \log_2 (n+1) \rceil\)。
+\end{definition}
+
+堆的抽象数据类型定义如下：
+\begin{lstlisting}[style=intro, morekeywords={ADT}, morekeywords={[2]{Heap, ElemType}}, morekeywords={[3]{InitHeap, DestroyHeap, CreateHeap, ClearHeap, IsEmpty, IsFull, GetLength, Insert, Remove, FixUp, FixDown}}]
+	ADT Heap {
+		数据对象：(*@\( D = \{a_i \mid a_i \in \)@*) ElemType(*@\( , i = 0, 1, \cdots, n, n \ge 0 \} \)@*)
+		数据关系：(*@\( R = \{a_i \ge a_{2i+1} \land a_i \ge a_{2i+2} \mid a_i \in D, i = 0, 1, \cdots, n \} \)@*)（以最大堆为例）
+		基本操作：
+			InitHeap(&H)
+				操作结果：构造一个空堆 H。
+			DestroyHeap(&H)
+				初始条件：堆 H 已存在。
+				操作结果：销毁堆 H。
+			CreateHeap(&H, A, n)
+				初始条件：数组 A 中存放 n 个元素。
+				操作结果：将数组 A 中的元素建立为堆 H。
+			ClearHeap(&H)
+				初始条件：堆 H 已存在。
+				操作结果：将堆 H 清空。
+			IsEmpty(H)
+				初始条件：堆 H 已存在。
+				操作结果：若 H 为空，则返回 true，否则返回 false。
+			IsFull(H)
+				初始条件：堆 H 已存在。
+				操作结果：若 H 已满，则返回 true，否则返回 false。
+			GetLength(H)
+				初始条件：堆 H 已存在。
+				操作结果：返回 H 中元素的个数。
+			Insert(&H, e)
+				初始条件：堆 H 已存在，元素 e 未在 H 中。
+				操作结果：将元素 e 插入到 H 中。
+			Remove(&H, i)
+				初始条件：堆 H 已存在，元素 i 在 H 中。
+				操作结果：将 H 中的元素 i 删除。
+			FixUp(&H, i)
+				初始条件：堆 H 已存在。
+				操作结果：从堆的第 i 个结点自底向上堆化。
+			FixDown(&H, i)
+				初始条件：堆 H 已存在。
+				操作结果：从堆的第 i 个结点自顶向下堆化。
+	} ADT Heap
+\end{lstlisting}
+
+对于堆的操作，如插入、删除、或修改结点的值都会破坏堆的性质，
+因此对堆进行修复以维护堆性质是堆最重要的操作。对于最大堆，
+\begin{itemize}
+	\item 如果某个结点的值小于其某个子结点（向下看发现问题），可以采用自顶向下堆化（Heapify-down）的算法进行修复：
+	\begin{lstlisting}[style=algo, morekeywords={[2]{CMaxHeap, ElemType}}, morekeywords={[3]{FixDown}}, gobble=8]
+		void CMaxHeap::FixDown(int k) {
+			int i = 2 * k + 1;				// 左孩子
+			while (i < heapSize) {
+				if (i + 1 < heapSize && heap[i] < heap[i + 1]) 
+					i++;					// 取左右孩子中较大的
+				if (heap[k] >= heap[i]) 
+					break;					// 若满足最大堆性质
+				swap(heap[k], heap[i]);		// 交换结点
+				k = i; i = 2 * k + 1;		// 移至下一层
+			}
+		}
+	\end{lstlisting}
+	\item 如果某个结点的值大于其父结点（向上看发现问题），可以采用自底向上堆化（Heapify-up）的算法进行修复：
+	\begin{lstlisting}[style=algo, morekeywords={[2]{CMaxHeap, ElemType}}, morekeywords={[3]{FixUp}}, gobble=8]
+		void CMaxHeap::FixUp(int k) {
+			while (k > 0 && heap[(k - 1) / 2] < heap[k]) {	// 若不满足堆性质
+				swap(heap[(k - 1) / 2], heap[k]);			// 交换结点
+				k = (k - 1) / 2;							// 移至上一层
+			}
+		}
+	\end{lstlisting}
+\end{itemize}
+
+在堆中插入一个元素，可以先将元素插入到堆的末尾，然后自底向上堆化；在堆中删除一个元素，可以将该元素为堆顶的子堆的最后一个元素移至该处，然后自顶向下堆化。
+
+给定一个线性表，要将其构造为堆，也有自顶向下和自底向上两种方法。
+\begin{itemize}
+	\item \textbf{自顶向下的堆构造}：不断向堆尾插入新结点，并调用自底向上堆化操作构造堆。
+	\begin{lstlisting}[style=algo, morekeywords={[2]{CMaxHeap, ElemType}}, morekeywords={[3]{FixUp}}, gobble=8]
+		CMaxHeap::CMaxHeap(ElemType A[], int n) {
+			heapSize = n; heap = new ElemType[n];
+			for (int i = 0; i < n; i++) {
+				heap[i] = A[i];
+				FixUp(i);
+			}
+		}
+	\end{lstlisting}
+	\item \textbf{自底向上的堆构造}：直接将线性表视为一棵尚未满足堆性质的完全二叉树，此时长度为 \(n\) 的二叉树 \(A\) 中的
+\end{itemize}
 
 \newpage
 %----------------------------------------------------------

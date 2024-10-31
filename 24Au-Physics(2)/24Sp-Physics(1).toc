@@ -6,30 +6,33 @@
 \contentsline {subsubsection}{\numberline {5.1.2}内能}{4}{subsubsection.5.1.2}%
 \contentsline {subsubsection}{\numberline {5.1.3}分子的速率和能量分布}{5}{subsubsection.5.1.3}%
 \contentsline {paragraph}{\numberline {A)}Maxwell 速率分布函数}{5}{paragraph.5.1.3.1}%
-\contentsline {paragraph}{\numberline {B)}Maxwell-Boltzmann 分布律}{6}{paragraph.5.1.3.2}%
-\contentsline {subsubsection}{\makebox [0pt][r]{*}5.1.4\hskip 1em\relax van der Waals 方程}{8}{subsubsection*.2}%
-\contentsline {subsubsection}{\numberline {5.1.5}平均自由程与输运过程}{9}{subsubsection.5.1.5}%
+\contentsline {paragraph}{\numberline {B)}Maxwell-Boltzmann 分布律}{7}{paragraph.5.1.3.2}%
+\contentsline {subsubsection}{\makebox [0pt][r]{*}5.1.4\hskip 1em\relax van der Waals 方程}{9}{subsubsection*.2}%
+\contentsline {subsubsection}{\numberline {5.1.5}平均自由程与输运过程}{10}{subsubsection.5.1.5}%
 \contentsline {paragraph}{\numberline {A)}热传导}{10}{paragraph.5.1.5.1}%
 \contentsline {paragraph}{\numberline {B)}粘滞（内摩擦）}{10}{paragraph.5.1.5.2}%
 \contentsline {paragraph}{\numberline {C)}扩散}{10}{paragraph.5.1.5.3}%
-\contentsline {subsection}{\numberline {5.2}热力学第一定律}{10}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.0}准静态过程}{10}{subsubsection.5.2.0}%
-\contentsline {subsubsection}{\numberline {5.2.1}热力学中的内能、热量、功}{10}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2}热力学第一定律}{11}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.0}准静态过程}{11}{subsubsection.5.2.0}%
+\contentsline {subsubsection}{\numberline {5.2.1}热力学中的内能、热量、功}{11}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}热容量}{12}{subsubsection.5.2.2}%
 \contentsline {subsubsection}{\numberline {5.2.3}绝热过程}{13}{subsubsection.5.2.3}%
-\contentsline {paragraph}{\numberline {A)}理想气体的准静态绝热过程}{13}{paragraph.5.2.3.1}%
-\contentsline {paragraph}{\numberline {B)}理想气体的多方过程}{13}{paragraph.5.2.3.2}%
+\contentsline {paragraph}{\numberline {A)}理想气体的准静态绝热过程}{14}{paragraph.5.2.3.1}%
+\contentsline {paragraph}{\numberline {B)}理想气体的多方过程}{14}{paragraph.5.2.3.2}%
 \contentsline {paragraph}{\numberline {C)}理想气体的绝热自由膨胀}{14}{paragraph.5.2.3.3}%
-\contentsline {subsubsection}{\numberline {5.2.4}循环过程}{14}{subsubsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.4}循环过程}{15}{subsubsection.5.2.4}%
 \contentsline {paragraph}{\numberline {A)}热循环和制冷循环}{15}{paragraph.5.2.4.1}%
 \contentsline {paragraph}{\numberline {B)}卡诺循环}{15}{paragraph.5.2.4.2}%
 \contentsline {subsection}{\numberline {5.3}热力学第二定律}{16}{subsection.5.3}%
 \contentsline {subsubsection}{\numberline {5.3.1}热力学第二定律的表述}{16}{subsubsection.5.3.1}%
-\contentsline {section}{\numberline {6}光学}{17}{section.6}%
-\contentsline {subsection}{\numberline {6.0}光学基本概念}{17}{subsection.6.0}%
-\contentsline {subsection}{\numberline {6.1}光的干涉}{18}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}光源的相干性}{18}{subsubsection.6.1.1}%
-\contentsline {section}{\numberline {A}必要的数学准备}{20}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}矢量运算}{20}{subsection.A.1}%
-\contentsline {subsubsection}{\numberline {A.1.1}矢量乘法}{20}{subsubsection.A.1.1}%
-\contentsline {subsubsection}{\numberline {A.1.2}矢量微分}{20}{subsubsection.A.1.2}%
+\contentsline {section}{\numberline {6}光学}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.0}光学基本概念}{18}{subsection.6.0}%
+\contentsline {subsection}{\numberline {6.1}光的干涉}{19}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}光源的相干性}{19}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}光的衍射}{20}{subsubsection.6.1.2}%
+\contentsline {paragraph}{\numberline {A)}单缝 Fraunhofer 衍射}{21}{paragraph.6.1.2.1}%
+\contentsline {paragraph}{\numberline {B)}光栅衍射}{22}{paragraph.6.1.2.2}%
+\contentsline {section}{\numberline {A}必要的数学准备}{23}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}矢量运算}{23}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {A.1.1}矢量乘法}{23}{subsubsection.A.1.1}%
+\contentsline {subsubsection}{\numberline {A.1.2}矢量微分}{23}{subsubsection.A.1.2}%

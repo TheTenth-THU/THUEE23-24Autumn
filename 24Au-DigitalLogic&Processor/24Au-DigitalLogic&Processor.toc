@@ -1,23 +1,36 @@
 \contentsline {section}{\numberline {1}布尔代数}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}数的编码与表示}{2}{subsection.1.1}%
-\contentsline {section}{\numberline {2}逻辑计算}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}从电路到逻辑门}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}组合逻辑}{3}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}组合逻辑电路的分析方法}{3}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}组合逻辑电路的设计过程}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}组合逻辑电路的评价指标}{6}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}组合逻辑电路的设计实例}{6}{subsubsection.2.2.4}%
-\contentsline {paragraph}{\numberline {\hskip 2emA)}编码器（Encoder）和译码器（Decoder）}{6}{paragraph.2.2.4.1}%
-\contentsline {paragraph}{\numberline {\hskip 2emB)}多路选择器（Multiplexer\textup {,}\hskip 0.5em MUX）}{7}{paragraph.2.2.4.2}%
-\contentsline {paragraph}{\numberline {\hskip 2emC)}加法器}{8}{paragraph.2.2.4.3}%
-\contentsline {subsection}{\numberline {2.3}时序逻辑}{9}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}时序逻辑电路的基本概念}{9}{subsubsection.2.3.1}%
-\contentsline {paragraph}{\numberline {\hskip 2emA)}触发与节拍信号}{9}{paragraph.2.3.1.1}%
-\contentsline {paragraph}{\numberline {\hskip 2emB)}状态与有限状态机}{9}{paragraph.2.3.1.2}%
-\contentsline {subsubsection}{\numberline {2.3.2}锁存器和寄存器}{9}{subsubsection.2.3.2}%
-\contentsline {paragraph}{\numberline {\hskip 2emA)}锁存器}{9}{paragraph.2.3.2.1}%
-\contentsline {paragraph}{\numberline {\hskip 2emB)}触发器}{12}{paragraph.2.3.2.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}时序逻辑电路分析}{14}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}时序逻辑电路设计}{14}{subsubsection.2.3.4}%
-\contentsline {paragraph}{\numberline {\hskip 2emA)}寄存器}{15}{paragraph.2.3.4.1}%
-\contentsline {paragraph}{\numberline {\hskip 2emB)}计数器}{16}{paragraph.2.3.4.2}%
+\contentsline {subsubsection}{\numberline {1.1.1}二进制自然数的特殊编码}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}二进制整数的编码}{3}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\makebox [0pt][r]{*}1.1.3\hskip 1em\relax 二进制小数的编码}{4}{subsubsection*.4}%
+\contentsline {subsection}{\numberline {1.2}函数的布尔代数表示}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}布尔代数}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}函数的逻辑实现}{4}{subsubsection.1.2.2}%
+\contentsline {section}{\numberline {2}逻辑计算}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}从电路到逻辑门}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}组合逻辑}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}组合逻辑电路的分析方法}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}组合逻辑电路的设计过程}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}组合逻辑电路的评价指标}{10}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}组合逻辑电路的设计实例}{10}{subsubsection.2.2.4}%
+\contentsline {paragraph}{\numberline {\hskip 2emA)}编码器（Encoder）和译码器（Decoder）}{10}{paragraph.2.2.4.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emB)}多路选择器（Multiplexer\textup {,}\hskip 0.5em MUX）}{11}{paragraph.2.2.4.2}%
+\contentsline {paragraph}{\numberline {\hskip 2emC)}加法器}{11}{paragraph.2.2.4.3}%
+\contentsline {subsection}{\numberline {2.3}时序逻辑}{14}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}时序逻辑电路的基本概念}{14}{subsubsection.2.3.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emA)}触发与节拍信号}{14}{paragraph.2.3.1.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emB)}状态与有限状态机}{14}{paragraph.2.3.1.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}锁存器和寄存器}{15}{subsubsection.2.3.2}%
+\contentsline {paragraph}{\numberline {\hskip 2emA)}锁存器}{15}{paragraph.2.3.2.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emB)}触发器}{17}{paragraph.2.3.2.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}时序逻辑电路分析}{19}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}时序逻辑电路设计}{19}{subsubsection.2.3.4}%
+\contentsline {paragraph}{\numberline {\hskip 2emA)}寄存器}{20}{paragraph.2.3.4.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emB)}计数器}{21}{paragraph.2.3.4.2}%
+\contentsline {section}{\numberline {3}计算机指令集系统}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}通用处理器的基本结构}{22}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}算法与指令的实现}{22}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}程序的执行流程}{23}{subsubsection.3.1.2}%
+\contentsline {paragraph}{\numberline {\hskip 2emA)}数据的存储格式}{23}{paragraph.3.1.2.1}%
+\contentsline {paragraph}{\numberline {\hskip 2emB)}汇编语言}{23}{definition.3.1.4}%
+\contentsline {paragraph}{\numberline {\hskip 2emC)}指令集的性能评价}{23}{paragraph.3.1.2.3}%
